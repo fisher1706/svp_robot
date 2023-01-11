@@ -1,92 +1,171 @@
 # svp_robot
-
 This project is for Automating SVP testing Using Robot
 
-## Getting started
+# Setup Instructions
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+---
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+# Project and IDE installation
 
-## Add your files
+**1. Download your favorite IDE >> [Pycharm, RIDE, VSCode]**
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+**2. Clone the desired project using Git, then open it in your favorite IDE. If you have the option to select the default python version, please select 3.8.x**
 
-```
-cd existing_repo
-git remote add origin https://gitlab.qiwa.tech/takamol/qa/svp_robot.git
-git branch -M master
-git push -uf origin master
-```
+---
 
-## Integrate with your tools
+# Python - Pyenv
 
-- [ ] [Set up project integrations](https://gitlab.qiwa.tech/takamol/qa/svp_robot/-/settings/integrations)
+**1. Python 3.8.x is required in order to use poetry, if you don't have python version 3.8.x (x stands for any sub version), please install pyenv to handle the process of installing and switching to the specified python version:**
 
-## Collaborate with your team
+    https://github.com/pyenv/pyenv
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+_For windows please follow these instructions:_
 
-## Test and Deploy
+    https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#powershell
 
-Use the built-in continuous integration in GitLab.
+_To install python version 3.8.x, please use the following command:_
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+> Please note that you can use any sub version you like, 3.8.13 is just a sample for demonstrating the installation process.
 
-***
+    pyenv install 3.8.13
 
-# Editing this README
+_To change the python version, please use the following command_
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+    pyenv shell 3.8.13
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+> Required - must run it before use poetry for the first time.
 
-## Name
-Choose a self-explaining name for your project.
+    pyenv local 3.8.13
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+> Optional - use it in case you need to close the terminal and want to keep using the same python version that got selected above.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+---
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+# Poetry
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+**1. In order to use virtual environment, please install poetry using pip command**
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+    pip install poetry
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+_2. Run `pyenv which python` to get the python path_
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+_3. Run `poetry env use {python path that you copied}` then run `poetry shell`_
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+> Access poetry virtual environment
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+    poetry self install
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+> Install all specified packages. you don't need to do anything, just execute the above command and watch the magic happens
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+    exit
 
-## License
-For open source projects, say how it is licensed.
+> This command is optional, in case you needed to quit the virtual environment.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+_In order to execute the test cases, you have two options:_
+
+1. Use `poetry run {command}` -> you should be out the poetry virtual environment.
+2. Use `poetry shell` to access the virtual environment then execute your commands without using `poetry run {command}`
+
+**All required packages will be installed using the above command, however, if you need to install any new package, use**
+
+    poetry add package_name
+
+---
+
+# Plugins
+
+**Install the following plugins:**
+
+      1. Robotframework support
+      2. Run Robotframework
+      3. Intellibot patched SeleniumLibrary
+
+Then restart you IDE after installing plugin and Libs
+
+---
+
+# Project Files Structure
+
+**Test Automation Framework Project for Robot Framework which contains the following layers:**
+
+    ├── Libraries                # This is for custom python libraries (Not built in)
+    ├── POM
+    │   ├── Keywords
+    │   │   ├── Modules          # This is for business keywords
+    │   │   └── Pages            # This is for technical keywords
+    │   └── Locators             # This is for elemets identifications(python files)
+    ├── Resources
+    │   ├── DataSources          # This is for external test data files
+    │   ├── Setup                # This is for any setup used for tests
+    │   ├── Uploads              # This is for different files format to upload
+    │   └── Variables            # This is for global variables across the whole project
+    ├── Results
+    │    └── Reports             # This is to store the generated reports of differed types
+    ├── Tests
+    │   ├── api                 # API test suites
+    │   └── ui                  # UI test suites
+    ├── .gitignore              # List files and dirs ignored by git
+    ├── docker-compose.yaml     # Docker compose for Allure and Selenium grid
+    └── README.md               # This is for Project description
+
+1. **POM (Page Object Model) Directory:**
+
+Which contains Keywords for each and every element will be used in each Page for AUT (Application Under Test). Each Keyword usually should contain of:
+
+1. Locators Directory: Contains Web Elements Identifiers. '.py' files got used in order to write dynamic reference and it should be used with all locator's files.
+2. Keywords Directory: contains two main directories, and they are:
+
+   1. Pages Directory: This directory contains all Actions that would be triggered on the Element like "Click, Input, Select, ..etc"
+   2. Modules Directory: This directory contains Keywords for each Step details needed combined in One Keyword. Guys coming from Java or Python this layer like Step definition to get your code organized
+
+3. **Tests Directory**
+
+   Which contains Test Cases calling Keywords of Keyword level which contains:
+
+   1. Test Setup/ Suite Setup
+      This is used to be executed before Test Steps executed for each Test Cases in Test Case/Suite
+   2. Test /Suite Teardown
+      This is used to executed once at the end of Test Case/ suite execution
+   3. Test Case Title
+      Which should matches Test Case Titles
+   4. [Tags]: Which could contains Test Case Tags, IDs in Test Management Tools as well as Smoke-Test, Functionality, ..etc
+   5. [Arguments]: Which contains Test Arguments as a Parameters to pass Test Data
+   6. Test Steps: Which calls the pre-defined Keywords using their names from modules directory
+
+---
+
+# Tests Execution
+
+**Note: If you used `poetry shell` command, no need to use `poetry run` in any commands**
+
+**Execution use the following Command:**
+
+    poetry run robot -d ./Results/Reports/  ./Tests/Login_TestSuite.robot
+
+**You can add -T to the command to generate reports with date_time_staps**
+
+    poetry run robot -T -d ./Results/Reports/  ./Tests/Login_TestSuite.robot
+
+This command will export by default three types of Reports(log.html, report.html, output.xml). Under Results/Reports directory, which will be used later for Test Execution on Test Tools like JIRA")
+**To generate allure reports use the following command:**
+
+    poetry run robot --listener allure_robotframework ./Tests/Login_TestSuite.robot
+
+_Note: Please don't remove the "poetry.lock" & "pyproject.toml"_
+
+---
+
+# References
+
+1. Collections library: http://robotframework.org/robotframework/latest/libraries/Collections.html
+2. String Library: https://robotframework.org/robotframework/latest/libraries/String.html#Get%20Lines%20Containing%20String
+3. Selenium Library: https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Scroll%20Element%20Into%20View
+4. Robot Framework official documentation: https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#user-keyword-name-and-documentation
+
+---
+
+# Done on each pull request
+
+_1. Run command:_
+
+    poetry lock

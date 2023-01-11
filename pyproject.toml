@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "svp_robot"
+version = "1.0.0"
+description = "This project is for Automating SVP testing Using Robot"
+authors = []
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "~3.8"
+selenium = "^4.7.2"
+robotframework = "^6.0.2"
+robotframework-seleniumlibrary = "^6.0.0"
+robotframework-pabot = "^2.11.0"
+robotframework-jsonlibrary = "^0.5"
+allure-robotframework = "^2.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
