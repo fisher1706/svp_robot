@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+.idea/*
+log/*
+/tmp
+.DS_Store
+/venv

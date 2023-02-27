@@ -1,0 +1,8 @@
+DEFAULT_LOGIN = 'admin@gmail.com'
+DEFAULT_PASSWORD = 'Password#1'
+INVALID_LOGIN = 'test@gmail.com'
+CHANGED_PASSWORD = 'Password#1!#'
+INVALID_PASSWORD = 'Invalid#1'
+TC_LOGIN = 'auto-ppuliw9p@qa.qiwa.tech'
+TC_NAME = 'Autotest nkmvrorv'
+LEGISLATOR_LOGIN = 'auto-unmlm1d2@qa.qiwa.tech'
