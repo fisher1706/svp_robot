@@ -7,13 +7,14 @@ readme = "README.md"
 packages = []
 
 [tool.poetry.dependencies]
-python = "~3.8"
+python = "~3.10"
 selenium = "^4.7.2"
 robotframework = "^6.0.2"
 robotframework-seleniumlibrary = "^6.0.0"
 robotframework-pabot = "^2.11.0"
 robotframework-jsonlibrary = "^0.5"
 allure-robotframework = "^2.12.0"
+PdfReader = "0.1.12"
 
 
 [build-system]
