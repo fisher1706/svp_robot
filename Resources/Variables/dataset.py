@@ -1,20 +1,10 @@
 import os
 
-from test_data.constants import UserInfo
-from test_data.validation_message import ErrorMessage
-
 DISCORD_HOOKS = {
     'demo': {
         'ui-daily': os.environ.get('DISCORD_URL'),
     }
 }
-
-
-class LoginDataset:
-    INVALID_CREDENTIALS_UI = [
-        [UserInfo.INVALID_LOGIN, UserInfo.DEFAULT_PASSWORD, ErrorMessage.INVALID_CREDENTIALS],
-        [UserInfo.DEFAULT_LOGIN, UserInfo.INVALID_LOGIN, ErrorMessage.INVALID_CREDENTIALS],
-    ]
 
 
 class SetPasswordDataset:

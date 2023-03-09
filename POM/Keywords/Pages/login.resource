@@ -19,6 +19,10 @@ Enter password
     [Arguments]     ${password}
     Type Text   selector=${PASSWORD_FIELD}    txt=${password}
 
+Verify button is dissabled
+    ${btn_status}=  Get Element States    ${SIGN_IN_BUTTON}    then    bool(disabled)
+    Should Be True  ${btn_status}
+
 Get 2fa code
     ${otp_text}=    Get Text    ${OTP_CODE}
     @{list}=    Split String    ${otp_text} ${SPACE}
@@ -35,7 +39,7 @@ Enter 2fa code
 Click Sign In_btn
     Click   ${SIGN_IN_BUTTON}
 
-Wait Sign In btn become disabled
+Get Sign In btn status disabled
     ${status}=    Get Element States    ${SIGN_IN_BUTTON}   then  bool(attached & disabled)
     [Return]    ${status}
 

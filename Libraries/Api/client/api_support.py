@@ -12,8 +12,8 @@ logger = yaml_logger.setup_logging(__name__)
 
 class ApiSupport:
 
-    def __init__(self):
-        self.api = None
+    def __init__(self, api):
+        self.api = api
         self.session_id = None
 
     @classmethod

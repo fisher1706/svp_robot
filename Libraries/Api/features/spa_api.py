@@ -1,13 +1,14 @@
 import allure
 
-from src.api.client.api_support import ApiSupport
-from src.ui.actions.driver_actions import DriverActions
+from Libraries.Api.client.api_client import ApiClient
+from Libraries.Api.client.api_support import ApiSupport
+from POM.Keywords.Modules.driver_actions import DriverActions
 
 
 class SPAApi:
-    def __init__(self, api):
-        self.api = api
-        self.support = ApiSupport(api)
+    def __init__(self):
+        self.api = ApiClient()
+        self.support = ApiSupport(self.api)
         self.driver_actions = DriverActions()
 
     @allure.step("GET api/v1/legislator_space/labors :: get labors info")

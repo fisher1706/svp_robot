@@ -1,7 +1,9 @@
 import json
 
 import allure
+from robot.api.deco import keyword
 
+from Libraries.Api.client.api_client import ApiClient
 from Libraries.Api.client.api_support import ApiSupport
 from Resources.Variables import UserInfo
 
@@ -9,11 +11,12 @@ from Resources.Variables import UserInfo
 class AuthApi:
 
     def __init__(self):
-        self.api = None
-        self.support = ApiSupport()
+        self.api = ApiClient()
+        self.support = ApiSupport(self.api)
         self.otp_code = None
 
     @allure.step("POST api/v1/login?locale=en :: get otp code")
+    @keyword('Get otp code')
     def get_otp_code(self, email=UserInfo.DEFAULT_LOGIN, user_type='admin', expect_code=401):
         json_body = {
             "user": {
@@ -24,8 +27,7 @@ class AuthApi:
         }
         self.api.post(url=self.api.api_url, endpoint='api/v1/login?locale=en', body=json.dumps(json_body))
         self.support.check_status_code(name="Two factor auth", expect_code=expect_code)
-        self.otp_code = self.support.get_response_value('otp_code')
-        return self
+        return self.support.get_response_value('otp_code')
 
     @allure.step("POST api/v1/login?locale=en :: get access token")
     def get_access_token(self, otp_code, email=UserInfo.DEFAULT_LOGIN, fe_app='admin'):
