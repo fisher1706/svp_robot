@@ -2,14 +2,15 @@ import json
 
 import allure
 
-from src.api.client.api_support import ApiSupport
+from Libraries.Api.client.api_client import ApiClient
+from Libraries.Api.client.api_support import ApiSupport
 
 
 class AdminApi:
 
-    def __init__(self, api):
-        self.api = api
-        self.support = ApiSupport(api)
+    def __init__(self):
+        self.api = ApiClient()
+        self.support = ApiSupport(self.api)
         self.legislator_id = None
 
     @staticmethod

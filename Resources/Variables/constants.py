@@ -99,12 +99,6 @@ class DateType:
     DATE_SEP_SPACE = '%d %B %Y'
 
 
-class Authentication:
-    EMAIL = 'email'
-    API = 'api'
-    OTP_FROM_NETWORK = 'otp_from_network'
-
-
 class Credits:
     AMOUNT = 25
 

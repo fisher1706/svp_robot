@@ -1,5 +1,6 @@
 import time
 
+from robot.api.deco import keyword
 from selenium.common import TimeoutException, NoSuchElementException
 
 from Libraries.email.email_client import EmailClient
@@ -11,7 +12,6 @@ class BaseActions:
     def __init__(self):
         super().__init__()
         self.confirmation_url = None
-        self.confirmation_code = None
         self.random_manager = RandomManager()
 
     def activate_account(self, email_to_confirm, visit=True):
@@ -22,11 +22,11 @@ class BaseActions:
             self.visit(url=self.confirmation_url)
         return self
 
+    @keyword('Get confirmation code')
     def get_confirmation_code(self, email):
         email_client = EmailClient()
         email_client.get_confirmation_code(email)
-        self.confirmation_code = email_client.confirmation_code
-        return self
+        return email_client.confirmation_code
 
     @classmethod
     def click_on_locator(cls, locator):

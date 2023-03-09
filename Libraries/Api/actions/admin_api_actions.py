@@ -1,11 +1,8 @@
-from helpers.logger import yaml_logger
-from src.api.actions.auth_api_actions import AuthApiActions
-from src.api.features.admin_api import AdminApi
-from src.ui.actions.base_actions import BaseActions
-from src.ui.actions.login_actions import LoginActions
-from src.ui.actions.password_actions import PasswordActions
-from test_data.constants import Title
-from test_data.models.model_builder import ModelBuilder
+from Libraries.Api.actions.auth_api_actions import AuthApiActions
+from Libraries.Api.features.admin_api import AdminApi
+from Libraries.logger import yaml_logger
+from POM.Keywords.Modules.base_actions import BaseActions
+from Resources.DataSources.models.model_builder import ModelBuilder
 
 logger = yaml_logger.setup_logging(__name__)
 
@@ -17,8 +14,6 @@ class AdminApiActions(AdminApi):
         self.legislator_account = None
         self.tcenter_account = None
         self.auth_api_actions = AuthApiActions(api)
-        self.login_action = LoginActions()
-        self.password = PasswordActions()
         self.base_actions = BaseActions()
 
     def create_legislator(self, token):
@@ -56,7 +51,6 @@ class AdminApiActions(AdminApi):
 
     def activate_account(self, email):
         self.base_actions.activate_account(email)
-        self.base_actions.verify_expected_title(expected_title=Title.SPA_SET_PASSWORD)
 
     def activate_permission(self, tcenter, multiple_categories=None):
         self.auth_api_actions.get_token()

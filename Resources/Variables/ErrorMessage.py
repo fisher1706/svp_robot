@@ -1,4 +1,4 @@
-INVALID_CREDENTIALS = {'type': 'invalid credentials error', 'text': 'Invalid Email or Password.'}
+INVALID_CREDENTIALS = 'Invalid Email or Password.'
 PASS_WARNING = {'type': 'pass warning', 'text': 'Complexity requirement not met. Length should be 8-20 characters '
                                                 'and include at least: 1 uppercase, 1 lowercase, 1 digit and 1 '
                                                 'special character'}
