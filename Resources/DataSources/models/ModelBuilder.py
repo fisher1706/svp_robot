@@ -1,5 +1,7 @@
 from datetime import date
 
+from robot.api.deco import keyword
+
 from Libraries.logger import yaml_logger
 from Libraries.random_manager import RandomManager
 from Resources.DataSources.models.account import Account
@@ -22,6 +24,7 @@ class ModelBuilder:
     POSTAL_CODE = 111111
 
     @staticmethod
+    @keyword('Create new account')
     def build_random_account(en_name=None,
                              ar_name='',
                              logo=LOGO,

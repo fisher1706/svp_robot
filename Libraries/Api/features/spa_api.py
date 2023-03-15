@@ -2,19 +2,18 @@ import allure
 
 from Libraries.Api.client.api_client import ApiClient
 from Libraries.Api.client.api_support import ApiSupport
-from POM.Keywords.Modules.driver_actions import DriverActions
 
 
 class SPAApi:
     def __init__(self):
         self.api = ApiClient()
         self.support = ApiSupport(self.api)
-        self.driver_actions = DriverActions()
 
     @allure.step("GET api/v1/legislator_space/labors :: get labors info")
     def get_labors_info(self, token: str = '', expect_code: int = 200):
-        if not token:
-            token = self.driver_actions.get_item_from_local_storage('auth_token_default')
+        # TODO: rewrite getting token from local storage when needed
+        # if not token:
+        #     token = self.get_item_from_local_storage('auth_token_default')
         self.api.get(url=self.api.api_url, endpoint='api/v1/legislator_space/labors?per_page=10&locale=en',
                      headers=self.support.get_headers(token))
         self.support.check_status_code(name='Get labors info', expect_code=expect_code)

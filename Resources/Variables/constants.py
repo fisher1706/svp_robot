@@ -1,4 +1,5 @@
-import os.path
+import os
+import sys
 
 
 class SupportedBrowser:
@@ -9,35 +10,11 @@ class SupportedBrowser:
     }
 
 
-class Title:
-    SIGN_IN = {'type': 'header', 'text': 'Sign in'}
-    LEGISLATORS = {'type': 'header', 'text': 'Legislators'}
-    NEW_LEGISLATOR = {'type': 'header', 'text': 'New Legislator'}
-    NEW_TEST_CENTER = {'type': 'header', 'text': 'New Test Center'}
-    TEST_CENTER = {'type': 'header', 'text': 'Test Centers'}
-    SPA_SIGN_IN = {'type': 'spa login', 'text': 'Welcome to International SVP!'}
-    SPA_SET_PASSWORD = {'type': 'spa login', 'text': 'Set Password'}
-    CARD_DETAILS = {'type': 'header payment', 'text': 'PLEASE ENTER YOUR CARD DETAILS TO A PURCHASE'}
-    UPLOADED_FILES = {'type': 'spa', 'text': 'Uploaded Files'}
-    ADD_GROUP = {'type': 'modal', 'text': 'Add Group'}
-    TRANSACTION_HISTORY = {'type': 'spa', 'text': 'Transaction History'}
-    REPORTS = {'type': 'spa', 'text': 'Reports'}
-    CHECK_VALIDITY = {'type': 'spa', 'text': 'Check Validity'}
-    GROUP = {'type': 'spa', 'text': 'GROUP {}'}
-    PAYMENT_CONFIRMATION = {'type': 'spa', 'text': 'Payment Confirmation'}
-    PAYMENT = {'type': 'spa', 'text': 'Payment'}
-    ADD_INDIVIDUAL = {'type': 'modal', 'text': 'Add Individual'}
-    SPA_NEW_TEST_CENTER = {'type': 'spa', 'text': 'New Test Center'}
-    SPA_TEST_CENTER_INFORMATION = {'type': 'spa', 'text': 'Test Center Information'}
-    SPA_EDIT_TEST_CENTER = {'type': 'spa', 'text': 'EDIT TEST CENTER'}
-    SPA_ACCOUNT_INFORMATION = {'type': 'spa', 'text': 'Account Information'}
-    SPA_CHANGE_PASSWORD = {'type': 'spa login', 'text': 'Change Password'}
-    SPA_PROFESSIONAL_ACCREDITATION_PROGRAM = {'type': 'home', 'text': 'Professional Accreditation Program'}
-
-
 class DirPath:
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    TEST_FILES = os.path.join(BASE_DIR, 'test_files')
+    BASE_DIR = sys.path[1]
+    RESOURCES = os.path.join(BASE_DIR, 'Resources')
+    DATA_SOURCES = os.path.join(RESOURCES, 'DataSources')
+    TEST_FILES = os.path.join(DATA_SOURCES, 'test_files')
     PNG_FILE = os.path.join(TEST_FILES, 'valid_3.png')
     CSV = os.path.join(TEST_FILES, 'sample_attributes.csv')
     CSV_5 = os.path.join(TEST_FILES, 'sample_attributes_5.csv')
@@ -101,19 +78,3 @@ class DateType:
 
 class Credits:
     AMOUNT = 25
-
-
-class Filters:
-    CONTAINS = 'Contains'
-    BEGINS_WITH = 'Begins with'
-    ENDS_WITH = 'Ends with'
-
-
-class Status:
-    ACTIVE = 'Active'
-    INACTIVE = 'Inactive'
-    DELETED = 'Deleted'
-
-
-class Countries:
-    MONTENEGRO = 'MONTENEGRO'

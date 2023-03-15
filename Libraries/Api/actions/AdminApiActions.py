@@ -1,19 +1,19 @@
-from Libraries.Api.actions.auth_api_actions import AuthApiActions
+from Libraries.Api.actions.AuthApiActions import AuthApiActions
 from Libraries.Api.features.admin_api import AdminApi
 from Libraries.logger import yaml_logger
 from POM.Keywords.Modules.base_actions import BaseActions
-from Resources.DataSources.models.model_builder import ModelBuilder
+from Resources.DataSources.models.ModelBuilder import ModelBuilder
 
 logger = yaml_logger.setup_logging(__name__)
 
 
 class AdminApiActions(AdminApi):
 
-    def __init__(self, api):
-        super().__init__(api)
+    def __init__(self):
+        super().__init__()
         self.legislator_account = None
         self.tcenter_account = None
-        self.auth_api_actions = AuthApiActions(api)
+        self.auth_api_actions = AuthApiActions()
         self.base_actions = BaseActions()
 
     def create_legislator(self, token):
@@ -53,7 +53,7 @@ class AdminApiActions(AdminApi):
         self.base_actions.activate_account(email)
 
     def activate_permission(self, tcenter, multiple_categories=None):
-        self.auth_api_actions.get_token()
+        self.auth_api_actions.request_token()
         self.put_permissions(token=self.auth_api_actions.token,
                              tcenter=tcenter,
                              multiple_categories=multiple_categories)

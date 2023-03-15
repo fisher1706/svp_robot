@@ -1,13 +1,14 @@
 import os
 
 import requests
+from robot.libraries.BuiltIn import BuiltIn
 
 
 class ApiClient:
 
     def __init__(self):
         self.session = requests.session()
-        self.api_url = os.environ.get('API_URL')
+        self.api_url = BuiltIn().get_variable_value("${API_URL}")
         self.response = None
         self.json_headers = {'Content-Type': 'application/json'}
 
