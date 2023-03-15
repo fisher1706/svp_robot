@@ -1,72 +1,89 @@
 *** Settings ***
-Resource    base_actions.resource
-Resource    base_actions.py
-Resource    ../Pages/login.resource
-Resource    ../../../Libraries/Api/features/auth_api.py
-Variables     ../../Locators/LoginLocators.py
-Variables   ../../../Resources/Variables/WarningMessage.py
-Variables   ../../../Resources/Variables/Authentication.py
-Variables   ../../../Resources/Variables/SuccessMessage.py
+Library     base_actions.py
+Library     Libraries/Api/features/auth_api.py
+Library     Libraries/Api/actions/AuthApiActions.py
+Resource    POM/Keywords/Modules/base_actions.resource
+Resource    POM/Keywords/Pages/login.resource
+Resource    POM/Keywords/Modules/dashboard_actions.resource
+Variables   POM/Locators/LoginLocators.py
+Variables   Resources/Variables/WarningMessage.py
+Variables   Resources/Variables/Authentication.py
+Variables   Resources/Variables/SuccessMessage.py
+Variables   Resources/Variables/UserInfo.py
+
 
 *** Keywords ***
-Log in to the Admin portal
-    [Arguments]     ${login}  ${password}   ${is_click}=${True}
-    Open Login Page
-    Enter login     ${login}
-    Enter password  ${password}
+Enter Login And Password
+    [Arguments]     ${login}  ${password}   ${is_click}=True
+    Enter Login     ${login}
+    Enter Password  ${password}
     IF  ${is_click}
-        Click continue btn
+        Click Continue Button
     ELSE
-        Verify button is dissabled
+        Verify Button Is Dissabled
     END
 
-Verify admin confirm code
-    Verify message  ${LOGIN_FORM}   ${ADMIN_CONFIRM_CODE}
+Verify Admin Confirm Code
+    Verify Text  ${LOGIN_FORM}   ${ADMIN_CONFIRM_CODE}
 
-Verify login error msg
+Verify Login Error Msg
     [Arguments]     ${msg}
-    Verify message  ${ERROR_MSG}   ${msg}
+    Verify Text  ${ERROR_MSG}   ${msg}
 
-Proceed 2fa via email
+Proceed 2fa Via Email
     [Arguments]     ${email}
-    ${two_factor_code}=     Get confirmation code   ${email}
-    Enter 2fa code  ${two_factor_code}
-    Click Sign In_btn
+    ${two_factor_code}=     Get Confirmation Code   ${email}
+    Enter 2fa Code  ${two_factor_code}
+    Click Sign In Button
 
-Proceed 2fa api
+Proceed 2fa Api
     [Arguments]     ${email}    ${user_type}
-    ${is_passed}=   ${False}
-    FOR     ${_} IN Range |0|   |5|
-        ${auth_api}=    Get otp code    ${email}    ${user_type}
-        Enter 2fa code  ${auth_api}
-        Click Sign In_btn
-        [Timeout]    3
-        IF  ${True}==   Get Sign In btn status
-            CONTINUE
-        ${is_passed}=   ${True}
+    ${is_passed}=   False
+    FOR     ${_}    IN RANGE    5
+        ${auth_api}=    Get Otp Code    ${email}    ${user_type}
+        Enter 2fa Code  ${auth_api}
+        Click Sign In Button
+        Sleep   1
+        IF  True==Get Sign In btn status    CONTINUE
+        ${is_passed}=   Set Variable    True
         BREAK
-        END
     END
     Should Be True  ${is_passed}    ${OTP_CODE}
 
-Proceed 2fa web
-    [Arguments]     ${two_factor_code}=${FALSE}  ${is_passed}=${FALSE}
+Proceed 2fa Web
+    [Arguments]     ${two_factor_code}=False  ${is_passed}=False
     FOR     ${_}    IN RANGE   5
-        IF    not(${two_factor_code})
-            ${two_factor_code}=     Get 2fa code
-        END
-        Enter 2fa code  ${two_factor_code}
-        Click Sign In_btn
+        ${two_factor_code}=     Run Keyword If  not(${two_factor_code})     Get 2fa Code
+        Log To Console    ${two_factor_code}
+        Enter 2fa Code  ${two_factor_code}
+        Click Sign In Button
         Sleep   2
-        ${is_displayed}=    Is warning msg displayed
-        ${is_status}=   Get Sign In btn status disabled
+        ${is_displayed}=    Is Warning Msg Displayed
+        ${is_status}=   Get Sign In Button Status Disabled
         IF  ${is_displayed}
-            ${two_factor_code}=     Set Variable    ${NONE}
+            ${two_factor_code}=     Set Variable    None
         ELSE IF     ${is_status}
             CONTINUE
         ELSE
-            ${is_passed}=   Set Variable    ${TRUE}
+            ${is_passed}=   Set Variable    True
             BREAK
         END
     END
     Should Be True  ${is_passed}    ${OTP_CODE}
+
+Log In To The Admin Portal
+    Open Login Page
+    Enter Login And Password  ${DEFAULT_LOGIN}    ${DEFAULT_PASSWORD}
+    Verify Admin Confirm Code
+    Proceed 2fa Web
+    Verify Admin Dashboard Welcome Text
+
+Log In By Api To The Admin Portal
+    Open Login Page
+    Request Token
+    ${token}=   Get Token
+    ${user}=   Get User Info
+    Local Storage Set Item  key=auth_token_default    value=${token}
+    Evaluate JavaScript     ${None}    localStorage.setItem('user', '${user}');
+    Reload
+    Verify Admin Dashboard Welcome Text

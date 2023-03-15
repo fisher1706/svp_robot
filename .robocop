@@ -1,0 +1,2 @@
+-e missing-doc-keyword,missing-doc-suite,missing-doc-test-case,deprecated-statement,todo-in-comment,missing-space-after-comment
+-c too-many-calls-in-keyword:max_calls:20

@@ -1,10 +1,20 @@
 *** Settings ***
-Library    Browser
 Library     Collections
-Variables   ../../Locators/BaseLocators.py
+Library    Browser
+Variables   POM/Locators/BaseLocators.py
+
 
 *** Keywords ***
-Verify message
-    [Arguments]     ${locator}  ${expected_message}
-    Wait For Elements State      ${locator}  visible
-    Get Text    ${locator}  should be  ${expected_message}
+Verify Text
+    [Arguments]     ${locator}  ${expected_message}  ${is_equal}=True
+    Wait For Elements State     ${locator}  visible
+    IF  ${is_equal}
+        Get Text    ${locator}  ==  ${expected_message}
+    ELSE
+        Get Text    ${locator}  contains  ${expected_message}
+    END
+
+Click Button
+    [Arguments]    ${locator}   ${state}=enabled
+    Wait For Elements State     ${locator}  ${state}
+    Click   ${locator}
