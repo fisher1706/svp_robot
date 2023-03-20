@@ -1,24 +1,24 @@
 from POM.Locators.SPAPaymentLocators import SPAPaymentLocators
 
 HEADER = '.header-section h1'
-SUCCESS = '.alert-text-holder p',
-EMAIL_CODE = '.login-form__text.pb-3',
-INVALID_CREDENTIALS_ERROR = '.validation-message--margin-bottom > span',
-LEGISLATOR_CREATION = '.alert-message > p',
-PASS_WARNING = '.validation-message--default > span > span',
-TOKEN_WARNING = '.validation-message--margin-bottom > span',
-SPA_USER_TYPE = '.user-info__role',
-CARD_NUMBER = SPAPaymentLocators.WARNING_MSG_CARD_NUMBER,
-CARD_EXPIRY_DATE = SPAPaymentLocators.WARNING_MSG_EXPIRY_DATE,
-CARD_CVV = SPAPaymentLocators.WARNING_MSG_CVV,
-CARD_HOLDER = SPAPaymentLocators.WARNING_MSG_CARD_HOLDER,
-POPUP_EDIT_EMAIL = '.validation-message__text span',
-ACTIVE_CERTIFICATE = '.modal-form__heading',
+SUCCESS = '.alert-text-holder p'
+EMAIL_CODE = '.login-form__text.pb-3'
+INVALID_CREDENTIALS_ERROR = '.validation-message--margin-bottom > span'
+LEGISLATOR_CREATION = '.alert-message > p'
+PASS_WARNING = '.validation-message--default > span > span'
+TOKEN_WARNING = '.validation-message--margin-bottom > span'
+SPA_USER_TYPE = '.user-info__role'
+CARD_NUMBER = SPAPaymentLocators.WARNING_MSG_CARD_NUMBER
+CARD_EXPIRY_DATE = SPAPaymentLocators.WARNING_MSG_EXPIRY_DATE
+CARD_CVV = SPAPaymentLocators.WARNING_MSG_CVV
+CARD_HOLDER = SPAPaymentLocators.WARNING_MSG_CARD_HOLDER
+POPUP_EDIT_EMAIL = '.validation-message__text span'
+ACTIVE_CERTIFICATE = '.modal-form__heading'
 TEST_CENTER_CREATION_LOCATOR = "div[role='status'] div"
-SPA_LOGIN = '.sign-template__header h1',
-HEADER_PAYMENT = '.payment-box__header-text',
-SPA = '.q-page-box__header h2',
-MODAL = '.modal-box .q-page-box__header',
+SPA_LOGIN = '.sign-template__header h1'
+HEADER_PAYMENT = '.payment-box__header-text'
+SPA = '.q-page-box__header h2'
+MODAL = '.modal-box .q-page-box__header'
 HOME = '.home-section__heading'
 OLD_WAITING_SPINNER = '.q-spinner-inner'
 WAITING_SPINNER = '.app-spinner span'

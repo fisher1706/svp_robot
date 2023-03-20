@@ -38,7 +38,7 @@ class EmailClient(EmailSupport):
         if not self.email_content:
             logger.debug(f"No unread emails in {attempts * sleep_time} sec. for: {recipient_email}")
             if raise_exception:
-                raise Exception(f"No unread emails in {attempts * sleep_time} sec. for: {recipient_email}")
+                raise ValueError(f"No unread emails in {attempts * sleep_time} sec. for: {recipient_email}")
 
     def parse_confirmation_url(self):
         msg = str(self.email_content.body[1])
@@ -49,7 +49,7 @@ class EmailClient(EmailSupport):
             self._confirmation_url = found_url.replace("=\n", "").replace("3D", "")
             logger.debug(f"Email confirmation URL: {self._confirmation_url}")
         else:
-            raise Exception("Verification URL was not found in Confirmation email")
+            raise ValueError("Verification URL was not found in Confirmation email")
 
     def parse_confirmation_code(self):
         msg = str(self.email_content.body[1])
@@ -59,7 +59,7 @@ class EmailClient(EmailSupport):
             self._confirmation_code = found_code.group(1)
             logger.debug(f"Confirmation code: {self._confirmation_code}")
         else:
-            raise Exception("Verification URL was not found in Confirmation email")
+            raise ValueError("Verification URL was not found in Confirmation email")
 
     def is_confirmation_email_received(self, pass_no_email=False):
         if pass_no_email:

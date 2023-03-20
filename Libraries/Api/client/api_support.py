@@ -55,7 +55,7 @@ class ApiSupport:
 
     def get_session_id(self):
         token = self.get_http_header("authorization")
-        decoded_token = jwt.decode(token, options={"verify_signature": False})
+        decoded_token = jwt.decode(token, options={"verify_signature": False})  # pylint: disable=no-member
         self.session_id = decoded_token['session-key']
 
     @allure.step
@@ -111,7 +111,7 @@ class ApiSupport:
             else:
                 actual_value = response["errors"][field_name]
         except KeyError as error:
-            raise Exception(f"field '{field_name}' was not found in response: {response}") from error
+            raise KeyError(f"field '{field_name}' was not found in response: {response}") from error
         assert actual_value == expected_value, f"Response message: {actual_value} but expected: {expected_value}"
 
     @allure.step

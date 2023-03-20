@@ -1,5 +1,3 @@
-import os
-
 import requests
 from robot.libraries.BuiltIn import BuiltIn
 

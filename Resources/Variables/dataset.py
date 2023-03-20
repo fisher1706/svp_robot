@@ -1,5 +1,7 @@
 import os
 
+from Resources.Variables import UserInfo
+
 DISCORD_HOOKS = {
     'demo': {
         'ui-daily': os.environ.get('DISCORD_URL'),
