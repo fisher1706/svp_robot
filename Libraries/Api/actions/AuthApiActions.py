@@ -1,3 +1,4 @@
+import json
 import time
 
 from Libraries.Api.features.auth_api import AuthApi
@@ -14,7 +15,6 @@ class AuthApiActions:
         return self.token
 
     def get_user_info(self):
-        import json
         return json.dumps(self.user_info)
 
     def request_token(self):

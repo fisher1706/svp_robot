@@ -70,7 +70,7 @@ class EmailSupport:
         self.email_content = None
         _, data = self.imap_session.fetch(self.email_id, EmailConst.EMAIL_FORMAT)
         email_body = data[0][1]
-        mail = email.message_from_bytes(email_body)
+        mail = email.message_from_bytes(email_body)  # pylint: disable=no-member
         self.email_content = ModelBuilder.build_email(mail)
 
     def mark_email_read(self):
