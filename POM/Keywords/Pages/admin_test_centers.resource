@@ -4,6 +4,7 @@ Variables   POM/Locators/BaseLocators.py
 Variables   POM/Locators/AdminTestCentersLocators.py
 Variables   Resources/Variables/Titles.py
 Variables   Resources/Variables/Status.py
+Variables   Resources/Variables/Filters.py
 Resource    POM/Keywords/Modules/base_actions.resource
 Resource    POM/Keywords/Pages/dashboard.resource
 
@@ -11,6 +12,7 @@ Resource    POM/Keywords/Pages/dashboard.resource
 *** Keywords ***
 Open Test Centers Page
     Open Admin Page     page_url=centers
+    Verify Title Test Center
 
 Verify Title Test Center
     Verify Text    ${HEADER}    ${TEST_CENTER}
@@ -26,12 +28,13 @@ Click Button Search
 Click Button Cancel
     Click Button    ${BTN_NEW_TEST_CENTER}
 
-# TODO: uncomment methods when needed in future tests
-#def select_dropdown_name(self, key=Filters.CONTAINS):
-#    s(self.DROPDOWN_NAME).all('option').element_by(have.exact_text(key)).click()
-#
-#def select_dropdown_city(self, key=Filters.CONTAINS):
-#    s(self.DROPDOWN_CITY).all('option').element_by(have.exact_text(key)).click()
+Select Dropdown Name
+    [Arguments]     ${key}=${CONTAINS}
+    Select Options By   ${DROPDOWN_NAME}  text  ${key}
+
+Select Dropdown City
+    [Arguments]     ${key}=${CONTAINS}
+    Select Options By   ${DROPDOWN_CITY}  text  ${key}
 
 Fill Filter Name
     [Arguments]     ${text}
@@ -41,22 +44,22 @@ Fill Filter City
     [Arguments]     ${text}
     Type Text   selector=${FIELD_CITY}    txt=${text}
 
-# TODO: uncomment methods when needed in future tests
-#def select_dropdown_statuses(self, key=Status.ACTIVE):
-#    s(self.DROPDOWN_CITY).all('option').element_by(have.exact_text(key)).click()
-#
-#def select_view_of_last_entry(self):
-#    s(self.ICON_DOTS).hover()
-#    s(self.ICON_VIEW_ACTION).should(be.clickable).click()
-#
-#def select_edit_of_last_entry(self):
-#    s(self.ICON_DOTS).hover()
-#    s(self.ICON_EDIT_ACTION).should(be.clickable).click()
-#    self.wait_spinners_to_disappear()
-#
-#def select_remove_of_last_entry(self):
-#    s(self.ICON_DOTS).hover()
-#    s(self.ICON_REMOVE_ACTION).should(be.clickable).click()
+Select Dropdown Statuses
+    [Arguments]    ${key}=${ACTIVE}
+    Select Options By   ${DROPDOWN_LEGISLATOR}  text  ${key}
+
+Select View Of Last Entry
+    Hover   ${ICON_DOTS}
+    Click Button    ${ICON_VIEW_ACTION}
+
+Select Edit Of Last Entry
+    Hover   ${ICON_DOTS}
+    Click Button    ${ICON_EDIT_ACTION}
+    Wait Spinners To Disappear
+
+Select Remove Of Last Entry
+    Hover   ${ICON_DOTS}
+    Click Button    ${ICON_REMOVE_ACTION}
 
 # New Test Center
 
@@ -65,6 +68,11 @@ Verify Title New Test Center
     ${message}=      Set Variable If     'type(${name})'==str     ${name}     ${NEW_TEST_CENTER}
     Wait For Elements State     ${HEADER}  visible
     Verify Text  ${HEADER}   ${message}
+
+Verify Warning Message
+    [Arguments]    ${msg}
+    Wait For Elements State     ${HEADER}  visible
+    Verify Text  ${HEADER}   ${msg}
 
 Click Button Create Test Center
     Click Button    ${BTN_CREATE_TEST_CENTER}

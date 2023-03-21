@@ -1,7 +1,7 @@
 BTN_NEW_LEGISLATORS = "//*[contains(text(),'New Legislator')]"
 BTN_CREATE_LEGISLATOR = "//*[contains(text(),'Create Legislator')]"
 BTN_CANCEL = "//*[contains(text(),'Cancel')]"
-FIELD_NAME = '#englishName'
+FIELD_LEGISLATOR_NAME = 'input[name="englishName"]'
 BTN_LOGO_FILE = '#logo'
 DROPDOWN_COUNTRY = '#country'
 FIELD_CITY = '#city'

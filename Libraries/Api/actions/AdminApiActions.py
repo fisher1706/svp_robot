@@ -1,3 +1,5 @@
+from robot.api.deco import keyword
+
 from Libraries.Api.actions.AuthApiActions import AuthApiActions
 from Libraries.Api.features.admin_api import AdminApi
 from Libraries.logger import yaml_logger
@@ -16,6 +18,15 @@ class AdminApiActions(AdminApi):
         self.auth_api_actions = AuthApiActions()
         self.base_actions = BaseActions()
 
+    @keyword('Get Test Center Account')
+    def get_tcenter_account(self):
+        return self.tcenter_account
+
+    @keyword('Get Legislator Account')
+    def get_legislator_account(self):
+        return self.legislator_account
+
+    @keyword('Create Legislator')
     def create_legislator(self, token):
         logger.info('LEGISLATOR INFO')
         self.legislator_account = ModelBuilder.build_random_account()
@@ -33,6 +44,7 @@ class AdminApiActions(AdminApi):
                                     show_logo=self.legislator_account.show_logo)
         return self
 
+    @keyword('Create Test Center')
     def create_tcenter(self, token):
         logger.info('TEST CENTER INFO')
         self.tcenter_account = ModelBuilder.build_random_account()
@@ -49,6 +61,7 @@ class AdminApiActions(AdminApi):
                                  postal_code=self.legislator_account.postal_code)
         return self
 
+    @keyword('Activate Account')
     def activate_account(self, email):
         self.base_actions.activate_account(email)
 

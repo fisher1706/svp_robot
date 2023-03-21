@@ -1,6 +1,8 @@
 import json
 import time
 
+from robot.api.deco import keyword
+
 from Libraries.Api.features.auth_api import AuthApi
 
 
@@ -11,12 +13,15 @@ class AuthApiActions:
         self.user_info = None
         self.auth_api = AuthApi()
 
+    @keyword('Get Token')
     def get_token(self):
         return self.token
 
+    @keyword('Get User Info')
     def get_user_info(self):
         return json.dumps(self.user_info)
 
+    @keyword('Request Token')
     def request_token(self):
         self.auth_api.get_otp_code()
         for _ in range(4):

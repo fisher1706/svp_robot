@@ -26,7 +26,6 @@ CONTINUE_BUTTON = '#continue_button'
 SPA_NO_DATA_AVAILABLE = '.modal-box--empty-text'
 ADMIN_NO_DATA_AVAILABLE = '.table-no-data'
 
-
 MESSAGE_LOCATOR = {
     'success': '.alert-text-holder p',
     'email code': '.login-form__text.pb-3',
@@ -43,7 +42,6 @@ MESSAGE_LOCATOR = {
     'active certificate': '.modal-form__heading'
 }
 TITLE_LOCATOR = {
-    'spa login': '.sign-template__header h1',
     'header payment': '.payment-box__header-text',
     'spa': '.q-page-box__header h2',
     'modal': '.modal-box .q-page-box__header',

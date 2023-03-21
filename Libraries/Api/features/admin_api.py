@@ -1,6 +1,7 @@
 import json
 
 import allure
+from robot.api.deco import keyword
 
 from Libraries.Api.client.api_client import ApiClient
 from Libraries.Api.client.api_support import ApiSupport
@@ -39,6 +40,7 @@ class AdminApi:
         return json_body
 
     @allure.step("PUT api/v1/admin_space/permissions?locale=en :: put country settings")
+    @keyword('Put Permissions')
     def put_permissions(self, token: str, country_id: int = 5, tcenter: bool = True, multiple_categories=None,
                         expect_code: int = 200):
         legislator = not tcenter

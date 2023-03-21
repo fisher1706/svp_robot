@@ -39,7 +39,7 @@ Select Legislator Dropdown County
 
 Fill Legislator Name
     [Arguments]    ${text}
-    Type Text   ${FIELD_NAME}   ${text}
+    Type Text   ${FIELD_LEGISLATOR_NAME}   ${text}
 
 Fill Legislator City
     [Arguments]    ${text}

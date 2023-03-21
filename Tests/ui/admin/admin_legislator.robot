@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation           Test Suite for Admin Log In
+Documentation           Test Suite for Admin Legislator
 Resource    Resources/Setup/webdriver_manager.resource
 Resource    POM/Keywords/Modules/login_actions.resource
 Resource    POM/Keywords/Modules/admin_actions.resource
