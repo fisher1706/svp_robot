@@ -1,13 +1,16 @@
 *** Settings ***
 Library    String
 Library    Browser
-Variables   ../../Locators/LoginLocators.py
+Variables   POM/Locators/LoginLocators.py
 Resource    base.resource
 
 
 *** Keywords ***
 Open Login Page
     Open Page   base_url=${ADMIN_URL}   page_url=auth
+
+Open SPA Login Page
+    Open Page   base_url=${SPA_URL}   page_url=auth
 
 Enter Login
     [Arguments]     ${Email}

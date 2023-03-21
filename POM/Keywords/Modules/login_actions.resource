@@ -23,8 +23,8 @@ Enter Login And Password
         Verify Button Is Dissabled
     END
 
-Verify Admin Confirm Code
-    Verify Text  ${LOGIN_FORM}   ${ADMIN_CONFIRM_CODE}
+Verify Confirm Code
+    Verify Text  ${LOGIN_FORM}   ${CONFIRM_CODE}
 
 Verify Login Error Msg
     [Arguments]     ${msg}
@@ -54,7 +54,6 @@ Proceed 2fa Web
     [Arguments]     ${two_factor_code}=False  ${is_passed}=False
     FOR     ${_}    IN RANGE   5
         ${two_factor_code}=     Run Keyword If  not(${two_factor_code})     Get 2fa Code
-        Log To Console    ${two_factor_code}
         Enter 2fa Code  ${two_factor_code}
         Click Sign In Button
         Sleep   2
@@ -74,7 +73,7 @@ Proceed 2fa Web
 Log In To The Admin Portal
     Open Login Page
     Enter Login And Password  ${DEFAULT_LOGIN}    ${DEFAULT_PASSWORD}
-    Verify Admin Confirm Code
+    Verify Confirm Code
     Proceed 2fa Web
     Verify Admin Dashboard Welcome Text
 
@@ -87,3 +86,10 @@ Log In By Api To The Admin Portal
     Evaluate JavaScript     ${None}    localStorage.setItem('user', '${user}');
     Reload
     Verify Admin Dashboard Welcome Text
+
+Log In To SPA
+    [Arguments]    ${email}=''  ${two_factor_verification}=''
+    Open SPA Login Page
+    Enter Login And Password  ${email}    ${DEFAULT_PASSWORD}
+    Verify Confirm Code
+    Proceed 2fa Via Email   email=${email}

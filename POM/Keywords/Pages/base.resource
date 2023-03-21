@@ -12,14 +12,10 @@ Open Page
 Click Continue Button
     Click    selector=${CONTINUE_BUTTON}
 
+Wait Spinners To Disappear
+    Wait For Elements State     ${WAITING_SPINNER}  hidden
+
 # TODO: uncomment methods when needed in future tests
-#def visit(self, **kwargs):
-#    self.driver_actions.visit(kwargs.get('url'), kwargs.get('admin'))
-#
-#def wait_spinners_to_disappear(self):
-#    s(self.WAITING_SPINNER).wait_until(be.not_.visible)
-#    return self
-#
 #@staticmethod
 #def is_disabled(locator_name: str):
 #    assert s(locator_name).should(have.value(''))
