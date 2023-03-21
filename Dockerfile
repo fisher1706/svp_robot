@@ -1,12 +1,17 @@
-FROM python:3.10-alpine
+FROM python:3.10-slim
 
 COPY . /app
 WORKDIR /app
 
 RUN \
-    apk update && apk add nodejs npm && \
+    apt-get update && apt-get install curl -y&& \
     pip3 install poetry && \
     poetry config virtualenvs.path /app && \
     poetry install && \
-    source $(find . -name activate) && \
-    rfbrowser init
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash && \
+    . ~/.bashrc && \
+    nvm install v18.12.1 && \
+    nvm use v18.12.1 && \
+    . $(find . -name activate) && \
+    rfbrowser init && \
+    npx playwright install-deps
