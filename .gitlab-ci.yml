@@ -32,6 +32,7 @@ build:
   only:
       - merge_requests
       - schedules
+      - web
 
 robocop:
   image: takamol/svp_robot:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME-$CI_COMMIT_SHORT_SHA
@@ -89,3 +90,4 @@ run_tests:
   only:
     - merge_requests
     - schedules
+    - web
