@@ -1,10 +1,9 @@
 INVALID_CREDENTIALS = 'Invalid Email or Password.'
-PASS_WARNING = {'type': 'pass warning', 'text': 'Complexity requirement not met. Length should be 8-20 characters '
-                                                'and include at least: 1 uppercase, 1 lowercase, 1 digit and 1 '
-                                                'special character'}
-CONFIRMED_PASS_WARNING = {'type': 'pass warning', 'text': 'doesn\'t match Password'}
+PASS_WARNING = 'Complexity requirement not met. Length should be 8-20 characters and include at least: 1 uppercase, ' \
+               '1 lowercase, 1 digit and 1 special character '
+CONFIRMED_PASS_WARNING = 'doesn\'t match Password'
 VERIFICATION_CODE_WARNING = {'type': 'pass warning', 'text': 'The code you have entered is incorrect'}
-TOKEN_INVALID = {'type': 'token warning', 'text': 'Password token is invalid'}
+TOKEN_INVALID = 'Password token is invalid'
 
 CARD_NUMBER = {'type': 'card number', 'text': 'Invalid card number or brand'}
 CARD_EXPIRY_DATE = {'type': 'card expiry date', 'text': 'Invalid expiry date'}

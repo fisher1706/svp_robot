@@ -5,6 +5,7 @@ from robot.api.deco import keyword
 
 from Libraries.Api.client.api_client import ApiClient
 from Libraries.Api.client.api_support import ApiSupport
+from Resources.Variables import CategoriesIdsDataset
 
 
 class AdminApi:
@@ -41,7 +42,7 @@ class AdminApi:
 
     @allure.step("PUT api/v1/admin_space/permissions?locale=en :: put country settings")
     @keyword('Put Permissions')
-    def put_permissions(self, token: str, country_id: int = 5, tcenter: bool = True, multiple_categories=None,
+    def put_permissions(self, token: str, country_id: int = 5, tcenter: bool = True, multiple_categories: bool = False,
                         expect_code: int = 200):
         legislator = not tcenter
         json_body = {
@@ -88,7 +89,7 @@ class AdminApi:
             },
             'categories': [
                 {
-                    'id': 24,
+                    'id': 51,
                     'min_score': 99
                 }
             ],
@@ -164,7 +165,7 @@ class AdminApi:
                 "city": city,
                 "address": address,
                 "category_ids": [
-                    24
+                    CategoriesIdsDataset.ENGINE_MECHANICS['id']
                 ],
                 "phone_number": phone_number,
                 "country_code": country_code,

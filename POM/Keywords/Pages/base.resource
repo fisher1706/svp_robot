@@ -1,19 +1,23 @@
 *** Settings ***
-Library    Browser
-Variables   POM/Locators/BaseLocators.py
-Variables   Resources/Variables/InfoMessages.py
+Library         Browser
+Variables       POM/Locators/BaseLocators.py
+Variables       Resources/Variables/InfoMessages.py
 
 
 *** Keywords ***
 Open Page
     [Arguments]    ${base_url}=None    ${page_url}=None
-    Go To  url=${base_url}${page_url}
+    Go To    url=${base_url}${page_url}
 
 Click Continue Button
     Click    selector=${CONTINUE_BUTTON}
 
+Verify Continue Button Is Dissabled
+    ${btn_status}=    Get Element States    ${CONTINUE_BUTTON}    then    bool(disabled)
+    Should Be True    ${btn_status}
+
 Wait Spinners To Disappear
-    Wait For Elements State     ${WAITING_SPINNER}  hidden
+    Wait For Elements State    ${WAITING_SPINNER}    hidden
 
 # TODO: uncomment methods when needed in future tests
 #@staticmethod
@@ -23,12 +27,12 @@ Wait Spinners To Disappear
 #def click_continue_btn(self, click_button=True):
 #    element = s(self.CONTINUE_BUTTON)
 #    if click_button:
-#        element.should(be.clickable).click()
+#    element.should(be.clickable).click()
 #    else:
-#        element.should(be.disabled)
+#    element.should(be.disabled)
 
 Verify No Data Available
     [Arguments]    ${spa}=True
-    ${locator}=   Set Variable If     ${spa}     ${SPA_NO_DATA_AVAILABLE}     ${ADMIN_NO_DATA_AVAILABLE}
-    Wait For Elements State     ${locator}     visible
-    Get Text    ${locator}    ==  ${NO_DATA_AVAILABLE}
+    ${locator}=    Set Variable If    ${spa}    ${SPA_NO_DATA_AVAILABLE}    ${ADMIN_NO_DATA_AVAILABLE}
+    Wait For Elements State    ${locator}    visible
+    Get Text    ${locator}    ==    ${NO_DATA_AVAILABLE}

@@ -10,8 +10,8 @@ disable=too-many-public-methods,
         invalid-name,
         fixme
 
-[SIMILARITIES]
-ignore-imports=yes
+ignore=README.md, Dockerfile, browser/*
+ignore-patterns=.*\.html$, .*\.xml, .*\.txt, .*\.lock, .*\.toml, .*\.png, .*\.resource, __init__.py
 
 [FORMAT]
-max-line-length=240
+max-line-length=120

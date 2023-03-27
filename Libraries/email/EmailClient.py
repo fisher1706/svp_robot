@@ -4,7 +4,9 @@ import re
 import time
 from urllib.parse import parse_qs, urlparse
 
-from Libraries.email.email_support import EmailSupport
+from robot.api.deco import keyword
+
+from Libraries.email.EmailSupport import EmailSupport
 from Libraries.logger import yaml_logger
 
 logger = yaml_logger.setup_logging(__name__)
@@ -14,18 +16,27 @@ class EmailClient(EmailSupport):
 
     def __init__(self):
         super().__init__()
-        self._confirmation_url = None
-        self._confirmation_code = None
+        self.confirmation_url = None
+        self.confirmation_code = None
 
-    @property
-    def confirmation_url(self):
-        return self._confirmation_url
+    @keyword("Get Confirmation Url")
+    def get_confirmation_url(self):
+        return self.confirmation_url
 
-    @property
-    def confirmation_code(self):
-        return self._confirmation_code
+    @keyword("Parse Context Email")
+    def parse_context_email(self, email_address):
+        self.find_email_by_recipient(email_address)
+        self.parse_confirmation_url()
 
-    def find_email_by_recipient(self, recipient_email, attempts=30, raise_exception=True, mark_read=True):
+    @keyword("Get Confirmation Code")
+    def get_confirmation_code(self, email_address):
+        self.find_email_by_recipient(email_address)
+        self.parse_confirmation_code()
+        return self.confirmation_code
+
+    # TODO: Decrease {attempts} when Gmail service stabilized or when activating the account via endpoint will be
+    #  implemented after closing the story https://is-takamol.atlassian.net/browse/PVPE-1798
+    def find_email_by_recipient(self, recipient_email, attempts=300, raise_exception=True, mark_read=True):
         sleep_time = 2
         for attempt in range(attempts):
             time.sleep(sleep_time)
@@ -46,8 +57,8 @@ class EmailClient(EmailSupport):
         found_url = link_pattern.search(msg)
         if found_url:
             found_url = found_url.group("url")
-            self._confirmation_url = found_url.replace("=\n", "").replace("3D", "")
-            logger.debug(f"Email confirmation URL: {self._confirmation_url}")
+            self.confirmation_url = found_url.replace("=\n", "").replace("3D", "")
+            logger.debug(f"Email confirmation URL: {self.confirmation_url}")
         else:
             raise ValueError("Verification URL was not found in Confirmation email")
 
@@ -56,8 +67,8 @@ class EmailClient(EmailSupport):
         code_pattern = re.compile(r'\D (\d{6})\D')
         found_code = code_pattern.search(msg)
         if found_code:
-            self._confirmation_code = found_code.group(1)
-            logger.debug(f"Confirmation code: {self._confirmation_code}")
+            self.confirmation_code = found_code.group(1)
+            logger.debug(f"Confirmation code: {self.confirmation_code}")
         else:
             raise ValueError("Verification URL was not found in Confirmation email")
 
@@ -66,14 +77,6 @@ class EmailClient(EmailSupport):
             assert not self.email_content, "Confirmation email was found in the mailbox"
         else:
             assert self.email_content, "Confirmation email was not found in the mailbox"
-
-    def receive_confirmation_url(self, email_address):
-        self.find_email_by_recipient(email_address)
-        self.parse_confirmation_url()
-
-    def get_confirmation_code(self, email_address):
-        self.find_email_by_recipient(email_address)
-        self.parse_confirmation_code()
 
     def get_confirmation_token(self):
         result = urlparse(self.confirmation_url)
