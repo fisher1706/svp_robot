@@ -3,7 +3,6 @@ from robot.api.deco import keyword
 from Libraries.Api.actions.AuthApiActions import AuthApiActions
 from Libraries.Api.features.admin_api import AdminApi
 from Libraries.logger import yaml_logger
-from POM.Keywords.Modules.base_actions import BaseActions
 from Resources.DataSources.models.ModelBuilder import ModelBuilder
 
 logger = yaml_logger.setup_logging(__name__)
@@ -16,7 +15,6 @@ class AdminApiActions(AdminApi):
         self.legislator_account = None
         self.tcenter_account = None
         self.auth_api_actions = AuthApiActions()
-        self.base_actions = BaseActions()
 
     @keyword('Get Test Center Account')
     def get_tcenter_account(self):
@@ -61,11 +59,8 @@ class AdminApiActions(AdminApi):
                                  postal_code=self.legislator_account.postal_code)
         return self
 
-    @keyword('Activate Account')
-    def activate_account(self, email):
-        self.base_actions.activate_account(email)
-
-    def activate_permission(self, tcenter, multiple_categories=None):
+    @keyword('Activate Permission')
+    def activate_permission(self, tcenter: bool, multiple_categories=None):
         self.auth_api_actions.request_token()
         self.put_permissions(token=self.auth_api_actions.token,
                              tcenter=tcenter,

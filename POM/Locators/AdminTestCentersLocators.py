@@ -24,7 +24,7 @@ FIELD_TEST_CENTER_OWNER_NAME = '#testCenterOwnerName'
 FIELD_TEST_CENTER_OWNER_EMAIL = '#testCenterOwnerEmail'
 
 TITLE = 'h1'
-locator = "//span[@class='details-list__title' and text()='{}']//following::div/span"
+locator = "//span[@class='details-list__title' and text()='{}']/following-sibling::div/span"
 NAME = locator.format('Name')
 ADDRESS = locator.format('Address')
 SUPPORTED_CATEGORIES = locator.format('Supported categories')

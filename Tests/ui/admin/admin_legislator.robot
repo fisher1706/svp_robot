@@ -1,11 +1,12 @@
 *** Settings ***
-Documentation           Test Suite for Admin Legislator
-Resource    Resources/Setup/webdriver_manager.resource
-Resource    POM/Keywords/Modules/login_actions.resource
-Resource    POM/Keywords/Modules/admin_actions.resource
-Variables   Resources/Variables/Titles.py
+Documentation       Test Suite for Admin Legislator
 
-Test Setup    Open Chrome Browser
+Resource            Resources/Setup/webdriver_manager.resource
+Resource            POM/Keywords/Modules/login_actions.resource
+Resource            POM/Keywords/Modules/admin_actions.resource
+Variables           Resources/Variables/Titles.py
+
+Test Setup          Open Chrome Browser
 
 
 *** Test Cases ***

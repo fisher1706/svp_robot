@@ -1,1 +1,2 @@
 MONTENEGRO = 'MONTENEGRO'
+MONACO = 'Monaco'

@@ -5,7 +5,6 @@ SUCCESS = '.alert-text-holder p'
 EMAIL_CODE = '.login-form__text.pb-3'
 INVALID_CREDENTIALS_ERROR = '.validation-message--margin-bottom > span'
 LEGISLATOR_CREATION = '.alert-message > p'
-PASS_WARNING = '.validation-message--default > span > span'
 TOKEN_WARNING = '.validation-message--margin-bottom > span'
 SPA_USER_TYPE = '.user-info__role'
 CARD_NUMBER = SPAPaymentLocators.WARNING_MSG_CARD_NUMBER
@@ -17,7 +16,7 @@ ACTIVE_CERTIFICATE = '.modal-form__heading'
 TEST_CENTER_CREATION_LOCATOR = "div[role='status'] div"
 SPA_LOGIN = '.sign-template__header h1'
 HEADER_PAYMENT = '.payment-box__header-text'
-SPA = '.q-page-box__header h2'
+SPA_HEADER = '.q-page-box__header h2'
 MODAL = '.modal-box .q-page-box__header'
 HOME = '.home-section__heading'
 OLD_WAITING_SPINNER = '.q-spinner-inner'
@@ -32,7 +31,6 @@ MESSAGE_LOCATOR = {
     'invalid credentials error': '.validation-message--margin-bottom > span',
     'legislator creation': '.alert-message > p',
     'pass warning': '.validation-message--default > span > span',
-    'token warning': '.validation-message--margin-bottom > span',
     'spa user type': '.user-info__role',
     'card number': SPAPaymentLocators.WARNING_MSG_CARD_NUMBER,
     'card expiry date': SPAPaymentLocators.WARNING_MSG_EXPIRY_DATE,
@@ -43,7 +41,6 @@ MESSAGE_LOCATOR = {
 }
 TITLE_LOCATOR = {
     'header payment': '.payment-box__header-text',
-    'spa': '.q-page-box__header h2',
     'modal': '.modal-box .q-page-box__header',
     'home': '.home-section__heading'
 }

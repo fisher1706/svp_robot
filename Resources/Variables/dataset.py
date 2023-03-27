@@ -9,17 +9,6 @@ DISCORD_HOOKS = {
 }
 
 
-class SetPasswordDataset:
-    INVALID_PASSWORD = [
-        ['1', '1'],
-        ['12345678901234567', '12345678901234567'],
-        ['Password1', 'Password1'],
-        ['Password#', 'Password#'],
-        ['password#', 'password#'],
-        [UserInfo.DEFAULT_PASSWORD, UserInfo.DEFAULT_PASSWORD + '1']
-    ]
-
-
 class ChangePasswordDataset:
     INVALID_CURRENT_PASSWORD = 'invalid current password'
     CURRENT_PASSWORD = 'current password'

@@ -7,6 +7,7 @@ from Libraries.random_manager import RandomManager
 from Resources.DataSources.models.account import Account
 from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
+from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.constants import DirPath
 
 logger = yaml_logger.setup_logging(__name__)
@@ -20,7 +21,7 @@ class ModelBuilder:
     CITY = 'Kiev'
     ADDRESS = 'Address'
     CONTACT_NAME = 'Contact Name'
-    CATEGORY = 'Engine Mechanics'
+    CATEGORY = CategoriesIdsDataset.ENGINE_MECHANICS['name']
     POSTAL_CODE = 111111
 
     @staticmethod
