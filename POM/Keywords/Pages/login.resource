@@ -1,6 +1,7 @@
 *** Settings ***
 Library         String
 Library         Browser
+Variables       POM/Locators/BaseLocators.py
 Variables       POM/Locators/LoginLocators.py
 Variables       Resources/Variables/Titles.py
 Resource        POM/Keywords/Pages/base.resource
@@ -23,8 +24,7 @@ Enter Password
     Type Secret    selector=${PASSWORD_FIELD}    secret=$password
 
 Verify Sign In Button Is Dissabled
-    ${btn_status}=    Get Element States    ${SIGN_IN_BUTTON}    then    bool(disabled)
-    Should Be True    ${btn_status}
+    Wait For Elements State    ${CONTINUE_BUTTON}    disabled
 
 Get 2fa Code
     ${otp_text}=    Get Text    ${OTP_CODE}
@@ -48,3 +48,6 @@ Get Sign In Button Status Disabled
 
 Verify Sign In Title
     Wait Until Keyword Succeeds    5x    1 sec    Verify Text    ${SPA_LOGIN}    ${SPA_SIGN_IN}
+
+Wait Login Page To Load
+    Wait For Elements State    ${PASSWORD_FIELD}

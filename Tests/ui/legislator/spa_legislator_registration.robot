@@ -12,8 +12,10 @@ Test Setup          Open Chrome Browser
 
 *** Test Cases ***
 C8804 C8805 Check receive an invitation email and set password with valid data
-    Create Entities And Log In    is_legislator_activate=True    login_tcenter=False
-    Verify Title Uploaded Files
+    Create Entities And Log In
+    ...    is_legislator_activate=True
+    ...    login_tcenter=False
+    ...    two_factor_verification=${EMPTY}
 
 C8815 Check set password with invalid data
     Create Entities And Log In    login=False

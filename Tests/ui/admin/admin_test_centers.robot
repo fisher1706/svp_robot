@@ -22,8 +22,12 @@ Check ability to add New Test Center with valid data
     Create New Test Center
 
 Check ability to add New Test Center with already existing email
-    Create Entities And Log In    is_tcenter=True    login=False
-    Verify Error Message On Test Center Create    msg=${EMAIL_IS_EXIST}
+    Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True    login=False
+    Verify Error Message On Test Center Create    msg=${EMAIL_IS_IN_USE}    is_email=True
+
+Check ability to add New Test Center with already existing name
+    Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True    login=False
+    Verify Error Message On Test Center Create    msg=${TC_NAME_IS_REGISTERED}    is_name=True
 
 Check an ability to see the specific message after filtration
     Log In By Api To The Admin Portal
