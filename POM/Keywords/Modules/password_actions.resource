@@ -31,13 +31,11 @@ Enter Login And Password On Password Form
     Click Continue Button
 
 Verify Password With Invalid Data
-    [Arguments]    ${is_tcenter}=True
+    [Arguments]    ${invalid_passwords}    ${is_tcenter}=True
     Open Activation Page    ${is_tcenter}
-    FOR    ${password}    IN    @{INVALID_PASSWORD_LIST}
-        Enter Password Activate    ${password[0]}
-        Enter Confirmed Password Activate    ${password[1]}
-        Verify Continue Button Is Dissabled
-    END
+    Enter Password Activate    ${invalid_passwords[0]}
+    Enter Confirmed Password Activate    ${invalid_passwords[1]}
+    Verify Continue Button Is Dissabled
 
 Verify Password Validation
     ${url}=    Get Confirmation Url
