@@ -15,12 +15,13 @@ Test Setup          Open Chrome Browser
 
 
 *** Test Cases ***
-C8820 Check invalid login and password
-    FOR    ${item}    IN    @{INVALID_CREDENTIALS_UI}
-        Open SPA Login Page
-        Enter Login And Password    ${item}[0]    ${item}[1]
-        Verify Login Error Msg    ${item}[2]
-    END
+C8820 Check invalid login
+    [Template]    Login To SPA Portal With Invalid Credentials
+    @{INVALID_LOGIN_DATASET}
+
+ENDC8820 Check invalid and password
+    [Template]    Login To SPA Portal With Invalid Credentials
+    @{INVALID_PASSWORD_DATASET}
 
 Check valid Login and Password 2fa via email
     Create Entities And Log In
@@ -47,3 +48,11 @@ C8863 Back to Home page from 'Confirm verification code'
     Verify Confirm Code
     Click Back Button
     Verify Title Spa Professional Cccreditation Program
+
+
+*** Keywords ***
+Login To SPA Portal With Invalid Credentials
+    [Arguments]    @{item}
+    Open SPA Login Page
+    Enter Login And Password    ${item}[0]    ${item}[1]
+    Verify Login Error Msg    ${item}[2]
