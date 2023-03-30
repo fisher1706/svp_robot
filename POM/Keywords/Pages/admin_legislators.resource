@@ -18,7 +18,7 @@ Verify Title Legislators
 Verify Title New Legislator
     [Arguments]    ${name}=None
     ${message}    Set Variable If    'type(${name})' == str    ${name}    ${NEW_LEGISLATOR}
-    Wait For Elements State    ${HEADER}    visible
+    Wait For Elements State    ${HEADER}
     Verify Text    ${HEADER}    ${message}
 
 Click Button New Legislators

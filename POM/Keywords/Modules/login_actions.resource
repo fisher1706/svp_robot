@@ -6,6 +6,7 @@ Resource        POM/Keywords/Pages/login.resource
 Resource        POM/Keywords/Pages/password.resource
 Resource        POM/Keywords/Modules/password_actions.resource
 Resource        POM/Keywords/Modules/dashboard_actions.resource
+Resource        POM/Keywords/Pages/spa.resource
 Variables       POM/Locators/LoginLocators.py
 Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/Authentication.py
@@ -93,18 +94,26 @@ Log In By Api To The Admin Portal
     Verify Admin Dashboard Welcome Text
 
 Log In To SPA
-    [Arguments]    ${email}=''
+    [Arguments]    ${two_factor_verification}=${EMPTY}    ${email}=''
     ${test}=    Get Url
     ${result}=    Should Contain    ${test}    auth
     IF    ${result}    Open SPA Login Page
     Enter Login And Password    ${email}    ${DEFAULT_PASSWORD}
     Verify Confirm Code
-    Proceed 2fa Web
+    IF    '${two_factor_verification}' == '${AUTH_WEB}'
+        Proceed 2fa Web
+    ELSE IF    '${two_factor_verification}' == '${AUTH_EMAIL}'
+        Proceed 2fa Email    ${email}
+    END
 
 Activate Account And Set Password
     [Arguments]    ${email}
-    Open Activation Page    ${email}
+    Open Activation Page    email=${email}
     Verify Password Title
     Enter Login And Password On Password Form
-    Verify Continue Button Is Dissabled
     Verify Sign In Title
+
+Log Out User
+    Click On Profile Menu
+    Click Logout Button
+    Wait Login Page To Load

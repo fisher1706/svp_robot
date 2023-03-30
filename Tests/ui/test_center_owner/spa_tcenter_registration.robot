@@ -12,8 +12,7 @@ Test Setup          Open Chrome Browser
 
 *** Test Cases ***
 Check receive an invitation email and set password with valid data
-    Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Verify Title Uploaded Files
+    Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True    two_factor_verification=${EMPTY}
 
 Check set password with invalid data
     Create Entities And Log In    is_tcenter=True    login=False

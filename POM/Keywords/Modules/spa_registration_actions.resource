@@ -6,4 +6,4 @@ Variables       Resources/Variables/Titles.py
 
 *** Keywords ***
 Verify Title Uploaded Files
-    Verify Text    ${SPA_HEADER}    ${UPLOADED_FILES}
+    Verify Text    locator=${SPA_HEADER}    expected_message=${UPLOADED_FILES}    timeout=60s

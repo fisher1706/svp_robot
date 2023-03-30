@@ -6,6 +6,7 @@ Resource        POM/Keywords/Modules/login_actions.resource
 Variables       POM/Locators/BaseLocators.py
 Variables       Resources/Variables/Titles.py
 Variables       Resources/Variables/SuccessMessage.py
+Variables       Resources/Variables/Authentication.py
 
 
 *** Keywords ***
@@ -18,6 +19,7 @@ Create Entities And Log In
     ...    ${login}=True
     ...    ${login_tcenter}=True
     ...    ${is_multiple_categories}=False
+    ...    ${two_factor_verification}=${AUTH_WEB}
     Request Token
     ${token}=    Get Token
     Put Permissions    token=${token}    tcenter=${login_tcenter}    multiple_categories=${is_multiple_categories}
@@ -41,5 +43,5 @@ Create Entities And Log In
     END
     IF    ${login}
         ${email}=    Set Variable If    ${login_tcenter}    ${tcenter_account.email}    ${legislator_account.email}
-        Log In To SPA    ${email}
+        Log In To SPA    ${two_factor_verification}    ${email}
     END

@@ -28,15 +28,15 @@ Verify Error Message On Test Center Create
     ...    ${legislator}=Autotest
     ...    ${msg}=''
     ...    ${is_name}=False
-    ...    ${name}='' ${is_email}=False
-    ...    ${email}=''
+    ...    ${is_email}=False
+    ${old_account}=    Get Test Center Account
     ${account}=    Create New Account
     Log In By Api To The Admin Portal
     Open Test Centers Page
     Click Btn New Test Center
     Verify Title New Test Center
-    ${account.en_name}=    Set Variable If    ${is_name}    ${name}
-    ${account.email}=    Set Variable If    ${is_email} ${email}
+    ${account.en_name}=    Set Variable If    ${is_name}    ${old_account.en_name}    ${account.en_name}
+    ${account.email}=    Set Variable If    ${is_email}    ${old_account.email}    ${account.email}
     Fill Test Center Form    ${account}    ${legislator}
     Verify Warning Message    ${msg}
 

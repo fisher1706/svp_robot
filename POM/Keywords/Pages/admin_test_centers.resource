@@ -68,13 +68,13 @@ Select Remove Of Last Entry
 Verify Title New Test Center
     [Arguments]    ${name}=None
     ${message}=    Set Variable If    'type(${name})'==str    ${name}    ${NEW_TEST_CENTER}
-    Wait For Elements State    ${HEADER}    visible
+    Wait For Elements State    ${HEADER}
     Verify Text    ${HEADER}    ${message}
 
 Verify Warning Message
     [Arguments]    ${msg}
-    Wait For Elements State    ${HEADER}    visible
-    Verify Text    ${HEADER}    ${msg}
+    Wait For Elements State    ${WARNING_TEST_CENTER_OWNER_EMAIL}
+    Verify Text    ${WARNING_TEST_CENTER_OWNER_EMAIL}    ${msg}
 
 Click Button Create Test Center
     Click Button    ${BTN_CREATE_TEST_CENTER}

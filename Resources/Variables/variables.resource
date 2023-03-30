@@ -13,4 +13,3 @@ Set Common Global Variables
     ...    ${DISCORD_URL}
     ...    https://discord.com/api/webhooks/1019273907892650055/Stt-bjhk-15K1vNbyoyoLttBIDd1laChmlHEm6_cYOohIK36NF5TnIpU5a3-wus2uqU5
     Set Global Variable    ${PROJECT_ENV}    demo
-    Set Global Variable    ${EXPLICIT_TIMEOUT}    15s

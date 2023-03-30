@@ -1,5 +1,7 @@
 *** Settings ***
 Library         Browser
+Resource        POM/Keywords/Pages/base.resource
+Resource        POM/Keywords/Modules/base_actions.resource
 Variables       POM/Locators/PasswordPageLocators.py
 Variables       Resources/Variables/Titles.py
 Variables       POM/Locators/BaseLocators.py
@@ -19,7 +21,7 @@ Enter Confirmed Password Activate
     Type Secret    selector=${CONFIRMED_PASSWORD}    secret=$confirm_password
 
 Wait Password Page To Load
-    Wait For Elements State    selector=${PASSWORD_FIELD_FORM}    visible
+    Wait For Elements State    ${PASSWORD_FIELD_FORM}
 
 Verify Password Title
     Verify Text    ${SPA_LOGIN}    ${SPA_SET_PASSWORD}

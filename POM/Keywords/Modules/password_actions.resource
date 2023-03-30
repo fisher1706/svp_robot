@@ -11,7 +11,7 @@ Resource        POM/Keywords/Pages/base.resource
 
 *** Keywords ***
 Open Activation Page
-    [Arguments]    ${is_tcenter}    ${email}=${EMPTY}
+    [Arguments]    ${is_tcenter}=False    ${email}=${EMPTY}
     IF    '${email}'=='${EMPTY}'
         IF    ${is_tcenter}
             ${account}=    Get Test Center Account

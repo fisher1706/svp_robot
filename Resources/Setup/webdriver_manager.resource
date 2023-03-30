@@ -7,9 +7,8 @@ Library     Browser
 Open Chrome Browser
     [Arguments]    ${browser}=chromium    ${timeout}=30s
     Set Common Global Variables
-    New Browser    browser=${browser}
+    New Persistent Context
+    ...    browser=${browser}
     ...    headless=True
-    ...    args=["--start-maximized", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]
+    ...    args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]
     Set Browser Timeout    ${timeout}
-    New Context    viewport=${None}
-    New Page

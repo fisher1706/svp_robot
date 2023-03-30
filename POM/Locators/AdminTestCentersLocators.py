@@ -35,3 +35,4 @@ PHONE_NUMBER = locator.format('Phone Number')
 LEGISLATOR = locator.format('Legislator')
 TEST_CENTER_OWNER_NAME = locator.format('Test Center Owner Name')
 TEST_CENTER_OWNER_EMAIL = locator.format('Test Center Owner Email')
+WARNING_TEST_CENTER_OWNER_EMAIL = 'div.validation-message.validation-message--default > span > span'

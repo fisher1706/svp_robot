@@ -1,5 +1,6 @@
 *** Settings ***
 Library         Browser
+Resource        POM/Keywords/Modules/base_actions.resource
 Variables       POM/Locators/BaseLocators.py
 Variables       Resources/Variables/InfoMessages.py
 
@@ -13,8 +14,10 @@ Click Continue Button
     Click    selector=${CONTINUE_BUTTON}
 
 Verify Continue Button Is Dissabled
-    ${btn_status}=    Get Element States    ${CONTINUE_BUTTON}    then    bool(disabled)
-    Should Be True    ${btn_status}
+    Get Element States    ${CONTINUE_BUTTON}    validate    value & disabled
+
+Wait Continue Button To Become Disabled
+    Wait For Elements State    ${CONTINUE_BUTTON}    disabled
 
 Wait Spinners To Disappear
     Wait For Elements State    ${WAITING_SPINNER}    hidden
@@ -34,5 +37,5 @@ Wait Spinners To Disappear
 Verify No Data Available
     [Arguments]    ${spa}=True
     ${locator}=    Set Variable If    ${spa}    ${SPA_NO_DATA_AVAILABLE}    ${ADMIN_NO_DATA_AVAILABLE}
-    Wait For Elements State    ${locator}    visible
+    Wait For Elements State    ${locator}
     Get Text    ${locator}    ==    ${NO_DATA_AVAILABLE}
