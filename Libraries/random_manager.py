@@ -21,10 +21,10 @@ class RandomManager:
     def random_name(self):
         return f"Autotest {self.random_letters(8).lower()}"
 
-    def random_email(self, personal_number=None, domain="qa.qiwa.tech", prefix='auto'):
+    def random_email(self, personal_number=None, domain="p2h.com", prefix='qiwaqa'):
         if not personal_number:
             personal_number = self.random_alphanumeric(8).lower()
-        return f"{prefix}-{personal_number}@{domain}"
+        return f"{prefix}+svp-{personal_number}@{domain}"
 
     def random_number(self, size=9, prefix=''):
         return f"{prefix}{self._random_int(size)}"
