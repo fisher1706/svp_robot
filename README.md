@@ -169,3 +169,65 @@ _Note: Please don't remove the "poetry.lock" & "pyproject.toml"_
 _1. Run command:_
 
     poetry lock
+
+# Run tests locally in docker
+ 
+1. Install docker and run docker application
+ 
+   ```
+   https://www.docker.com/
+   ```
+
+2. Run terminal
+3. Clone project from branch where you need to run tests or 
+checkout to expected branch if you already have project locally
+   
+   ```
+   git clone 'branch name'
+   ```
+
+4. Navigate to the project folder
+
+   ```
+   cd 'project_name'
+   ```
+   
+5. Run docker command for build and run container.
+It should build an image with the name and tag <none> and run a container by entering it.
+After exiting the container, it will automatically remove it, but the image will continue to exist.
+You can remove it manually or leave it as is. In the future, it will be replaced by a new one.
+
+   ```
+   docker run --rm -v `pwd`/Results/Reports:/app/Results/Reports -it $(docker build -q .) bash
+   ```
+
+6. Activate poetry environment
+
+   ```
+   . $(find . -name activate)
+   ```
+7. Run tests in the container
+
+   ```
+   python -m robot.run -d ./Results/Reports/ Tests/
+   ```
+   
+8. Exit from container and navigate to folder <your_path>/Results/Reports/ 
+and open report.html
+
+   ```
+   exit
+   ```
+   macOS
+   ```
+   open -a "Google Chrome" <your_path>/Results/Reports/report.html
+   ```   
+   linux
+   ```
+   firefox <your_path>/Results/Reports/report.html
+   ```   
+   windows
+   ```
+   "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" <your_path>/Results/Reports/report.html
+   ```
+   
