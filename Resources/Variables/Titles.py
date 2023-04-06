@@ -19,6 +19,6 @@ SPA_NEW_TEST_CENTER = {'type': 'spa', 'text': 'New Test Center'}
 SPA_TEST_CENTER_INFORMATION = {'type': 'spa', 'text': 'Test Center Information'}
 SPA_EDIT_TEST_CENTER = {'type': 'spa', 'text': 'EDIT TEST CENTER'}
 SPA_ACCOUNT_INFORMATION = 'Account Information'
-SPA_CHANGE_PASSWORD = {'type': 'spa login', 'text': 'Change Password'}
+SPA_CHANGE_PASSWORD = 'Change Password'
 SPA_PROFESSIONAL_ACCREDITATION_PROGRAM = 'Professional Accreditation Program'
 TEST = {'selector': 'header', 'text': 'Welcome to International SVP!'}

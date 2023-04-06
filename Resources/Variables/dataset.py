@@ -1,35 +1,10 @@
 import os
 
-from Resources.Variables import UserInfo
-
 DISCORD_HOOKS = {
     'demo': {
         'ui-daily': os.environ.get('DISCORD_URL'),
     }
 }
-
-
-class ChangePasswordDataset:
-    INVALID_CURRENT_PASSWORD = 'invalid current password'
-    CURRENT_PASSWORD = 'current password'
-    MISMATCH_NEW_PASSWORD = 'mismatch new password'
-    INVALID_CONFIRM_PASSWORD = 'invalid confirm password'
-    LIST_INVALID_PASSWORDS = {
-        INVALID_CURRENT_PASSWORD: [UserInfo.DEFAULT_PASSWORD + '1', UserInfo.DEFAULT_PASSWORD,
-                                   UserInfo.DEFAULT_PASSWORD],
-        CURRENT_PASSWORD: [UserInfo.DEFAULT_PASSWORD, UserInfo.DEFAULT_PASSWORD, UserInfo.DEFAULT_PASSWORD],
-        MISMATCH_NEW_PASSWORD: [UserInfo.DEFAULT_PASSWORD, UserInfo.DEFAULT_PASSWORD + '1', UserInfo.DEFAULT_PASSWORD],
-        INVALID_CONFIRM_PASSWORD: [UserInfo.DEFAULT_PASSWORD, UserInfo.DEFAULT_PASSWORD,
-                                   UserInfo.DEFAULT_PASSWORD + '1']
-    }
-    WRONG_PASSWORDS = [
-        [' ', ' ', ' '],
-        ['1234567', '1234567', '1234567'],
-        ['password', 'password', 'password'],
-        ['PASSWORD', 'PASSWORD', 'PASSWORD'],
-        ['Password1', 'Password1', 'Password1'],
-        ['1234567890a1234567890', '1234567890a1234567890', '1234567890a1234567890']
-    ]
 
 
 class GetCreditsDataset:
