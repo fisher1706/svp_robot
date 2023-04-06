@@ -88,6 +88,6 @@ run_tests:
     - . $(find . -name activate)
     - python -m robot.run -d ./Results/Reports/ Tests/
   only:
-    - merge_requests
-    - schedules
+#    - merge_requests
+#    - schedules
     - web
