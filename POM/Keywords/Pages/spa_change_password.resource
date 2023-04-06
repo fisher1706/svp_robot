@@ -12,6 +12,9 @@ Variables       Resources/Variables/Titles.py
 Open Change Password Page
     Open Page    base_url=${SPA_URL}    page_url=auth/change-pass
 
+Verify Title Change Password
+    Verify Text    ${SPA_HEADER}    ${SPA_CHANGE_PASSWORD}
+
 Click Back Button
     Click Button    ${BTN_BACK}
 

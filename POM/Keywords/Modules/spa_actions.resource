@@ -488,45 +488,6 @@ Documentation       SPA Actions
 #    self.spa_test_centers.verify_empty_city_field()
 #    self.spa_test_centers.verify_empty_street_field()
 #
-#def verify_view_change_password_form(self):
-#    self.click_on_profile_menu().click_change_password()
-#    self.base_actions.verify_expected_title(Title.SPA_CHANGE_PASSWORD)
-#    self.spa_change_password.click_back_btn()
-#    self.base_actions.verify_expected_title(Title.UPLOADED_FILES)
-#
-#def verify_change_password(self):
-#    self.spa_change_password.visit()
-#    self.spa_change_password.fill_current_password(UserInfo.DEFAULT_PASSWORD)
-#    self.spa_change_password.fill_new_password(UserInfo.CHANGED_PASSWORD)
-#    self.spa_change_password.fill_confirmed_new_password(UserInfo.CHANGED_PASSWORD)
-#    self.spa_change_password.click_continue_btn()
-#    self.base_actions.verify_expected_title(Title.SPA_SIGN_IN)
-#
-#def verify_changing_password_with_invalid_new_password(self):
-#    self.spa_change_password.visit()
-#    for passwords in ChangePasswordDataset.WRONG_PASSWORDS:
-#    self.spa_change_password.fill_current_password(passwords[0])
-#    self.spa_change_password.fill_new_password(passwords[1])
-#    self.spa_change_password.fill_confirmed_new_password(passwords[2])
-#    self.spa_change_password.verify_is_change_button_disabled()
-#
-#def verify_change_password_with_invalid_password(self):
-#    self.spa_change_password.visit()
-#    for description, password in ChangePasswordDataset.LIST_INVALID_PASSWORDS.items():
-#    self.spa_change_password.fill_current_password(password[0])
-#    self.spa_change_password.fill_new_password(password[1])
-#    self.spa_change_password.fill_confirmed_new_password(password[2])
-#    self.spa_change_password.click_continue_btn()
-#    if description == ChangePasswordDataset.INVALID_CURRENT_PASSWORD:
-#    self.spa_change_password.verify_warning_current_password()
-#    elif description == ChangePasswordDataset.CURRENT_PASSWORD:
-#    self.spa_change_password.verify_warning_new_password()
-#    elif description == ChangePasswordDataset.MISMATCH_NEW_PASSWORD:
-#    self.spa_change_password.verify_warning_new_password()
-#    self.spa_change_password.verify_warning_confirm_new_password()
-#    else:
-#    self.spa_change_password.verify_warning_confirm_new_password()
-#
 #def verify_download_csv_sample(self):
 #    self.spa_upload.click_add_group_btn()
 #    self.base_actions.verify_expected_title(Title.ADD_GROUP)
