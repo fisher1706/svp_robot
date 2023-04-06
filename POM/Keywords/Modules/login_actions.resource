@@ -96,11 +96,13 @@ Log In By Api To The Admin Portal
 Log In To SPA
     [Arguments]    ${two_factor_verification}=${EMPTY}    ${email}=''
     ${test}=    Get Url
-    ${result}=    Should Contain    ${test}    auth
-    IF    ${result}    Open SPA Login Page
+    ${result}=    Run Keyword And Return Status    Should Contain    ${test}    auth
+    IF    not(${result})    Open SPA Login Page
     Enter Login And Password    ${email}    ${DEFAULT_PASSWORD}
     Verify Confirm Code
     IF    '${two_factor_verification}' == '${AUTH_WEB}'
+        Proceed 2fa Web
+    ELSE IF    '${two_factor_verification}' == '${EMPTY}'
         Proceed 2fa Web
     ELSE IF    '${two_factor_verification}' == '${AUTH_EMAIL}'
         Proceed 2fa Email    ${email}

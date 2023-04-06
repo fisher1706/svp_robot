@@ -1,4 +1,4 @@
--e missing-doc-keyword,missing-doc-suite,missing-doc-test-case,deprecated-statement,todo-in-comment,missing-space-after-comment
+-e missing-doc-keyword,missing-doc-suite,missing-doc-test-case,deprecated-statement,todo-in-comment,missing-space-after-comment,file-too-long
 -c too-many-calls-in-keyword:max_calls:20
 -c line-too-long:line_length:120
 -c too-many-arguments:max_args:10
