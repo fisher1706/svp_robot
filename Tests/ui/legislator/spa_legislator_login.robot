@@ -5,7 +5,7 @@ Resource            Resources/Setup/webdriver_manager.resource
 Resource            POM/Keywords/Pages/login.resource
 Resource            POM/Keywords/Modules/login_actions.resource
 Resource            POM/Keywords/Modules/backgrounds.resource
-Resource            POM/Keywords/Modules/spa_registration_actions.resource
+Resource            POM/Keywords/Pages/spa_upload_files.resource
 Resource            POM/Keywords/Pages/spa_change_password.resource
 Variables           Resources/Variables/LoginDataset.py
 Variables           Resources/Variables/Authentication.py

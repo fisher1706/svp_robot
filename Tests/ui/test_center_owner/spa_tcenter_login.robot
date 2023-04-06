@@ -3,7 +3,7 @@ Documentation       Registration Test Center Owner to SVP
 
 Resource            Resources/Setup/webdriver_manager.resource
 Resource            POM/Keywords/Modules/backgrounds.resource
-Resource            POM/Keywords/Modules/spa_registration_actions.resource
+Resource            POM/Keywords/Pages/spa_upload_files.resource
 Variables           Resources/Variables/Authentication.py
 
 Test Setup          Open Chrome Browser

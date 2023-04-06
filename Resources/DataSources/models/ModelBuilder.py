@@ -25,7 +25,7 @@ class ModelBuilder:
     POSTAL_CODE = 111111
 
     @staticmethod
-    @keyword('Create new account')
+    @keyword('Create New Account')
     def build_random_account(en_name=None,
                              ar_name='',
                              logo=LOGO,
