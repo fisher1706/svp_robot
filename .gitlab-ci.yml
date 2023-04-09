@@ -3,11 +3,22 @@ include:
     file: '/common-jobs/.package-docker-image.yml'
   - project: 'takamol/qiwa/infrastructure/ci-cd'
     file: '/common-jobs/.sonarqube-check.yml'
+  - project: 'takamol/qiwa/infrastructure/ci-cd'
+    file: '/common-jobs/.allure-report.yml'
+
+variables:
+  IMAGE: takamol/svp_robot:master-latest
+  WORKING_DIRECTORY: /builds/takamol/qa/svp_robot/
+  POETRY_ENV: /app
+  ROBOT_RESULTS_REPORTS: ./Results/Reports/
+  ROBOT_REPORT: ./Results/Reports/report.html
+  ALLURE_RESULTS_DIRECTORY: ./Results/Reports/allure-results
 
 stages:
   - build
   - code_quality
   - run_tests
+  - send-test-reports
 
 .package:
   image: takamol/ci-cd:package-latest
@@ -30,31 +41,34 @@ build:
   variables:
     ENV: master
   only:
+    refs:
+      - master
       - merge_requests
-      - schedules
-      - web
+    changes:
+      - Dockerfile
+      - pyproject.toml
 
 robocop:
-  image: takamol/svp_robot:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME-$CI_COMMIT_SHORT_SHA
+  image: $IMAGE
   stage: code_quality
   tags:
     - oci-shared
   script:
-    - cd /app
-    - . $(find . -name activate)
+    - cd $WORKING_DIRECTORY
+    - . $(find $POETRY_ENV -name activate)
     - poetry run robocop
   only:
-    - merge_requests
+      - merge_requests
 
 pylint:
+  image: $IMAGE
   stage: code_quality
-  image: takamol/svp_robot:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME-$CI_COMMIT_SHORT_SHA
   tags:
     - oci-shared
   allow_failure: true
   before_script:
-    - cd /app
-    - . $(find . -name activate)
+    - cd $WORKING_DIRECTORY
+    - . $(find $POETRY_ENV -name activate)
     - mkdir -p public/badges public/lint
     - echo undefined > public/badges/$CI_JOB_NAME.score
   script:
@@ -74,20 +88,109 @@ pylint:
       codequality: codeclimate.json
     when: always
   only:
-    - merge_requests
+      - merge_requests
 
-run_tests:
-  image: takamol/svp_robot:master-latest
+ui_admin_tests:
+  image: $IMAGE
   allow_failure: true
   stage: run_tests
   tags:
     - oci-shared
   script:
-    - cd /app
+    - cd $WORKING_DIRECTORY
     - . ~/.bashrc
-    - . $(find . -name activate)
-    - python -m robot.run -d ./Results/Reports/ Tests/
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/admin/
+  artifacts:
+    paths:
+      - $ALLURE_RESULTS_DIRECTORY
+      - $ROBOT_REPORT
+    expire_in: 1 day
+    when: always
   only:
-#    - merge_requests
-#    - schedules
-    - web
+    - master
+
+ui_legislator_tests:
+  image: $IMAGE
+  allow_failure: true
+  stage: run_tests
+  tags:
+    - oci-shared
+  script:
+    - cd $WORKING_DIRECTORY
+    - . ~/.bashrc
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/legislator/
+  artifacts:
+    paths:
+      - $ALLURE_RESULTS_DIRECTORY
+      - $ROBOT_REPORT
+    expire_in: 1 day
+    when: always
+  only:
+    - master
+
+ui_test_center_owner_tests:
+  image: $IMAGE
+  allow_failure: true
+  stage: run_tests
+  tags:
+    - oci-shared
+  script:
+    - cd $WORKING_DIRECTORY
+    - . ~/.bashrc
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/test_center_owner/
+  artifacts:
+    paths:
+      - $ALLURE_RESULTS_DIRECTORY
+      - $ROBOT_REPORT
+    expire_in: 1 day
+    when: always
+  only:
+    - master
+
+allure-ui-admin-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: svp-ui-daily-admin
+  tags:
+    - oci-shared
+  dependencies:
+    - ui_admin_tests
+  needs:
+    - ui_admin_tests
+  only:
+    - master
+
+allure-ui-legislator-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: svp-ui-daily-legislator
+  tags:
+    - oci-shared
+  dependencies:
+    - ui_legislator_tests
+  needs:
+    - ui_legislator_tests
+  only:
+    - master
+
+allure-ui-test_center_owner-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: svp-ui-daily-tc
+  tags:
+    - oci-shared
+  dependencies:
+    - ui_test_center_owner_tests
+  needs:
+    - ui_test_center_owner_tests
+  only:
+    - master
