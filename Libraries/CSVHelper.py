@@ -64,3 +64,5 @@ class CSVHelper:
             item[4] = exam_score
             item[5] = timestamp
         self._open_file(file_path, list_csv, mode='w')
+
+        return file_path
