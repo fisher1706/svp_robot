@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-COPY . /app
+COPY pyproject.toml /app/
 WORKDIR /app
 
 RUN \
