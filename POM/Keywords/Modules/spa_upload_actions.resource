@@ -56,7 +56,7 @@ Upload Group Of Labors
     Click Add       ${locators.BTN_ADD}
     Verify Value     ${locators.FIELD_POPUP_TOTAL_LABORS}      ${amount}
 
-Verify upload csv file without selected category and tcenter
+Verify Upload Csv file Without Selected Category and Tcenter
     [Arguments]     ${entity}       ${tcenter}      ${occupation}
     ${locators}=       Chose Locators       ${entity}
 
@@ -94,14 +94,14 @@ Verify Total Amount Value
     Click Next
     Filters On Upload Tab   ${entity}
 
-Verify download csv sample
+Verify Download Csv Sample
     [Arguments]    ${entity}
     ${locators}=       Chose Locators       ${entity}
 
     Click Add Group     ${locators.BTN_ADD_GROUP}
     Click Download Csv Sample
-    ${files}=   Get temp files
-    Check compatibility files       ${files}[0]     ${files}[1]
+    ${files}=   Get Temp Files
+    Check Compatibility Files       ${files}[0]     ${files}[1]
 
 Get Last Entry
     [Arguments]    ${locator}

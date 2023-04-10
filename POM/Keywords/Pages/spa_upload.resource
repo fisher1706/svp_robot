@@ -8,10 +8,10 @@ Variables       POM/Locators/SPALaborLocatorsLegislator.py
 
 *** Variables ***
 @{FILTERS}
-    ...     ${FIELD_FILE_ID}
-    ...     ${PICKER_UPLOAD_DATE}
-    ...     ${FIELD_NUMBER_OF_PASSED_LABORS}
-    ...     ${FIELD_NUMBER_OF_LABORS}
+...     ${FIELD_FILE_ID}
+...     ${PICKER_UPLOAD_DATE}
+...     ${FIELD_NUMBER_OF_PASSED_LABORS}
+...     ${FIELD_NUMBER_OF_LABORS}
 
 
 *** Keywords ***
