@@ -56,7 +56,7 @@ Upload Group Of Labors
     Click Add       ${locators.BTN_ADD}
     Verify Value     ${locators.FIELD_POPUP_TOTAL_LABORS}      ${amount}
 
-Verify Upload Csv file Without Selected Category and Tcenter
+Verify Upload Csv File Without Selected Category And Tcenter
     [Arguments]     ${entity}       ${tcenter}      ${occupation}
     ${locators}=       Chose Locators       ${entity}
 
