@@ -1,4 +1,18 @@
-class SPALaborLocatorsLegislator:
+class SPALUploadLocators:
+    # TCenter
+    ZAPEL = '//*[@href="/centers"]'
+    # BTN_TCENTER = '//*[@id="app"]/div/div/div/aside/nav[2]/ul/li[5]/a/span'
+    BTN_ADD_TCENTER = '//*[@class="btn btn--primary"]'
+    # BTN_CONFIRM = '//*[@class="btn btn-lg btn--primary text-capitalize"]'
+    FIELD_NAME_GENERAL_INFORMATION = '//*[@id="name"]'
+    FIELD_OFFICIAL_CONTACT_NUMBER = '//*[@id="phone_number"]'
+    CATEGORY = '//*[@class="checkbox__label checkboxes-list__label"]'
+    FIELD_NAME_TCENTR_OWNER = '//*[@id="owner_full_name"]'
+    FIELD_EMAIL = '//*[@id="owner_email"]'
+    FIELD_CITY = '//*[@id="city"]'
+    FIELD_STREET_NAME = '//*[@id="streetName"]'
+    FIELD_POSTAL_CODE = '//*[@id="postal_code"]'
+    BTN_ADD_NEW_TCENTR = '//*[@class="btn btn--primary new-test-center__btn"]'
 
     # Individual locators
     BTN_ADD_INDIVIDUAL = '.btn--border-primary'

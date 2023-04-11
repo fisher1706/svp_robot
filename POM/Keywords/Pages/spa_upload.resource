@@ -3,7 +3,7 @@ Library         Resources/DataSources/models/ModelBuilder.py
 Library         Libraries/CSVHelper.py
 Resource        POM/Keywords/Modules/base_actions.resource
 Variables       Resources/Variables/Titles.py
-Variables       POM/Locators/SPALaborLocatorsLegislator.py
+Variables       POM/Locators/SPAUploadLocators.py
 
 
 *** Variables ***
@@ -15,6 +15,43 @@ Variables       POM/Locators/SPALaborLocatorsLegislator.py
 
 
 *** Keywords ***
+Click Test Center
+    Click Button    ${ZAPEL}
+
+Click Add Test Center
+    Click Button    ${BTN_ADD_TCENTR}
+
+Fill Name General Information
+    [Arguments]    ${name}
+    Type Text   ${FIELD_NAME_GENERAL_INFORMATION}   ${name}
+
+Fill Official Contact Number
+    [Arguments]    ${number}
+    Type Text    ${FIELD_OFFICIAL_CONTACT_NUMBER}   ${number}
+
+Check Select Category
+    Log To Console      ${CATEGORY}
+
+Fill Name Test Centr Owner
+    [Arguments]    ${name}
+    Type Text       ${FIELD_NAME_TCENTR_OWNER}      ${name}
+
+Fill TCENTER Email
+    [Arguments]    ${email}
+    Type Text   ${FIELD_EMAIL}      ${email}
+
+Fill City
+    [Arguments]    ${city}
+    Type Text   ${FIELD_CITY}       ${city}
+
+Fill Street Name
+    [Arguments]    ${street}
+    Type Text    ${FIELD_STREET_NAME}   ${street}
+
+Fill Postal Code
+    [Arguments]    ${postal_code}
+    Type Text    ${FIELD_POSTAL_CODE}   ${postal_code}
+
 Click Add Individual
     Click Button    ${BTN_ADD_INDIVIDUAL}
 

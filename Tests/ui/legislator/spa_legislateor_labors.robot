@@ -14,16 +14,15 @@ ${OCCUPATION}       Engine Mechanics
 ${PAGES}            10
 ${ENTITY}           legislator
 
-
+#qiwaqa+svp-ckhhehtt@p2h.com
 *** Test Cases ***
 Checking validation of edit email field on Labors tab
     Create Entities And Log In
     ...     is_legislator_activate=True
     ...     login_tcenter=False
-    ...     two_factor_verification=${AUTH_EMAIL}
-
-    Sleep    10
-
+    Add TCentr
+#    Sleep   120
+#
 #    Upload Group Of Labors      ${ENTITY}       ${TEST_CENTER}     ${OCCUPATION}
 
 #C6488 Check the ability to add individual labor with valid data

@@ -2,71 +2,81 @@
 Library         Resources/DataSources/models/ModelBuilder.py
 Library         Libraries/CSVHelper.py
 Library         Libraries/FileHelper.py
-Library         POM/Locators/SPALaborLocatorsLegislator.py
+Variables       POM/Locators/SPAUploadLocators.py
 Library         POM/Locators/SPALaborLocatorsTCentr.py
-Resource        POM/Keywords/Modules/base_actions.resource
+#Resource        POM/Keywords/Modules/base_actions.resource
 Resource        POM/Keywords/Pages/spa_upload.resource
 Variables       Resources/Variables/Titles.py
+Resource        POM/Keywords/Modules/backgrounds.resource
 
 
 *** Keywords ***
+Add TCentr
+    ${token}=    Get Token
+    ${tcenter}     Create New Account      ${token}
+    Wait For Elements State    ${WAITING_SPINNER}    hidden
+#    Sleep    10
+    Click Test Center
+    Click Add Test Center
+    Fill Name General Information    ${tcenter}
+    Fill Official Contact Number    ${tcenter}
+    Check Select Category
+    Fill Name Test Centr Owner    ${tcenter}
+    Fill City    ${tcenter}
+    Fill Street Name    ${tcenter}
+    Fill Postal Code    ${tcenter}
+
 Add Individual Labor
     [Arguments]     ${entity}       ${tcenter}       ${occupation}
     Click Add Individual
     ${labor}=   Create New Random Labor
     Fill Labor Individual Form    ${entity}     ${labor}      ${tcenter}       ${occupation}
 
-Chose Locators
-    [Arguments]    ${entity}
-    IF    '${entity}'=='legislator'
-        ${locators}=       Return Locators Legislator
-    ELSE
-        ${locators}=    Return Locators Tcentr
-    END
-    [Return]    ${locators}
+#Chose Locators
+#    [Arguments]    ${entity}
+#    IF    '${entity}'=='legislator'
+#        ${locators}=       Return Locators Legislator
+#    ELSE
+#        ${locators}=    Return Locators Tcentr
+#    END
+#    [Return]    ${locators}
 
 Fill Labor Individual Form
     [Arguments]    ${entity}    ${labor}     ${tcenter}       ${occupation}
-    ${locators}=       Chose Locators       ${entity}
-
     Fill National ID    ${labor.national_id}
     Fill Labor Name    ${labor.labor_name}
     Fill Passport    ${labor.passport}
     Fill Email    ${labor.email}
     IF    '${entity}'=='legislator'
-        Select Test Center    ${locators.DROPDOWN_TCENTER}       ${tcenter}
+        Select Test Center    ${DROPDOWN_TCENTER}       ${tcenter}
     END
     Fill Exam Date    ${labor.exam_date}
-    Select Occupation    ${locators.DROPDOWN_OCCUPATION}     ${occupation}
+    Select Occupation    ${DROPDOWN_OCCUPATION}     ${occupation}
     Fill Exam Result %    ${labor.exam_result}
-    Click Add       ${locators.ADD_INDIVIDUAL_LABOR}
-    Verify Value    ${locators.FIELD_FILE_NAME}       ${labor.labor_name}
-    Click Add       ${locators.ADD_INDIVIDUAL_LABOR}
+    Click Add       ${ADD_INDIVIDUAL_LABOR}
+    Verify Value    ${FIELD_FILE_NAME}       ${labor.labor_name}
+    Click Add       ${ADD_INDIVIDUAL_LABOR}
 
 Upload Group Of Labors
-    [Arguments]     ${entity}     ${tcenter}       ${occupation}      ${amount}=1
+    [Arguments]     ${tcenter}       ${occupation}      ${amount}=1
     ${csv_file_path}=    Prepare Csv File    ${amount}
-    ${locators}=       Chose Locators       ${entity}
-
-    Click Add Group     ${locators.BTN_ADD_GROUP}
-    Select Test Center      ${locators.DROPDOWN_TCENTER_LIST}     ${tcenter}
-    Select Occupation    ${locators.DROPDOWN_CATEGORY_LIST}     ${occupation}
-    Upload File     ${locators.BTN_CHOOSE_FILE}      ${csv_file_path}
-    Verify Value     ${locators.TD_PASSED_LABORS}      ${amount}
-    Click Add       ${locators.BTN_ADD}
-    Verify Value     ${locators.FIELD_POPUP_TOTAL_LABORS}      ${amount}
+    Click Add Group     ${BTN_ADD_GROUP}
+    Select Test Center      ${DROPDOWN_TCENTER_LIST}     ${tcenter}
+    Select Occupation    ${DROPDOWN_CATEGORY_LIST}     ${occupation}
+    Upload File     ${BTN_CHOOSE_FILE}      ${csv_file_path}
+    Verify Value     ${TD_PASSED_LABORS}      ${amount}
+    Click Add       ${BTN_ADD}
+    Verify Value     ${FIELD_POPUP_TOTAL_LABORS}      ${amount}
 
 Verify Upload Csv File Without Selected Category And Tcenter
-    [Arguments]     ${entity}       ${tcenter}      ${occupation}
-    ${locators}=       Chose Locators       ${entity}
-
-    Click Button    ${locators.BTN_ADD_GROUP}
-    Verify Choose File Button Status    ${locators.BTN_CHOOSE_FILE}    disabled
-    Select Test Center      ${locators.DROPDOWN_TCENTER_LIST}     ${tcenter}
-    Verify Choose File Button Status    ${locators.BTN_CHOOSE_FILE}    disabled
-    Select Occupation    ${locators.DROPDOWN_CATEGORY_LIST}     ${occupation}
-    Verify Choose File Button Status    ${locators.BTN_CHOOSE_FILE}    enabled
-    Click Cancel        ${locators.BTN_CANCEL}
+    [Arguments]     ${tcenter}      ${occupation}
+    Click Button    ${BTN_ADD_GROUP}
+    Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    disabled
+    Select Test Center      ${DROPDOWN_TCENTER_LIST}     ${tcenter}
+    Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    disabled
+    Select Occupation    ${DROPDOWN_CATEGORY_LIST}     ${occupation}
+    Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    enabled
+    Click Cancel        ${BTN_CANCEL}
 
 Verify Filters On Uploads Tab
     [Arguments]     ${entity}       ${tcenter}       ${occupation}      ${amount}=1

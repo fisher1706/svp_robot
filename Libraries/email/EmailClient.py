@@ -34,9 +34,9 @@ class EmailClient(EmailSupport):
         self.parse_confirmation_code()
         return self.confirmation_code
 
-    # TODO: Decrease {attempts} when Gmail service stabilized or when activating the account via endpoint will be
-    #  implemented after closing the story https://is-takamol.atlassian.net/browse/PVPE-1798
-    def find_email_by_recipient(self, recipient_email, attempts=300, raise_exception=True, mark_read=True):
+    # TODO: Change email verification after the story will be ready https://is-takamol.atlassian.net/browse/PVPE-1798
+    # Use it only for verify activation user on registration suite
+    def find_email_by_recipient(self, recipient_email, attempts=30, raise_exception=True, mark_read=True):
         sleep_time = 2
         for attempt in range(attempts):
             time.sleep(sleep_time)
