@@ -1,0 +1,10 @@
+{"level":30,"time":"2023-04-11T06:58:56.638Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Listening on 58464"}
+{"level":30,"time":"2023-04-11T06:58:57.116Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-04-11T06:58:57.116Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-04-11T06:58:57.123Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-04-11T06:58:57.123Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-04-11T06:58:57.146Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method newPersistentContext"}
+{"level":30,"time":"2023-04-11T06:58:58.440Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2023-04-11T06:58:58.448Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method newPersistentContext"}
+{"level":30,"time":"2023-04-11T06:58:58.448Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active context"}
+{"level":30,"time":"2023-04-11T07:03:11.162Z","pid":16554,"hostname":"Macbook-Pro-Flora.local","msg":"Removed page=51937c92-11b9-471e-be12-bc9feded1ac5 from context=b7049608-b1fb-4b7b-825e-bc326ec57617 page stack"}

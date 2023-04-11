@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230411 09:58:54.941" rpa="false" schemaversion="3">
+<suite id="s1" name="Svp Robot" source="/Users/olehlazeba/PycharmProjects/svp_robot">
+<suite id="s1-s1" name="Tests" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests">
+<suite id="s1-s1-s1" name="Ui" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui">
+<suite id="s1-s1-s1-s1" name="Legislator" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui/legislator">
+<suite id="s1-s1-s1-s1-s1" name="Spa Legislator Login" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui/legislator/spa_legislator_login.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="C8819 Check valid Login and Password" line="33">
+<kw name="Open Chrome Browser" library="webdriver_manager" type="SETUP">
+<kw name="Set Common Global Variables" library="variables">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ADMIN_URL}</arg>
+<arg>https://svp-international-admin.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.129" level="INFO">${ADMIN_URL} = https://svp-international-admin.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230411 09:58:57.126" endtime="20230411 09:58:57.129"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${SPA_URL}</arg>
+<arg>https://svp-international-spa.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.132" level="INFO">${SPA_URL} = https://svp-international-spa.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230411 09:58:57.129" endtime="20230411 09:58:57.132"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${API_URL}</arg>
+<arg>https://svp-international-api.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.134" level="INFO">${API_URL} = https://svp-international-api.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230411 09:58:57.132" endtime="20230411 09:58:57.134"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ALLURE_URL}</arg>
+<arg>https://allure-api.takamol.support</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.137" level="INFO">${ALLURE_URL} = https://allure-api.takamol.support</msg>
+<status status="PASS" starttime="20230411 09:58:57.135" endtime="20230411 09:58:57.137"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${GRID_URL}</arg>
+<arg>http://localhost:4444/wd/hub</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.139" level="INFO">${GRID_URL} = http://localhost:4444/wd/hub</msg>
+<status status="PASS" starttime="20230411 09:58:57.137" endtime="20230411 09:58:57.139"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DISCORD_URL}</arg>
+<arg>https://discord.com/api/webhooks/1019273907892650055/Stt-bjhk-15K1vNbyoyoLttBIDd1laChmlHEm6_cYOohIK36NF5TnIpU5a3-wus2uqU5</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.142" level="INFO">${DISCORD_URL} = https://discord.com/api/webhooks/1019273907892650055/Stt-bjhk-15K1vNbyoyoLttBIDd1laChmlHEm6_cYOohIK36NF5TnIpU5a3-wus2uqU5</msg>
+<status status="PASS" starttime="20230411 09:58:57.139" endtime="20230411 09:58:57.142"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${PROJECT_ENV}</arg>
+<arg>demo</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230411 09:58:57.144" level="INFO">${PROJECT_ENV} = demo</msg>
+<status status="PASS" starttime="20230411 09:58:57.142" endtime="20230411 09:58:57.144"/>
+</kw>
+<status status="PASS" starttime="20230411 09:58:57.125" endtime="20230411 09:58:57.144"/>
+</kw>
+<kw name="New Persistent Context" library="Browser">
+<arg>browser=${browser}</arg>
+<arg>headless=False</arg>
+<arg>args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]</arg>
+<doc>Open a new
+[https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context | persistent context].</doc>
+<msg timestamp="20230411 09:58:57.145" level="INFO">{
+  "userDataDir": "",
+  "browser": "chromium",
+  "headless": false,
+  "acceptDownloads": true,
+  "args": [
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-gpu"
+  ],
+  "bypassCSP": false,
+  "devtools": false,
+  "forcedColors": "none",
+  "handleSIGHUP": true,
+  "handleSIGINT": true,
+  "handleSIGTERM": true,
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "slowMo": 0.0,
+  "timeout": 30000.0,
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "deprecated_pos_args": [],
+  "tracesDir": "/Users/olehlazeba/PycharmProjects/svp_robot/browser/traces/cfdd952b-aec0-4eee-a71c-3416d58a433c"
+}</msg>
+<msg timestamp="20230411 09:58:58.450" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230411 09:58:58.450" level="INFO">{'userDataDir': '', 'browser': 'chromium', 'headless': False, 'acceptDownloads': True, 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'], 'bypassCSP': False, 'devtools': False, 'forcedColors': 'none', 'handleSIGHUP': True, 'handleSIGINT': True, 'handleSIGTERM': True, 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'slowMo': 0, 'timeout': 30000, 'viewport': {'height': 720, 'width': 1280}, 'deprecated_pos_args': [], 'tracesDir': '/Users/olehlazeba/PycharmProjects/svp_robot/browser/traces/cfdd952b-aec0-4eee-a71c-3416d58a433c'}</msg>
+<status status="PASS" starttime="20230411 09:58:57.144" endtime="20230411 09:58:58.450"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20230411 09:58:58.455" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20230411 09:58:58.451" endtime="20230411 09:58:58.455"/>
+</kw>
+<status status="PASS" starttime="20230411 09:58:57.125" endtime="20230411 09:58:58.455"/>
+</kw>
+<kw name="Create Entities And Log In" library="backgrounds">
+<arg>is_legislator_activate=True</arg>
+<arg>login_tcenter=False</arg>
+<kw name="Request Token" library="AuthApiActions">
+<status status="PASS" starttime="20230411 09:58:58.456" endtime="20230411 09:59:01.859"/>
+</kw>
+<kw name="Get Token" library="AuthApiActions">
+<var>${token}</var>
+<msg timestamp="20230411 09:59:01.861" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODExOTY0MDEsInVzZXJfaWQiOjY1NCwidWlkIjoiY2I0ZDJiZDgtNDM1NS00ZWNlLTgyYTEtOWM0ZTY3OWVhNzVhIiwicnVpZCI6ImI5MzllNjBjLTk4ZjgtNGU4OC1iZDA1LWZkMjk2MDYzODIzYiJ9.vUgRolU...</msg>
+<status status="PASS" starttime="20230411 09:59:01.860" endtime="20230411 09:59:01.861"/>
+</kw>
+<kw name="Put Permissions" library="AdminApiActions">
+<arg>token=${token}</arg>
+<arg>tcenter=${login_tcenter}</arg>
+<arg>multiple_categories=${is_multiple_categories}</arg>
+<status status="PASS" starttime="20230411 09:59:01.861" endtime="20230411 09:59:02.971"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_legislator}">
+<kw name="Create Legislator" library="AdminApiActions">
+<arg>${token}</arg>
+<msg timestamp="20230411 09:59:02.972" level="INFO">LEGISLATOR INFO</msg>
+<msg timestamp="20230411 09:59:02.972" level="INFO">USER EMAIL: auto-wqtxrocl@qa.qiwa.tech, USER NAME: Autotest beaadraw</msg>
+<status status="PASS" starttime="20230411 09:59:02.972" endtime="20230411 09:59:03.440"/>
+</kw>
+<kw name="Get Legislator Account" library="AdminApiActions">
+<var>${legislator_account}</var>
+<msg timestamp="20230411 09:59:03.441" level="INFO">${legislator_account} = &lt;Resources.DataSources.models.account.Account object at 0x107feaf80&gt;</msg>

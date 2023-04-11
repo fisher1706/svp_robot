@@ -19,7 +19,8 @@ Create Entities And Log In
     ...    ${login}=True
     ...    ${login_tcenter}=True
     ...    ${is_multiple_categories}=False
-    ...    ${two_factor_verification}=${AUTH_WEB}
+#    ...    ${two_factor_verification}=${AUTH_WEB}
+    ...    ${two_factor_verification}=${AUTH_EMAIL}
     Request Token
     ${token}=    Get Token
     Put Permissions    token=${token}    tcenter=${login_tcenter}    multiple_categories=${is_multiple_categories}
