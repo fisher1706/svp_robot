@@ -1,9 +1,8 @@
-class SPALUploadLocators:
+class SPAUploadLocators:
     # TCenter
-    ZAPEL = '//*[@href="/centers"]'
-    # BTN_TCENTER = '//*[@id="app"]/div/div/div/aside/nav[2]/ul/li[5]/a/span'
+    BTN_TCENTER = '//*[@href="/centers"]'
     BTN_ADD_TCENTER = '//*[@class="btn btn--primary"]'
-    # BTN_CONFIRM = '//*[@class="btn btn-lg btn--primary text-capitalize"]'
+    BTN_UPLOADED_FILES = '//*[@href="/upload"]'
     FIELD_NAME_GENERAL_INFORMATION = '//*[@id="name"]'
     FIELD_OFFICIAL_CONTACT_NUMBER = '//*[@id="phone_number"]'
     CATEGORY = '//*[@class="checkbox__label checkboxes-list__label"]'
@@ -45,7 +44,3 @@ class SPALUploadLocators:
     FIELD_NUMBER_OF_LABORS = 'th:nth-child(4)  .table-main__input'
     BTN_NEXT = '.next a'
     BTN_DOWNLOAD_CSV_SAMPLE = '.upload-modal .q-page-box__header a'
-
-    @classmethod
-    def return_locators_legislator(cls):
-        return cls

@@ -80,8 +80,8 @@ class ModelBuilder:
         national_id = national_id if national_id else random_manager.random_name()
         labor_name = labor_name if labor_name else random_manager.random_name()
         email = email if email else random_manager.random_email()
-        passport = passport if passport else random_manager.random_letters(size=2) + str(random_manager.random_number())
-        # exam_date = exam_date if exam_date else datetime.date.today() - datetime.timedelta(days=1)
+        passport = passport if passport else \
+            random_manager.random_letters(size=2) + str(random_manager.random_number())
         exam_date = exam_date if exam_date else date.today()
         exam_result = exam_result if exam_result else random_manager.random_number(size=2)
         return Labor(national_id=national_id,
@@ -92,3 +92,8 @@ class ModelBuilder:
                      exam_date=exam_date,
                      exam_result=exam_result,
                      scope=scope)
+
+    @staticmethod
+    @keyword('Create random email')
+    def build_random_email():
+        return RandomManager().random_email()

@@ -2,44 +2,44 @@
 Library         Resources/DataSources/models/ModelBuilder.py
 Library         Libraries/CSVHelper.py
 Library         Libraries/FileHelper.py
-Variables       POM/Locators/SPAUploadLocators.py
-Library         POM/Locators/SPALaborLocatorsTCentr.py
-#Resource        POM/Keywords/Modules/base_actions.resource
 Resource        POM/Keywords/Pages/spa_upload.resource
-Variables       Resources/Variables/Titles.py
-Resource        POM/Keywords/Modules/backgrounds.resource
+Resource        POM/Keywords/Modules/base_actions.resource
+
+
+*** Variables ***
+${PHONE_NUMBER}     2117937
 
 
 *** Keywords ***
 Add TCentr
-    ${token}=    Get Token
-    ${tcenter}     Create New Account      ${token}
-    Wait For Elements State    ${WAITING_SPINNER}    hidden
-#    Sleep    10
     Click Test Center
+    Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
+    ${tcenter}      ${occupation}       Fill TCenter Form
+    [Return]        ${tcenter}      ${occupation}
+
+Fill TCenter Form
+    ${tcenter}=     Create New Account      phone_number=${PHONE_NUMBER}
     Click Add Test Center
-    Fill Name General Information    ${tcenter}
-    Fill Official Contact Number    ${tcenter}
+    Fill Name General Information    ${tcenter.en_name}
+    Fill Official Contact Number    ${tcenter.phone_number}
     Check Select Category
-    Fill Name Test Centr Owner    ${tcenter}
-    Fill City    ${tcenter}
-    Fill Street Name    ${tcenter}
-    Fill Postal Code    ${tcenter}
+    ${occupation}=      Get Text    ${CATEGORY}
+    Log To Console      ${occupation}
+    Fill Name Test Centr Owner    ${tcenter.en_name}
+    Fill TCenter Email      ${tcenter.email}
+    Fill City    ${tcenter.city}
+    Fill Street Name    ${tcenter.address}
+    Fill Postal Code    ${tcenter.postal_code}
+    Click Add       ${BTN_ADD_NEW_TCENTR}
+    Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
+    Click Uploaded Files
+    [Return]        ${tcenter.en_name}      ${occupation}
 
 Add Individual Labor
     [Arguments]     ${entity}       ${tcenter}       ${occupation}
     Click Add Individual
     ${labor}=   Create New Random Labor
     Fill Labor Individual Form    ${entity}     ${labor}      ${tcenter}       ${occupation}
-
-#Chose Locators
-#    [Arguments]    ${entity}
-#    IF    '${entity}'=='legislator'
-#        ${locators}=       Return Locators Legislator
-#    ELSE
-#        ${locators}=    Return Locators Tcentr
-#    END
-#    [Return]    ${locators}
 
 Fill Labor Individual Form
     [Arguments]    ${entity}    ${labor}     ${tcenter}       ${occupation}
@@ -58,15 +58,16 @@ Fill Labor Individual Form
     Click Add       ${ADD_INDIVIDUAL_LABOR}
 
 Upload Group Of Labors
-    [Arguments]     ${tcenter}       ${occupation}      ${amount}=1
+    [Arguments]     ${tcenter}       ${occupation}
+    ...     ${amount}=1     ${wrong_timestamp}=False    ${exam_score}=99
     ${csv_file_path}=    Prepare Csv File    ${amount}
     Click Add Group     ${BTN_ADD_GROUP}
     Select Test Center      ${DROPDOWN_TCENTER_LIST}     ${tcenter}
     Select Occupation    ${DROPDOWN_CATEGORY_LIST}     ${occupation}
     Upload File     ${BTN_CHOOSE_FILE}      ${csv_file_path}
-    Verify Value     ${TD_PASSED_LABORS}      ${amount}
-    Click Add       ${BTN_ADD}
     Verify Value     ${FIELD_POPUP_TOTAL_LABORS}      ${amount}
+    Click Add       ${BTN_ADD}
+    Verify Value     ${TD_PASSED_LABORS}      ${amount}
 
 Verify Upload Csv File Without Selected Category And Tcenter
     [Arguments]     ${tcenter}      ${occupation}
@@ -79,17 +80,13 @@ Verify Upload Csv File Without Selected Category And Tcenter
     Click Cancel        ${BTN_CANCEL}
 
 Verify Filters On Uploads Tab
-    [Arguments]     ${entity}       ${tcenter}       ${occupation}      ${amount}=1
-    Upload Group Of Labors      ${entity}       ${tcenter}       ${occupation}      ${amount}
-    Filters On Upload Tab       ${entity}
+    [Arguments]     ${tcenter}       ${occupation}      ${amount}=1
+    Upload Group Of Labors      ${tcenter}       ${occupation}      ${amount}
+    Filters On Upload Tab
 
 Filters On Upload Tab
-    [Arguments]    ${entity}
-    ${locators}=       Chose Locators       ${entity}
-
     Wait For Elements State    ${WAITING_SPINNER}    hidden
-    ${elements}=    Get Last Entry    ${locators.LAST_ENTRY}
-
+    ${elements}=    Get Last Entry    ${LAST_ENTRY}
     Verify Field File Id        ${elements}[0]
     Verify Upload Date      ${elements}[1]
     Verify Field Number Of Passed Labors        ${elements}[2]
@@ -97,18 +94,15 @@ Filters On Upload Tab
     Verify Disabling Filters Fields
 
 Verify Total Amount Value
-    [Arguments]    ${entity}    ${pages}     ${tcenter}       ${occupation}      ${amount}=1
+    [Arguments]    ${pages}     ${tcenter}       ${occupation}      ${amount}=1
     FOR    ${_}    IN RANGE    ${pages}
-        Upload Group Of Labors   ${entity}      ${tcenter}       ${occupation}      ${amount}
+        Upload Group Of Labors   ${tcenter}       ${occupation}      ${amount}
     END
     Click Next
-    Filters On Upload Tab   ${entity}
+    Filters On Upload Tab
 
 Verify Download Csv Sample
-    [Arguments]    ${entity}
-    ${locators}=       Chose Locators       ${entity}
-
-    Click Add Group     ${locators.BTN_ADD_GROUP}
+    Click Add Group     ${BTN_ADD_GROUP}
     Click Download Csv Sample
     ${files}=   Get Temp Files
     Check Compatibility Files       ${files}[0]     ${files}[1]

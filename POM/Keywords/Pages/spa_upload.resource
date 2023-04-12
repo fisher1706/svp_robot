@@ -1,8 +1,5 @@
 *** Settings ***
-Library         Resources/DataSources/models/ModelBuilder.py
-Library         Libraries/CSVHelper.py
 Resource        POM/Keywords/Modules/base_actions.resource
-Variables       Resources/Variables/Titles.py
 Variables       POM/Locators/SPAUploadLocators.py
 
 
@@ -16,10 +13,13 @@ Variables       POM/Locators/SPAUploadLocators.py
 
 *** Keywords ***
 Click Test Center
-    Click Button    ${ZAPEL}
+    Click Button    ${BTN_TCENTER}
 
 Click Add Test Center
-    Click Button    ${BTN_ADD_TCENTR}
+    Click Button    ${BTN_ADD_TCENTER}
+
+Click Uploaded Files
+    Click Button    ${BTN_UPLOADED_FILES}
 
 Fill Name General Information
     [Arguments]    ${name}
@@ -30,13 +30,13 @@ Fill Official Contact Number
     Type Text    ${FIELD_OFFICIAL_CONTACT_NUMBER}   ${number}
 
 Check Select Category
-    Log To Console      ${CATEGORY}
+    Check checkbox      ${CATEGORY}
 
 Fill Name Test Centr Owner
     [Arguments]    ${name}
     Type Text       ${FIELD_NAME_TCENTR_OWNER}      ${name}
 
-Fill TCENTER Email
+Fill TCenter Email
     [Arguments]    ${email}
     Type Text   ${FIELD_EMAIL}      ${email}
 
