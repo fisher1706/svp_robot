@@ -30,7 +30,7 @@ Fill Official Contact Number
     Type Text    ${FIELD_OFFICIAL_CONTACT_NUMBER}   ${number}
 
 Check Select Category
-    Check checkbox      ${CATEGORY}
+    Check Checkbox      ${CATEGORY}
 
 Fill Name Test Centr Owner
     [Arguments]    ${name}
