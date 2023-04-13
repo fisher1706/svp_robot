@@ -88,6 +88,6 @@ Verify Validation Edit Email On Labors Tab
 Edit And Verify Email
     Click Labors
     Clik On Email Field
-    ${new_email}=    Create Random Email
+    ${new_email}    Create Random Email
     Fill Labor Email        ${new_email}
     Click Save Email
