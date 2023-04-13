@@ -21,7 +21,7 @@ Test Legislator Validation Edit Email On Labors Tab
 Test Legislator Edit Email On Labors Tab
     ${tect_center}     ${occupation}     Add TCentr
     Upload Group Of Labors      ${tect_center}     ${occupation}
-    Edit and verify email
+    Edit And Verify Email
 
 Test Legislator Pagination And Search Result Value
     ${tect_center}     ${occupation}     Add TCentr
@@ -49,15 +49,15 @@ Test Legislator Search Entry By Filters On Labors Table
     Upload Group Of Labors      ${tect_center}     ${occupation}    amount=1
     Click Labors
     Wait For Elements State     ${EDIT_EMAIL_FIELD}      enabled
-    ${elements}=    Get Last Entry    ${LAST_ENTRY}
+    ${elements}    Get Last Entry    ${LAST_ENTRY}
     Verify National Id      ${elements}[0]
     Verify Labor Name       ${elements}[1]
     Verify Passport Number       ${elements}[2]
     Verify Email       ${elements}[3]
-#    Verify Category       ${elements}[4]
-#    Verify TCenter      ${elements}[5]
-#    Verify Exam Date        ${elements}[6]
-#    Verify Exam Result      ${elements}[7]
+    Verify Category       ${elements}[4]
+    Verify TCenter      ${elements}[5]
+    Verify Exam Date        ${elements}[6]
+    Verify Exam Result      ${elements}[7]
 
 Test Legislator Counts On Labors Tab
     ${tect_center}     ${occupation}     Add TCentr
@@ -85,9 +85,9 @@ Verify Validation Edit Email On Labors Tab
         Should Match        ${error_email_message}    ${TC_VALID_EMAIL}
     END
 
-Edit and verify email
+Edit And Verify Email
     Click Labors
     Clik On Email Field
-    ${new_email}=    Create random email
+    ${new_email}=    Create Random Email
     Fill Labor Email        ${new_email}
     Click Save Email
