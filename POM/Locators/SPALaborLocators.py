@@ -7,9 +7,7 @@ class SPALaborLocators:
     BTN_SAVE_EMAIL = '//*[@id="modals-container"]//button[1]'
     BTN_NEXT = '.next a'
     VALUE_SEARCH_RESULT = '.pagination-wrap__text'
-
     LAST_ENTRY = 'tr:nth-child(1) td'
-
     NATIONAL_ID = 'th:nth-child(1)  .table-main__input'
     LABOR_NAME = 'th:nth-child(2)  .table-main__input'
     PASSPORT_NUMBER = 'th:nth-child(3)  .table-main__input'
@@ -18,4 +16,3 @@ class SPALaborLocators:
     TEST_CENTER = 'th:nth-child(6)  .table-main__input'
     EXAM_DATE = 'th:nth-child(7)  .table-main__input'
     EXAM_RESULT = 'th:nth-child(8)  .table-main__input'
-
