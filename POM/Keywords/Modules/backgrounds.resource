@@ -45,3 +45,9 @@ Create Entities And Log In
         ${email}=    Set Variable If    ${login_tcenter}    ${tcenter_account.email}    ${legislator_account.email}
         Log In To SPA    ${two_factor_verification}    ${email}
     END
+
+Log In With Valid Login And Password
+    [Arguments]     ${login}     ${password}=${DEFAULT_PASSWORD}
+    Open SPA Login Page
+    Enter Login And Password    ${login}    ${password}
+    Proceed 2fa Web
