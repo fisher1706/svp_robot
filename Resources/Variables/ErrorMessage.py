@@ -14,5 +14,3 @@ POPUP_EMAIL_FIELD = {'type': 'popup edit email', 'text': 'Please enter a valid e
 MSG_WRONG_CERTIFICATE = 'The passport number does not match for this certificate serial number'
 MSG_CERTIFICATE_NOT_EXIST = 'The certificate does not exist'
 MSG_EXPIRED_CERTIFICATE = 'The certificate is expired'
-
-

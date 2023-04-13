@@ -14,7 +14,7 @@ ${PHONE_NUMBER}     2117937
 Add TCentr
     Click Test Center
     Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
-    ${tcenter}      ${occupation}       Fill TCenter Form
+    ${tcenter}      ${occupation}=       Fill TCenter Form
     [Return]        ${tcenter}      ${occupation}
 
 Fill TCenter Form
