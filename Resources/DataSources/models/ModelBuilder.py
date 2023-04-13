@@ -73,16 +73,27 @@ class ModelBuilder:
                      )
 
     @staticmethod
-    def build_random_labor(national_id=None, labor_name=None, passport=None, occupation=CATEGORY, exam_date=None,
-                           scope=33):
+    @keyword('Create new random labor')
+    def build_random_labor(national_id=None, labor_name=None, passport=None, email=None,
+                           occupation=CATEGORY, exam_date=None, exam_result=None, scope=33):
         random_manager = RandomManager()
         national_id = national_id if national_id else random_manager.random_name()
         labor_name = labor_name if labor_name else random_manager.random_name()
-        passport = passport if passport else random_manager.random_number()
+        email = email if email else random_manager.random_email()
+        passport = passport if passport else \
+            random_manager.random_letters(size=2) + str(random_manager.random_number())
         exam_date = exam_date if exam_date else date.today()
+        exam_result = exam_result if exam_result else random_manager.random_number(size=2)
         return Labor(national_id=national_id,
                      labor_name=labor_name,
                      passport=passport,
+                     email=email,
                      occupation=occupation,
                      exam_date=exam_date,
+                     exam_result=exam_result,
                      scope=scope)
+
+    @staticmethod
+    @keyword('Create random email')
+    def build_random_email():
+        return RandomManager().random_email()

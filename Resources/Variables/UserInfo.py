@@ -6,3 +6,6 @@ INVALID_PASSWORD = 'Invalid#1'
 TC_NAME = 'Autotest nkmvrorv'
 LEGISLATOR_LOGIN = 'auto-l8kcqup2@qa.qiwa.tech'
 TC_LOGIN = 'auto-qr4aeyln@qa.qiwa.tech'
+
+ALARM_LOGIN_LEGISLATOR = 'qiwaqa+svp-dtvez3ti@p2h.com'
+ALARM_LOGIN_TCENTR = 'maram.moh995+54@gmail.com'
