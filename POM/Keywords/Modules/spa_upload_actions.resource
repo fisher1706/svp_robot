@@ -45,9 +45,7 @@ Fill Labor Individual Form
     Fill Labor Name    ${labor.labor_name}
     Fill Passport    ${labor.passport}
     Fill Email    ${labor.email}
-    IF    '${entity}'=='legislator'
-        Select Test Center    ${DROPDOWN_TCENTER}
-    END
+    IF    '${entity}'=='legislator'     Select Test Center    ${DROPDOWN_TCENTER}
     Fill Exam Date    ${labor.exam_date}
     Select Occupation    ${DROPDOWN_OCCUPATION}
     Fill Exam Result %    ${labor.exam_result}

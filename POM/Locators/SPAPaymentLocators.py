@@ -25,4 +25,3 @@ class SPAPaymentLocators:
     BTN_ISSUE = "//button[.='Issue']"
     BTN_CONFIRM = "//button[.='Confirm']"
     PAYMENT_AMOUNT = "td[data-label='Amount']"
-

@@ -48,5 +48,3 @@ Click Issue
 
 Click Confirm
     Click Button    ${BTN_CONFIRM}
-
-

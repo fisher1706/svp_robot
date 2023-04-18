@@ -19,7 +19,7 @@ Generate Payment
     Click Transaction Pay
     Wait For Elements State    ${PAYMENT_REFERENCE_NUMBER}      visible
 
-Activate payment
+Activate Payment
     Click Payment
     Click Select All
     Click Issue

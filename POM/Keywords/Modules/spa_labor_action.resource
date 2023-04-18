@@ -2,8 +2,8 @@
 Resource        POM/Keywords/Pages/spa_labor.resource
 Resource        POM/Keywords/Modules/spa_upload_actions.resource
 Resource        POM/Keywords/Modules/spa_payment_actions.resource
-Library         Resources/DataSources/models/ModelBuilder.py
 Library         String
+Library         Resources/DataSources/models/ModelBuilder.py
 Variables       Resources/Variables/dataset.py
 Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/dataset.py      PageNumbersDataset
@@ -67,7 +67,7 @@ Test Legislator Counts On Labors Tab
         IF    '${result}'=='PASSED'
             Upload Group Of Labors Index
             Generate Payment        amount=1
-            Activate payment
+            Activate Payment
             Click Uploaded Files
         ELSE IF     '${result}'=='FAILED'
             Upload Group Of Labors Index      exam_score=1
