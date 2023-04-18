@@ -1,3 +1,4 @@
+import ast
 import csv
 import datetime
 from random import randint
@@ -51,6 +52,12 @@ class CSVHelper:
         self._open_file(DirPath.CSV, list_csv, mode='w')
 
     def prepare_csv_file(self, amount: int = 1, wrong_timestamp: str = False, exam_score: int = 99):
+        """
+        robot send "False/True" as str
+        use "ast.literal_eval" for conversation to bool
+        """
+        wrong_timestamp = ast.literal_eval(wrong_timestamp) if \
+            wrong_timestamp in ['False', 'True'] else wrong_timestamp
         timestamp = self._verify_timestamp(wrong_timestamp)
         random_number = str(randint(1, 10 ** randint(7, 8)))
         self.passport_numbers = [random_number + str(_) for _ in range(amount)]
