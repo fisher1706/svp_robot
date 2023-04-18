@@ -14,8 +14,7 @@ ${PHONE_NUMBER}     2117937
 Add TCentr
     Click Test Center
     Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
-    ${tcenter}      ${occupation}=       Fill TCenter Form
-    [Return]        ${tcenter}      ${occupation}
+    Fill TCenter Form
 
 Fill TCenter Form
     ${tcenter}=     Create New Account      phone_number=${PHONE_NUMBER}
@@ -33,55 +32,54 @@ Fill TCenter Form
     Click Add       ${BTN_ADD_NEW_TCENTR}
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
     Click Uploaded Files
-    [Return]        ${tcenter.en_name}      ${occupation}
 
 Add Individual Labor
-    [Arguments]     ${entity}       ${tcenter}       ${occupation}
+    [Arguments]     ${entity}
     Click Add Individual
     ${labor}=   Create New Random Labor
-    Fill Labor Individual Form    ${entity}     ${labor}      ${tcenter}       ${occupation}
+    Fill Labor Individual Form    ${entity}     ${labor}
 
 Fill Labor Individual Form
-    [Arguments]    ${entity}    ${labor}     ${tcenter}       ${occupation}
+    [Arguments]    ${entity}    ${labor}
     Fill National ID    ${labor.national_id}
     Fill Labor Name    ${labor.labor_name}
     Fill Passport    ${labor.passport}
     Fill Email    ${labor.email}
-    IF    '${entity}'=='legislator'
-        Select Test Center    ${DROPDOWN_TCENTER}       ${tcenter}
-    END
+    IF    '${entity}'=='legislator'     Select Test Center    ${DROPDOWN_TCENTER}
     Fill Exam Date    ${labor.exam_date}
-    Select Occupation    ${DROPDOWN_OCCUPATION}     ${occupation}
+    Select Occupation    ${DROPDOWN_OCCUPATION}
     Fill Exam Result %    ${labor.exam_result}
     Click Add       ${ADD_INDIVIDUAL_LABOR}
     Verify Value    ${FIELD_FILE_NAME}       ${labor.labor_name}
     Click Add       ${ADD_INDIVIDUAL_LABOR}
 
-Upload Group Of Labors
-    [Arguments]     ${tcenter}       ${occupation}
-    ...     ${amount}=1     ${wrong_timestamp}=False    ${exam_score}=99
-    ${csv_file_path}=    Prepare Csv File    ${amount}
+Upload Group Of Labors Index
+    [Arguments]
+    ...     ${amount}=1
+    ...     ${wrong_timestamp}=False
+    ...     ${exam_score}=99
+    ${csv_file_path}=    Prepare Csv File    ${amount}      ${wrong_timestamp}      ${exam_score}
     Click Add Group     ${BTN_ADD_GROUP}
-    Select Test Center      ${DROPDOWN_TCENTER_LIST}     ${tcenter}
-    Select Occupation    ${DROPDOWN_CATEGORY_LIST}     ${occupation}
+    Select Test Center      ${DROPDOWN_TCENTER_LIST}     1     index
+    Select Occupation    ${DROPDOWN_CATEGORY_LIST}     1    index
     Upload File     ${BTN_CHOOSE_FILE}      ${csv_file_path}
     Verify Value     ${FIELD_POPUP_TOTAL_LABORS}      ${amount}
     Click Add       ${BTN_ADD}
-    Verify Value     ${TD_PASSED_LABORS}      ${amount}
+    Run Keyword If      '${wrong_timestamp}'=='False' and '${exam_score}'=='99'
+    ...     Verify Value     ${TD_PASSED_LABORS}      ${amount}
 
 Verify Upload Csv File Without Selected Category And Tcenter
-    [Arguments]     ${tcenter}      ${occupation}
     Click Button    ${BTN_ADD_GROUP}
     Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    disabled
-    Select Test Center      ${DROPDOWN_TCENTER_LIST}     ${tcenter}
+    Select Test Center      ${DROPDOWN_TCENTER_LIST}
     Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    disabled
-    Select Occupation    ${DROPDOWN_CATEGORY_LIST}     ${occupation}
+    Select Occupation    ${DROPDOWN_CATEGORY_LIST}
     Verify Choose File Button Status    ${BTN_CHOOSE_FILE}    enabled
     Click Cancel        ${BTN_CANCEL}
 
 Verify Filters On Uploads Tab
-    [Arguments]     ${tcenter}       ${occupation}      ${amount}=1
-    Upload Group Of Labors      ${tcenter}       ${occupation}      ${amount}
+    [Arguments]     ${amount}=1
+    Upload Group Of Labors Index        ${amount}
     Filters On Upload Tab
 
 Filters On Upload Tab
@@ -94,9 +92,9 @@ Filters On Upload Tab
     Verify Disabling Filters Fields
 
 Verify Total Amount Value
-    [Arguments]    ${pages}     ${tcenter}       ${occupation}      ${amount}=1
+    [Arguments]    ${pages}     ${amount}=1
     FOR    ${_}    IN RANGE    ${pages}
-        Upload Group Of Labors   ${tcenter}       ${occupation}      ${amount}
+        Upload Group Of Labors Index        ${amount}
     END
     Click Next
     Filters On Upload Tab
