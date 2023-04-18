@@ -3,8 +3,10 @@ Resource            Resources/Setup/webdriver_manager.resource
 Resource            POM/Keywords/Modules/backgrounds.resource
 Resource            POM/Keywords/Modules/spa_labor_action.resource
 
-Test Setup    Run Keywords    Open Chrome Browser
-...           AND     Create Entities And Log In        is_legislator_activate=True     login_tcenter=False
+Test Setup    Run Keywords    Open Chrome Browser   AND     Create Entities And Log In
+...     is_legislator_activate=True
+...     login_tcenter=False
+...     is_tcenter=True
 
 
 *** Test Cases ***

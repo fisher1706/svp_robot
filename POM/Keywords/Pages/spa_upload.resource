@@ -101,13 +101,15 @@ Fill Exam Result %
     Type Text   ${EXAM_RESULT}    ${result of exam}
 
 Select Test Center
-    [Arguments]    ${selector}      ${val}     ${attr}=text
+#    [Arguments]    ${selector}      ${val}     ${attr}=text
+    [Arguments]    ${selector}      ${val}=1     ${attr}=index
     Click Button    ${selector}
     Select Options By    ${selector}    ${attr}    ${val}
     Keyboard Key    press    Enter
 
 Select Occupation
-    [Arguments]    ${selector}      ${val}     ${attr}=text
+#    [Arguments]    ${selector}      ${val}     ${attr}=text
+    [Arguments]    ${selector}      ${val}=1     ${attr}=index
     Click Button    ${selector}
     Select Options By    ${selector}    ${attr}    ${val}
     Keyboard Key    press    Enter

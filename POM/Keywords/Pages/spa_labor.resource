@@ -54,24 +54,29 @@ Verify Category
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
 
 Verify TCenter
-    [Arguments]    ${val}     ${attr}=text
-    Click Button    ${TEST_CENTER}
-    Select Options By    ${TEST_CENTER}    ${attr}    ${val}
+    [Arguments]    ${val}=1     ${attr}=index
+    Click Button    ${TEST_CENTERS}
+    Select Options By    ${TEST_CENTERS}    ${attr}    ${val}
     Keyboard Key    press    Enter
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
 
 Verify Exam Date
     [Arguments]    ${val}
     Fill Filter Field   ${EXAM_DATE}    ${val}
+    Click    ${LABOR_TEXT}
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
 
 Verify Exam Result
     [Arguments]    ${val}     ${attr}=text
-    Click Button    ${EXAM_RESULT}
-    Select Options By    ${EXAM_RESULT}    ${attr}    ${val}
+    Click Button    ${EXAM_RESULT_LABOR}
+    Select Options By    ${EXAM_RESULT_LABOR}    ${attr}    ${val}
     Keyboard Key    press    Enter
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
 
 Fill Filter Field
     [Arguments]    ${locator}       ${val}
     Type Text    ${locator}     ${val}
+
+Verify All
+    [Arguments]    ${amount}
+    Verify Text        ${ALL}       ${amount}     is_equal=True
