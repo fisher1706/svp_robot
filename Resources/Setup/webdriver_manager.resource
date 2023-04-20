@@ -5,10 +5,10 @@ Library     Browser
 
 *** Keywords ***
 Open Chrome Browser
-    [Arguments]    ${browser}=chromium    ${timeout}=30s
+    [Arguments]    ${browser}=firefox    ${timeout}=30s
     Set Common Global Variables
     New Persistent Context
     ...    browser=${browser}
-    ...    headless=False
+    ...    headless=True
     ...    args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]
     Set Browser Timeout    ${timeout}
