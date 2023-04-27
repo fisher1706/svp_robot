@@ -2,8 +2,7 @@ import ast
 import csv
 import datetime
 from random import randint
-
-from Resources.Variables.constants import DirPath
+from Resources.Variables.DirPath import DirPath
 
 
 class CSVHelper:

@@ -4,6 +4,8 @@ Library         Libraries/CSVHelper.py
 Library         Libraries/FileHelper.py
 Resource        POM/Keywords/Pages/spa_upload.resource
 Resource        POM/Keywords/Modules/base_actions.resource
+Variables       Resources/Variables/PageNumbersDataset.py
+Variables       Resources/Variables/DirPath.py
 
 
 *** Variables ***
@@ -92,18 +94,21 @@ Filters On Upload Tab
     Verify Disabling Filters Fields
 
 Verify Total Amount Value
-    [Arguments]    ${pages}     ${amount}=1
-    FOR    ${_}    IN RANGE    ${pages}
+    [Arguments]    ${amount}=1
+    FOR    ${_}    IN RANGE    ${PAGE_VALUES}
         Upload Group Of Labors Index        ${amount}
     END
     Click Next
     Filters On Upload Tab
 
 Verify Download Csv Sample
+    Clear Temp Folder
     Click Add Group     ${BTN_ADD_GROUP}
+    ${dl_promise}=    Promise To Wait For Download    ${TEMP_FOLDER}/sample_attributes_example.csv
     Click Download Csv Sample
+    ${file_obj}=    Wait For  ${dl_promise}
     ${files}=   Get Temp Files
-    Check Compatibility Files       ${files}[0]     ${files}[1]
+    Check Compatibility Files       ${files}[0]     ${CSV_TEMPLATE}
 
 Get Last Entry
     [Arguments]    ${locator}

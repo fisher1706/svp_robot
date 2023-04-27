@@ -42,5 +42,6 @@ MESSAGE_LOCATOR = {
 TITLE_LOCATOR = {
     'header payment': '.payment-box__header-text',
     'modal': '.modal-box .q-page-box__header',
-    'home': '.home-section__heading'
+    'home': '.home-section__heading',
+    'spa': '.q-page-box__header h2'
 }
