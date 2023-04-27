@@ -1,24 +1,9 @@
-import os
-import sys
-
-
 class SupportedBrowser:
     VERSION = {
         "chrome": "107.0",
         "firefox": "93.0",
         "opera": "80.0"
     }
-
-
-class DirPath:
-    BASE_DIR = sys.path[1]
-    RESOURCES = os.path.join(BASE_DIR, 'Resources')
-    DATA_SOURCES = os.path.join(RESOURCES, 'DataSources')
-    TEST_FILES = os.path.join(DATA_SOURCES, 'test_files')
-    PNG_FILE = os.path.join(TEST_FILES, 'valid_3.png')
-    CSV = os.path.join(TEST_FILES, 'sample_attributes.csv')
-    CSV_5 = os.path.join(TEST_FILES, 'sample_attributes_5.csv')
-    TEMP_FOLDER = os.path.join(TEST_FILES, 'temp')
 
 
 class EmailConst:
@@ -51,16 +36,6 @@ class TransactionStatuses:
         'prepared checkout': PREPARED_CHECKOUT,
         'failed': FAILED
     }
-
-
-class ExamResult:
-    ALL = 'All'
-    PASSED = 'Passed'
-    FAILED = 'Failed'
-    PENDING = 'Pending'
-    REJECTED = 'Rejected'
-    LIST_EXAM_RESULTS = [PASSED, FAILED, PENDING, REJECTED]
-    LIST_ALL_EXAM_RESULTS = [ALL, PASSED, FAILED, PENDING, REJECTED]
 
 
 class Labels:

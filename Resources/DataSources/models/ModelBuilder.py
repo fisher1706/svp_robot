@@ -8,7 +8,7 @@ from Resources.DataSources.models.account import Account
 from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
 from Resources.Variables import CategoriesIdsDataset
-from Resources.Variables.constants import DirPath
+from Resources.Variables.DirPath import DirPath
 
 logger = yaml_logger.setup_logging(__name__)
 

@@ -4,18 +4,11 @@ Resource        POM/Keywords/Modules/spa_upload_actions.resource
 Resource        POM/Keywords/Modules/spa_payment_actions.resource
 Library         String
 Library         Resources/DataSources/models/ModelBuilder.py
-Variables       Resources/Variables/dataset.py
+#Variables       Resources/Variables/dataset.py
+Variables       Resources/Variables/EditEmailDataset.py
 Variables       Resources/Variables/WarningMessage.py
-Variables       Resources/Variables/dataset.py      PageNumbersDataset
-
-
-*** Variables ***
-${AMOUNT}       11
-@{LIST_EXAM_RESULTS}
-...     PASSED
-...     FAILED
-...     PENDING
-...     REJECTED
+Variables       Resources/Variables/PageNumbersDataset.py
+Variables       Resources/Variables/ExamResult.py
 
 
 *** Keywords ***
@@ -28,11 +21,11 @@ Test Legislator Edit Email On Labors Tab
     Edit And Verify Email
 
 Test Legislator Pagination And Search Result Value
-    FOR    ${_}    IN RANGE    ${AMOUNT}
+    FOR    ${_}    IN RANGE    ${PAGE_VALUES}
         Upload Group Of Labors Index
     END
     Click Next Labor
-    Verify Search Result Value      ${AMOUNT}
+    Verify Search Result Value      ${PAGE_VALUES}
 
 Test Legislator All Count On Labors Tab
     Upload Group Of Labors Index
@@ -65,9 +58,7 @@ Test Legislator Search Entry By Filters On Labors Table
 Test Legislator Counts On Labors Tab
     FOR    ${result}    IN      @{LIST_EXAM_RESULTS}
         IF    '${result}'=='PASSED'
-            Upload Group Of Labors Index
-            Generate Payment        amount=1
-            Activate Payment
+            Pass Labor Flow
             Click Uploaded Files
         ELSE IF     '${result}'=='FAILED'
             Upload Group Of Labors Index      exam_score=1

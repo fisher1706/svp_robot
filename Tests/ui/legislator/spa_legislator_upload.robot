@@ -12,7 +12,6 @@ Test Setup    Run Keywords    Open Chrome Browser   AND     Create Entities And 
 
 
 *** Variables ***
-${PAGES}            11
 ${ENTITY}           legislator
 
 
@@ -30,7 +29,7 @@ C9121 C9126 Checking the ability to search entry by filters and clear filters on
     Verify Filters On Uploads Tab
 
 Checking pagination and search result value as Legislator on Upload tab
-    Verify Total Amount Value       ${PAGES}
+    Verify Total Amount Value
 
 Checking the ability to download csv sample
     Verify Download Csv Sample

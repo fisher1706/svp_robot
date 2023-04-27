@@ -6,7 +6,7 @@ import zipfile
 
 from PyPDF2 import PdfReader
 
-from Resources.Variables.constants import DirPath
+from Resources.Variables.DirPath import DirPath
 
 
 class FileHelper:
@@ -32,7 +32,7 @@ class FileHelper:
             assert False, 'File not found in temp directory'
         return None
 
-    def clear_temp_folder(self, check=True):
+    def clear_temp_folder(self, check=False):
         tmp_files = self.get_temp_files(check=check)
         if tmp_files:
             for file in tmp_files:

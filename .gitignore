@@ -1,9 +1,12 @@
 *.pyc
 *.swp
-*.csv
 .idea/*
 log/*
 /tmp
 .DS_Store
 /venv
 poetry.lock
+
+sample_attributes_5.csv
+sample_attributes.csv
+*.png
