@@ -1,5 +1,6 @@
 *** Settings ***
 Resource        POM/Keywords/Modules/base_actions.resource
+Resource        POM/Keywords/Modules/spa_actions.resource
 Variables       POM/Locators/SPAUploadLocators.py
 
 
@@ -134,14 +135,8 @@ Verify Field Number Of Labors
 
 Verify Disabling Filters Fields
     Click Clear Filter
-    FOR    ${locator}   IN      @{FILTERS}
-        Verify Text     ${locator}      ${EMPTY}
-    END
+    Is Disabled     ${FILTERS}
 
 Upload File
     [Arguments]    ${selector}      ${dir_path}
     Upload File By Selector    ${selector}    ${dir_path}
-
-Fill Filter Field
-    [Arguments]    ${locator}       ${val}
-    Type Text    ${locator}     ${val}

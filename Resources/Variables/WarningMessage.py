@@ -21,4 +21,5 @@ TC_ONLY_DIGITS_POSTAL_CODE = 'Should contain digits only'
 INVALID_CURRENT_PASSWORD = 'Current password is invalid'
 SAME_NEW_PASSWORD = 'new password shouldn’t be same as old Password'
 MISMATCH_PASSWORD = "doesn't match Password"
-MSG_WRONG_CERTIFICATE = "The passport number is valid but its not for the certificate entered serial number"
+
+MESSAGE_WRONG_CERTIFICATE = "The passport number is valid but its not for the certificate entered serial number"

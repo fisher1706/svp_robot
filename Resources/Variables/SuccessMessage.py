@@ -4,5 +4,5 @@ CONFIRM_CODE = 'Two-Factor Verification'
 LEGISLATOR_CREATION = {'type': 'legislator creation', 'text': 'The legislator has been created successfully'}
 TEST_CENTER_CREATION = 'Test center has been created successfully'
 TEST_CENTER_REMOVE = {'type': 'test center creation', 'text': 'Test Center has been deleted successfully'}
-MSG_VALID_CERTIFICATE = 'The certificate is valid'
+MESSAGE_VALID_CERTIFICATE = 'The certificate is valid'
 MSG_CERTIFICATE = 'You can download list of certificates now'

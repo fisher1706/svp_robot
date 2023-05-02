@@ -1,6 +1,7 @@
 *** Settings ***
 Library         Collections
 Library         BuiltIn
+Library         Browser
 Library         Libraries/Utils.py
 Library         Libraries/FileHelper.py
 Resource        POM/Keywords/Pages/spa_payment.resource
@@ -18,7 +19,7 @@ Test Legislator Get Credits
     [Arguments]    ${amount}=1
     ${states}       Get Slice From List     ${TRANSACTION_STATE_LIST}         end=-1
     FOR    ${state}     IN      @{states}
-        IF    '${state}'!='${SUCCESS}'
+        IF    '${state}'!='${TRANSACTION_STATE_LIST}[0]'
             CONTINUE
         ELSE
             Pass Credit Flow        ${state}
@@ -57,7 +58,7 @@ Test Legislator Get Verify Input Fields On Add Credits
 Test Legislator Number Of Labors And Total Amount Counters
     [Arguments]    ${amount}=1
     Upload Group Of Labors Index
-    Pass Credit Flow    state=${SUCCESS}
+    Pass Credit Flow    state=${TRANSACTION_STATE_LIST}[0]
     Click Payment
     Verify Total Labors     ${amount}
     ${total_amount}       Return Total Price      ${amount}      full=False
@@ -99,14 +100,14 @@ Test Legislator Invoice After Passing Get Credits Flow
     Should Not Be Empty      ${data_pdf}
 
 Pass Credit Flow
-    [Arguments]    ${state}=${SUCCESS}    ${amount}=1
+    [Arguments]    ${state}    ${amount}=1
     Get Credit      ${amount}
     Fill Card Details
     Click Pay Now
     Select Dropdown Transaction State       ${state}
     Click Transaction Pay
     Wait For Elements State    ${WAITING_SPINNER}      hidden
-    IF    '${state}'=='${SUCCESS}'
+    IF    '${state}'=='${TRANSACTION_STATE_LIST}[0]'
         ${reference}     Get Text        ${REFERENCE_NUMBER}
         Should Not Be Empty      ${reference}
     END
@@ -130,8 +131,11 @@ Fill Card Details
 
 Pass Labor Flow
     [Arguments]     ${amount}=1
-    Upload Group Of Labors Index
-    Pass Credit Flow
+    Upload Group Of Labors Index    ${amount}
+    Pass Credit Flow    state=${TRANSACTION_STATE_LIST}[0]
+    Approve Payment
+
+Approve Payment
     Click Payment
     Click Select All
     Click Issue

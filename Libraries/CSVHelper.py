@@ -2,6 +2,7 @@ import ast
 import csv
 import datetime
 from random import randint
+
 from Resources.Variables.DirPath import DirPath
 
 
@@ -11,7 +12,6 @@ class CSVHelper:
         self.name = []
         self.passport_numbers = []
 
-    @property
     def get_passport_number(self):
         return self.passport_numbers[0]
 

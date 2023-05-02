@@ -6,7 +6,7 @@ VERIFICATION_CODE_WARNING = {'type': 'pass warning', 'text': 'The code you have 
 TOKEN_INVALID = 'Password token is invalid'
 
 POPUP_EMAIL_FIELD = {'type': 'popup edit email', 'text': 'Please enter a valid email'}
-MSG_WRONG_CERTIFICATE = 'The passport number does not match for this certificate serial number'
+MSG_WRONG_CERTIFICATE_ERROR = 'The passport number does not match for this certificate serial number'
 MSG_CERTIFICATE_NOT_EXIST = 'The certificate does not exist'
 MSG_EXPIRED_CERTIFICATE = 'The certificate is expired'
 
