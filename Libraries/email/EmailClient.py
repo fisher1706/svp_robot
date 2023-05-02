@@ -37,6 +37,7 @@ class EmailClient(EmailSupport):
     # TODO: Change email verification after the story will be ready https://is-takamol.atlassian.net/browse/PVPE-1798
     # Use it only for verify activation user on registration suite
     def find_email_by_recipient(self, recipient_email, attempts=30, raise_exception=True, mark_read=True):
+        print(f"email: {recipient_email}")
         sleep_time = 2
         for attempt in range(attempts):
             time.sleep(sleep_time)

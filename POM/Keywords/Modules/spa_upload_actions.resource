@@ -2,6 +2,7 @@
 Library         Resources/DataSources/models/ModelBuilder.py
 Library         Libraries/CSVHelper.py
 Library         Libraries/FileHelper.py
+Resource        POM/Keywords/Modules/spa_actions.resource
 Resource        POM/Keywords/Pages/spa_upload.resource
 Resource        POM/Keywords/Modules/base_actions.resource
 Variables       Resources/Variables/PageNumbersDataset.py
@@ -60,7 +61,12 @@ Upload Group Of Labors Index
     ...     ${amount}=1
     ...     ${wrong_timestamp}=False
     ...     ${exam_score}=99
-    ${csv_file_path}=    Prepare Csv File    ${amount}      ${wrong_timestamp}      ${exam_score}
+    ...     ${file}=True
+    IF    ${file}
+        ${csv_file_path}=    Prepare Csv File    ${amount}      ${wrong_timestamp}      ${exam_score}
+    ELSE
+        ${csv_file_path}=    Set Variable    ${CSV}
+    END
     Click Add Group     ${BTN_ADD_GROUP}
     Select Test Center      ${DROPDOWN_TCENTER_LIST}     1     index
     Select Occupation    ${DROPDOWN_CATEGORY_LIST}     1    index
@@ -109,20 +115,6 @@ Verify Download Csv Sample
     ${file_obj}=    Wait For  ${dl_promise}
     ${files}=   Get Temp Files
     Check Compatibility Files       ${files}[0]     ${CSV_TEMPLATE}
-
-Get Last Entry
-    [Arguments]    ${locator}
-    ${rowList}=  Create List
-    @{elements}=    Get Elements    ${locator}
-    FOR  ${element}     IN      @{elements}
-        ${text}=  Get Text      ${element}
-        Append To List  ${rowList}  ${text}
-    END
-    [Return]    ${rowList}
-
-Fill Filter Field
-    [Arguments]    ${locator}       ${val}
-    Type Text    ${locator}     ${val}
 
 Verify Value
     [Arguments]    ${locator}      ${val}
