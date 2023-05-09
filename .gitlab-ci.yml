@@ -19,6 +19,7 @@ stages:
   - code_quality
   - run_tests
   - send-test-reports
+  - send-slack-reports
 
 .package:
   image: takamol/ci-cd:package-latest
