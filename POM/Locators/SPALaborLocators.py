@@ -19,3 +19,14 @@ class SPALaborLocators:
     LABOR_TEXT = '//*[@id="app"]//h2'
     COUNT = '//*[@id="app"]//div[2]//div[3]/div[2]/ul/li[2]'
     ALL = '.green'
+
+    FILTERS_LABOR = [
+        NATIONAL_ID,
+        LABOR_NAME,
+        PASSPORT_NUMBER,
+        EMAIL,
+        CATEGORY_LABOR,
+        TEST_CENTERS,
+        EXAM_DATE,
+        EXAM_RESULT_LABOR
+    ]

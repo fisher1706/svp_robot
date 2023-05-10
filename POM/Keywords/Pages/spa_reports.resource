@@ -10,9 +10,6 @@ Variables       POM/Locators/SPAReportsLocator.py
 Click Reports
     Click Button    ${BTN_REPORTS}
 
-Click Clear Filter
-    Click Button    ${BTN_CLEAR_FILTER}
-
 Verify Field Id
     [Arguments]    ${val}
     Fill Filter Field       ${FILTER_FIELD_ID}     ${val}
@@ -37,10 +34,6 @@ Verify Field Date
 Verify Field Status
     [Arguments]    ${val}
     Verify Text     ${FIELD_STATUS}     ${val}
-
-Verify Disabling Filters Fields Reports
-    Click Clear Filter
-    Is Disabled     ${FILTERS}
 
 Click Check Validity
     Click Button        ${BTN_CHECK_VALIDITY}

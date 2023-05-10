@@ -12,7 +12,6 @@ class SPAReportsLocator:
     FIELD_AMOUNT = '//*[@id="app"]//table/tbody/tr/td[3]'
     FIELD_DATE = "td[data-label='Date'] span"
     FIELD_STATUS = "td[data-label='Status'] span"
-    BTN_CLEAR_FILTER = '.link'
     BTN_CHECK_VALIDITY = '.check-validity-link'
     FIELD_PASSPORT_NUMBER = '#passport'
     FIELD_CERTIFICATE_SERIAL_NUMBER = '#certificate'

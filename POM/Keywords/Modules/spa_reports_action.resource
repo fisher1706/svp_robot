@@ -23,7 +23,7 @@ Test Legislator Check Filters And Clear Filters Reports Tab
     Verify Field Amount     ${elements}[2]
     Verify Field Date       ${elements}[3]
     Verify Field Status    ${elements}[4]
-    Verify Disabling Filters Fields Reports
+    Verify Disabling Filters Fields     ${FILTERS}
 
 Test Legislator Valid Scenario
     Pass Labor Flow

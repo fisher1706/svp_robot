@@ -73,10 +73,6 @@ Verify Exam Result
     Keyboard Key    press    Enter
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
 
-Fill Filter Field
-    [Arguments]    ${locator}       ${val}
-    Type Text    ${locator}     ${val}
-
 Verify All
     [Arguments]    ${amount}
     Verify Text        ${ALL}       ${amount}     is_equal=True

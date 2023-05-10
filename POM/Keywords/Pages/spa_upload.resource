@@ -4,54 +4,9 @@ Resource        POM/Keywords/Modules/spa_actions.resource
 Variables       POM/Locators/SPAUploadLocators.py
 
 
-*** Variables ***
-@{FILTERS}
-...     ${FIELD_FILE_ID}
-...     ${PICKER_UPLOAD_DATE}
-...     ${FIELD_NUMBER_OF_PASSED_LABORS}
-...     ${FIELD_NUMBER_OF_LABORS}
-
-
 *** Keywords ***
-Click Test Center
-    Click Button    ${BTN_TCENTER}
-
-Click Add Test Center
-    Click Button    ${BTN_ADD_TCENTER}
-
 Click Uploaded Files
     Click Button    ${BTN_UPLOADED_FILES}
-
-Fill Name General Information
-    [Arguments]    ${name}
-    Type Text   ${FIELD_NAME_GENERAL_INFORMATION}   ${name}
-
-Fill Official Contact Number
-    [Arguments]    ${number}
-    Type Text    ${FIELD_OFFICIAL_CONTACT_NUMBER}   ${number}
-
-Check Select Category
-    Check Checkbox      ${CATEGORY}
-
-Fill Name Test Centr Owner
-    [Arguments]    ${name}
-    Type Text       ${FIELD_NAME_TCENTR_OWNER}      ${name}
-
-Fill TCenter Email
-    [Arguments]    ${email}
-    Type Text   ${FIELD_EMAIL}      ${email}
-
-Fill City
-    [Arguments]    ${city}
-    Type Text   ${FIELD_CITY}       ${city}
-
-Fill Street Name
-    [Arguments]    ${street}
-    Type Text    ${FIELD_STREET_NAME}   ${street}
-
-Fill Postal Code
-    [Arguments]    ${postal_code}
-    Type Text    ${FIELD_POSTAL_CODE}   ${postal_code}
 
 Click Add Individual
     Click Button    ${BTN_ADD_INDIVIDUAL}
@@ -67,9 +22,6 @@ Click Add
 Click Cancel
     [Arguments]    ${selector}
     Click Button    ${selector}
-
-Click Clear Filter
-    Click Button    ${BTN_CLEAR_FILTER}
 
 Click Next
     Click Button    ${BTN_NEXT}
@@ -132,10 +84,6 @@ Verify Field Number Of Labors
     [Arguments]    ${val}
     Fill Filter Field   ${FIELD_NUMBER_OF_LABORS}    ${val}
     Verify Text     ${SEARCH_RESULTS}      Search Results       is_equal=False
-
-Verify Disabling Filters Fields
-    Click Clear Filter
-    Is Disabled     ${FILTERS}
 
 Upload File
     [Arguments]    ${selector}      ${dir_path}
