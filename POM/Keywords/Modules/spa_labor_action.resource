@@ -4,7 +4,6 @@ Resource        POM/Keywords/Modules/spa_upload_actions.resource
 Resource        POM/Keywords/Modules/spa_payment_actions.resource
 Library         String
 Library         Resources/DataSources/models/ModelBuilder.py
-#Variables       Resources/Variables/dataset.py
 Variables       Resources/Variables/EditEmailDataset.py
 Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/PageNumbersDataset.py
@@ -53,7 +52,7 @@ Test Legislator Search Entry By Filters On Labors Table
     Verify Exam Date        ${elements}[6]
     ${str}     Convert To Lower Case       ${elements}[7]
     Verify Exam Result      ${str}
-    Verify Disabling Filters Fields Labors
+    Verify Disabling Filters Fields     ${FILTERS_LABOR}
 
 Test Legislator Counts On Labors Tab
     FOR    ${result}    IN      @{LIST_EXAM_RESULTS}
@@ -87,7 +86,3 @@ Edit And Verify Email
     ${new_email}    Create Random Email
     Fill Labor Email        ${new_email}
     Click Save Email
-
-Verify Disabling Filters Fields Labors
-    Click Clear Filter
-    Verify Text     ${SEARCH_RESULTS}      5 Search Results       is_equal=True

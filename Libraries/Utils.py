@@ -1,4 +1,3 @@
-
 import re
 from robot.api.deco import keyword
 from Resources.Variables.constants import Credits
@@ -12,11 +11,21 @@ class Utils:
         return amount
 
     @staticmethod
-    @keyword('Reformat date')
+    @keyword('Reformat Date')
     def reformat_date(date):
         return date.split('\n')[0]
 
     @staticmethod
-    @keyword('Find certificate number')
+    @keyword('Find Certificate Number')
     def find_certificate_number(data):
         return [item for item in data if re.findall(r'\d{17}', item)][0]
+
+    @staticmethod
+    @keyword('Cap String')
+    def cap_str(data):
+        return data.title()
+
+    @staticmethod
+    @keyword('Low String')
+    def low_str(data):
+        return data.lower()
