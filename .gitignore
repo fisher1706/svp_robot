@@ -11,3 +11,8 @@ sample_attributes_5.csv
 sample_attributes.csv
 *.png
 Resources/DataSources/test_files/temp/
+
+log.html
+report.html
+playwright-log.txt
+output.xml

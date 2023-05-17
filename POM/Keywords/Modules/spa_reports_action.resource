@@ -122,7 +122,7 @@ Is Report Tab Actoins
     END
 
 Is View Payment Actions
-    [Arguments]     ${is_view_payment}
+    [Arguments]     ${is_view_payment}=True
     IF  ${is_view_payment}      Click Actions
     Clear Temp Folder
     ${dl_promise}    Promise To Wait For Download    ${TEMP_FOLDER}/report.pdf
