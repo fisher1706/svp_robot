@@ -1,6 +1,5 @@
 *** Settings ***
 Library         Browser
-Resource        POM/Keywords/Modules/base_actions.resource
 Variables       POM/Locators/BaseLocators.py
 Variables       Resources/Variables/InfoMessages.py
 

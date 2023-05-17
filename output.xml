@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230510 20:26:21.448" rpa="false" schemaversion="3">
+<suite id="s1" name="Svp Robot" source="/Users/olehlazeba/PycharmProjects/svp_robot">
+<suite id="s1-s1" name="Tests" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests">
+<suite id="s1-s1-s1" name="Ui" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui">
+<suite id="s1-s1-s1-s1" name="Legislator" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui/legislator">
+<suite id="s1-s1-s1-s1-s1" name="Spa Legislator Transaction History" source="/Users/olehlazeba/PycharmProjects/svp_robot/Tests/ui/legislator/spa_legislator_transaction_history.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Check the ability to download invoice as a Legislator on view payment details" line="26">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Chrome Browser</arg>
+<arg>AND</arg>
+<arg>Log In With Valid Login And Password</arg>
+<arg>login=qiwaqa+svp-dtvez3ti@p2h.com</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Chrome Browser" library="webdriver_manager">
+<kw name="Set Common Global Variables" library="variables">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ADMIN_URL}</arg>
+<arg>https://svp-international-admin.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.627" level="INFO">${ADMIN_URL} = https://svp-international-admin.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230510 20:26:23.621" endtime="20230510 20:26:23.627"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${SPA_URL}</arg>
+<arg>https://svp-international-spa.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.632" level="INFO">${SPA_URL} = https://svp-international-spa.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230510 20:26:23.627" endtime="20230510 20:26:23.632"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${API_URL}</arg>
+<arg>https://svp-international-api.svp.stage.devops.takamol.support/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.637" level="INFO">${API_URL} = https://svp-international-api.svp.stage.devops.takamol.support/</msg>
+<status status="PASS" starttime="20230510 20:26:23.632" endtime="20230510 20:26:23.637"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ALLURE_URL}</arg>
+<arg>https://allure-api.takamol.support</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.641" level="INFO">${ALLURE_URL} = https://allure-api.takamol.support</msg>
+<status status="PASS" starttime="20230510 20:26:23.637" endtime="20230510 20:26:23.641"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${GRID_URL}</arg>
+<arg>http://localhost:4444/wd/hub</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.645" level="INFO">${GRID_URL} = http://localhost:4444/wd/hub</msg>
+<status status="PASS" starttime="20230510 20:26:23.642" endtime="20230510 20:26:23.645"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DISCORD_URL}</arg>
+<arg>https://discord.com/api/webhooks/1019273907892650055/Stt-bjhk-15K1vNbyoyoLttBIDd1laChmlHEm6_cYOohIK36NF5TnIpU5a3-wus2uqU5</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.649" level="INFO">${DISCORD_URL} = https://discord.com/api/webhooks/1019273907892650055/Stt-bjhk-15K1vNbyoyoLttBIDd1laChmlHEm6_cYOohIK36NF5TnIpU5a3-wus2uqU5</msg>
+<status status="PASS" starttime="20230510 20:26:23.646" endtime="20230510 20:26:23.649"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${PROJECT_ENV}</arg>
+<arg>demo</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230510 20:26:23.653" level="INFO">${PROJECT_ENV} = demo</msg>
+<status status="PASS" starttime="20230510 20:26:23.649" endtime="20230510 20:26:23.653"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:23.621" endtime="20230510 20:26:23.653"/>
+</kw>
+<kw name="New Persistent Context" library="Browser">
+<arg>browser=${browser}</arg>
+<arg>headless=False</arg>
+<arg>args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]</arg>
+<doc>Open a new
+[https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context | persistent context].</doc>
+<msg timestamp="20230510 20:26:23.655" level="INFO">{
+  "userDataDir": "",
+  "browser": "firefox",
+  "headless": false,
+  "acceptDownloads": true,
+  "args": [
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--disable-gpu"
+  ],
+  "bypassCSP": false,
+  "devtools": false,
+  "forcedColors": "none",
+  "handleSIGHUP": true,
+  "handleSIGINT": true,
+  "handleSIGTERM": true,
+  "hideRfBrowser": false,
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "slowMo": 0.0,
+  "timeout": 30000.0,
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "deprecated_pos_args": [],
+  "tracesDir": "/Users/olehlazeba/PycharmProjects/svp_robot/browser/traces/8ef01b22-5f5f-4676-b836-9f5b0a86aaa9"
+}</msg>
+<msg timestamp="20230510 20:26:26.629" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230510 20:26:26.629" level="INFO">{'userDataDir': '', 'browser': 'firefox', 'headless': False, 'acceptDownloads': True, 'args': ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu'], 'bypassCSP': False, 'devtools': False, 'forcedColors': 'none', 'handleSIGHUP': True, 'handleSIGINT': True, 'handleSIGTERM': True, 'hideRfBrowser': False, 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'slowMo': 0, 'timeout': 30000, 'viewport': {'height': 720, 'width': 1280}, 'deprecated_pos_args': [], 'tracesDir': '/Users/olehlazeba/PycharmProjects/svp_robot/browser/traces/8ef01b22-5f5f-4676-b836-9f5b0a86aaa9'}</msg>
+<status status="PASS" starttime="20230510 20:26:23.654" endtime="20230510 20:26:26.629"/>
+</kw>
+<kw name="Set Browser Timeout" library="Browser">
+<arg>${timeout}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<msg timestamp="20230510 20:26:26.635" level="INFO">Set timeout to: 30000</msg>
+<status status="PASS" starttime="20230510 20:26:26.630" endtime="20230510 20:26:26.635"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:23.620" endtime="20230510 20:26:26.635"/>
+</kw>
+<kw name="Log In With Valid Login And Password" library="backgrounds">
+<arg>login=qiwaqa+svp-dtvez3ti@p2h.com</arg>
+<kw name="Open SPA Login Page" library="login">
+<kw name="Open Page" library="base">
+<arg>base_url=${SPA_URL}</arg>
+<arg>page_url=auth</arg>
+<kw name="Go To" library="Browser">
+<arg>url=${base_url}${page_url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<msg timestamp="20230510 20:26:28.989" level="INFO">Successfully opened URL https://svp-international-spa.svp.stage.devops.takamol.support/auth</msg>
+<status status="PASS" starttime="20230510 20:26:26.637" endtime="20230510 20:26:28.989"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:26.637" endtime="20230510 20:26:28.989"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:26.636" endtime="20230510 20:26:28.990"/>
+</kw>
+<kw name="Enter Login And Password" library="login_actions">
+<arg>${login}</arg>
+<arg>${password}</arg>
+<kw name="Enter Login" library="login">
+<arg>${login}</arg>
+<kw name="Type Text" library="Browser">
+<arg>selector=${LOGIN_FIELD}</arg>
+<arg>txt=${Email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:28.991" level="INFO">Types the text 'qiwaqa+svp-dtvez3ti@p2h.com' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:28.991" endtime="20230510 20:26:29.299"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:28.990" endtime="20230510 20:26:29.299"/>
+</kw>
+<kw name="Enter Password" library="login">
+<arg>${password}</arg>
+<kw name="Type Secret" library="Browser">
+<arg>selector=${PASSWORD_FIELD}</arg>
+<arg>secret=$password</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:29.300" endtime="20230510 20:26:29.362"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:29.299" endtime="20230510 20:26:29.362"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_click}">
+<kw name="Click Continue Button" library="base">
+<kw name="Click" library="Browser">
+<arg>selector=${CONTINUE_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:29.363" endtime="20230510 20:26:29.446"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:29.362" endtime="20230510 20:26:29.446"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:29.362" endtime="20230510 20:26:29.446"/>
+</branch>
+<branch type="ELSE">
+<kw name="Verify Sign In Button Is Dissabled" library="login">
+<status status="NOT RUN" starttime="20230510 20:26:29.447" endtime="20230510 20:26:29.447"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:29.446" endtime="20230510 20:26:29.447"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:29.362" endtime="20230510 20:26:29.447"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:28.990" endtime="20230510 20:26:29.447"/>
+</kw>
+<kw name="Proceed 2fa Web" library="login_actions">
+<for flavor="IN RANGE">
+<var>${_}</var>
+<value>5</value>
+<iter>
+<var name="${_}">0</var>
+<if>
+<branch type="IF" condition="not(${two_factor_code})">
+<kw name="Get 2fa Code" library="login">
+<var>${two_factor_code}</var>
+<kw name="Get Text" library="Browser">
+<var>${otp_text}</var>
+<arg>${OTP_CODE}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:32.357" level="INFO">Text: 'OTP Code: 926692'</msg>
+<msg timestamp="20230510 20:26:32.357" level="INFO">${otp_text} = OTP Code: 926692</msg>
+<status status="PASS" starttime="20230510 20:26:29.449" endtime="20230510 20:26:32.357"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{list}</var>
+<arg>${otp_text} ${SPACE}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20230510 20:26:32.357" level="INFO">@{list} = [ OTP | Code: | 926692 ]</msg>
+<status status="PASS" starttime="20230510 20:26:32.357" endtime="20230510 20:26:32.357"/>
+</kw>
+<return>
+<value>${list}[2]</value>
+<status status="PASS" starttime="20230510 20:26:32.358" endtime="20230510 20:26:32.358"/>
+</return>
+<msg timestamp="20230510 20:26:32.358" level="INFO">${two_factor_code} = 926692</msg>
+<status status="PASS" starttime="20230510 20:26:29.449" endtime="20230510 20:26:32.358"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:29.448" endtime="20230510 20:26:32.358"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" library="BuiltIn">
+<var>${two_factor_code}</var>
+<arg>${None}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:32.359" endtime="20230510 20:26:32.359"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:32.358" endtime="20230510 20:26:32.359"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:29.448" endtime="20230510 20:26:32.359"/>
+</if>
+<kw name="Enter 2fa Code" library="login">
+<arg>${two_factor_code}</arg>
+<kw name="Type Secret" library="Browser">
+<arg>selector=${TWO_FA_FIELD}</arg>
+<arg>secret=$code</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given secret from ``variable_name`` into the text field
+found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:32.359" endtime="20230510 20:26:32.442"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:32.359" endtime="20230510 20:26:32.442"/>
+</kw>
+<kw name="Click Sign In Button" library="login">
+<kw name="Click" library="Browser">
+<arg>${SIGN_IN_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:32.443" endtime="20230510 20:26:32.505"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:32.443" endtime="20230510 20:26:32.505"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230510 20:26:34.508" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230510 20:26:32.506" endtime="20230510 20:26:34.508"/>
+</kw>
+<kw name="Is Warning Msg Displayed" library="login">
+<var>${is_displayed}</var>
+<kw name="Get Element States" library="Browser">
+<var>${status}</var>
+<arg>${OTP_CODE_WARNING_MSG}</arg>
+<arg>then</arg>
+<arg>bool(value &amp; attached)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:34.768" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20230510 20:26:34.509" endtime="20230510 20:26:34.768"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" starttime="20230510 20:26:34.768" endtime="20230510 20:26:34.768"/>
+</return>
+<msg timestamp="20230510 20:26:34.769" level="INFO">${is_displayed} = False</msg>
+<status status="PASS" starttime="20230510 20:26:34.508" endtime="20230510 20:26:34.769"/>
+</kw>
+<kw name="Get Sign In Button Status Disabled" library="login">
+<var>${is_status}</var>
+<kw name="Get Element States" library="Browser">
+<var>${status}</var>
+<arg>${SIGN_IN_BUTTON}</arg>
+<arg>then</arg>
+<arg>bool(attached &amp; disabled)</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:35.024" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20230510 20:26:34.769" endtime="20230510 20:26:35.024"/>
+</kw>
+<return>
+<value>${status}</value>
+<status status="PASS" starttime="20230510 20:26:35.024" endtime="20230510 20:26:35.024"/>
+</return>
+<msg timestamp="20230510 20:26:35.025" level="INFO">${is_status} = False</msg>
+<status status="PASS" starttime="20230510 20:26:34.769" endtime="20230510 20:26:35.025"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_displayed}">
+<kw name="Set Variable" library="BuiltIn">
+<var>${two_factor_code}</var>
+<arg>None</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:35.026" endtime="20230510 20:26:35.026"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:35.025" endtime="20230510 20:26:35.026"/>
+</branch>
+<branch type="ELSE IF" condition="${is_status}">
+<continue>
+<status status="NOT RUN" starttime="20230510 20:26:35.027" endtime="20230510 20:26:35.027"/>
+</continue>
+<status status="NOT RUN" starttime="20230510 20:26:35.026" endtime="20230510 20:26:35.027"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" library="BuiltIn">
+<var>${is_passed}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230510 20:26:35.028" level="INFO">${is_passed} = True</msg>
+<status status="PASS" starttime="20230510 20:26:35.028" endtime="20230510 20:26:35.028"/>
+</kw>
+<break>
+<status status="PASS" starttime="20230510 20:26:35.029" endtime="20230510 20:26:35.029"/>
+</break>
+<status status="PASS" starttime="20230510 20:26:35.027" endtime="20230510 20:26:35.029"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:35.025" endtime="20230510 20:26:35.029"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:29.448" endtime="20230510 20:26:35.029"/>
+</iter>
+<status status="PASS" starttime="20230510 20:26:29.448" endtime="20230510 20:26:35.030"/>
+</for>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${is_passed}</arg>
+<arg>${OTP_CODE}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230510 20:26:35.030" endtime="20230510 20:26:35.031"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:29.448" endtime="20230510 20:26:35.031"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:26.636" endtime="20230510 20:26:35.032"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:23.619" endtime="20230510 20:26:35.032"/>
+</kw>
+<kw name="Test Download Certificate On View Payment Details" library="spa_transaction_history_actions">
+<kw name="Clear Temp Folder" library="FileHelper">
+<status status="PASS" starttime="20230510 20:26:35.033" endtime="20230510 20:26:45.065"/>
+</kw>
+<kw name="Pass Labor Flow" library="spa_payment_actions">
+<arg>${amount}</arg>
+<kw name="Upload Group Of Labors Index" library="spa_upload_actions">
+<arg>${amount}</arg>
+<if>
+<branch type="IF" condition="${file}">
+<kw name="Prepare Csv File" library="CSVHelper">
+<var>${csv_file_path}</var>
+<arg>${amount}</arg>
+<arg>${wrong_timestamp}</arg>
+<arg>${exam_score}</arg>
+<doc>robot send "False/True" as str
+use "ast.literal_eval" for conversation to bool</doc>
+<msg timestamp="20230510 20:26:45.071" level="INFO">${csv_file_path} = /Users/olehlazeba/PycharmProjects/svp_robot/Resources/DataSources/test_files/sample_attributes.csv</msg>
+<status status="PASS" starttime="20230510 20:26:45.069" endtime="20230510 20:26:45.071"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.069" endtime="20230510 20:26:45.072"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" library="BuiltIn">
+<var>${csv_file_path}</var>
+<arg>${CSV}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:45.072" endtime="20230510 20:26:45.073"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:45.072" endtime="20230510 20:26:45.073"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:45.069" endtime="20230510 20:26:45.073"/>
+</if>
+<kw name="Click Add Group" library="spa_upload">
+<arg>${BTN_ADD_GROUP}</arg>
+<kw name="Click Button" library="base_actions">
+<arg>${selector}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:45.104" level="INFO">Waited for Element with selector .btn--primary at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:45.075" endtime="20230510 20:26:45.104"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:45.104" endtime="20230510 20:26:45.211"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.074" endtime="20230510 20:26:45.211"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.073" endtime="20230510 20:26:45.211"/>
+</kw>
+<kw name="Select Test Center" library="spa_upload">
+<arg>${DROPDOWN_TCENTER_LIST}</arg>
+<arg>1</arg>
+<arg>index</arg>
+<kw name="Click Button" library="base_actions">
+<arg>${selector}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:45.229" level="INFO">Waited for Element with selector //*[@id="modals-container"]//div[1]/div/select at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:45.212" endtime="20230510 20:26:45.230"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:45.230" endtime="20230510 20:26:45.310"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.212" endtime="20230510 20:26:45.311"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>${selector}</arg>
+<arg>${attr}</arg>
+<arg>${val}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:45.311" endtime="20230510 20:26:45.547"/>
+</kw>
+<kw name="Keyboard Key" library="Browser">
+<arg>press</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" starttime="20230510 20:26:45.547" endtime="20230510 20:26:45.555"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.211" endtime="20230510 20:26:45.555"/>
+</kw>
+<kw name="Select Occupation" library="spa_upload">
+<arg>${DROPDOWN_CATEGORY_LIST}</arg>
+<arg>1</arg>
+<arg>index</arg>
+<kw name="Click Button" library="base_actions">
+<arg>${selector}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:45.575" level="INFO">Waited for Element with selector //*[@id="modals-container"]//div[2]/div/select at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:45.556" endtime="20230510 20:26:45.575"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:45.575" endtime="20230510 20:26:45.643"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.556" endtime="20230510 20:26:45.643"/>
+</kw>
+<kw name="Select Options By" library="Browser">
+<arg>${selector}</arg>
+<arg>${attr}</arg>
+<arg>${val}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:45.644" endtime="20230510 20:26:45.801"/>
+</kw>
+<kw name="Keyboard Key" library="Browser">
+<arg>press</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" starttime="20230510 20:26:45.801" endtime="20230510 20:26:45.805"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.555" endtime="20230510 20:26:45.806"/>
+</kw>
+<kw name="Upload File" library="spa_upload_actions">
+<arg>${BTN_CHOOSE_FILE}</arg>
+<arg>${csv_file_path}</arg>
+<kw name="Upload File By Selector" library="Browser">
+<arg>${locator}</arg>
+<arg>${dir_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from `path` to file input element matched by selector.</doc>
+<status status="PASS" starttime="20230510 20:26:45.807" endtime="20230510 20:26:45.824"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.806" endtime="20230510 20:26:45.824"/>
+</kw>
+<kw name="Verify Value" library="spa_upload_actions">
+<arg>${FIELD_POPUP_TOTAL_LABORS}</arg>
+<arg>${amount}</arg>
+<kw name="Verify Text" library="base_actions">
+<arg>${locator}</arg>
+<arg>${val}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>selector=${locator}</arg>
+<arg>state=visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:48.244" level="INFO">Waited for Element with selector td[data-label="Total Labors"] span at state visible</msg>
+<status status="PASS" starttime="20230510 20:26:45.826" endtime="20230510 20:26:48.244"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_equal}">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>==</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:48.265" level="INFO">Text: '1'</msg>
+<status status="PASS" starttime="20230510 20:26:48.245" endtime="20230510 20:26:48.265"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.244" endtime="20230510 20:26:48.266"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>contains</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:48.266" endtime="20230510 20:26:48.266"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:48.266" endtime="20230510 20:26:48.266"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:48.244" endtime="20230510 20:26:48.266"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:45.825" endtime="20230510 20:26:48.266"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.824" endtime="20230510 20:26:48.266"/>
+</kw>
+<kw name="Click Add" library="spa_upload">
+<arg>${BTN_ADD_FRAME}</arg>
+<kw name="Click Button" library="base_actions">
+<arg>${selector}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:48.283" level="INFO">Waited for Element with selector .btn-info at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:48.267" endtime="20230510 20:26:48.283"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:48.283" endtime="20230510 20:26:48.365"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.267" endtime="20230510 20:26:48.366"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.267" endtime="20230510 20:26:48.366"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${wrong_timestamp}'=='False' and '${exam_score}'=='99'</arg>
+<arg>Verify Value</arg>
+<arg>${TD_PASSED_LABORS}</arg>
+<arg>${amount}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Verify Value" library="spa_upload_actions">
+<arg>${TD_PASSED_LABORS}</arg>
+<arg>${amount}</arg>
+<kw name="Verify Text" library="base_actions">
+<arg>${locator}</arg>
+<arg>${val}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>selector=${locator}</arg>
+<arg>state=visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:48.380" level="INFO">Waited for Element with selector .table tr:nth-child(1) &gt; td:nth-child(3) at state visible</msg>
+<status status="PASS" starttime="20230510 20:26:48.368" endtime="20230510 20:26:48.380"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_equal}">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>==</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:48.399" level="INFO">Text: '1'</msg>
+<status status="PASS" starttime="20230510 20:26:48.381" endtime="20230510 20:26:48.399"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.380" endtime="20230510 20:26:48.399"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>contains</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:48.400" endtime="20230510 20:26:48.400"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:48.399" endtime="20230510 20:26:48.400"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:48.380" endtime="20230510 20:26:48.400"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:48.368" endtime="20230510 20:26:48.400"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.367" endtime="20230510 20:26:48.400"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.366" endtime="20230510 20:26:48.400"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:45.068" endtime="20230510 20:26:48.401"/>
+</kw>
+<kw name="Pass Credit Flow" library="spa_payment_actions">
+<arg>state=${TRANSACTION_STATE_LIST}[0]</arg>
+<kw name="Get Credit" library="spa_payment_actions">
+<arg>${amount}</arg>
+<kw name="Click Payment" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_PAYMENT}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:48.422" level="INFO">Waited for Element with selector //*[@href="/payment"] at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:48.403" endtime="20230510 20:26:48.422"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:48.423" endtime="20230510 20:26:48.872"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.402" endtime="20230510 20:26:48.872"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.402" endtime="20230510 20:26:48.872"/>
+</kw>
+<kw name="Click Get Credit" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_GET_CREDIT}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:49.076" level="INFO">Waited for Element with selector //button[.='Get Credit'] at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:48.873" endtime="20230510 20:26:49.076"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:49.076" endtime="20230510 20:26:49.119"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.873" endtime="20230510 20:26:49.119"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.872" endtime="20230510 20:26:49.120"/>
+</kw>
+<kw name="Fill Certificates" library="spa_payment">
+<arg>${amount}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${FIELD_CERTIFICATES}</arg>
+<arg>${amount}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:49.121" level="INFO">Types the text '1' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:49.120" endtime="20230510 20:26:49.332"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:49.120" endtime="20230510 20:26:49.332"/>
+</kw>
+<kw name="Return Total Price" library="Utils">
+<var>${total_amount}</var>
+<arg>${amount}</arg>
+<msg timestamp="20230510 20:26:49.332" level="INFO">${total_amount} = 25$</msg>
+<status status="PASS" starttime="20230510 20:26:49.332" endtime="20230510 20:26:49.332"/>
+</kw>
+<kw name="Verify Text" library="base_actions">
+<arg>${TOTAL}</arg>
+<arg>${total_amount}</arg>
+<arg>is_equal=False</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>selector=${locator}</arg>
+<arg>state=visible</arg>
+<arg>timeout=${timeout}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:49.345" level="INFO">Waited for Element with selector .payment-form__total-wrap div at state visible</msg>
+<status status="PASS" starttime="20230510 20:26:49.333" endtime="20230510 20:26:49.345"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_equal}">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>==</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230510 20:26:49.346" endtime="20230510 20:26:49.346"/>
+</kw>
+<status status="NOT RUN" starttime="20230510 20:26:49.346" endtime="20230510 20:26:49.346"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" library="Browser">
+<arg>${locator}</arg>
+<arg>contains</arg>
+<arg>${expected_message}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:49.363" level="INFO">Text: '25$'</msg>
+<status status="PASS" starttime="20230510 20:26:49.346" endtime="20230510 20:26:49.363"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:49.346" endtime="20230510 20:26:49.364"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:49.346" endtime="20230510 20:26:49.364"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:49.332" endtime="20230510 20:26:49.364"/>
+</kw>
+<kw name="Click Pay" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_PAY}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:49.378" level="INFO">Waited for Element with selector //button[.='Pay'] at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:49.365" endtime="20230510 20:26:49.378"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:49.378" endtime="20230510 20:26:49.449"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:49.364" endtime="20230510 20:26:49.449"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:49.364" endtime="20230510 20:26:49.450"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:48.402" endtime="20230510 20:26:49.450"/>
+</kw>
+<kw name="Fill Card Details" library="spa_payment_actions">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${FIELD_CARD_HOLDER}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:51.782" level="INFO">Waited for Element with selector //input[@name='card.holder'] at state visible</msg>
+<status status="PASS" starttime="20230510 20:26:49.450" endtime="20230510 20:26:51.782"/>
+</kw>
+<kw name="Fill Card Number" library="spa_payment">
+<arg>${card_details[0]}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${FIELD_CARD_NUMBER}</arg>
+<arg>${card_number}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:51.787" level="INFO">Types the text '4111111111111111' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:51.787" endtime="20230510 20:26:52.199"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:51.783" endtime="20230510 20:26:52.200"/>
+</kw>
+<kw name="Fill CVV" library="spa_payment">
+<arg>${card_details[3]}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${FIELD_CVV}</arg>
+<arg>${cvv}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:52.203" level="INFO">Types the text '000' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:52.203" endtime="20230510 20:26:52.305"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.200" endtime="20230510 20:26:52.305"/>
+</kw>
+<kw name="Fill Expity Date" library="spa_payment">
+<arg>${card_details[1]}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${FIELD_EXPIRY_DATE}</arg>
+<arg>${expiry_date}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:52.308" level="INFO">Types the text '0130' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:52.308" endtime="20230510 20:26:52.359"/>
+</kw>
+<kw name="Keyboard Key" library="Browser">
+<arg>press</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" starttime="20230510 20:26:52.359" endtime="20230510 20:26:52.364"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.305" endtime="20230510 20:26:52.364"/>
+</kw>
+<kw name="Fill Card Holder" library="spa_payment">
+<arg>${card_details[2]}</arg>
+<kw name="Type Text" library="Browser">
+<arg>${FIELD_CARD_HOLDER}</arg>
+<arg>${card_holder}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:52.368" level="INFO">Types the text 'Test' in the given field.</msg>
+<status status="PASS" starttime="20230510 20:26:52.367" endtime="20230510 20:26:52.413"/>
+</kw>
+<kw name="Keyboard Key" library="Browser">
+<arg>press</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" starttime="20230510 20:26:52.414" endtime="20230510 20:26:52.418"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.364" endtime="20230510 20:26:52.418"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:49.450" endtime="20230510 20:26:52.418"/>
+</kw>
+<kw name="Click Pay Now" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_PAY_NOW}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:52.433" level="INFO">Waited for Element with selector .custom-pay-btn at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:52.419" endtime="20230510 20:26:52.433"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:52.433" endtime="20230510 20:26:52.504"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.419" endtime="20230510 20:26:52.504"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.418" endtime="20230510 20:26:52.505"/>
+</kw>
+<kw name="Select Dropdown Transaction State" library="spa_payment">
+<arg>${state}</arg>
+<kw name="Select Options By" library="Browser">
+<arg>${DROPDOWN_TRANSACTION_STATE}</arg>
+<arg>${attr}</arg>
+<arg>${val}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Selects options from select element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:52.505" endtime="20230510 20:26:54.441"/>
+</kw>
+<kw name="Keyboard Key" library="Browser">
+<arg>press</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Press a keyboard key on the virtual keyboard or set a key up or down.</doc>
+<status status="PASS" starttime="20230510 20:26:54.441" endtime="20230510 20:26:54.445"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:52.505" endtime="20230510 20:26:54.446"/>
+</kw>
+<kw name="Click Transaction Pay" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_TRANSACTION_PAY}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:54.460" level="INFO">Waited for Element with selector input[name] at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:54.446" endtime="20230510 20:26:54.460"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:54.461" endtime="20230510 20:26:54.948"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:54.446" endtime="20230510 20:26:54.948"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:54.446" endtime="20230510 20:26:54.948"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${WAITING_SPINNER}</arg>
+<arg>hidden</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:54.985" level="INFO">Waited for Element with selector .app-spinner span at state hidden</msg>
+<status status="PASS" starttime="20230510 20:26:54.948" endtime="20230510 20:26:54.985"/>
+</kw>
+<if>
+<branch type="IF" condition="'${state}'=='${TRANSACTION_STATE_LIST}[0]'">
+<kw name="Get Text" library="Browser">
+<var>${reference}</var>
+<arg>${REFERENCE_NUMBER}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230510 20:26:57.933" level="INFO">Text: '8ac7a4a0880534c7018806b397dd3e78'</msg>
+<msg timestamp="20230510 20:26:57.933" level="INFO">${reference} = 8ac7a4a0880534c7018806b397dd3e78</msg>
+<status status="PASS" starttime="20230510 20:26:54.986" endtime="20230510 20:26:57.933"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${reference}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20230510 20:26:57.934" level="INFO">Length is 32</msg>
+<status status="PASS" starttime="20230510 20:26:57.934" endtime="20230510 20:26:57.934"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:54.985" endtime="20230510 20:26:57.934"/>
+</branch>
+<status status="PASS" starttime="20230510 20:26:54.985" endtime="20230510 20:26:57.934"/>
+</if>
+<status status="PASS" starttime="20230510 20:26:48.401" endtime="20230510 20:26:57.934"/>
+</kw>
+<kw name="Approve Payment" library="spa_payment_actions">
+<kw name="Click Payment" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${BTN_PAYMENT}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:26:57.957" level="INFO">Waited for Element with selector //*[@href="/payment"] at state enabled</msg>
+<status status="PASS" starttime="20230510 20:26:57.935" endtime="20230510 20:26:57.958"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230510 20:26:57.958" endtime="20230510 20:26:58.003"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:57.935" endtime="20230510 20:26:58.003"/>
+</kw>
+<status status="PASS" starttime="20230510 20:26:57.935" endtime="20230510 20:26:58.004"/>
+</kw>
+<kw name="Click Select All" library="spa_payment">
+<kw name="Click Button" library="base_actions">
+<arg>${SELECT_ALL}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230510 20:27:28.866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230510 20:27:28.866" level="FAIL">Error: locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================</msg>
+<status status="FAIL" starttime="20230510 20:26:58.005" endtime="20230510 20:27:28.867"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20230510 20:27:28.868" endtime="20230510 20:27:28.868"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:58.004" endtime="20230510 20:27:28.868"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:58.004" endtime="20230510 20:27:28.868"/>
+</kw>
+<kw name="Click Issue" library="spa_payment">
+<status status="NOT RUN" starttime="20230510 20:27:28.868" endtime="20230510 20:27:28.868"/>
+</kw>
+<kw name="Click Confirm" library="spa_payment">
+<status status="NOT RUN" starttime="20230510 20:27:28.868" endtime="20230510 20:27:28.868"/>
+</kw>
+<kw name="Verify Text" library="base_actions">
+<arg>${CERTIFICATES}</arg>
+<arg>${MSG_CERTIFICATE}</arg>
+<status status="NOT RUN" starttime="20230510 20:27:28.868" endtime="20230510 20:27:28.869"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:57.934" endtime="20230510 20:27:28.869"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:45.066" endtime="20230510 20:27:28.869"/>
+</kw>
+<kw name="Click Transaction History" library="spa_transaction_history">
+<status status="NOT RUN" starttime="20230510 20:27:28.869" endtime="20230510 20:27:28.869"/>
+</kw>
+<kw name="Is View Payment Actions" library="spa_reports_action">
+<status status="NOT RUN" starttime="20230510 20:27:28.869" endtime="20230510 20:27:28.869"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:35.032" endtime="20230510 20:27:28.869"/>
+</kw>
+<status status="FAIL" starttime="20230510 20:26:23.615" endtime="20230510 20:27:28.870">Error: locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) &lt;button type="button" class="toggle-button"&gt;&lt;/button&gt; aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================</status>
+</test>
+<status status="FAIL" starttime="20230510 20:26:21.485" endtime="20230510 20:27:29.346"/>
+</suite>
+<status status="FAIL" starttime="20230510 20:26:21.479" endtime="20230510 20:27:29.352"/>
+</suite>
+<status status="FAIL" starttime="20230510 20:26:21.475" endtime="20230510 20:27:29.353"/>
+</suite>
+<status status="FAIL" starttime="20230510 20:26:21.472" endtime="20230510 20:27:29.354"/>
+</suite>
+<status status="FAIL" starttime="20230510 20:26:21.450" endtime="20230510 20:27:29.355"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Svp Robot">Svp Robot</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Svp Robot.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Ui">Svp Robot.Tests.Ui</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Legislator">Svp Robot.Tests.Ui.Legislator</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1-s1" name="Spa Legislator Transaction History">Svp Robot.Tests.Ui.Legislator.Spa Legislator Transaction History</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

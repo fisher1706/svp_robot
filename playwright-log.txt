@@ -1,0 +1,860 @@
+{"level":30,"time":"2023-05-10T17:26:23.069Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Listening on 57526"}
+{"level":30,"time":"2023-05-10T17:26:23.612Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:26:23.612Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:26:23.617Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:26:23.617Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:26:23.656Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method newPersistentContext"}
+{"level":30,"time":"2023-05-10T17:26:26.621Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2023-05-10T17:26:26.627Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active context"}
+{"level":30,"time":"2023-05-10T17:26:26.627Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method newPersistentContext"}
+{"level":30,"time":"2023-05-10T17:26:26.638Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method goTo"}
+{"level":30,"time":"2023-05-10T17:26:28.987Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method goTo"}
+{"level":30,"time":"2023-05-10T17:26:28.992Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:28.992Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #login_email in page."}
+{"level":30,"time":"2023-05-10T17:26:29.297Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:29.301Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:29.301Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #login_password in page."}
+{"level":30,"time":"2023-05-10T17:26:29.360Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:29.364Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:29.364Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #continue_button in page."}
+{"level":30,"time":"2023-05-10T17:26:29.445Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:29.450Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:29.450Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .otp-code in page."}
+{"level":30,"time":"2023-05-10T17:26:32.355Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Retrieved text for element .otp-code containing OTP Code: 926692"}
+{"level":30,"time":"2023-05-10T17:26:32.355Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:32.360Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:32.361Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #fk_1 in page."}
+{"level":30,"time":"2023-05-10T17:26:32.441Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:32.444Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:32.444Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .sign-form__button in page."}
+{"level":30,"time":"2023-05-10T17:26:32.504Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:34.512Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2023-05-10T17:26:34.513Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .validation-message__text--error in page."}
+{"level":30,"time":"2023-05-10T17:26:34.765Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2023-05-10T17:26:34.771Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getElementStates"}
+{"level":30,"time":"2023-05-10T17:26:34.772Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .sign-form__button in page."}
+{"level":30,"time":"2023-05-10T17:26:35.021Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getElementStates"}
+{"level":30,"time":"2023-05-10T17:26:45.077Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.077Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .btn--primary in page."}
+{"level":30,"time":"2023-05-10T17:26:45.103Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.105Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.105Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .btn--primary in page."}
+{"level":30,"time":"2023-05-10T17:26:45.209Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.213Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.213Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[1]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.228Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.230Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.230Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[1]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.309Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.312Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:45.312Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[1]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.545Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Option entries: 5"}
+{"level":30,"time":"2023-05-10T17:26:45.545Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:45.545Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Selected entries: 1"}
+{"level":30,"time":"2023-05-10T17:26:45.549Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:45.549Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Invoking keyboard action press with params [\"Enter\"]"}
+{"level":30,"time":"2023-05-10T17:26:45.553Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:45.556Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.557Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[2]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.573Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.576Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.576Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[2]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.642Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:45.645Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:45.645Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"modals-container\"]//div[2]/div/select in page."}
+{"level":30,"time":"2023-05-10T17:26:45.800Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Option entries: 2"}
+{"level":30,"time":"2023-05-10T17:26:45.800Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:45.800Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Selected entries: 1"}
+{"level":30,"time":"2023-05-10T17:26:45.802Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:45.802Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Invoking keyboard action press with params [\"Enter\"]"}
+{"level":30,"time":"2023-05-10T17:26:45.804Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:45.808Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #upload_file in page."}
+{"level":30,"time":"2023-05-10T17:26:45.827Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:45.827Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with td[data-label=\"Total Labors\"] span in page."}
+{"level":30,"time":"2023-05-10T17:26:48.242Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.246Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:48.246Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with td[data-label=\"Total Labors\"] span in page."}
+{"level":30,"time":"2023-05-10T17:26:48.264Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Retrieved text for element td[data-label=\"Total Labors\"] span containing 1"}
+{"level":30,"time":"2023-05-10T17:26:48.264Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:48.268Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.268Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .btn-info in page."}
+{"level":30,"time":"2023-05-10T17:26:48.281Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.284Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:48.284Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .btn-info in page."}
+{"level":30,"time":"2023-05-10T17:26:48.364Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:48.370Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.370Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .table tr:nth-child(1) > td:nth-child(3) in page."}
+{"level":30,"time":"2023-05-10T17:26:48.379Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.382Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:48.382Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .table tr:nth-child(1) > td:nth-child(3) in page."}
+{"level":30,"time":"2023-05-10T17:26:48.397Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Retrieved text for element .table tr:nth-child(1) > td:nth-child(3) containing 1"}
+{"level":30,"time":"2023-05-10T17:26:48.397Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:48.404Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.404Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@href=\"/payment\"] in page."}
+{"level":30,"time":"2023-05-10T17:26:48.421Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.424Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:48.424Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@href=\"/payment\"] in page."}
+{"level":30,"time":"2023-05-10T17:26:48.870Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:48.873Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:48.874Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //button[.='Get Credit'] in page."}
+{"level":30,"time":"2023-05-10T17:26:49.074Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.076Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:49.077Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //button[.='Get Credit'] in page."}
+{"level":30,"time":"2023-05-10T17:26:49.117Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:49.121Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:49.121Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with #certificates in page."}
+{"level":30,"time":"2023-05-10T17:26:49.330Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:49.334Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.334Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .payment-form__total-wrap div in page."}
+{"level":30,"time":"2023-05-10T17:26:49.344Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.347Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:49.347Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .payment-form__total-wrap div in page."}
+{"level":30,"time":"2023-05-10T17:26:49.362Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Retrieved text for element .payment-form__total-wrap div containing 25$"}
+{"level":30,"time":"2023-05-10T17:26:49.362Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:49.365Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.365Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //button[.='Pay'] in page."}
+{"level":30,"time":"2023-05-10T17:26:49.377Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.379Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:49.379Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //button[.='Pay'] in page."}
+{"level":30,"time":"2023-05-10T17:26:49.448Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:49.451Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:49.451Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //input[@name='card.holder'] in page."}
+{"level":30,"time":"2023-05-10T17:26:51.781Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:51.788Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:51.788Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find with css=iframe[name=\"card\\.number\"] >>> input[name='card.number'] in frame."}
+{"level":30,"time":"2023-05-10T17:26:52.198Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.203Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.204Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find with iframe[name=\"card\\.cvv\"] >>> input[name='card.cvv'] in frame."}
+{"level":30,"time":"2023-05-10T17:26:52.304Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.309Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.309Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .wpwl-control-expiry in page."}
+{"level":30,"time":"2023-05-10T17:26:52.358Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.359Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:52.359Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Invoking keyboard action press with params [\"Enter\"]"}
+{"level":30,"time":"2023-05-10T17:26:52.363Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:52.368Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.368Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //input[@name='card.holder'] in page."}
+{"level":30,"time":"2023-05-10T17:26:52.411Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method typeText"}
+{"level":30,"time":"2023-05-10T17:26:52.414Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:52.414Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Invoking keyboard action press with params [\"Enter\"]"}
+{"level":30,"time":"2023-05-10T17:26:52.417Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:52.419Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:52.419Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .custom-pay-btn in page."}
+{"level":30,"time":"2023-05-10T17:26:52.431Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:52.433Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:52.433Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .custom-pay-btn in page."}
+{"level":30,"time":"2023-05-10T17:26:52.503Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:52.506Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:52.506Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with select[name='returnCode'] in page."}
+{"level":30,"time":"2023-05-10T17:26:54.439Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Option entries: 5"}
+{"level":30,"time":"2023-05-10T17:26:54.439Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method selectOption"}
+{"level":30,"time":"2023-05-10T17:26:54.439Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Selected entries: 1"}
+{"level":30,"time":"2023-05-10T17:26:54.442Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:54.442Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Invoking keyboard action press with params [\"Enter\"]"}
+{"level":30,"time":"2023-05-10T17:26:54.444Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method keyboardKey"}
+{"level":30,"time":"2023-05-10T17:26:54.447Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:54.447Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with input[name] in page."}
+{"level":30,"time":"2023-05-10T17:26:54.459Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:54.461Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:54.461Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with input[name] in page."}
+{"level":30,"time":"2023-05-10T17:26:54.946Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:54.949Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:54.949Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .app-spinner span in page."}
+{"level":30,"time":"2023-05-10T17:26:54.984Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:54.986Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:54.986Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with .table-main__table td[data-label='Reference Number'] in page."}
+{"level":30,"time":"2023-05-10T17:26:57.931Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Retrieved text for element .table-main__table td[data-label='Reference Number'] containing 8ac7a4a0880534c7018806b397dd3e78"}
+{"level":30,"time":"2023-05-10T17:26:57.931Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getText"}
+{"level":30,"time":"2023-05-10T17:26:57.936Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:57.936Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@href=\"/payment\"] in page."}
+{"level":30,"time":"2023-05-10T17:26:57.956Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:57.958Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method click"}
+{"level":30,"time":"2023-05-10T17:26:57.958Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@href=\"/payment\"] in page."}
+{"level":30,"time":"2023-05-10T17:26:58.002Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method click"}
+{"level":30,"time":"2023-05-10T17:26:58.005Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:58.005Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:26:59.982Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:26:59.986Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:26:59.986Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:01.015Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:01.017Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:01.018Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:02.021Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:02.023Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:02.023Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:03.065Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:03.067Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:03.067Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:04.092Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:04.093Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:04.093Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:05.064Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:05.065Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:05.066Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:06.048Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:06.050Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:06.050Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:07.064Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:07.066Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:07.066Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:08.065Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:08.066Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:08.066Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:09.041Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:09.043Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:09.043Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:10.015Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:10.017Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:10.017Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:10.977Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:10.979Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:10.979Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:11.949Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:11.951Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:11.951Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:12.911Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:12.912Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:12.913Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:13.882Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:13.883Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:13.883Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:14.863Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:14.864Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:14.864Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:15.901Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:15.902Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:15.902Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:16.858Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:16.859Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:16.860Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:17.832Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:17.834Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:17.834Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:18.782Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:18.784Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:18.784Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:19.759Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:19.761Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:19.761Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:20.718Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:20.720Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:20.720Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:21.675Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:21.677Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:21.677Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:22.635Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:22.637Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:22.637Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:23.586Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:23.588Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:23.588Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:24.570Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:24.572Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:24.572Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:25.612Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:25.614Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:25.614Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+{"level":30,"time":"2023-05-10T17:27:26.621Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:26.623Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:26.623Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:27.790Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:27.792Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2023-05-10T17:27:27.792Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Strict mode is enabled, find Locator with //*[@id=\"app\"]//span/button in page."}
+================= Original suppressed error =================
+{"level":30,"time":"2023-05-10T17:27:28.750Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Error of node method  waitForElementState"}
+locator.elementHandle: Error: strict mode violation: locator('xpath=//*[@id="app"]//span/button') resolved to 10 elements:
+    1) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143859 10-05-2023 08:26pm 1 1 25' }).getByRole('button')
+    2) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143858 10-05-2023 08:05pm 1 1 25' }).getByRole('button')
+    3) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143857 03-05-2023 11:03pm 1 1 25' }).getByRole('button')
+    4) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143856 03-05-2023 11:00pm 1 1 25' }).getByRole('button')
+    5) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143855 03-05-2023 10:58pm 1 1 25' }).getByRole('button')
+    6) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143854 03-05-2023 10:54pm 1 1 25' }).getByRole('button')
+    7) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143853 03-05-2023 10:53pm 1 1 25' }).getByRole('button')
+    8) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143852 03-05-2023 10:48pm 1 1 25' }).getByRole('button')
+    9) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143851 03-05-2023 10:47pm 1 1 25' }).getByRole('button')
+    10) <button type="button" class="toggle-button"></button> aka getByRole('row', { name: '143850 03-05-2023 10:35pm 1 1 25' }).getByRole('button')
+
+=========================== logs ===========================
+waiting for locator('xpath=//*[@id="app"]//span/button')
+============================================================
+    at waitForElementState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:8467:35)
+    at async PlaywrightServer.waitForElementsState (/Users/olehlazeba/Library/Caches/pypoetry/virtualenvs/svp-robot-WCPYLJYb-py3.10/lib/python3.10/site-packages/Browser/wrapper/index.js:9967:28)
+=============================================================
+{"level":30,"time":"2023-05-10T17:27:28.752Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2023-05-10T17:27:28.864Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2023-05-10T17:27:28.872Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.884Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.886Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.888Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.890Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active context"}
+{"level":30,"time":"2023-05-10T17:27:28.890Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changing current active page"}
+{"level":30,"time":"2023-05-10T17:27:28.890Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active page"}
+{"level":30,"time":"2023-05-10T17:27:28.892Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.894Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.896Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2023-05-10T17:27:28.897Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2023-05-10T17:27:28.898Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2023-05-10T17:27:28.898Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2023-05-10T17:27:28.900Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.902Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:28.903Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active context"}
+{"level":30,"time":"2023-05-10T17:27:28.903Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changing current active page"}
+{"level":30,"time":"2023-05-10T17:27:28.903Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Changed active page"}
+{"level":30,"time":"2023-05-10T17:27:28.905Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method closeContext"}
+{"level":30,"time":"2023-05-10T17:27:28.912Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Removed page=7468edb0-940e-4653-b3e6-2692a07e311f from context=0ab8594c-dbb3-4293-8cd9-faba46b14485 page stack"}
+{"level":30,"time":"2023-05-10T17:27:29.344Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method closeContext"}
+{"level":30,"time":"2023-05-10T17:27:29.349Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:29.350Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2023-05-10T17:27:29.396Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2023-05-10T17:27:29.396Z","pid":79766,"hostname":"Macbook-Pro-Flora.local","msg":"End of node method closeAllBrowsers"}
