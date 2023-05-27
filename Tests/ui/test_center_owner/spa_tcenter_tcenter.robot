@@ -6,7 +6,6 @@ Resource            POM/Keywords/Modules/spa_tcenter_action.resource
 Test Setup    Run Keywords    Open Chrome Browser       AND     Create Entities And Log In
 ...     is_tcenter_activate=True
 ...     is_tcenter=True
-...     is_multiple_categories=True
 
 
 *** Test Cases ***

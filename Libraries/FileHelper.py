@@ -47,5 +47,6 @@ class FileHelper:
     def read_pdf_file(self):
         tmp_file = self.get_temp_files(pdf=True)
         if tmp_file:
-            return set(PdfReader(os.path.join(self.temp_folder_path, tmp_file)).getPage(0).extractText().split('\n'))
+            # pylint: disable=E1101
+            return set(PdfReader(os.path.join(self.temp_folder_path, tmp_file)).pages[0].extract_text().split('\n'))
         assert False, 'File not found in temp directory'

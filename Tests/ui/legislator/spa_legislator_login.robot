@@ -24,6 +24,7 @@ ENDC8820 Check invalid and password
     @{INVALID_PASSWORD_DATASET}
 
 Check valid Login and Password 2fa via email
+    Skip    Can not possibility get email from email service
     Create Entities And Log In
     ...    is_legislator_activate=True
     ...    login_tcenter=False

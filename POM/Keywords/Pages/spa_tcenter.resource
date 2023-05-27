@@ -7,6 +7,7 @@ Variables       POM/Locators/SPALocators.py
 Variables       POM/Locators/SPATcenterLocators.py
 Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/WrongTestCenterDataset.py
+Variables       Resources/Variables/PageNumbersDataset.py
 
 
 *** Keywords ***
@@ -25,10 +26,14 @@ Fill Official Contact Number
     Type Text    ${FIELD_OFFICIAL_CONTACT_NUMBER}   ${number}
 
 Check Select Category
-    Check Checkbox      ${CATEGORY}
     @{elements}=    Get Elements    ${CATEGORY_LIST}
     ${data}=    Get Text    ${elements}[0]
     Check Checkbox      //*[contains(text(),'${data}')]
+
+Uncheck Select Category
+    @{elements}=    Get Elements    ${CATEGORY_LIST}
+    ${data}=    Get Text    ${elements}[0]
+    Uncheck Checkbox    //*[contains(text(),'${data}')]
 
 Select All Categories
     @{elements}=    Get Elements    ${CATEGORY_LIST}
@@ -118,14 +123,11 @@ Verify Warning Duplicate Name
     Verify Text    ${WARNING_NAME}     ${TC_NAME_IS_REGISTERED}
 
 Verify Warning Duplicate Email
-    Verify Text     ${WARNING_EMAIL}     ${EMAIL_IS_EXIST}
+    Verify Text     ${WARNING_EMAIL}     ${EMAIL_IS_IN_USE}
 
 Verify Search Result Value
-    ${data}=     Get Text        ${SEARCH_RESULTS}
-    Should Not Be Empty     ${data}
-
-Click Next
-    Click Button    ${BTN_NEXT}
+    ${num}=    Convert To String       ${${PAGE_VALUES}+${1}}
+    Verify Text     ${QUANTITY}     ${num}
 
 Click Icon Edit
     Hover       ${ACTIONS}

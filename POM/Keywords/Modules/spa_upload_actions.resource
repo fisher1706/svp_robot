@@ -5,6 +5,7 @@ Library         Libraries/FileHelper.py
 Resource        POM/Keywords/Modules/spa_actions.resource
 Resource        POM/Keywords/Pages/spa_upload.resource
 Resource        POM/Keywords/Modules/base_actions.resource
+Resource        POM/Keywords/Pages/spa.resource
 Variables       Resources/Variables/PageNumbersDataset.py
 Variables       Resources/Variables/DirPath.py
 
@@ -55,7 +56,7 @@ Verify Total Amount Value
     FOR    ${_}    IN RANGE    ${PAGE_VALUES}
         Upload Group Of Labors Index        ${amount}
     END
-    Click Next
+    Click Button Next
     Filters On Upload Tab
 
 Fill Labor Individual Form
@@ -82,7 +83,7 @@ Verify Download Csv Sample
     Check Compatibility Files       ${files}[0]     ${CSV_TEMPLATE}
 
 Filters On Upload Tab
-    Wait For Elements State    ${WAITING_SPINNER}    hidden
+    Wait For Elements State    ${BTN_CHOOSE_FILE}     hidden
     ${elements}=    Get Last Entry    ${LAST_ENTRY}
     Verify Field File Id        ${elements}[0]
     Verify Upload Date      ${elements}[1]

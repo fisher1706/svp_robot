@@ -9,6 +9,7 @@ Variables       Resources/Variables/WrongTestCenterDataset.py
 *** Keywords ***
 Verify Account Information
     [Arguments]    ${account}=False    ${is_logo}=False
+    Open Account Information Page
     IF    ${account}==False    # robocop: disable=inline-if-can-be-used
         ${account}=    Get Legislator Account
     END
@@ -19,7 +20,7 @@ Verify Account Information
     ${result}=    Get Address
     Should Be Equal As Strings    ${result}    ${account.address}
     ${result}=    Get Postal Code
-    Should Be Equal As Strings    ${result}    str(${account.postal_code})
+    Should Be Equal As Strings    ${result}    ${account.postal_code}
     ${result}=    Get Full Name
     Should Be Equal As Strings    ${result}    ${account.contact_name}
     ${result}=    Get Phone Number
@@ -36,11 +37,13 @@ Go To Edit Account Form
 Verify View Account Information
     Go To Edit Account Form
     ${account}=    Get Legislator Account
-    Should Not Be True    Get Show Logo    is_edit=True
+    ${result}=      Get Show Logo    is_edit=True
+    Should Not Be True    ${result}
     ${result}=    Get Address    is_edit=True
     Should Be Equal As Strings    ${result}    ${account.address}
     ${result}=    Get Postal Code    is_edit=True
-    Should Be Equal As Strings    ${result}    ${account.postal_code}
+    ${postal_code}=      Convert To String       ${account.postal_code}
+    Should Be Equal As Strings    ${result}    ${postal_code}
     ${result}=    Get Full Name    is_edit=True
     Should Be Equal As Strings    ${result}    ${account.contact_name}
     ${result}=    Get Phone Number    is_edit=True

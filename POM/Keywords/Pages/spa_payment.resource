@@ -33,7 +33,7 @@ Fill CVV
 Fill Card Holder
     [Arguments]    ${card_holder}
     Type Text       ${FIELD_CARD_HOLDER}    ${card_holder}
-    Keyboard Key    press    Enter
+    Click       ${CARD_HOLDER_TEXT}
 
 Click Pay Now
     Click Button    ${BTN_PAY_NOW}

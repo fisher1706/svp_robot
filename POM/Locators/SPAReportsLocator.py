@@ -7,9 +7,9 @@ class SPAReportsLocator:
     FILTER_FIELD_GROUP_NO = 'th:nth-child(2)  .table-main__input'
     FILTER_FIELD_AMOUNT = 'th:nth-child(3)  .table-main__input'
     FILTER_FIELD_DATE = 'th:nth-child(4)  .table-main__input'
-    FIELD_ID = '//*[@id="app"]//table/tbody/tr/td[1]'
-    FIELD_GROUP_NO = '//*[@id="app"]//table/tbody/tr/td[2]'
-    FIELD_AMOUNT = '//*[@id="app"]//table/tbody/tr/td[3]'
+    FIELD_ID = "td[data-label='ID']"
+    FIELD_GROUP_NO = "td[data-label='Group No']"
+    FIELD_AMOUNT = "td[data-label='Amount']"
     FIELD_DATE = "td[data-label='Date'] span"
     FIELD_STATUS = "td[data-label='Status'] span"
     BTN_CHECK_VALIDITY = '.check-validity-link'

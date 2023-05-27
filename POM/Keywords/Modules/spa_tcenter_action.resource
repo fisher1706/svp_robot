@@ -13,6 +13,7 @@ Variables       Resources/Variables/PageNumbersDataset.py
 Variables       Resources/Variables/WrongTestCenterDataset.py
 Variables       Resources/Variables/Titles.py
 Variables       Resources/Variables/InfoMessages.py
+Variables       Resources/Variables/UserInfo.py
 
 
 *** Keywords ***
@@ -49,15 +50,13 @@ Test Check Ability To Add Owner With Registered Email
     Verify Warning Duplicate Email
 
 Test Check Ability See The List Of Test Centers Pagination
-    # TODO: Use "PAGE_VALUES" in assert (api)
+    Click Test Center
+    Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
     FOR    ${_}    IN RANGE    ${PAGE_VALUES}
-        Request Token
-        ${token}=    Get Token
-        Put Permissions     ${token}
-        Create Test Center    ${token}
+        Verify Adding New Test Center   multiple_categories=False
     END
+    Click Button Next
     Verify Search Result Value
-    Click Next
 
 Test Check Ability To Add New Tcenter With Invalid Data
     [Arguments]
@@ -104,8 +103,7 @@ Test Can Not Edit Owner With Registered Email And Duplicate Name
     ...     warning=True      is_add_btn=False
     Verify Text     ${WARNING_NAME}       ${TC_NAME_IS_REGISTERED}
     IF      ${is_legislator}
-        Verify Text     ${WARNING_EMAIL}        ${EMAIL_IS_EXIST}
-        Verify Text     ${WARNING_OWNER_NAME}       ${TC_NAME_IS_REGISTERED}
+        Verify Text     ${WARNING_EMAIL}        ${EMAIL_IS_IN_USE}
     END
 
 Test Can Edit Test Center With Invalid Data
@@ -174,9 +172,8 @@ Fill TCenter Form
     ...     ${warning}=False
     ...     ${is_legislator}=True
     ...     ${is_add_btn}=True
-    ${past_tcenter}=     Get Test Center Account
     IF    ${warning}
-        Fill Name General Information    ${past_tcenter.en_name}
+        Fill Name General Information    ${TC_NAME_CREATED}
     ELSE
         Fill Name General Information    ${tcenter.en_name}
     END
@@ -188,8 +185,8 @@ Fill TCenter Form
     END
     IF      ${is_legislator}
         IF    ${warning}
-            Fill Name Test Centr Owner    ${past_tcenter.en_name}
-            Fill TCenter Email      ${past_tcenter.email}
+            Fill TCenter Email      ${LEGISLATOR_LOGIN}
+            Fill Name Test Centr Owner    ${TC_OWNER_NAME_CREATED}
         ELSE
             Fill Name Test Centr Owner    ${tcenter.en_name}
             Fill TCenter Email      ${tcenter.email}
@@ -244,9 +241,10 @@ Verify View Edit Tcenter Form
     Verify Text     ${FIELD_OFFICIAL_CONTACT_NUMBER}       ${tcenter.sub_number}
     Verify Text     ${FIELD_CITY}       ${tcenter.city}
     Verify Text     ${FIELD_STREET_NAME}       ${tcenter.address}
-    Verify Text     ${FIELD_POSTAL_CODE}       ${tcenter.postal_code}
+    ${postal_code}=      Convert To String       ${tcenter.postal_code}
+    Verify Text     ${FIELD_POSTAL_CODE}       ${postal_code}
     IF    ${is_legislator}
-        Verify Text    ${FIELD_NAME_TCENTR_OWNER}       ${tcenter.en_name}
+        Verify Text    ${FIELD_NAME_TCENTR_OWNER}       ${tcenter.contact_name}
         Verify Text    ${FIELD_EMAIL}       ${tcenter.email}
     END
 
@@ -255,7 +253,7 @@ Clear All Fields
     ...     ${is_legislator}=True
     Fill Official Contact Number    ${EMPTY}
     Fill Name General Information       ${EMPTY}
-    Uncheck Checkbox        ${CATEGORY}
+    Uncheck Select Category
     Fill City       ${EMPTY}
     Fill Street Name        ${EMPTY}
     Fill Postal Code        ${EMPTY}

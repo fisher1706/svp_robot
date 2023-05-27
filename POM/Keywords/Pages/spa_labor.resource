@@ -19,9 +19,6 @@ Fill Labor Email
 Click Save Email
     Click Button    ${BTN_SAVE_EMAIL}
 
-Click Next Labor
-    Click Button    ${BTN_NEXT}
-
 Verify Search Result Value
     [Arguments]    ${amount}
     Verify Text        ${VALUE_SEARCH_RESULT}       ${amount}     is_equal=False
