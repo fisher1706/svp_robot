@@ -23,9 +23,6 @@ Click Cancel
     [Arguments]    ${selector}
     Click Button    ${selector}
 
-Click Next
-    Click Button    ${BTN_NEXT}
-
 Click Download Csv Sample
     Click Button        ${BTN_DOWNLOAD_CSV_SAMPLE}
 

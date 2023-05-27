@@ -6,13 +6,14 @@ log/*
 .DS_Store
 /venv
 poetry.lock
-
-sample_attributes_5.csv
-sample_attributes.csv
 *.png
-Resources/DataSources/test_files/temp/
 
 log.html
 report.html
 playwright-log.txt
 output.xml
+
+Results/Reports/allure-results
+Results/Reports/browser/screenshot/
+Results/Reports/browser/traces/
+Resources/DataSources/test_files/temp/

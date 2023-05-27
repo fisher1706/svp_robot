@@ -20,7 +20,7 @@ Click Back Button
 
 Fill Current Password
     [Arguments]    ${text}
-    Type Secret    ${BTN_BACK}    $text
+    Type Secret    ${FIELD_CURRENT_PASSWORD}    $text
 
 Fill New Password
     [Arguments]    ${text}
@@ -31,13 +31,13 @@ Fill Confirmed New Password
     Type Secret    ${FIELD_CONFIRMED_NEW_PASSWORD}    $text
 
 Verify Warning Current Password
-    Should Match    ${WARNING_CURRENT_PASSWORD}    ${INVALID_CURRENT_PASSWORD}
+    Verify Text     ${WARNING_CURRENT_PASSWORD}    ${INVALID_CURRENT_PASSWORD}
 
 Verify Warning New Password
-    Should Match    ${WARNING_NEW_PASSWORD}    ${SAME_NEW_PASSWORD}
+    Verify Text     ${WARNING_NEW_PASSWORD}    ${SAME_NEW_PASSWORD}
 
 Verify Warning Confirm New Password
-    Should Match    ${WARNING_CONFIRM_NEW_PASSWORD}    ${MISMATCH_PASSWORD}
+    Verify Text     ${WARNING_CONFIRM_NEW_PASSWORD}    ${MISMATCH_PASSWORD}
 
 Verify Change Button Is Disabled
     Wait For Elements State    ${BTN_CHANGE_PASSWORD}    disabled

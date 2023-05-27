@@ -11,6 +11,7 @@ Test Setup          Open Chrome Browser
 
 *** Test Cases ***
 Check valid Login and Password 2fa via email
+    Skip    Can not possibility get email from email service
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True    two_factor_verification=${AUTH_EMAIL}
     Verify Title Uploaded Files
 

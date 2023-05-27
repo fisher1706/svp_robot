@@ -25,3 +25,6 @@ Click Account Info
 
 Click Logout Button
     Click Button    ${LOGOUT}
+
+Click Button Next
+    Click Button    ${BTN_NEXT}

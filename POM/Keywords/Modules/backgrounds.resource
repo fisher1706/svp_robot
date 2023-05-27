@@ -26,10 +26,10 @@ Create Entities And Log In
     IF    ${is_legislator}
         Create Legislator    ${token}
         ${legislator_account}=    Get Legislator Account
-        Log To Console    Legislator Email
+        Log To Console    \nLegislator Email
         Log To Console    ${legislator_account.email}
         IF    ${is_legislator_activate}
-            Activate Account And Set Password    email=${legislator_account.email}
+            Activate Account And Set Password    ${legislator_account.email}      is_tcenter=False
         END
     END
     IF    ${is_tcenter}
@@ -38,7 +38,7 @@ Create Entities And Log In
         Log To Console    Test Center Owner Email
         Log To Console    ${tcenter_account.email}
         IF    ${is_tcenter_activate}
-            Activate Account And Set Password    email=${tcenter_account.email}
+            Activate Account And Set Password    ${tcenter_account.email}     is_tcenter=True
         END
     END
     IF    ${login}

@@ -11,11 +11,11 @@ class SPATcenterLocators:
     BTN_ADD_NEW_TCENTR = '//*[@class="btn btn--primary new-test-center__btn"]'
     BTN_ADD_INDIVIDUAL = '.btn--border-primary'
     CATEGORY_LIST = '.checkboxes-list__item'
-    ID = '//*[@id="app"]//table/tbody/tr[1]/td[1]'
-    NAME = '//*[@id="app"]//table/tbody/tr[1]/td[2]'
-    CITY_TC = '//*[@id="app"]//table/tbody/tr[1]/td[3]'
-    TCENTER_OWNER = '//*[@id="app"]//table/tbody/tr[1]/td[4]'
-    STATUS = '//*[@id="app"]//table/tbody/tr[1]/td[5]'
+    ID = '//*[@id="app"]//tr[1]/td[1]'
+    NAME = '//*[@id="app"]//tr[1]/td[2]'
+    CITY_TC = '//*[@id="app"]//tr[1]/td[3]'
+    TCENTER_OWNER = '//*[@id="app"]//tr[1]/td[4]'
+    STATUS = '//*[@id="app"]//tr[1]/td[5]'
     ACTIONS = 'td[data-label="Actions"]'
     FIELD_COUNTRY = '#country'
     ICON_VIEW_ACTION = 'tr:nth-child(1) a[href="view"]'
@@ -39,6 +39,7 @@ class SPATcenterLocators:
     BTN_ADD = '//button[.="Add"]'
     BTN_EDIT = '//button[.="Edit"]'
     BTN_CONFIRM = '//button[.="Confirm"]'
+    QUANTITY = '//*[@id="app"]//strong'
 
     FILTERS = [
         FILTER_ID,

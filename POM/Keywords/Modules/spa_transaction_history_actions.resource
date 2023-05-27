@@ -1,12 +1,11 @@
 *** Settings ***
 Resource        POM/Keywords/Pages/spa_transaction_history.resource
 Resource        POM/Keywords/Modules/spa_payment_actions.resource
-Resource        POM/Keywords/Modules/spa_reports_action.resource
 
 
 *** Keywords ***
 Test Check Filters And Clear Filters
-    Test Legislator Get Credits
+    Test Get Credits
     Click Transaction History
     Wait For Elements State     ${STATUS_HISTORY}   visible
     ${elements}     Get Last Entry      ${LAST_ENTRY}
@@ -35,20 +34,5 @@ Verify Transactions Statuses
         END
     END
 
-Test Download Certificate
-    [Arguments]     ${amount}=1
-    Clear Temp Folder
-    Pass Labor Flow     ${amount}
-    Click Transaction History
-    ${dl_promise}    Promise To Wait For Download    ${TEMP_FOLDER}/invoice.pdf
-    Download Invoice
-    ${file_obj}    Wait For  ${dl_promise}
-    ${data_pdf}     Read Pdf File
-    Should Not Be Empty      ${data_pdf}
-
 Test Download Certificate On View Payment Details
-    [Arguments]     ${amount}=1
-    Clear Temp Folder
-    Pass Labor Flow     ${amount}
-    Click Transaction History
-    Is View Payment Actions
+    Test Invoice After Passing Get Credits Flow

@@ -1,5 +1,7 @@
 import re
+from datetime import datetime, timedelta
 from robot.api.deco import keyword
+from random_manager import RandomManager
 from Resources.Variables.constants import Credits
 
 
@@ -29,3 +31,38 @@ class Utils:
     @keyword('Low String')
     def low_str(data):
         return data.lower()
+
+    @staticmethod
+    @keyword('Time New Session')
+    def time_new_session(delta=3, correct_start='False'):
+        data = [
+            datetime.now().strftime('%d'),
+            (datetime.now() - timedelta(days=1)).strftime('%d'),
+        ]
+        if correct_start == 'False':
+            add = [
+                (datetime.now() + timedelta(hours=1)).strftime('%H:00'),
+                (datetime.now() + timedelta(hours=delta)).strftime('%H:00'),
+                (datetime.now() + timedelta(hours=1)).strftime('%d/%m/%Y %H:00')
+            ]
+        elif correct_start == 'Less':
+            add = [
+                f"{(datetime.now() + timedelta(hours=1)).strftime('%H:')}30",
+                (datetime.now() + timedelta(hours=delta)).strftime('%H:00'),
+            ]
+        else:
+            add = [
+                (datetime.now() - timedelta(hours=4)).strftime('%H:00'),
+                (datetime.now() - timedelta(hours=2)).strftime('%H:00'),
+            ]
+        return data + add
+
+    @staticmethod
+    @keyword('Return Random Number Limit')
+    def return_random_number_limit():
+        return RandomManager().random_number_limit()
+
+    @staticmethod
+    @keyword('Return Random Data List')
+    def return_random_data_list(data):
+        return RandomManager.random_from_list(data)

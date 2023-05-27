@@ -109,8 +109,12 @@ Log In To SPA
     END
 
 Activate Account And Set Password
-    [Arguments]    ${email}
-    Open Activation Page    email=${email}
+    [Arguments]    ${email}     ${is_tcenter}   ${without_email_service}=True
+    IF  ${without_email_service}
+        Open Activation Page Link       ${is_tcenter}
+    ELSE
+        Open Activation Page    email=${email}
+    END
     Verify Password Title
     Enter Login And Password On Password Form
     Verify Sign In Title

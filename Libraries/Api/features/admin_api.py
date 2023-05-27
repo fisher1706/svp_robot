@@ -14,6 +14,7 @@ class AdminApi:
         self.api = ApiClient()
         self.support = ApiSupport(self.api)
         self.legislator_id = None
+        self.activation_link = None
 
     @staticmethod
     def __add_categories(json_body):
@@ -42,8 +43,10 @@ class AdminApi:
 
     @allure.step("PUT api/v1/admin_space/permissions?locale=en :: put country settings")
     @keyword('Put Permissions')
+    # pylint: disable=W0613
     def put_permissions(self, token: str, country_id: int = 5, tcenter: bool = True, multiple_categories: bool = False,
                         expect_code: int = 200):
+        print(f"TCENER: {tcenter}")
         legislator = not tcenter
         json_body = {
             'permissions': {
@@ -102,10 +105,74 @@ class AdminApi:
                 'legislators': []
             }
         }
+
+        # TODO test request body for permissions -> stage version
+        # json_body = {
+        #     'permissions': {
+        #         'legislator': {
+        #             'test_centers': {
+        #                 'create': tcenter,
+        #                 'create_owner': tcenter,
+        #                 'edit': tcenter,
+        #                 'view': tcenter,
+        #                 'delete': tcenter
+        #             },
+        #             'labors': {
+        #                 'create': legislator,
+        #                 'create_group': legislator,
+        #                 'view_uploaded_files': True,
+        #                 'view': True
+        #             },
+        #             'payment': {
+        #                 'make_payment': tcenter,
+        #                 'view_transaction_history': True,
+        #                 'view_certificate': True,
+        #                 'withdraw': tcenter
+        #             }
+        #         },
+        #         'test_center_owner': {
+        #             'test_centers': {
+        #                 'edit': legislator,
+        #                 'view': legislator
+        #             },
+        #             'labors': {
+        #                 'create': tcenter,
+        #                 'create_group': tcenter,
+        #                 'view_uploaded_files': True,
+        #                 'view': True
+        #             },
+        #             'payment': {
+        #                 'make_payment': legislator,
+        #                 'view_transaction_history': True,
+        #                 'view_certificate': True,
+        #                 'withdraw': legislator
+        #             }
+        #         }
+        #     },
+        #     'categories': [
+        #         {
+        #             'id': 51,
+        #             'min_score': 99
+        #         }
+        #     ],
+        #     'country_id': country_id,
+        #     'expiry_years': 3,
+        #     'nationalities': [],
+        #     'trial_mode': False,
+        #     'trial_balance': {
+        #         'test_centers': [],
+        #         'legislators': []
+        #     }
+        # }
+
         if multiple_categories:
             json_body = self.__add_categories(json_body)
+
+        print(f"JSON: {json_body}")
+
         self.api.put(url=self.api.api_url, endpoint='api/v1/admin_space/permissions?locale=en',
                      body=json.dumps(json_body), headers=self.support.get_headers(token))
+        # TODO off assert status code -> stage version
         self.support.check_status_code(name='Update country settings', expect_code=expect_code)
 
     @allure.step("POST api/v1/admin_space/legislators?locale=en :: create legislator")
@@ -143,6 +210,7 @@ class AdminApi:
                       body=json.dumps(json_body), headers=self.support.get_headers(token))
         self.support.check_status_code(name='Create legislator', expect_code=expect_code)
         self.legislator_id = self.support.get_response_body()['id']
+        self.activation_link = self.support.get_response_body()['user']['activation_link']
         return self
 
     @allure.step("POST api/v1/admin_space/test_centers?locale=en :: create test center")

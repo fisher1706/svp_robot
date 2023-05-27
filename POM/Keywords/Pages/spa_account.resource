@@ -1,5 +1,6 @@
 *** Settings ***
 Resource        POM/Keywords/Pages/base.resource
+Resource        POM/Keywords/Modules/base_actions.resource
 Variables       POM/Locators/SPAAccountLocators.py
 Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/Titles.py
@@ -14,8 +15,12 @@ Verify Title Account Information
 
 Get Attribute Or Text
     [Arguments]    ${locator}    ${is_edit}
-    IF    ${is_edit}    RETURN    Get Attribute    ${locator}    value
-    RETURN    Get Text    ${locator}
+    IF    ${is_edit}
+        ${result}=      Get Text     ${locator}
+        RETURN      ${result}
+    END
+    ${result}=      Get Text        ${locator}
+    RETURN      ${result}
 
 Get Show Logo
     [Arguments]    ${is_edit}=False
@@ -61,7 +66,7 @@ Click Edit Button
 #    s(self.BTN_EDIT).should(be.clickable).perform(command.js.scroll_into_view).click()
 
 Verify Button Id Disabled
-    Get Element States    ${BTN_EDIT}    validate    value & disabled
+    Get Element States    ${BTN_SAVE}    validate    value & disabled
 
 Click Cancel Button
     Click Button    ${BTN_CANCEL}
@@ -99,16 +104,16 @@ Upload Logo File
 #    s(self.BTN_LOGO_FILE).should(be.clickable).type(dir_path)
 
 Verify Warning Digits Only Postal Code
-    Should Match    ${WARNING_POSTAL_CODE}    ${TC_ONLY_DIGITS_POSTAL_CODE}
+    Verify Text        ${WARNING_POSTAL_CODE}    ${TC_ONLY_DIGITS_POSTAL_CODE}
 
 Verify Warning En Chars Only Name
-    Should Match    ${WARNING_NAME}    ${ONLY_EN_CHARS}
+    Verify Text     ${WARNING_NAME}    ${ONLY_EN_CHARS}
 
 Verify Warning Digits Only Contact Number
     Should Match    ${WARNING_PHONE_NUMBER}    ${TC_ONLY_DIGITS_CONTACT_NUMBER}
 
 Verify Warning Invalid Email Field
-    Should Match    ${WARNING_EMAIL}    ${TC_VALID_EMAIL}
+    Verify Text     ${WARNING_EMAIL}    ${TC_VALID_EMAIL}
 
 Verify Warning Duplicate Email
     Should Match    ${WARNING_EMAIL}    ${EMAIL_IS_EXIST}

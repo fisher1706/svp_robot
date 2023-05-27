@@ -15,7 +15,7 @@ Variables       Resources/Variables/DirPath.py
 
 
 *** Keywords ***
-Test Legislator Get Credits
+Test Get Credits
     [Arguments]    ${amount}=1
     ${states}       Get Slice From List     ${TRANSACTION_STATE_LIST}         end=-1
     FOR    ${state}     IN      @{states}
@@ -28,7 +28,7 @@ Test Legislator Get Credits
         END
     END
 
-Test Legislator Issue Certificate
+Test Issue Certificate
     Upload Group Of Labors Index
     Click Payment
     Verify Credits Counter      0
@@ -36,7 +36,7 @@ Test Legislator Issue Certificate
     ${total_amount}       Return Total Price      amount=0
     Verify Total Amount     ${total_amount}
 
-Test Legislator Get Verify Input Fields On Add Credits
+Test Get Verify Input Fields On Add Credits
     [Arguments]    ${amount}=1
     Click Payment
     Click Get Credit
@@ -55,7 +55,7 @@ Test Legislator Get Verify Input Fields On Add Credits
         Verify Text     ${WARNING_MSG_CARD_HOLDER}      ${MSG_CARD_HOLDER}
     END
 
-Test Legislator Number Of Labors And Total Amount Counters
+Test Number Of Labors And Total Amount Counters
     [Arguments]    ${amount}=1
     Upload Group Of Labors Index
     Pass Credit Flow    state=${TRANSACTION_STATE_LIST}[0]
@@ -64,7 +64,7 @@ Test Legislator Number Of Labors And Total Amount Counters
     ${total_amount}       Return Total Price      ${amount}      full=False
     Verify Amount Entry     ${total_amount}
 
-Test Legislator Download Certificate
+Test Download Certificate
     [Arguments]     ${amount}=1
     Clear Temp Folder
     Pass Labor Flow     ${amount}
@@ -76,7 +76,7 @@ Test Legislator Download Certificate
     ${data_pdf}     Read Pdf File
     Should Not Be Empty      ${data_pdf}
 
-Test Legislator Payment Info
+Test Payment Info
     [Arguments]     ${amount}=1
     Pass Labor Flow     ${amount}
     ${total_amount}       Return Total Price      ${amount}     full=False
@@ -88,7 +88,7 @@ Test Legislator Payment Info
     Verift Transaction Amount       ${total_amount}
     Verify Transaction Date
 
-Test Legislator Invoice After Passing Get Credits Flow
+Test Invoice After Passing Get Credits Flow
     [Arguments]     ${amount}=1
     Clear Temp Folder
     Pass Labor Flow     ${amount}

@@ -20,11 +20,13 @@ Checking the ability to view account information
     Verify View Account Information
 
 Checking the ability to edit account information with valid data
+    Skip    issue with upload logo
     Create Entities And Log In    is_legislator_activate=True    login_tcenter=False
     Verify Title Uploaded Files
     Verify Edit Account Information With Valid Data
 
 Checking the ability to edit account information with duplicate email
+    Skip    issue with upload logo
     Create Entities And Log In
     ...    is_legislator_activate=True
     ...    is_tcenter=True

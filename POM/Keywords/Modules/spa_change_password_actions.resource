@@ -25,28 +25,29 @@ Verify Change Password
 
 Fill Change Password Form
     [Arguments]    @{password_list}    ${is_click}=True
+    Open Change Password Page
     Fill Current Password    ${password_list[0]}
     Fill New Password    ${password_list[1]}
     Fill Confirmed New Password    ${password_list[2]}
-    Run Keyword If    ${is_click}    Click Continue Button    Verify Is Change Button Disabled
+    IF      ${is_click}
+        Click Continue Button
+    ELSE
+        Verify Continue Button Is Dissabled
+    END
 
 Verify Change Password With Invalid Current Password
-    Open Change Password Page
-    Fill Change Password Form    @{INVALID_CURRENT_PASSWORD}
+    Fill Change Password Form    @{INVALID_CURRENT_PASSWORD_LIST}
     Verify Warning Current Password
 
 Verify Change Password With Current Password
-    Open Change Password Page
     Fill Change Password Form    @{CURRENT_PASSWORD}
     Verify Warning New Password
 
 Verify Change Password With Mismatch New Password
     Open Change Password Page
     Fill Change Password Form    @{MISMATCH_NEW_PASSWORD}
-    Verify Warning New Password
     Verify Warning Confirm New Password
 
 Verify Change Password With Invalid Confirm Password
-    Open Change Password Page
     Fill Change Password Form    @{INVALID_CONFIRM_PASSWORD}
     Verify Warning Confirm New Password

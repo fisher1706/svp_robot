@@ -20,18 +20,18 @@ Verify Field Group No
     Fill Filter Field    ${FILTER_FIELD_GROUP_NO}      ${val}
     Verify Text     ${FIELD_GROUP_NO}      ${val}
 
-Verify Field Amount
+Verify Field Amount Report
     [Arguments]    ${val}
     Fill Filter Field    ${FILTER_FIELD_AMOUNT}    ${val}
     Verify Text     ${FIELD_AMOUNT}      ${val}
 
-Verify Field Date
+Verify Field Date Report
     [Arguments]    ${val}
     ${date}=    Reformat Date       ${val}
     Fill Filter Field    ${FILTER_FIELD_DATE}      ${date}
     Verify Text     ${FIELD_DATE}      ${val}
 
-Verify Field Status
+Verify Field Status Report
     [Arguments]    ${val}
     Verify Text     ${FIELD_STATUS}     ${val}
 

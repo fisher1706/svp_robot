@@ -21,41 +21,41 @@ Checking the ability to change password
 
 C8839 Check ability to change password with invalid new password - Empy passwords
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[0]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[0]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - 8 characters
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[1]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[1]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - 20 characters
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[2]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[2]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - Uppercase letter
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[3]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[3]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - Lowercase letter
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[4]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[4]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - Number
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[5]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[5]}    is_click=False
 
 C8839 Check ability to change password with invalid new password - Special character
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
-    Fill Change Password Form    invalid_passwords=${INVALID_PASSWORD_LIST[6]}    is_click=False
+    Fill Change Password Form    @{INVALID_PASSWORD_LIST[6]}    is_click=False
 
 C8838 Check ability to change password with invalid current password
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
     Verify Change Password With Invalid Current Password
 
-C8841 Check ability to change password with mismatch "New password"
+C8841 Check ability to change password with mismatch New password
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
     Verify Change Password With Mismatch New Password
 
-C8842 Check ability to change password with invalid "confirm password"
+C8842 Check ability to change password with invalid confirm password
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
     Verify Change Password With Invalid Confirm Password
 

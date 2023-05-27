@@ -7,7 +7,6 @@ Test Setup    Run Keywords    Open Chrome Browser   AND     Create Entities And 
 ...     is_legislator_activate=True
 ...     login_tcenter=False
 ...     is_tcenter=True
-...     is_multiple_categories=True
 
 
 *** Test Cases ***

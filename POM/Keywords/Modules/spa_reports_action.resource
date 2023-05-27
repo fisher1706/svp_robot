@@ -20,9 +20,9 @@ Test Legislator Check Filters And Clear Filters Reports Tab
     ${elements}     Get Last Entry      ${LAST_ENTRY}
     Verify Field Id     ${elements}[0]
     Verify Field Group No       ${elements}[1]
-    Verify Field Amount     ${elements}[2]
-    Verify Field Date       ${elements}[3]
-    Verify Field Status    ${elements}[4]
+    Verify Field Amount Report     ${elements}[2]
+    Verify Field Date Report       ${elements}[3]
+    Verify Field Status Report   ${elements}[4]
     Verify Disabling Filters Fields     ${FILTERS}
 
 Test Legislator Valid Scenario

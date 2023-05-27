@@ -21,13 +21,11 @@ class SPAUploadLocators:
     TD_PASSED_LABORS = '.table tr:nth-child(1) > td:nth-child(3)'
     BTN_CANCEL = '.close-upload-btn'
     FIELD_POPUP_TOTAL_LABORS = 'td[data-label="Total Labors"] span'
-    LAST_ENTRY = 'tr:nth-child(1) td'
     FIELD_FILE_ID = 'th:nth-child(1)  .table-main__input'
     SEARCH_RESULTS = '//*[text()=" Search Results"]'
     PICKER_UPLOAD_DATE = 'th:nth-child(2)  .table-main__input'
     FIELD_NUMBER_OF_PASSED_LABORS = 'th:nth-child(3)  .table-main__input'
     FIELD_NUMBER_OF_LABORS = 'th:nth-child(4)  .table-main__input'
-    BTN_NEXT = '.next a'
     BTN_DOWNLOAD_CSV_SAMPLE = '.upload-modal .q-page-box__header a'
 
     FILTERS = [

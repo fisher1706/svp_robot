@@ -11,22 +11,22 @@ Variables       Resources/Variables/ExamResult.py
 
 
 *** Keywords ***
-Test Legislator Validation Edit Email On Labors Tab
+Test Validation Edit Email On Labors Tab
     Upload Group Of Labors Index
     Verify Validation Edit Email On Labors Tab
 
-Test Legislator Edit Email On Labors Tab
+Test Edit Email On Labors Tab
     Upload Group Of Labors Index
     Edit And Verify Email
 
-Test Legislator Pagination And Search Result Value
+Test Pagination And Search Result Value
     FOR    ${_}    IN RANGE    ${PAGE_VALUES}
         Upload Group Of Labors Index
     END
-    Click Next Labor
+    Click Button Next
     Verify Search Result Value      ${PAGE_VALUES}
 
-Test Legislator All Count On Labors Tab
+Test All Count On Labors Tab
     Upload Group Of Labors Index
     Click Labors
     Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
@@ -38,7 +38,8 @@ Test Legislator All Count On Labors Tab
     Wait For Elements State     ${BTN_ADD_INDIVIDUAL}     hidden
     Verify Search Result Value      amount=2
 
-Test Legislator Search Entry By Filters On Labors Table
+Test Search Entry By Filters On Labors Table
+    [Arguments]    ${entity}=legislator
     Upload Group Of Labors Index        amount=5
     Click Labors
     Wait For Elements State    ${COUNT}    visible
@@ -48,13 +49,13 @@ Test Legislator Search Entry By Filters On Labors Table
     Verify Passport Number       ${elements}[2]
     Verify Email       ${elements}[3]
     Verify Category       ${elements}[4]
-    Verify TCenter
+    IF    '${entity}'=='legislator'     Verify TCenter
     Verify Exam Date        ${elements}[6]
     ${str}     Convert To Lower Case       ${elements}[7]
     Verify Exam Result      ${str}
     Verify Disabling Filters Fields     ${FILTERS_LABOR}
 
-Test Legislator Counts On Labors Tab
+Test Counts On Labors Tab
     FOR    ${result}    IN      @{LIST_EXAM_RESULTS}
         IF    '${result}'=='PASSED'
             Pass Labor Flow

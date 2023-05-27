@@ -24,6 +24,16 @@ Open Activation Page
     ${url}=    Get Confirmation Url
     Go To    ${url}
 
+Open Activation Page Link
+    [Arguments]    ${is_tcenter}
+    IF    ${is_tcenter}
+        ${account}=    Get Test Center Account
+    ELSE
+        ${account}=    Get Legislator Account
+    END
+    ${url}=    Set Variable     ${account.activation_link}
+    Go To    ${SPA_URL}${url}
+
 Enter Login And Password On Password Form
     [Arguments]    ${password}=${DEFAULT_PASSWORD}    ${confirm_password}=${DEFAULT_PASSWORD}
     Enter Password Activate    ${password}
@@ -32,13 +42,15 @@ Enter Login And Password On Password Form
 
 Verify Password With Invalid Data
     [Arguments]    ${invalid_passwords}    ${is_tcenter}=True
-    Open Activation Page    ${is_tcenter}
+    # TODO: Use "Open Activation Page" when email service will work
+    Open Activation Page Link       ${is_tcenter}
     Enter Password Activate    ${invalid_passwords[0]}
     Enter Confirmed Password Activate    ${invalid_passwords[1]}
     Verify Continue Button Is Dissabled
 
 Verify Password Validation
-    ${url}=    Get Confirmation Url
-    Go To    ${url}
+    [Arguments]     ${is_tcenter}=False
+    # TODO: Use "Get Confirmation Url + Go To" when email service will work
+    Open Activation Page Link       is_tcenter=${is_tcenter}
     Enter Login And Password On Password Form
     Verify Message Token Warning

@@ -19,7 +19,12 @@ TC_VALID_EMAIL = 'Please enter a valid email'
 ONLY_EN_CHARS = 'Only english characters'
 TC_ONLY_DIGITS_POSTAL_CODE = 'Should contain digits only'
 INVALID_CURRENT_PASSWORD = 'Current password is invalid'
-SAME_NEW_PASSWORD = 'new password shouldn’t be same as old Password'
-MISMATCH_PASSWORD = "doesn't match Password"
-
+SAME_NEW_PASSWORD = 'New password shouldn’t be same as old Password'
+MISMATCH_PASSWORD = "Password do not match"
 MESSAGE_WRONG_CERTIFICATE = "The passport number is valid but its not for the certificate entered serial number"
+SESSION_CAN_NOT_BE_PAST = "Exam session date and time can't be in past"
+SESSION_HAS_BEEN_TAKEN = "Session with the same category have already been created within 30 min difference or less " \
+                      "for your Test Center\nhas already been taken"
+SESSION_LESS_30_MIN = "Session with the same category have already been created within 30 min " \
+                      "difference or less for your Test Center"
+SESSION_WRONG_INTERVAL = "The session duration should be between 90 min and 2h"

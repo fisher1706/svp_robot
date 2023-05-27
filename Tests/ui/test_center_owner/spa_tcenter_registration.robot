@@ -5,7 +5,7 @@ Resource            Resources/Setup/webdriver_manager.resource
 Resource            POM/Keywords/Modules/backgrounds.resource
 Resource            POM/Keywords/Modules/password_actions.resource
 Variables           Resources/Variables/Authentication.py
-Variables           POM/Keywords/Modules/password_actions.resource
+#Variables           POM/Keywords/Modules/password_actions.resource
 
 Test Setup          Open Chrome Browser
 
@@ -43,6 +43,7 @@ Check set password with invalid data - Special character
     Verify Password With Invalid Data    invalid_passwords=${INVALID_PASSWORD_LIST[6]}
 
 C9327 C9328 Check the warning message of password token
+    Skip    Can not possibility get email from email service
     [Documentation]    Check then password can't be set if it had set and can be set if it hasn't been set before
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True    login=False
     Verify Password Validation

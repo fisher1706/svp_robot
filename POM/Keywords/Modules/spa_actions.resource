@@ -39,3 +39,15 @@ Verify Disabling Filters Fields
     FOR    ${locator}   IN      @{filters}
         Verify Text     ${locator}      ${EMPTY}
     END
+
+Select Dropdown List
+    [Arguments]    ${selector}      ${attr}     ${val}
+    Click Button    ${selector}
+    Select Options By    ${selector}    ${attr}    ${val}
+    Keyboard Key    press    Enter
+
+Choose Value With Button
+    [Arguments]    ${locator_btn}   ${locator_input}   ${value}
+    Click Button    ${locator_btn}
+    Type Text       ${locator_input}    ${value}
+    Keyboard Key    press    Enter

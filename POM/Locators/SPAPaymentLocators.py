@@ -9,6 +9,7 @@ class SPAPaymentLocators:
     FIELD_EXPIRY_DATE = '.wpwl-control-expiry'
     FIELD_CVV = 'iframe[name="card\\.cvv"] >>> input[name=\'card.cvv\']'
     FIELD_CARD_HOLDER = "//input[@name='card.holder']"
+    CARD_HOLDER_TEXT = '//*[text()="Card holder"]'
     BTN_PAY_NOW = '.custom-pay-btn'
     WARNING_MSG_CARD_NUMBER = '.wpwl-hint-cardNumberError'
     WARNING_MSG_EXPIRY_DATE = '.wpwl-hint-expiryMonthError'

@@ -1,3 +1,4 @@
+import random
 import string
 from random import randint, choices
 
@@ -18,6 +19,14 @@ class RandomManager:
     def random_letters(size):
         return ''.join(choices(string.ascii_letters, k=size))
 
+    @staticmethod
+    def random_number_limit():
+        return randint(1, 99)
+
+    @staticmethod
+    def random_from_list(data):
+        return random.choice(data)
+
     def random_name(self):
         return f"Autotest {self.random_letters(8).lower()}"
 
@@ -28,3 +37,19 @@ class RandomManager:
 
     def random_number(self, size=9, prefix=''):
         return f"{prefix}{self._random_int(size)}"
+
+
+if __name__ == '__main__':
+    session_repeat = [
+        'Does not repeat',
+        'Daily',
+        'Weakly on',
+        'Monthly of the first'
+    ]
+
+    r = RandomManager()
+    x = r.random_number_limit()
+    print(x)
+
+    y = r.random_from_list(session_repeat)
+    print(y)
