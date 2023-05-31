@@ -9,9 +9,10 @@ Variables       Resources/Variables/WarningMessage.py
 
 *** Keywords ***
 Test Check Ability Add New Session
+    [Arguments]    ${num}=1
     Switch To Session
     Click Add Session
-    ${session_time}=    Time New Session
+    ${session_time}=    Time New Session    num=${num}
     ${seat_number}=     Return Random Number Limit
     ${repeat_type}=   Return Random Data List     ${session_repeat}
     Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
