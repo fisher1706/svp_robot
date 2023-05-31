@@ -6,3 +6,4 @@ USER_INFO = '.user-info__icon'
 CHANGE_PASSWORD = "//*[contains(text(),'Change Password')]"
 ACCOUNT_INFORMATION = "//*[contains(text(),'Account Information')]"
 LOGOUT = "//*[contains(text(),'Logout')]"
+# SEARCH_RESULTS = '//*[text()=" Search Results"]'

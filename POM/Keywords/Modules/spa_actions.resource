@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       SPA Actions
-# TODO: Separate methods by each functionality and remove from this file
+Library         String
 Resource        POM/Keywords/Modules/base_actions.resource
 Resource        POM/Keywords/Pages/spa.resource
 
@@ -41,7 +41,7 @@ Verify Disabling Filters Fields
     END
 
 Select Dropdown List
-    [Arguments]    ${selector}      ${attr}     ${val}
+    [Arguments]    ${selector}      ${attr}=index     ${val}=1
     Click Button    ${selector}
     Select Options By    ${selector}    ${attr}    ${val}
     Keyboard Key    press    Enter
