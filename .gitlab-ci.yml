@@ -137,6 +137,11 @@ ui_legislator_tests:
   only:
     - master
     - QAA-726
+  dependencies:
+    - ui_admin_tests
+  needs:
+    - ui_admin_tests
+
 
 ui_test_center_owner_tests:
   image: $IMAGE
@@ -159,7 +164,12 @@ ui_test_center_owner_tests:
   only:
     - master
     - QAA-726
-
+  dependencies:
+    - ui_admin_tests
+    - ui_legislator_tests
+  needs:
+    - ui_admin_tests
+    - ui_legislator_tests
 
 allure-ui-admin-results:
   extends: .generate_allure_report

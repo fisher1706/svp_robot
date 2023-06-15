@@ -1,6 +1,6 @@
 DEFAULT_LOGIN = 'admin@gmail.com'
 DEFAULT_PASSWORD = 'Password#1'
-INVALID_LOGIN = 'test@gmail.com'
+INVALID_LOGIN = 'test$@gmail.com'
 CHANGED_PASSWORD = 'Password#1!#'
 INVALID_PASSWORD = 'Invalid#1'
 TC_NAME = 'Autotest nkmvrorv'

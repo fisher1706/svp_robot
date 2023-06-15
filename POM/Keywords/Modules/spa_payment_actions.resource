@@ -6,6 +6,7 @@ Library         Libraries/Utils.py
 Library         Libraries/FileHelper.py
 Resource        POM/Keywords/Pages/spa_payment.resource
 Resource        POM/Keywords/Modules/spa_upload_actions.resource
+Resource        POM/Keywords/Pages/base.resource
 Resource        POM/Keywords/Pages/spa_transaction_history.resource
 Variables       Resources/Variables/GetCreditsDataset.py
 Variables       Resources/Variables/TransactionState.py
@@ -140,4 +141,5 @@ Approve Payment
     Click Select All
     Click Issue
     Click Confirm
+    Wait Spinners To Disappear
     Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
