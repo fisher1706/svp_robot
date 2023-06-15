@@ -28,6 +28,8 @@ class ApiClient:
         self.response = self.session.put(url=url + endpoint, data=body, params=params,
                                          headers=self.json_headers if not headers else headers)
 
+        print(f"response: \n{self.response.json()}")
+
     def clean_session_cookies(self):
         self.session.cookies.clear()
         self.json_headers = {'Content-Type': 'application/json'}
