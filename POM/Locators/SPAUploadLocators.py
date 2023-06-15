@@ -13,7 +13,8 @@ class SPAUploadLocators:
     ADD_INDIVIDUAL_LABOR = '//*[@class="btn btn-info"]'
     FIELD_FILE_NAME = '.table-files-wrapper td:nth-child(1)'
     # Group Locators
-    BTN_ADD_GROUP = '.btn--primary'
+    # BTN_ADD_GROUP = '.btn--primary'
+    BTN_ADD_GROUP = '//*[text()="Add Group"]'
     DROPDOWN_TCENTER_LIST = '//*[@id="modals-container"]//div[1]/div/select'
     DROPDOWN_CATEGORY_LIST = '//*[@id="modals-container"]//div[2]/div/select'
     BTN_CHOOSE_FILE = '#upload_file'

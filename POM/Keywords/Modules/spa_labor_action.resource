@@ -1,4 +1,5 @@
 *** Settings ***
+Resource        POM/Keywords/Pages/base.resource
 Resource        POM/Keywords/Pages/spa_labor.resource
 Resource        POM/Keywords/Modules/spa_upload_actions.resource
 Resource        POM/Keywords/Modules/spa_payment_actions.resource
@@ -42,7 +43,8 @@ Test Search Entry By Filters On Labors Table
     [Arguments]    ${entity}=legislator
     Upload Group Of Labors Index        amount=5
     Click Labors
-    Wait For Elements State    ${COUNT}    visible
+    Wait Spinners To Disappear
+    Wait For Elements State    ${LABORS_COUNT}    visible
     ${elements}    Get Last Entry    ${LAST_ENTRY}
     Verify National Id      ${elements}[0]
     Verify Labor Name       ${elements}[1]
