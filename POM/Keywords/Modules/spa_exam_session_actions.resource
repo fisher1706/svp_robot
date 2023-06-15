@@ -22,8 +22,9 @@ Test Check Ability Add New Session
 
 Test Not Ability To Create New Session For Past Date
     Switch To Session
-    ${session_time}=    Time New Session    session_past=True
-    Get Element States    //*[text()="${session_time[1]}"]    validate    value & disabled
+    ${session_time}=    Time New Session    correct_start=True
+    ${elements}=    Get Elements    //*[text()="${session_time[1]}"]
+    Get Element States    ${elements}[-1]    validate    value & disabled
     Click Add Session
     Fill New Session Form   ${session_time}     1      Does not repeat
     Verify Text     ${TEXT_ERROR}       ${SESSION_CAN_NOT_BE_PAST}
@@ -69,7 +70,8 @@ Fill New Session Form
 Verify Added Session
     [Arguments]    ${time}
     Wait For Elements State     ${BTN_ADD}   hidden
-    Click       //*[text()="${time[0]}"]
+    ${elements}=     Get Elements        //*[text()="${time[0]}"]
+    Click       ${elements}[-1]
     Verify Text     ${SESSION_CATEGORY}     Engine Mechanics
     Verify Text     ${SESSION_TIME}     ${time[2]} - ${time[3]}
     Verify Text     ${SESSION_STATUS}       Scheduled

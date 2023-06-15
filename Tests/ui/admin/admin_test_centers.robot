@@ -44,6 +44,7 @@ Check an active Admin can view Edit Test Center form
     Open Test Centers Page
     Fill Filter Name    ${tcenter_account.en_name}
     Click Button Search
+    Wait Spinners To Disappear
     Select View Of Last Entry
     Verify Tcenters View Fields    ${tcenter_account}    ${legislator_account.en_name}
 

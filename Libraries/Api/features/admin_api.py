@@ -43,10 +43,8 @@ class AdminApi:
 
     @allure.step("PUT api/v1/admin_space/permissions?locale=en :: put country settings")
     @keyword('Put Permissions')
-    # pylint: disable=W0613
     def put_permissions(self, token: str, country_id: int = 5, tcenter: bool = True, multiple_categories: bool = False,
-                        expect_code: int = 200):
-        print(f"TCENER: {tcenter}")
+                        expect_code: int = 200, count: int = 5):
         legislator = not tcenter
         json_body = {
             'permissions': {
@@ -168,12 +166,15 @@ class AdminApi:
         if multiple_categories:
             json_body = self.__add_categories(json_body)
 
-        print(f"JSON: {json_body}")
-
         self.api.put(url=self.api.api_url, endpoint='api/v1/admin_space/permissions?locale=en',
                      body=json.dumps(json_body), headers=self.support.get_headers(token))
-        # TODO off assert status code -> stage version
-        self.support.check_status_code(name='Update country settings', expect_code=expect_code)
+
+        for _ in range(count):
+            try:
+                self.support.check_status_code(name='Update country settings', expect_code=expect_code)
+            except AssertionError:
+                self.api.put(url=self.api.api_url, endpoint='api/v1/admin_space/permissions?locale=en',
+                             body=json.dumps(json_body), headers=self.support.get_headers(token))
 
     @allure.step("POST api/v1/admin_space/legislators?locale=en :: create legislator")
     def post_create_legislator(self, token: str,

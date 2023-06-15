@@ -9,6 +9,10 @@ Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/Authentication.py
 
 
+*** Variables ***
+${CHECKER}      //*[text()="Add Group"]
+
+
 *** Keywords ***
 Create Entities And Log In
     [Arguments]
@@ -44,6 +48,9 @@ Create Entities And Log In
     IF    ${login}
         ${email}=    Set Variable If    ${login_tcenter}    ${tcenter_account.email}    ${legislator_account.email}
         Log In To SPA    ${two_factor_verification}    ${email}
+        Check Permission Settings       token=${token}     login_tcenter=${login_tcenter}
+        ...     is_multiple_categories=${is_multiple_categories}      two_factor_verification=${two_factor_verification}
+        ...     email=${email}
     END
 
 Log In With Valid Login And Password
@@ -51,3 +58,21 @@ Log In With Valid Login And Password
     Open SPA Login Page
     Enter Login And Password    ${login}    ${password}
     Proceed 2fa Web
+
+Check Permission Settings
+    [Arguments]
+    ...     ${token}
+    ...     ${login_tcenter}
+    ...     ${is_multiple_categories}
+    ...     ${two_factor_verification}
+    ...     ${email}
+    TRY
+        Wait For Elements State     ${CHECKER}     visible
+    EXCEPT
+        Log Out User
+        Put Permissions
+        ...     token=${token}
+        ...     tcenter=${login_tcenter}
+        ...     multiple_categories=${is_multiple_categories}
+        Log In To SPA    ${two_factor_verification}    ${email}
+    END

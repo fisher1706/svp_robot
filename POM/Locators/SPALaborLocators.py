@@ -16,7 +16,7 @@ class SPALaborLocators:
     EXAM_DATE = 'th:nth-child(7)  .table-main__input'
     EXAM_RESULT_LABOR = '//*[@id="app"]//th[8]//span//select'
     LABOR_TEXT = '//*[@id="app"]//h2'
-    COUNT = '//*[@id="app"]//div[3]//li[2]'
+    LABORS_COUNT = '//*[@id="app"]//div[3]//li[2]'
     ALL = '.green'
 
     FILTERS_LABOR = [
