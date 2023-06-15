@@ -104,65 +104,6 @@ class AdminApi:
             }
         }
 
-        # TODO test request body for permissions -> stage version
-        # json_body = {
-        #     'permissions': {
-        #         'legislator': {
-        #             'test_centers': {
-        #                 'create': tcenter,
-        #                 'create_owner': tcenter,
-        #                 'edit': tcenter,
-        #                 'view': tcenter,
-        #                 'delete': tcenter
-        #             },
-        #             'labors': {
-        #                 'create': legislator,
-        #                 'create_group': legislator,
-        #                 'view_uploaded_files': True,
-        #                 'view': True
-        #             },
-        #             'payment': {
-        #                 'make_payment': tcenter,
-        #                 'view_transaction_history': True,
-        #                 'view_certificate': True,
-        #                 'withdraw': tcenter
-        #             }
-        #         },
-        #         'test_center_owner': {
-        #             'test_centers': {
-        #                 'edit': legislator,
-        #                 'view': legislator
-        #             },
-        #             'labors': {
-        #                 'create': tcenter,
-        #                 'create_group': tcenter,
-        #                 'view_uploaded_files': True,
-        #                 'view': True
-        #             },
-        #             'payment': {
-        #                 'make_payment': legislator,
-        #                 'view_transaction_history': True,
-        #                 'view_certificate': True,
-        #                 'withdraw': legislator
-        #             }
-        #         }
-        #     },
-        #     'categories': [
-        #         {
-        #             'id': 51,
-        #             'min_score': 99
-        #         }
-        #     ],
-        #     'country_id': country_id,
-        #     'expiry_years': 3,
-        #     'nationalities': [],
-        #     'trial_mode': False,
-        #     'trial_balance': {
-        #         'test_centers': [],
-        #         'legislators': []
-        #     }
-        # }
-
         if multiple_categories:
             json_body = self.__add_categories(json_body)
 

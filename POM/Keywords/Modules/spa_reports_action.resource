@@ -33,7 +33,7 @@ Test Legislator Valid Scenario
     ...     ${MESSAGE_VALID_CERTIFICATE}
 
 Test Legislator Certificate Is Expired
-    Upload Group Of Labors Index
+    Upload Group Of Labors Index    wrong_timestamp=True
     Change Timestamp To Previous Day
     Upload Group Of Labors Index    file=False
     Pass Credit Flow    state=Success
