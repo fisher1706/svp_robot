@@ -21,9 +21,10 @@ Test Check Ability Add New Session
     [Return]    ${session_time}     ${seat_number}      ${repeat_type}
 
 Test Not Ability To Create New Session For Past Date
+    [Arguments]    ${start}=//*[text()="    ${end}="]
     Switch To Session
     ${session_time}=    Time New Session    correct_start=True
-    ${elements}=    Get Elements    //*[text()="${session_time[1]}"]
+    ${elements}=    Get Elements    ${start}${session_time[1]}${end}
     Get Element States    ${elements}[-1]    validate    value & disabled
     Click Add Session
     Fill New Session Form   ${session_time}     1      Does not repeat
@@ -68,10 +69,11 @@ Fill New Session Form
     Click Add
 
 Verify Added Session
-    [Arguments]    ${time}
+    [Arguments]    ${time}      ${start}=//*[text()="        ${end}="]
     Wait For Elements State     ${BTN_ADD}   hidden
-    ${elements}=     Get Elements        //*[text()="${time[0]}"]
-    Click       ${elements}[-1]
+    ${elements}=     Get Elements        ${start}${time[0]}${end}
+    ${el}=      Get Day     ${time}     0
+    Click       ${el}
     Verify Text     ${SESSION_CATEGORY}     Engine Mechanics
     Verify Text     ${SESSION_TIME}     ${time[2]} - ${time[3]}
     Verify Text     ${SESSION_STATUS}       Scheduled
@@ -89,3 +91,13 @@ Verify Additional Information About Session
     Should Be Equal     ${entry}[5]     0
     Should Be Equal     ${entry}[6]     ${repeat_type}
     Should Be Equal     ${entry}[7]     Scheduled
+
+Get Day
+    [Arguments]    ${time}      ${index}
+    @{elements}=     Get Elements        //*[text()="${time}[${index}]"]
+    FOR    ${el}    IN      @{elements}
+        Log To Console      ${el}
+        ${data}=    Get Attribute Names     ${el}  ==
+        ...     data-v-4420d078     tabindex    aria-label      aria-disabled   role    class
+        IF      ${data}     RETURN    ${el}
+    END

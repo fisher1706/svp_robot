@@ -40,12 +40,6 @@ Verify Disabling Filters Fields
         Verify Text     ${locator}      ${EMPTY}
     END
 
-Select Dropdown List
-    [Arguments]    ${selector}      ${attr}=index     ${val}=1
-    Click Button    ${selector}
-    Select Options By    ${selector}    ${attr}    ${val}
-    Keyboard Key    press    Enter
-
 Choose Value With Button
     [Arguments]    ${locator_btn}   ${locator_input}   ${value}
     Click Button    ${locator_btn}

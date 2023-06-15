@@ -1,5 +1,4 @@
 import re
-import calendar
 from datetime import datetime, timedelta
 import calendar
 from robot.api.deco import keyword
@@ -38,8 +37,8 @@ class Utils:
     @keyword('Time New Session')
     def time_new_session(delta=3, correct_start='False', num=0):
         data = [
-            datetime.now().strftime('%d'),
-            (datetime.now() - timedelta(days=1)).strftime('%d'),
+            datetime.now().strftime('%-d'),
+            (datetime.now() - timedelta(days=1)).strftime('%-d'),
         ]
         if correct_start == 'False':
             add = [
@@ -70,8 +69,8 @@ class Utils:
         return RandomManager.random_from_list(data)
 
     @staticmethod
-    @keyword('Get Month Interval')
-    def get_month_interval():
-        date = datetime.now().strftime('%Y-%m')
-        last_day = calendar.monthrange(int(date.split('-')[0]), int(date.split('-')[1]))[1]
-        return [f"{date}-01", f"{date}-{last_day}"]
+    @keyword('Reverse Date')
+    def reverse_date(data):
+        inner = data.split(' ')[0].split('/')
+        inner.reverse()
+        return '-'.join(inner)
