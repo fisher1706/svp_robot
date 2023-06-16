@@ -74,3 +74,10 @@ class Utils:
         inner = data.split(' ')[0].split('/')
         inner.reverse()
         return '-'.join(inner)
+
+    @staticmethod
+    @keyword('Get Month Interval')
+    def get_month_interval():
+        date = datetime.now().strftime('%Y-%m')
+        last_day = calendar.monthrange(int(date.split('-')[0]), int(date.split('-')[1]))[1]
+        return [f"{date}-01", f"{date}-{last_day}"]
