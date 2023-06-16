@@ -46,7 +46,7 @@ build:
     refs:
       - master
       - merge_requests
-      - QAA-726
+      - QAA-753
     changes:
       - Dockerfile
       - pyproject.toml
@@ -92,7 +92,7 @@ pylint:
     when: always
   only:
       - merge_requests
-      - QAA-726
+      - QAA-753
 
 ui_admin_tests:
   image: $IMAGE
@@ -114,7 +114,7 @@ ui_admin_tests:
     when: always
   only:
     - master
-    - QAA-726
+    - QAA-753
 
 ui_legislator_tests:
   image: $IMAGE
@@ -136,7 +136,7 @@ ui_legislator_tests:
     when: always
   only:
     - master
-    - QAA-726
+    - QAA-753
   dependencies:
     - ui_admin_tests
   needs:
@@ -163,7 +163,7 @@ ui_test_center_owner_tests:
     when: always
   only:
     - master
-    - QAA-726
+    - QAA-753
   dependencies:
     - ui_admin_tests
     - ui_legislator_tests
@@ -185,7 +185,7 @@ allure-ui-admin-results:
     - ui_admin_tests
   only:
     - master
-    - QAA-726
+    - QAA-753
 
 
 allure-ui-legislator-results:
@@ -202,7 +202,7 @@ allure-ui-legislator-results:
     - ui_legislator_tests
   only:
     - master
-    - QAA-726
+    - QAA-753
 
 allure-ui-test_center_owner-results:
   extends: .generate_allure_report
@@ -218,7 +218,7 @@ allure-ui-test_center_owner-results:
     - ui_test_center_owner_tests
   only:
     - master
-    - QAA-726
+    - QAA-753
 
 
 slack-report-ui-admin-results:
@@ -235,7 +235,7 @@ slack-report-ui-admin-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-admin
     only:
       - master
-      - QAA-726
+      - QAA-753
 
 slack-report-ui-legislator-results:
     image: $IMAGE
@@ -251,7 +251,7 @@ slack-report-ui-legislator-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-legislator
     only:
       - master
-      - QAA-726
+      - QAA-753
 
 slack-report-ui-test_center_owner-results:
     image: $IMAGE
@@ -267,4 +267,4 @@ slack-report-ui-test_center_owner-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-tc
     only:
       - master
-      - QAA-726
+      - QAA-753
