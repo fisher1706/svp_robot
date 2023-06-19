@@ -4,7 +4,6 @@ class AdminLaborsLocators:
     LABORS_TEXT = '//*[@id="app"]//h1'
     ACTIVE_LABORS = '//*[text()="Active"]/../..'
     NATIONAL_ID = '//*[@class="national_id"]'
-    BTN_NEXT = '.next a'
     GENERAL_INFORMATION = '//*[text()="General Information"]'
     DATA_GENERAL_INFORMATION = '//*[@class="info-value"]'
     BTN_YES = '//*[text()="yes"]'
