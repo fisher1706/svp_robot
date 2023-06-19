@@ -27,10 +27,8 @@ Upload Group Of Labors Index
     Select Occupation    ${DROPDOWN_CATEGORY_LIST}     1    index
     Upload File     ${BTN_CHOOSE_FILE}      ${csv_file_path}
     Wait For Elements State     ${BTN_ADD_FRAME}    enabled
-    Log To Console    Verify added labors
     Verify Value     ${FIELD_POPUP_TOTAL_LABORS}      ${amount}
     Click Add       ${BTN_ADD_FRAME}
-    Log To Console    Verify passed labors
     Run Keyword If      '${wrong_timestamp}'=='False' and '${exam_score}'=='99'
     ...     Verify Value     ${TD_PASSED_LABORS}      ${amount}
 

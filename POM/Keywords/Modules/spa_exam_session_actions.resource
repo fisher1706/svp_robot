@@ -96,7 +96,6 @@ Get Day
     [Arguments]    ${time}      ${index}
     @{elements}=     Get Elements        //*[text()="${time}[${index}]"]
     FOR    ${el}    IN      @{elements}
-        Log To Console      ${el}
         ${data}=    Get Attribute Names     ${el}  ==
         ...     data-v-4420d078     tabindex    aria-label      aria-disabled   role    class
         IF      ${data}     RETURN    ${el}

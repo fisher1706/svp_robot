@@ -52,4 +52,4 @@ class DateType:
 
 
 class Credits:
-    AMOUNT = 25
+    AMOUNT = 30
