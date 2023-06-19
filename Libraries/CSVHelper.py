@@ -72,3 +72,16 @@ class CSVHelper:
         self._open_file(file_path, list_csv, mode='w')
 
         return file_path
+
+    def prepare_occupations_csv_file(self, occupation):
+        file_path = DirPath.CSV_OCCUPATION
+        list_csv = []
+        self._open_file(file_path, list_csv, mode='r')
+        for item in list_csv[1:]:
+            item[0] = occupation.key
+            item[1] = occupation.english_name
+            item[2] = occupation.arabic_name
+            item[3] = 31
+        self._open_file(file_path, list_csv, mode='w')
+
+        return file_path

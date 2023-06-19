@@ -28,3 +28,4 @@ SESSION_HAS_BEEN_TAKEN = "Session with the same category have already been creat
 SESSION_LESS_30_MIN = "Session with the same category have already been created within 30 min " \
                       "difference or less for your Test Center"
 SESSION_WRONG_INTERVAL = "The session duration should be between 90 min and 2h"
+KEY_OCCUPATION_IS_EXIST = 'Has already been taken'

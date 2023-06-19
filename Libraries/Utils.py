@@ -59,8 +59,8 @@ class Utils:
 
     @staticmethod
     @keyword('Return Random Number Limit')
-    def return_random_number_limit():
-        return RandomManager().random_number_limit()
+    def return_random_number_limit(start=1, end=99):
+        return RandomManager().random_number_limit(start, end)
 
     @staticmethod
     @keyword('Return Random Data List')
