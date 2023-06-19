@@ -7,6 +7,7 @@ from Libraries.random_manager import RandomManager
 from Resources.DataSources.models.account import Account
 from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
+from Resources.DataSources.models.occupation import Occupation
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
 
@@ -97,3 +98,24 @@ class ModelBuilder:
     @keyword('Create random email')
     def build_random_email():
         return RandomManager().random_email()
+
+    @staticmethod
+    @keyword('Create New Random Occupation')
+    def build_random_occupation(arabic_name='سمكري مركبات'):
+        random_manager = RandomManager()
+        key = random_manager.random_number()
+        english_name = random_manager.random_name()
+        return Occupation(key=key,
+                          arabic_name=arabic_name,
+                          english_name=english_name)
+
+    @staticmethod
+    @keyword('Update Occupation Data')
+    def update_occupation_key(occupation, key=None, english_name=None, arabic_name=None):
+        if key:
+            occupation.key = key
+        if english_name:
+            occupation.english_name = english_name
+        if arabic_name:
+            occupation.arabic_name = arabic_name
+        return occupation

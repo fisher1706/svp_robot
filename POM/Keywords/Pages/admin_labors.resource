@@ -4,6 +4,7 @@ Resource            POM/Keywords/Modules/base_actions.resource
 Library             String
 Library             Libraries/Utils.py
 Variables           POM/Locators/AdminLaborsLocators.py
+Variables           POM/Locators/SPALocators.py
 
 
 *** Keywords ***
