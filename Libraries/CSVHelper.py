@@ -85,3 +85,15 @@ class CSVHelper:
         self._open_file(file_path, list_csv, mode='w')
 
         return file_path
+
+    def prepare_categories_csv_file(self, category):
+        file_path = DirPath.CSV_CATEGORIES
+        list_csv = []
+        self._open_file(file_path, list_csv, mode='r')
+        for item in list_csv[1:]:
+            item[0] = category.code
+            item[1] = category.english_name
+            item[2] = category.arabic_name
+        self._open_file(file_path, list_csv, mode='w')
+
+        return file_path

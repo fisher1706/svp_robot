@@ -4,10 +4,12 @@ from robot.api.deco import keyword
 
 from Libraries.logger import yaml_logger
 from Libraries.random_manager import RandomManager
+from Libraries.translate_to_arabic import Translator
 from Resources.DataSources.models.account import Account
 from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
 from Resources.DataSources.models.occupation import Occupation
+from Resources.DataSources.models.category import Category
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
 
@@ -119,3 +121,21 @@ class ModelBuilder:
         if arabic_name:
             occupation.arabic_name = arabic_name
         return occupation
+
+    @staticmethod
+    @keyword('Create New Category')
+    def build_random_category(status='correct'):
+        random_manager = RandomManager()
+        if status == 'correct':
+            code = random_manager.random_number()
+            english_name = Translator().create_random_name()
+            arabic_name = Translator().translate_string(english_name)
+        else:
+            code = random_manager.random_name()
+            english_name = random_manager.random_number()
+            arabic_name = random_manager.random_name()
+        return Category(
+            code=code,
+            english_name=english_name,
+            arabic_name=arabic_name
+        )

@@ -6,3 +6,6 @@ TEST_CENTER_CREATION = 'Test center has been created successfully'
 TEST_CENTER_REMOVE = {'type': 'test center creation', 'text': 'Test Center has been deleted successfully'}
 MESSAGE_VALID_CERTIFICATE = 'The certificate is valid'
 MSG_CERTIFICATE = 'You can download list of certificates now'
+SUCCESSFULLY_CREATED_CATEGORY = 'Category has been created successfully'
+SUCCESSFULLY_UPDATED_CATEGORY = 'Category has been updated successfully'
+

@@ -14,3 +14,8 @@ MSG_CARD_NUMBER = 'Invalid card number or brand'
 MSG_CARD_EXPIRY_DATE = 'Invalid expiry date'
 MSG_CARD_CVV = 'Invalid CVV'
 MSG_CARD_HOLDER = 'Invalid card holder'
+
+MSG_CATEGORY_CODE = 'Only digits'
+MSG_ENGLISH_NAME = 'Only english characters'
+MSG_ARABIC_NAME = 'Only arabic characters'
+MSG_DOWNLOAD_ERROR = 'You can not upload the categories. Please update the CSV file then try again'
