@@ -17,3 +17,4 @@ Results/Reports/allure-results
 Results/Reports/browser/screenshot/
 Results/Reports/browser/traces/
 Resources/DataSources/test_files/temp/
+Resources/DataSources/test_files/

@@ -37,3 +37,15 @@ class RandomManager:
 
     def random_number(self, size=9, prefix=''):
         return f"{prefix}{self._random_int(size)}"
+
+    @staticmethod
+    def random_str(size=16, chars=string.ascii_letters + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size))
+
+
+if __name__ == '__main__':
+    r = RandomManager()
+    x = r.random_str(size=2, chars=string.ascii_letters)
+    y = r.random_str(size=7, chars=string.digits)
+    print(x)
+    print(y)

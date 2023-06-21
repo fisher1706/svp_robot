@@ -40,6 +40,7 @@ Test Upload Occupation
     IF      ${new}
         Verify File Information     saved=1     skipped=0       total=1
         Click Done
+        Open Admin Occupations Page
         Verify Added Occupation     occupation=${occupation}
     ELSE
         Verify File Information     saved=0     skipped=1       total=1
@@ -93,7 +94,7 @@ Fill Occupatioin Form
 
 Verify Added Occupation
     [Arguments]    ${occupation}
-    Open Admin Occupations Page
+    Wait For Elements State    ${OCCUPATIONS_TEXT}      visible
     ${entry}=       Get Last Entry      ${LAST_ENTRY}
     Should Be Equal     ${entry}[1]     ${occupation.key}
     Should Be Equal     ${entry}[2]     ${occupation.arabic_name}
