@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 from random import choices
 
 
@@ -11,7 +12,7 @@ class Translator:
         "x": u"\u062E",  # khaa'
         "d": u"\u062F",  # daal
         "r": u"\u0631",  # raa'
-        # "z": u"\u0632",  # zaay
+        "z": u"\u0632",  # zaay
         "s": u"\u0633",  # siin
         "g": u"\u063A",  # ghayn
         "f": u"\u0641",  # faa'
@@ -35,3 +36,11 @@ class Translator:
         for k, v in self.buck2uni.items():
             string = string.replace(k, v)
         return string
+
+    def validate_and_return_names(self):
+        match = english = arabic = None
+        while not match:
+            english = self.create_random_name()
+            arabic = self.translate_string(english)
+            match = re.search(r'^[\u0621-\u064A\u0660-\u0669 ]+$', arabic)
+        return english, arabic

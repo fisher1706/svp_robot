@@ -98,7 +98,6 @@ Add Category
     Click New Category
     Wait Spinners To Disappear
     Wait For Elements State    ${NEW_CATEGORY_TEXT}     visible
-    Log To Console      ${category.arabic_name}
     Fill Category Form      category=${category}
     IF    '${status}'=='correct'     Click Btn Create Category
 

@@ -128,8 +128,7 @@ class ModelBuilder:
         random_manager = RandomManager()
         if status == 'correct':
             code = random_manager.random_number()
-            english_name = Translator().create_random_name()
-            arabic_name = Translator().translate_string(english_name)
+            english_name, arabic_name = Translator().validate_and_return_names()
         else:
             code = random_manager.random_name()
             english_name = random_manager.random_number()

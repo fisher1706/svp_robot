@@ -11,7 +11,7 @@ Variables       Resources/Variables/SuccessMessage.py
 
 *** Keywords ***
 Create New Test Center
-    [Arguments]    ${legislator_name}=Autotest    ${permissions}=None
+    [Arguments]    ${legislator_name}=Autotest      ${permissions}=None
     Click Test Centers Tab
     Click Btn New Test Center
     Verify Title New Test Center
