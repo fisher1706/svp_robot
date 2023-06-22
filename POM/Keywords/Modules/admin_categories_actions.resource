@@ -86,7 +86,6 @@ Test Download Csv Sample
     Admin Categories Actions
     Click Upload Categories
     ${file}=    Download File       filename=sample_categories.csv      btn_download=${DOWNLOAD_CSV_SAMPLE}
-    Log To Console    \nDownload file: ${file}[0]
 
 Admin Categories Actions
     Open Admin Categories Page

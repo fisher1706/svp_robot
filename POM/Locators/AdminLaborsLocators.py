@@ -26,3 +26,4 @@ class AdminLaborsLocators:
     FIELD_LAST_ACTIVE_DATE = '//*[@placeholder="dd-mm-yyyy"]'
     FIELD_EMAIL = '//*[@id="email"]'
     FILTERS_CONTROL = '//*[@class="filter-controls__tag"]'
+    HOVER_ACTIONS = '//*[@class="actionTypeLinks"]'

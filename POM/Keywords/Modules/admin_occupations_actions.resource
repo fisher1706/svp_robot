@@ -103,7 +103,6 @@ Verify Added Occupation
 Download All Occupations
     [Arguments]    ${filename}=all_occupations.csv
     ${file}=    Download File       filename=${filename}    btn_download=${DOWNLOAD_OCCUPATIONS_CSV}
-    Log To Console    \nDownload file: ${file}[0]
 
 Verify Key Error Message
     Verify Text     ${KEY_ERROR}        ${KEY_OCCUPATION_IS_EXIST}
