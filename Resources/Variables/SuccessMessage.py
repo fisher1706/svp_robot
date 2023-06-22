@@ -8,4 +8,3 @@ MESSAGE_VALID_CERTIFICATE = 'The certificate is valid'
 MSG_CERTIFICATE = 'You can download list of certificates now'
 SUCCESSFULLY_CREATED_CATEGORY = 'Category has been created successfully'
 SUCCESSFULLY_UPDATED_CATEGORY = 'Category has been updated successfully'
-
