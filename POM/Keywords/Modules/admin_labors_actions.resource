@@ -100,7 +100,7 @@ Choose Item Actions
     [Arguments]
     ...     ${actions}
     ...     ${type}
-    ...     ${hover}=//*[@class="actionTypeLinks"]
+    ...     ${hover}=${HOVER_ACTIONS}
     ...     ${view_start}=//a[text() = "
     ...     ${view_end}="]
     ...     ${start}=//span[contains(text(), "

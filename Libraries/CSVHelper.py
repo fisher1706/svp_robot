@@ -59,8 +59,8 @@ class CSVHelper:
         wrong_timestamp = ast.literal_eval(wrong_timestamp) if \
             wrong_timestamp in ['False', 'True'] else wrong_timestamp
         timestamp = self._verify_timestamp(wrong_timestamp)
-        random_number = RandomManager.random_str(size=2, chars=string.ascii_letters) + \
-            RandomManager.random_str(size=6, chars=string.digits)
+        random_number = RandomManager.random_string(size=2, chars=string.ascii_letters) + \
+            RandomManager.random_string(size=6, chars=string.digits)
         self.passport_numbers = [random_number + str(_) for _ in range(amount)]
         emails = [f'test{number}@gmail.com' for number in self.passport_numbers]
         file_path = DirPath.CSV if amount == 1 else DirPath.CSV_5
