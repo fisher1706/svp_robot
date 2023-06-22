@@ -2,6 +2,8 @@
 import re
 from random import choices
 
+# pylint: disable=W1406
+
 
 class Translator:
     buck2uni = {
