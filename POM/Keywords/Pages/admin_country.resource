@@ -10,3 +10,14 @@ Open Admin Country Page
 
 Click New Country
     Click Button        ${BTN_NEW_COUNTRY}
+
+Select Country
+    [Arguments]    ${selector}      ${val}=1     ${attr}=index
+    Click Button    ${selector}
+    Select Options By    ${selector}    ${attr}    ${val}
+    Keyboard Key    press    Enter
+
+Click Btn Add
+    Click Button    ${BTN_ADD}
+
+

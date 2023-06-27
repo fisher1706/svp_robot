@@ -81,3 +81,9 @@ class Utils:
         date = datetime.now().strftime('%Y-%m')
         last_day = calendar.monthrange(int(date.split('-')[0]), int(date.split('-')[1]))[1]
         return [f"{date}-01", f"{date}-{last_day}"]
+
+    @staticmethod
+    @keyword('Get Current Date')
+    def get_current_date():
+        date = datetime.now().strftime('%d-%m-%Y')
+        return date

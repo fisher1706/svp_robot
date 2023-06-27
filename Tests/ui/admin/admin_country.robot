@@ -11,3 +11,6 @@ Test Setup    Run Keywords    Open Chrome Browser   AND     Log In By Api To The
 *** Test Cases ***
 Abitity To Create New Country Page
     Test Create New Country
+
+Ability To Edit Country Page By Clickin On Edit Button
+    Test Edit Country Page By Edit Button
