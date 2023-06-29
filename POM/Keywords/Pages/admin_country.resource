@@ -6,7 +6,7 @@ Variables           POM/Locators/AdminCountryLocators.py
 
 
 *** Variables ***
-@{second_atr}
+@{Second_atr}
 ...     viewUploadFiles
 ...     viewTransactionsHis
 ...     centerViewUploadData
@@ -53,7 +53,7 @@ Choose Item Actions
 Fill Group Expire Years
     [Arguments]    ${start}=50      ${end}=100      ${years}=True
     ${elements}=     Get Elements    ${FIELDS_GROUP_EXPIRE_YEARS}
-    ${len}=     Get length    ${elements}
+    ${len}=     Get Length    ${elements}
     IF      ${years}     Type Text       ${elements}[0]       50
     FOR    ${i}    IN RANGE    1   ${len}
         TRY
@@ -75,7 +75,7 @@ Set Settings Legislator And TCenter
     ${elements}=    Get Elements    ${CHECKBOX}
     FOR    ${el}    IN      @{elements}
         ${atr}=    Get Attribute   ${el}${CHECKBOX_CHECK}    id
-        IF      '${atr}' in @{second_atr}
+        IF      '${atr}' in @{Second_atr}
             Append To List      ${second_checkbox}      ${el}
             CONTINUE
         ELSE
