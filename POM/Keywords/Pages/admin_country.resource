@@ -6,7 +6,7 @@ Variables           POM/Locators/AdminCountryLocators.py
 
 
 *** Variables ***
-@{Second_atr}
+@{SECOND_ATR}
 ...     viewUploadFiles
 ...     viewTransactionsHis
 ...     centerViewUploadData
@@ -75,7 +75,7 @@ Set Settings Legislator And TCenter
     ${elements}=    Get Elements    ${CHECKBOX}
     FOR    ${el}    IN      @{elements}
         ${atr}=    Get Attribute   ${el}${CHECKBOX_CHECK}    id
-        IF      '${atr}' in @{Second_atr}
+        IF      '${atr}' in @{SECOND_ATR}
             Append To List      ${second_checkbox}      ${el}
             CONTINUE
         ELSE
