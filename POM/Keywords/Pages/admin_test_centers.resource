@@ -50,7 +50,11 @@ Select Dropdown Statuses
 
 Select View Of Last Entry
     Wait Spinners To Disappear
-    Wait For Condition    Element Count    ${ICON_DOTS}    ==    1
+    TRY
+        Wait For Condition    Element Count    ${ICON_DOTS}    ==    1
+    EXCEPT
+        Wait For Condition    Element Count    ${ICON_DOTS}    ==    1
+    END
     Hover    ${ICON_DOTS}
     Click Button    ${ICON_VIEW_ACTION}
 

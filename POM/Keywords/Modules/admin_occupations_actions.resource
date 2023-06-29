@@ -2,6 +2,7 @@
 Resource        POM/Keywords/Pages/admin_occupations.resource
 Resource        POM/Keywords/Pages/base.resource
 Resource        POM/Keywords/Modules/spa_actions.resource
+Resource        POM/Keywords/Modules/admin_base_actions.resource
 Library         Libraries/CSVHelper.py
 Library         Libraries/FileHelper.py
 Library         Resources/DataSources/models/ModelBuilder.py
@@ -39,6 +40,7 @@ Test Upload Occupation
     IF      ${new}
         Verify File Information     saved=1     skipped=0       total=1
         Click Done
+        Open Admin Occupations Page
         Verify Added Occupation     occupation=${occupation}
     ELSE
         Verify File Information     saved=0     skipped=1       total=1
@@ -92,7 +94,7 @@ Fill Occupatioin Form
 
 Verify Added Occupation
     [Arguments]    ${occupation}
-    Open Admin Occupations Page
+    Wait For Elements State    ${OCCUPATIONS_TEXT}      visible
     ${entry}=       Get Last Entry      ${LAST_ENTRY}
     Should Be Equal     ${entry}[1]     ${occupation.key}
     Should Be Equal     ${entry}[2]     ${occupation.arabic_name}
@@ -100,18 +102,7 @@ Verify Added Occupation
 
 Download All Occupations
     [Arguments]    ${filename}=all_occupations.csv
-    Clear Temp Folder
-    ${dl_promise}=    Promise To Wait For Download    ${TEMP_FOLDER}/${filename}
-    Click Button        ${DOWNLOAD_OCCUPATIONS_CSV}
-    ${file_obj}=    Wait For  ${dl_promise}
-    ${files}=   Get Temp Files
-    Should Not Be Empty     ${files}
-
-Verify File Information
-    [Arguments]    ${saved}     ${skipped}      ${total}
-    Verify Text     ${FIELD_SAVED_COUNT}    ${saved}
-    Verify Text     ${FIELD_SKIPPED_COUNT}    ${skipped}
-    Verify Text     ${FIELD_TOTAL_COUNT}    ${total}
+    ${file}=    Download File       filename=${filename}    btn_download=${DOWNLOAD_OCCUPATIONS_CSV}
 
 Verify Key Error Message
     Verify Text     ${KEY_ERROR}        ${KEY_OCCUPATION_IS_EXIST}

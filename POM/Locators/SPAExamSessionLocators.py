@@ -10,7 +10,7 @@ class SPAExamSessionLocators:
     INPUT_TIME_FROM = '//*[@placeholder="From"]'
     INPUT_TIME_TO = '//*[@placeholder="To"]'
     INPUT_SEATS = '//*[@placeholder="Choose Number"]'
-    CATEGORY_SESSION = '//*[text()="Engine Mechanics"]'
+    CATEGORY_SESSION = "//span[contains(text(),'Engine Mechanics')]"
     BTN_ADD = '//*[text()="Add"]'
     BTN_OK = '//*[text()="Ok"]'
     SESSION_CATEGORY = '//*[@class="session__category"]'

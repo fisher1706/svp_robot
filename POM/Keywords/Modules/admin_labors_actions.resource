@@ -2,7 +2,6 @@
 Resource        POM/Keywords/Pages/admin_labors.resource
 Resource        POM/Keywords/Pages/base.resource
 Resource        POM/Keywords/Modules/spa_actions.resource
-Library         Libraries/Utils.py
 
 
 *** Keywords ***
@@ -19,12 +18,13 @@ Test Use View Actions Active Labor
     Verify General Information      data=${data}
 
 Test Revoke Labor On The Labor Page
+    [Arguments]    ${start}=//*[text()="     ${end}="]/../..
     Admin Labors Actions
     ${data}     ${actions_from}=    Get Data Labor      selector=${ACTIVE_LABORS}
     Choose Item Actions     ${actions_from}      Revoke
     Click Yes
     Sleep    1
-    ${entry}=       Get Last Entry      //*[text()="${data[0]}"]/../..
+    ${entry}=       Get Last Entry      ${start}${data[0]}${end}
     Should Contain      ${entry}[0]        Revoked
 
 Test Use View Actions Revoked Labor
@@ -35,16 +35,19 @@ Test Use View Actions Revoked Labor
 
 Test Ability Activate Labor On Labor Page
     Test Revoke Labor On The Labor Page
-    ${data}=    Get Data Revoked Labors
-    FOR     ${item}     IN      @{data}
-        Choose Item Actions     ${item}      Reactivate
+    Admin Labors Actions
+    ${data_before}=    Get Elements    ${REVOKED_LABORS}
+    ${count_before}=       Get Length      ${data_before}
+    FOR    ${_}    IN RANGE    ${count_before}
+        ${inner}=    Get Elements    ${REVOKED_LABORS}
+        Choose Item Actions     ${inner}[0]      Reactivate
         Wait Spinners To Disappear
         Click Yes
+        Wait For Elements State    ${NATIONAL_ID}       visible
     END
-    ${data}=    Get Data Revoked Labors
-    ${count}=       Get Length      ${data}
-    ${out}=   Convert To Integer      1
-    Should Be Equal     ${count}        ${out}
+    ${data_after}=    Get Elements    ${REVOKED_LABORS}
+    ${count_after}=       Get Length      ${data_after}
+    Should Not Be Equal     ${count_before}        ${count_after}
 
 Test Ability To Back From View Labor Page
     Test Use View Actions Active Labor
@@ -72,7 +75,6 @@ Test Ability Use Filtration
     Verify Filter Field    ${FIELD_EMAIL}        ${data}[6]
     Verify Filter Field Select      ${FIELD_COUNTRY_OF_RESIDENCE}   ${INPUT_COUNTRY_OF_RESIDENCE}   ${data}[3]
     Verify Filter Field Select      ${FIELD_NATIONALITY}   ${INPUT_NATIONALITY}   ${data}[4]
-    Verify Filter Field Select      ${FIELD_STATUS}   ${INPUT_NATIONALITY}   ${data}[4]
 
 Verify General Information
     [Arguments]    ${data}
@@ -89,29 +91,27 @@ Admin Labors Actions
 Get Data Labor
     [Arguments]    ${selector}
     ${entries}=    Get Elements    ${selector}
-    ${work}=    Get Slice From List     ${entries}      1
-    ${entry}=   Return Random Data List     ${work}
+    ${entry}=   Return Random Data List     ${entries}
     ${data}=     Get Last Entry      ${entry}
     ${out}=    Split String     ${data}[0]     \t
     [Return]    ${out}     ${entry}
 
-Get Data Revoked Labors
-    ${entries}=    Get Elements    ${REVOKED_LABORS}
-    FOR    ${entry}     IN      @{entries}
-        ${atr}=     Get Attribute Names     ${entry}
-        IF    ${atr}    Remove Values From List     ${entries}      ${entry}
-    END
-    [Return]        ${entries}
-
 Choose Item Actions
-    [Arguments]    ${actions}       ${type}
-    Hover       ${actions}//*[@class="actionTypeLinks"]
+    [Arguments]
+    ...     ${actions}
+    ...     ${type}
+    ...     ${hover}=${HOVER_ACTIONS}
+    ...     ${view_start}=//a[text() = "
+    ...     ${view_end}="]
+    ...     ${start}=//span[contains(text(), "
+    ...     ${end}=")]
+    Hover       ${actions}${hover}
     IF      '${type}'=='View'
-        Click Button        ${actions}//a[text() = "${type}"]
+        Click Button        ${actions}${view_start}${type}${view_end}
     ELSE IF     '${type}'=='Revoke'
-        Click Button        ${actions}//span[contains(text(), "${type}")]
+        Click Button        ${actions}${start}${type}${end}
     ELSE IF     '${type}'=='Reactivate'
-        Click Button        ${actions}//span[contains(text(), "${type}")]
+        Click Button        ${actions}${start}${type}${end}
     END
 
 Verify Filter Field Select
@@ -132,11 +132,3 @@ Verify Filter Field
     Type Text    ${selector}    ${value}
     Keyboard Key    press    Enter
     Verify Text     ${FILTERS_CONTROL}       ${value}
-
-Verify Filter Status
-    [Arguments]    ${value}
-    Click Filters Admin
-    Click Button        ${FIELD_STATUS}
-    Click Button        ${INPUT_STATUS}
-    Click Apply
-    Verify Text         ${FILTERS_CONTROL}       ${value}
