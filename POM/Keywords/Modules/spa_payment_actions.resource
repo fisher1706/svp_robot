@@ -104,7 +104,11 @@ Pass Credit Flow
     [Arguments]    ${state}    ${amount}=1
     Get Credit      ${amount}
     Fill Card Details
-    Click Pay Now
+    TRY
+        Click Pay Now
+    EXCEPT
+        Click Pay Now
+    END
     Select Dropdown Transaction State       ${state}
     Click Transaction Pay
     Wait For Elements State    ${WAITING_SPINNER}      hidden

@@ -48,8 +48,11 @@ Create Entities And Log In
     IF    ${login}
         ${email}=    Set Variable If    ${login_tcenter}    ${tcenter_account.email}    ${legislator_account.email}
         Log In To SPA    ${two_factor_verification}    ${email}
-        Check Permission Settings       token=${token}     login_tcenter=${login_tcenter}
-        ...     is_multiple_categories=${is_multiple_categories}      two_factor_verification=${two_factor_verification}
+        Check Permission Settings
+        ...     token=${token}
+        ...     login_tcenter=${login_tcenter}
+        ...     is_multiple_categories=${is_multiple_categories}
+        ...     two_factor_verification=${two_factor_verification}
         ...     email=${email}
     END
 

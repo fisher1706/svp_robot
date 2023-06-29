@@ -1,7 +1,8 @@
 import ast
 import csv
 import datetime
-from random import randint
+import string
+from random_manager import RandomManager
 
 from Resources.Variables.DirPath import DirPath
 
@@ -58,7 +59,8 @@ class CSVHelper:
         wrong_timestamp = ast.literal_eval(wrong_timestamp) if \
             wrong_timestamp in ['False', 'True'] else wrong_timestamp
         timestamp = self._verify_timestamp(wrong_timestamp)
-        random_number = str(randint(1, 10 ** randint(7, 8)))
+        random_number = RandomManager.random_string(size=2, chars=string.ascii_letters) + \
+            RandomManager.random_string(size=6, chars=string.digits)
         self.passport_numbers = [random_number + str(_) for _ in range(amount)]
         emails = [f'test{number}@gmail.com' for number in self.passport_numbers]
         file_path = DirPath.CSV if amount == 1 else DirPath.CSV_5
@@ -82,6 +84,18 @@ class CSVHelper:
             item[1] = occupation.english_name
             item[2] = occupation.arabic_name
             item[3] = 31
+        self._open_file(file_path, list_csv, mode='w')
+
+        return file_path
+
+    def prepare_categories_csv_file(self, category):
+        file_path = DirPath.CSV_CATEGORIES
+        list_csv = []
+        self._open_file(file_path, list_csv, mode='r')
+        for item in list_csv[1:]:
+            item[0] = category.code
+            item[1] = category.english_name
+            item[2] = category.arabic_name
         self._open_file(file_path, list_csv, mode='w')
 
         return file_path
