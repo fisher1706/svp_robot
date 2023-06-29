@@ -1,9 +1,10 @@
 *** Settings ***
 Resource        POM/Keywords/Pages/admin_country.resource
 Resource        POM/Keywords/Pages/base.resource
-Resource        POM/Keywords/Modules/admin_base_actions.resource
-Library         Libraries/Utils.py
 Variables       POM/Locators/AdminCountryLocators.py
+Variables       Resources/Variables/SuccessMessage.py
+Variables       Resources/Variables/Filters.py
+Variables       Resources/Variables/ErrorMessage.py
 
 
 *** Keywords ***
@@ -12,68 +13,115 @@ Test Create New Country
     Click New Country
     Wait Spinners To Disappear
     Wait For Elements State     ${NEW_COUNTRY_TEXT}       visible
-    Select Country      ${DROPDOWN_COUNTRY}
-#    Click Btn Add
+    Select Dropdown List      selector=${COUNTRY}
+    Fill Field Mandated Date
+    Set Settings Legislator And TCenter
+    Choose Category
+    Fill Group Expire Years
+    Verify Active Add Button
 
 Test Edit Country Page By Edit Button
     Open Admin Country Page
     Choose Item Actions     type=Edit
     Wait For Elements State     ${EDIT_COUNTRY}       visible
-#    Fill Group Expire Years
-#    Fill Field Mandated Date
-    Checkboks Actions
+    Set Settings Legislator And TCenter
+    Fill Field Mandated Date
+    Click Btn Edit
+    Verify Edit Country
 
+Test Edit Country Page From View Page
+    Open Admin Country Page
+    Choose Item Actions     type=View
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    Click Btn Edit
+    Choose Category
+    Fill Group Expire Years
+    Click Btn Edit
+    Verify Edit Country
 
+Test Edit Pass Percentage For Category
+    Open Admin Country Page
+    Choose Item Actions     type=Edit
+    Wait For Elements State     ${EDIT_COUNTRY}       visible
+    Fill Group Expire Years     years=False
+    Click Btn Edit
+    Verify Edit Country
 
+Test Not Ability Save Pass Percentage Less Than 50 Per Category
+    Open Admin Country Page
+    Choose Item Actions     type=Edit
+    Wait For Elements State     ${EDIT_COUNTRY}       visible
+    Fill Group Expire Years     start=1      end=40
+    Verify Edit Button Is Dissabled
 
+Test Select Nationality
+    Open Admin Country Page
+    Choose Item Actions     type=Edit
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    ${natioality}=      Choose Nationality
+    Click Btn Edit
+    TRY
+        Verify Edit Country
+    EXCEPT
+        Verify Text     ${LINKED_NATIONALITY}      ${MSG_LINKED_NATIONALITY}    is_equal=False
+    END
 
+Test Filter By Country
+    Open Admin Country Page
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    Country Filter
+    Verify Filters Country
 
+Test Filter By Legislator
+    Open Admin Country Page
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    ${value}=       Filter      filter_options=${LEGISLATOR_TCENTER_FILTER_OPTIONS}     locator=${LEGISLATOR}
+    Verify Filters      value=${value}       locator=${LEGISLATOR_TAB}
 
-
+Test Filter By TCenter
+    Open Admin Country Page
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    ${value}=       Filter      filter_options=${LEGISLATOR_TCENTER_FILTER_OPTIONS}     locator=${TCENTER}
+    Verify Filters      value=${value}       locator=${TCENTER_TAB}
 
 Admin Country Actions
     Open Admin Country Page
     Wait Spinners To Disappear
     Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
 
-Choose Item Actions
-    [Arguments]     ${type}
-    Hover       ${LAST_ACTION}
-    IF      '${type}'=='View'
-        Click Button        ${ICON_VIEW}
-    ELSE
-        Click Button        ${ICON_EDIT}
-    END
+Verify Edit Country
+    Wait Spinners To Disappear
+    Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
+    Verify Text    ${COUNTRY_SUCCESSFULLY_UPDATED}      ${SUCCESS_UPDATE_MESSAGE}
 
-Fill Group Expire Years
-    ${elements}=     Get Elements    ${FIELDS_GROUP_EXPIRE_YEARS}
-    FOR    ${el}    IN      @{elements}
-        TRY
-            ${status}=    Get Element States    ${el}       *=    enabled
-            ${number}=      Return Random Number Limit
-            Type Text       ${el}       ${number}
-        EXCEPT
-            CONTINUE
-        END
-    END
+Verify Edit Button Is Dissabled
+    Wait For Elements State    ${BTN_EDIT}    disabled
 
-Fill Field Mandated Date
-    ${date}=    Get Current Date
-    Type Text    ${FIELD_MANDATED_DATE}     ${date}
-    Keyboard Key    press    Enter
+Verify Active Add Button
+    Wait For Elements State    ${BTN_ADD}    enabled
 
-Checkboks Actions
-    ${elements}=    Get Elements    ${CHECKBOX}
-    FOR    ${el}    IN      @{elements}
-        TRY
-            ${status}=    Get Element States    ${el}//*[@class="checkbox__input test-center-check"]       *=    disabled
-            CONTINUE
-        EXCEPT
-            ${state}=    Get Checkbox State    ${el}//*[@class="checkbox__input test-center-check"]
-            IF    ${state}
-                Uncheck Checkbox    ${el}//*[@class="checkbox__label text--regent-gray"]
-            ELSE
-                Check Checkbox    ${el}//*[@class="checkbox__label text--regent-gray"]
-            END
-        END
-    END
+Country Filter
+    [Arguments]    ${default_country}=Denmark
+    Click Btn Cancel
+    ${value}=       Return Random Number Limit      start=0     end=2
+    Select Dropdown List      selector=${COUNTRY_CHOOSE_OPTION}       val=${value}
+    Type Text       ${COUNTRY}      ${default_country}
+    Click Btn Seach
+
+Filter
+    [Arguments]    ${filter_options}        ${locator}
+    Click Btn Cancel
+    ${value}=       Return Random Data List      ${filter_options}
+    Select Dropdown List      selector=${locator}       val=${value}     attr=text
+    Click Btn Seach
+    [Return]        ${value}
+
+Verify Filters Country
+    [Arguments]    ${default_country}=Denmark
+    Wait Spinners To Disappear
+    Verify Text    ${COUNTRY_TAB}       ${default_country}
+
+Verify Filters
+    [Arguments]    ${value}     ${locator}
+    Wait Spinners To Disappear
+    Verify Text     ${locator}      ${value}    is_equal=False
