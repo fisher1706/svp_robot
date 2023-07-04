@@ -3,7 +3,6 @@ Resource        POM/Keywords/Pages/admin_log_page.resource
 Resource        POM/Keywords/Pages/base.resource
 Resource        POM/Keywords/Modules/spa_actions.resource
 Library         Libraries/Utils.py
-Variables       POM/Locators/AdminCertificatePriceLocators.py
 Variables       Resources/Variables/Filters.py
 
 

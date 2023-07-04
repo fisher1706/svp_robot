@@ -48,3 +48,9 @@ CONTAINS_FILTER_OPTIONS = [
     'Begins with',
     'Ends with'
 ]
+
+TRANSACTIONS_LOG_FILTER_OPTIONS = [
+    {'success': '07-01-2038'},
+    {'Failed': '03-01-2008'},
+    {'Prepared Checkout': '07-01-2035'}
+]

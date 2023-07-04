@@ -85,8 +85,7 @@ class Utils:
     @staticmethod
     @keyword('Get Current Date')
     def get_current_date():
-        date = datetime.now().strftime('%d-%m-%Y')
-        return date
+        return datetime.now().strftime('%d-%m-%Y')
 
     @staticmethod
     @keyword('Reformat Data Filter')
