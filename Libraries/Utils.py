@@ -87,3 +87,13 @@ class Utils:
     def get_current_date():
         date = datetime.now().strftime('%d-%m-%Y')
         return date
+
+    @staticmethod
+    @keyword('Reformat Data Filter')
+    def reformat_filters_data(data):
+        return list(data.keys())[0], list(data.values())[0]
+
+    @staticmethod
+    @keyword('Get Randon String')
+    def get_random_string():
+        return RandomManager().random_name()
