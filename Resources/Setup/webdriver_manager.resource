@@ -5,7 +5,7 @@ Library     Browser
 
 *** Keywords ***
 Open Chrome Browser
-    [Arguments]    ${browser}=firefox    ${timeout}=50s
+    [Arguments]    ${browser}=firefox    ${timeout}=30s
     Set Common Global Variables
     New Persistent Context
     ...    browser=${browser}

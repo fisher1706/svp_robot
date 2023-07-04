@@ -19,3 +19,5 @@ MSG_CATEGORY_CODE = 'Only digits'
 MSG_ENGLISH_NAME = 'Only english characters'
 MSG_ARABIC_NAME = 'Only arabic characters'
 MSG_DOWNLOAD_ERROR = 'You can not upload the categories. Please update the CSV file then try again'
+
+MSG_LINKED_NATIONALITY = 'was already linked with another country'

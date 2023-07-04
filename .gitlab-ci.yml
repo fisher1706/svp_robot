@@ -45,7 +45,7 @@ build:
   only:
     refs:
       - master
-      - merge_requests
+      - merge_request
     changes:
       - Dockerfile
       - pyproject.toml
