@@ -126,15 +126,29 @@ class ModelBuilder:
     @keyword('Create New Category')
     def build_random_category(status='correct'):
         random_manager = RandomManager()
+
+        category_status = random_manager.random_from_list(CategoriesIdsDataset.CATEGORY_STATUS)
+        test_type = random_manager.random_from_list(CategoriesIdsDataset.CATEGORY_TEST_TYPE)
+        prometric_cbt_exam_weight = random_manager.random_number_limit()
+        prometric_code = random_manager.random_number_limit(start=10)
+        cbt_exam_weight = random_manager.random_number_limit()
+
         if status == 'correct':
             code = random_manager.random_number()
             english_name, arabic_name = Translator().validate_and_return_names()
+
         else:
             code = random_manager.random_name()
             english_name = random_manager.random_number()
             arabic_name = random_manager.random_name()
+
         return Category(
             code=code,
+            category_status=category_status,
             english_name=english_name,
-            arabic_name=arabic_name
+            arabic_name=arabic_name,
+            test_type=test_type,
+            prometric_cbt_exam_weight=prometric_cbt_exam_weight,
+            cbt_exam_weight=cbt_exam_weight,
+            prometric_code=prometric_code
         )

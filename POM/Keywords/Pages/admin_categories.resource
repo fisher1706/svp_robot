@@ -11,23 +11,17 @@ Open Admin Categories Page
 Click New Category
     Click Button    ${BTN_NEW_CATEGORY}
 
-Click Create Category
-    Click Button    ${BTN_CREATE_CATEGORY}
+Click Btn Save
+    Click Button    ${BTN_SAVE}
 
-Select Status
-    [Arguments]    ${attr}=index    ${val}=0
-    Click Button    ${FIELD_STATUS}
-    Select Options By    ${FIELD_STATUS}    ${attr}    ${val}
-    Keyboard Key    press    Enter
+Click Btn Change Logs
+    Click Button    ${CHANGE_LOGS}
 
-Click Btn Create Category
-    Click Button    ${BTN_CREATE_CATEGORY}
-
-Click Btn Edit Category
-    Click Button    ${BTN_EDIT_CATEGORY}
+Click Btn Edit
+    Click Button    ${BTN_EDIT}
 
 Verify Create Category Button Is Dissabled
-    Wait For Elements State    ${BTN_CREATE_CATEGORY}    disabled
+    Wait For Elements State    ${BTN_SAVE_CATEGORY}    disabled
 
 Click Chage Status
     Click Button    ${CHANGE_STATUS}
@@ -37,3 +31,13 @@ Click Upload Categories
 
 Click Done
     Click Button    ${BTN_DONE}
+
+Click Btn Publish
+    Click Button    ${BTN_PUBLISH}
+
+Click Btn Unpublish
+    Click Button    ${BTN_UNPUBLISH}
+
+Click Btn Back
+    Click Button    ${BTN_BACK}
+

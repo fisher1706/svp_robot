@@ -13,7 +13,7 @@ class SPAAssessorsLocators:
     LICENSES_CERTIFICATIONS = '//*[text()="Licenses & Certifications"]'
     EXPERIENCE = '//*[text()="Experience certificate"]'
     FILTER = '//*[@class="filter-icon"]'
-    FIELD_NAME = '//*[@placeholder="Name"]'
+    FIELD_NAME = '//*[@placeholder="Full Name"]'
     FIELD_CNIC = '//*[@placeholder="CNIC"]'
     FIELD_PHONE_NUMBER = '//*[@id="phoneNumber"]'
     FIELD_PASSPORT_NUMBER = '//*[@placeholder="Passport Number"]'

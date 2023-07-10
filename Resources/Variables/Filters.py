@@ -51,6 +51,11 @@ CONTAINS_FILTER_OPTIONS = [
 
 TRANSACTIONS_LOG_FILTER_OPTIONS = [
     {'success': '07-01-2038'},
-    {'Failed': '03-01-2008'},
+    {'Failed': '07-01-2059'},
     {'Prepared Checkout': '07-01-2035'}
+]
+
+FILTER_OWNER_ROLE = [
+    {'Test Centers': 'Contact Name'},
+    {'Legislators': 'Contact Name'}
 ]

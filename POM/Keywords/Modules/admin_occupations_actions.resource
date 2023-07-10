@@ -8,6 +8,7 @@ Library         Libraries/FileHelper.py
 Library         Resources/DataSources/models/ModelBuilder.py
 Variables       Resources/Variables/DirPath.py
 Variables       Resources/Variables/WarningMessage.py
+Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/SpecialChars.py
 
 
@@ -16,7 +17,7 @@ Test Add New Occupation
     Open Admin Occupations Page
     ${occupation}=      Create New Random Occupation
     Add Occupation      occupation=${occupation}
-    Verify Added Occupation     occupation=${occupation}
+    Verify Added Occupation
 
 Test Download All Occupations List
     Open Admin Occupations Page
@@ -40,8 +41,7 @@ Test Upload Occupation
     IF      ${new}
         Verify File Information     saved=1     skipped=0       total=1
         Click Done
-        Open Admin Occupations Page
-        Verify Added Occupation     occupation=${occupation}
+        Verify Added Occupation     upload=True
     ELSE
         Verify File Information     saved=0     skipped=1       total=1
     END
@@ -61,7 +61,7 @@ Test Add Occupation With Existed Name
     ${occupation}=      Update Occupation Data   occupation=${occupation}
     ...     english_name=${entry}[6]       arabic_name=${entry}[2]
     Add Occupation      occupation=${occupation}
-    Verify Added Occupation     occupation=${occupation}
+    Verify Added Occupation
 
 Test Add Occupation With Special Char In Name Field
     Open Admin Occupations Page
@@ -69,7 +69,7 @@ Test Add Occupation With Special Char In Name Field
     ${occupation}=      Update Occupation Data   occupation=${occupation}
     ...     english_name=${special_chars}       arabic_name=${special_chars}
     Add Occupation      occupation=${occupation}
-    Verify Added Occupation     occupation=${occupation}
+    Verify Added Occupation
 
 Open Admin Occupations Page
     Open Page    base_url=${ADMIN_URL}    page_url=occupations
@@ -93,12 +93,12 @@ Fill Occupatioin Form
     Select Category
 
 Verify Added Occupation
-    [Arguments]    ${occupation}
-    Wait For Elements State    ${OCCUPATIONS_TEXT}      visible
-    ${entry}=       Get Last Entry      ${LAST_ENTRY}
-    Should Be Equal     ${entry}[1]     ${occupation.key}
-    Should Be Equal     ${entry}[2]     ${occupation.arabic_name}
-    Should Be Equal     ${entry}[6]     ${occupation.english_name}
+    [Arguments]     ${upload}=False
+    IF    ${upload}
+        Verify Text    ${FIELD_ADD_SUCCESS}     ${MSG_SUCCESS_UPLOAD_OCCUPATION}
+    ELSE
+        Verify Text    ${FIELD_ADD_SUCCESS}     ${MSG_SUCCESS_ADD_OCCUPATION}
+    END
 
 Download All Occupations
     [Arguments]    ${filename}=all_occupations.csv

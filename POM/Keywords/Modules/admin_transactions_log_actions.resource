@@ -15,26 +15,24 @@ Test Open Transactions Log Page
     Should Not Be Empty    ${data}
 
 Test Use Filter On Transactions Log Page
+    [Arguments]    ${fill_date}=True
     Admin Transactions Log Actions
-    FOR    ${item}      IN      ${TRANSACTIONS_LOG_FILTER_OPTIONS}
+    FOR    ${item}      IN      @{TRANSACTIONS_LOG_FILTER_OPTIONS}
         ${key}      ${value}=   Reformat Data Filter        ${item}
         Click Btn Cancel
         Select Dropdown List    selector=${SELECT_STATUS}       val=${key}
-        Type Text    ${FIELD_TRANSACTION_DATE}        ${value}
+        IF      ${fill_date}
+            Type Text    ${FIELD_TRANSACTION_DATE}        ${value}
+            Keyboard Key    press    Enter
+        END
         Click Btn Seach
-        Sleep    3
-#        Verify Filter   value=${value}
+        Verify Filter   value=${key}
     END
 
 Admin Transactions Log Actions
     Open Admin Transactions Log Page
     Wait Spinners To Disappear
     Wait For Elements State     ${TRANSACTIONS_LOG_TEXT}       visible
-
-
-
-
-
 
 Select Dropdown List
     [Arguments]    ${selector}      ${val}     ${attr}=text
@@ -44,6 +42,7 @@ Select Dropdown List
 
 Verify Filter
     [Arguments]    ${value}
+    ${data}=    Cap String      ${value}
     Wait Spinners To Disappear
     ${entry}=       Get Last Entry      ${LAST_ENTRY}
-    List Should Contain Value       ${entry}        ${value}
+    List Should Contain Value       ${entry}        ${data}

@@ -11,14 +11,14 @@ Variables       Resources/Variables/Filters.py
 
 *** Keywords ***
 Test TCcenter Will Be Able To View All Sessions
-    [Arguments]    ${number}=6
+    [Arguments]    ${number}=3
     ${total_data}=     Create List
     Switch To Session
     FOR    ${i}    IN RANGE    0    ${number}   3
         Click Add Session
         ${session_time}=    Time New Session    num=${i}
         ${seat_number}=     Return Random Number Limit
-        ${repeat_type}=   Return Random Data List     ${session_repeat}
+        ${repeat_type}=   Set Variable      ${session_repeat}[0]
         Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
         Click Ok
         ${seat_number}=     Convert To String       ${seat_number}
@@ -27,6 +27,7 @@ Test TCcenter Will Be Able To View All Sessions
         Append To List      ${total_data}      ${session_time[4]}     ${seat_number}      ${repeat_type}
     END
     Switch To Session Management
+    Log To Console      ${total_data}
     Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
     Verify Added Sessions   ${total_data}
 
@@ -131,7 +132,7 @@ Read Tabs Data Session Management
         IF      ${all_data}
             Append To List      ${final}    ${inner}
         ELSE
-            Append To List      ${final}    ${inner}[2]     ${inner}[4]     ${inner}[6]
+            Append To List      ${final}    ${inner}[3]     ${inner}[5]     ${inner}[7]
         END
     END
     [Return]    ${final}

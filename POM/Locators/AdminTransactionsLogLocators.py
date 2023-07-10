@@ -7,14 +7,5 @@ class AdminTransactionsLogLocators:
     BTN_SEARCH = '//*[text()="Search"]'
     SELECT_STATUS = '//*[@id="status"]'
     FIELD_TRANSACTION_DATE = '//*[@class="input-control"]'
-
-
-
     DETAILS_ITEM = '//*[@class="details-list__item"]'
-
-
-
-    SELECT_CONTAINS = '//*[@class="form-row"]//select'
-    FILTER_FIELD = '//*[@id="loggable_name"]'
     LAST_ENTRY = 'tbody tr:nth-child(1)'
-

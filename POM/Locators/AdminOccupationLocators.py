@@ -19,3 +19,4 @@ class AdminOccupationLocators:
     FIELD_TOTAL_COUNT = 'td[data-label="Total count"]'
     BTN_DONE = '//*[text()="Done"]'
     KEY_ERROR = '//*[text()="has already been taken"]'
+    FIELD_ADD_SUCCESS = '//*[@class="toasted-container alert-msg top-center"]'
