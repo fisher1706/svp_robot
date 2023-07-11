@@ -11,3 +11,12 @@ Test Setup    Run Keywords    Open Chrome Browser   AND     Log In By Api To The
 *** Test Cases ***
 Ability To Add The New Attache
     Test Create New Attache
+
+Ability To Add The New Attache For Attached Labor
+    Test Create New Attache     success=False
+
+Ability Resend Invitatuion For Attached Labor
+    Test Resend Invitation
+
+Checking Ability Search Entry By Filters And Clear Filters
+    Test Use Filters
