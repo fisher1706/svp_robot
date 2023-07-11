@@ -131,7 +131,7 @@ class ModelBuilder:
         test_type = random_manager.random_from_list(CategoriesIdsDataset.CATEGORY_TEST_TYPE)
         prometric_cbt_exam_weight = random_manager.random_number_limit()
         prometric_code = random_manager.random_number_limit(start=10)
-        cbt_exam_weight = random_manager.random_number_limit()
+        exam_weight = random_manager.random_number_limit()
 
         if status == 'correct':
             code = random_manager.random_number()
@@ -149,6 +149,6 @@ class ModelBuilder:
             arabic_name=arabic_name,
             test_type=test_type,
             prometric_cbt_exam_weight=prometric_cbt_exam_weight,
-            cbt_exam_weight=cbt_exam_weight,
+            exam_weight=exam_weight,
             prometric_code=prometric_code
         )

@@ -110,7 +110,7 @@ Add Category
 
 Fill Category Form
     [Arguments]    ${category}
-    ${state_prometric}=    Get Element States    ${FIELD_PROMETRIC_CTB_EXAM_WEIGHT}    then    bool(value & enabled)
+    ${state_prometric}=    Get Element States    ${FIELD_PROMETRIC}    then    bool(value & enabled)
     ${state_arabic}=    Get Element States    ${FIELD_ARABIC_NAME}    then    bool(value & enabled)
     Select Dropdown List    selector=${FIELD_STATUS}    val=${category.category_status}
     Select Dropdown List    selector=${FIELD_TEST_TYPE}    val=${category.test_type}
@@ -118,10 +118,8 @@ Fill Category Form
     Type Text    ${FIELD_ENGLISH_NAME}      ${category.english_name}
     Type Text    ${FIELD_PROMETRIC_CODE}      ${category.prometric_code}
     IF    ${state_arabic}       Type Text    ${FIELD_ARABIC_NAME}      ${category.arabic_name}
-    IF    ${state_prometric}      Type Text    ${FIELD_PROMETRIC_CTB_EXAM_WEIGHT}
-    ...     ${category.prometric_cbt_exam_weight}
-    IF    '${category.test_type}'=='CBT and Practical Exam'      Type Text    ${FIELD_CBT_EXAM_WEIGHT}
-    ...     ${category.cbt_exam_weight}
+    IF    ${state_prometric}    Type Text    ${FIELD_PROMETRIC}     ${category.prometric_cbt_exam_weight}
+    IF    '${category.test_type}'=='CBT and Practical Exam'     Type Text   ${FIELD_WEIGHT}     ${category.exam_weight}
 
 Choose Item Actions
     [Arguments]     ${type}

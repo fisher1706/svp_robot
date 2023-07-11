@@ -15,3 +15,4 @@ RUN \
     . $(find . -name activate) && \
     rfbrowser init && \
     npx playwright install-deps
+
