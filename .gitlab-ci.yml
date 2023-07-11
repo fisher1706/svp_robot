@@ -7,7 +7,7 @@ include:
     file: '/common-jobs/.allure-report.yml'
 
 variables:
-  IMAGE: takamol/svp_robot:master-latest
+  IMAGE: jed.ocir.io/axyoc73bayij/takamol/qa/svp_robot:master-latest
   WORKING_DIRECTORY: /builds/takamol/qa/svp_robot/
   POETRY_ENV: /app
   ROBOT_RESULTS_REPORTS: ./Results/Reports/
@@ -23,17 +23,17 @@ stages:
   - send-slack-reports
 
 .package:
-  image: takamol/ci-cd:package-latest
+  image: $OCI_REGISTRY/gitops/infra/ci-cd:package-latest
   services:
     - name: docker:dind
   script:
-    - echo $TAKAMOL_REGISTRY_PASSWORD | docker login -u $TAKAMOL_REGISTRY_USERNAME --password-stdin
-    - docker pull $ENV_LATEST || true
+    - echo $OCI_REGISTRY_PASSWORD | docker login $OCI_REGISTRY_REGION -u $OCI_REGISTRY_USERNAME --password-stdin
+    - docker pull $OCI_ENV_LATEST || true
     #remove --build-arg when pip registry will be ready
-    - docker build --cache-from $ENV_LATEST --build-arg CI_JOB_TOKEN=${CI_JOB_TOKEN} --build-arg CI_SERVER_HOST=${CI_SERVER_HOST} -t $ENV_LATEST -t $VERSION_TAGGED .
-    - docker push $ENV_LATEST
-    - docker push $VERSION_TAGGED
-    - echo "Image name $VERSION_TAGGED"
+    - docker build --cache-from $OCI_ENV_LATEST --build-arg CI_JOB_TOKEN=${CI_JOB_TOKEN} --build-arg CI_SERVER_HOST=${CI_SERVER_HOST} -t $OCI_ENV_LATEST -t $OCI_VERSION_TAGGED .
+    - docker push $OCI_ENV_LATEST
+    - docker push $OCI_VERSION_TAGGED
+    - echo "Image name $OCI_VERSION_TAGGED"
 
 build:
   stage: build
