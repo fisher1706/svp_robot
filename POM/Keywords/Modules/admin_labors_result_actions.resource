@@ -33,6 +33,7 @@ Find Necessary Labor
     ELSE
         WHILE   '${len}'<='1'
             Click Next
+            Sleep    1
             ${entries}=    Get Elements    ${start}${status}${end}
             ${len}=     Get Length      ${entries}
         END

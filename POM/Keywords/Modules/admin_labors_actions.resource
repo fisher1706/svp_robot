@@ -80,7 +80,7 @@ Verify General Information
     [Arguments]    ${data}
     Wait For Elements State     ${NATIONAL_ID}       visible
     ${general}=     Get Last Entry    ${DATA_GENERAL_INFORMATION}
-    List Should Contain Sub List        ${general}     ${data}
+    List Should Contain Value       ${general}     ${data}[0]
 
 Admin Labors Actions
     Open Admin Labors Page

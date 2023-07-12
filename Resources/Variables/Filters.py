@@ -32,3 +32,30 @@ LEGISLATOR_TCENTER_FILTER_OPTIONS = [
     'View Transactions history',
     'View certificate'
 ]
+
+ACTIONS_LOG_ENTITY_FILTER_OPTIONS = [
+    {'Test Center': 'Autotest axsuoqjv'},
+    {'Category': 'nbrz'},
+    {'Occupation': 'gkgsxpfl'},
+    {'User': 'ruba test'},
+    {'Legislator': 'Legislator'},
+    {'Permission': 'action'},
+    {'Country category': 'Tiling'}
+]
+
+CONTAINS_FILTER_OPTIONS = [
+    'Contains',
+    'Begins with',
+    'Ends with'
+]
+
+TRANSACTIONS_LOG_FILTER_OPTIONS = [
+    {'success': '07-01-2038'},
+    {'Failed': '07-01-2059'},
+    {'Prepared Checkout': '07-01-2035'}
+]
+
+FILTER_OWNER_ROLE = [
+    {'Test Centers': 'Contact Name'},
+    {'Legislators': 'Contact Name'}
+]

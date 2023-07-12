@@ -15,7 +15,7 @@ Test Ability Add Category
     Admin Categories Actions
     ${category}=    Create New Category     status=correct
     Add Category        category=${category}
-    Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_CREATED_CATEGORY}
+    Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_ACTIONS_CATEGORY}
 
 Test Add Category With Incorrect Data
     Admin Categories Actions
@@ -35,33 +35,41 @@ Test Ability To Edit Category
     Choose Item Actions    type=Edit
     ${category}=    Create New Category     status=correct
     Fill Category Form      category=${category}
-    Click Btn Edit Category
+    Click Btn Save
     Wait Spinners To Disappear
-    Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_UPDATED_CATEGORY}
+    Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_ACTIONS_CATEGORY}
 
 Test View Category Detail Information
     Admin Categories Actions
     Choose Item Actions    type=View
-    ${data_category}=    Get Last Entry    ${DATA_CATEGORY}
-    FOR    ${item}      IN      @{data_category}
+    Sleep   2
+    ${data}=    Get Last Entry    ${DATA_CATEGORY}
+    FOR    ${item}      IN      @{data}
         Should Not Be Empty     ${item}
     END
 
 Test View Category History
     Admin Categories Actions
     Choose Item Actions    type=View
-    Wait For Elements State    ${CHANGE_LOG_TEXT}       visible
+    Click Btn Change Logs
     ${data_history}=    Get Last Entry    ${LAST_ENTRY}
     Should Not Be Empty     ${data_history}
 
 Test Change Category Status
     Admin Categories Actions
     Choose Item Actions    type=View
-    ${data_before}=    Get Last Entry    ${DATA_CATEGORY}
-    Click Chage Status
-    Wait For Elements State     ${CHANGE_STATUS}        visible
-    ${data_after}=    Get Last Entry    ${DATA_CATEGORY}
-    Should Not Be Equal     ${data_before}[-1]      ${data_after}[-1]
+    ${status_before}=    Get Text       ${PUBLISH_STATUS}
+    IF      '${status_before}'=='yes'
+        Click Btn Unpublish
+    ELSE
+        Click Btn Publish
+    END
+    Click Btn Back
+    Wait Spinners To Disappear
+    Choose Item Actions    type=View
+    Sleep    2
+    ${status_after}=    Get Text       ${PUBLISH_STATUS}
+    Should Not Be Equal     ${status_before}      ${status_after}
 
 Test Upload Category From Csv
     [Arguments]    ${is_correct}=True
@@ -96,16 +104,22 @@ Add Category
     [Arguments]     ${category}     ${status}=correct
     Click New Category
     Wait Spinners To Disappear
-    Wait For Elements State    ${NEW_CATEGORY_TEXT}     visible
+    Wait For Elements State    ${CATEGORY_INFORMATION_TEXT}     visible
     Fill Category Form      category=${category}
-    IF    '${status}'=='correct'     Click Btn Create Category
+    IF    '${status}'=='correct'     Click Btn Save
 
 Fill Category Form
     [Arguments]    ${category}
+    ${state_prometric}=    Get Element States    ${FIELD_PROMETRIC}    then    bool(value & enabled)
+    ${state_arabic}=    Get Element States    ${FIELD_ARABIC_NAME}    then    bool(value & enabled)
+    Select Dropdown List    selector=${FIELD_STATUS}    val=${category.category_status}
+    Select Dropdown List    selector=${FIELD_TEST_TYPE}    val=${category.test_type}
     Type Text    ${FIELD_CODE}      ${category.code}
     Type Text    ${FIELD_ENGLISH_NAME}      ${category.english_name}
-    Type Text    ${FIELD_ARABIC_NAME}      ${category.arabic_name}
-    Select Status
+    Type Text    ${FIELD_PROMETRIC_CODE}      ${category.prometric_code}
+    IF    ${state_arabic}       Type Text    ${FIELD_ARABIC_NAME}      ${category.arabic_name}
+    IF    ${state_prometric}    Type Text    ${FIELD_PROMETRIC}     ${category.prometric_cbt_exam_weight}
+    IF    '${category.test_type}'=='CBT and Practical Exam'     Type Text   ${FIELD_WEIGHT}     ${category.exam_weight}
 
 Choose Item Actions
     [Arguments]     ${type}
@@ -115,3 +129,9 @@ Choose Item Actions
     ELSE
         Click Button        ${ICON_EDIT}
     END
+
+Select Dropdown List
+    [Arguments]    ${selector}      ${val}     ${attr}=text
+    Click Button    ${selector}
+    Select Options By    ${selector}    ${attr}    ${val}
+    Keyboard Key    press    Enter

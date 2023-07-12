@@ -13,4 +13,5 @@ class DirPath:
     CSV_TEMPLATE = os.path.join(TEST_FILES, 'sample_attributes_template.csv')
     CSV_OCCUPATION = os.path.join(TEST_FILES, 'sample_upload_occupations.csv')
     CSV_CATEGORIES = os.path.join(TEST_FILES, 'sample_upload_categories.csv')
+    USER_GUIDE_FILE = os.path.join(TEST_FILES, 'user_guide.pdf')
     TEMP_FOLDER = os.path.join(TEST_FILES, 'temp')
