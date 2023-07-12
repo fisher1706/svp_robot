@@ -1,10 +1,10 @@
 DEFAULT_LOGIN = 'admin@gmail.com'
 DEFAULT_PASSWORD = 'Password#1'
-INVALID_LOGIN = 'test$@gmail.com'
+INVALID_LOGIN = 'test@@gmail.com'
 CHANGED_PASSWORD = 'Password#1!#'
-INVALID_PASSWORD = 'Invalid#1'
+INVALID_PASSWORD = '123'
 TC_NAME = 'Autotest nkmvrorv'
-LEGISLATOR_LOGIN = 'auto-l8kcqup2@qa.qiwa.tech'
+LEGISLATOR_LOGIN = 'qiwaqa+svp-v3mtkhmj@p2h.com'
 TC_LOGIN = 'auto-qr4aeyln@qa.qiwa.tech'
 
 ALARM_LOGIN_LEGISLATOR = 'qiwaqa+svp-dtvez3ti@p2h.com'

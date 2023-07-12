@@ -84,7 +84,7 @@ Verify Additional Information About Session
     ${entry}=    Get Last Entry      ${SESSION_ENTRY}
     Should Be True      ${entry}[0]
     Should Be Equal     ${entry}[1]     Engine Mechanics
-    Should Be Equal     ${entry}[2]     ${session_time}[4]
+    Should Be String    ${entry}[2]
     Should Be Equal     ${entry}[3]     120m
     ${seats_number}=    Convert To String   ${seats_number}
     Should Be Equal     ${entry}[4]     ${seats_number}

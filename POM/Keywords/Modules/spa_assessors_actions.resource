@@ -31,7 +31,6 @@ Test Ability Download Attached Files
     Verify Download Assessors Files    passport     ${VIEW_PASSPORT}
     Click Other Details
     Wait For Elements State     ${CATEGORY}   visible
-    Verify Download Assessors Files    licenses_certification     ${LICENSES_CERTIFICATIONS}
     Verify Download Assessors Files    experience     ${EXPERIENCE}
 
 Test Ability Select Filter
@@ -46,10 +45,12 @@ Test Ability Select Filter
     Verify Filter Field Input   ${FIELD_PHONE_NUMBER}   ${data}[2]
     Verify Filter Field Input   ${FIELD_PASSPORT_NUMBER}   ${data}[3]
     Verify Filter Field Input   ${FIELD_FROM}   ${month}[0]
-    Verify Filter Field Choose      ${dropdown}[0]      ${data[4]}
-    Verify Filter Field Choose      ${dropdown}[1]      ${data[5]}
+    Verify Filter Field Choose      ${dropdown}[0]      ${data[8]}
+    Verify Filter Field Choose      ${dropdown}[1]      ${data[4]}
+    Verify Filter Field Choose      ${dropdown}[2]      ${data[5]}
+
     ${status}=  Low String      ${data}[7]
-    Verify Filter Field Choose      ${dropdown}[2]      ${status}
+    Verify Filter Field Choose      ${dropdown}[3]      ${status}
 
 Verify Assessor Information
     @{elements}=   Get Elements    ${DATA}

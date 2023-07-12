@@ -4,6 +4,7 @@ NEW_LEGISLATOR = 'New Legislator'
 NEW_TEST_CENTER = 'New Test Center'
 TEST_CENTER = 'Test Centers'
 SPA_SIGN_IN = 'Welcome to International SVP!'
+# SPA_SET_PASSWORD = 'Set Password'
 SPA_SET_PASSWORD = 'Reset Password'
 CARD_DETAILS = {'type': 'header payment', 'text': 'PLEASE ENTER YOUR CARD DETAILS TO A PURCHASE'}
 UPLOADED_FILES = 'Uploaded Files'

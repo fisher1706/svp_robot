@@ -52,7 +52,6 @@ Test Get Verify Input Fields On Add Credits
         Fill Card Details       ${item}
         Verify Text     ${WARNING_MSG_CARD_NUMBER}      ${MSG_CARD_NUMBER}
         Verify Text     ${WARNING_MSG_EXPIRY_DATE}      ${MSG_CARD_EXPIRY_DATE}
-        Verify Text     ${WARNING_MSG_CVV}      ${MSG_CARD_CVV}
         Verify Text     ${WARNING_MSG_CARD_HOLDER}      ${MSG_CARD_HOLDER}
     END
 

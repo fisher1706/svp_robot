@@ -117,7 +117,8 @@ Fill Phone
 
 Select Legislator
     [Arguments]    ${text}
-    Select Options By    ${DROPDOWN_LEGISLATOR}    text    ${text}
+    Click Button        ${DROPDOWN_LEGISLATOR}
+    Click Button        ${DEFAULT_LEGISLATOR}
 
 Fill Test Center Owner Name
     [Arguments]    ${text}
