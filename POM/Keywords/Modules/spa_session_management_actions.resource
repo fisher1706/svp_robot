@@ -27,7 +27,6 @@ Test TCcenter Will Be Able To View All Sessions
         Append To List      ${total_data}      ${session_time[4]}     ${seat_number}      ${repeat_type}
     END
     Switch To Session Management
-    Log To Console      ${total_data}
     Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
     Verify Added Sessions   ${total_data}
 
