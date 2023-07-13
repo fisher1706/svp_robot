@@ -21,3 +21,5 @@ MSG_ARABIC_NAME = 'Only arabic characters'
 MSG_DOWNLOAD_ERROR = 'You can not upload the categories. Please update the CSV file then try again'
 
 MSG_LINKED_NATIONALITY = 'was already linked with another country'
+
+MSG_WRONG_INVITATION = 'This email is already in use with another account'

@@ -90,7 +90,8 @@ class Utils:
     @staticmethod
     @keyword('Reformat Data Filter')
     def reformat_filters_data(data):
-        return list(data.keys())[0], list(data.values())[0]
+        first_key = next(iter(data))
+        return first_key, data[first_key]
 
     @staticmethod
     @keyword('Get Randon String')
