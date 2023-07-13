@@ -12,3 +12,6 @@ ALARM_LOGIN_TCENTR = 'maram.moh995+54@gmail.com'
 
 TC_NAME_CREATED = 'Autotest aqqlokazfgvd'
 TC_OWNER_NAME_CREATED = 'test'
+
+INDIVIDUAL_DEFAULT_LOGIN = 'zapefondy@gmail.com'
+INDIVIDUAL_DEFAULT_PASSWORD = '*Zapel#1706'

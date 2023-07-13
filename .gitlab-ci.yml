@@ -45,7 +45,6 @@ build:
   only:
     refs:
       - master
-#      - QAA-763
       - merge_request
     changes:
       - Dockerfile

@@ -34,7 +34,7 @@ class SendAllureReport:
         self.__webhook_url = SlackReportWebHooks.UI.value
         self.__suite_name = sys.argv[1]
         self.__project_env = 'stage'
-        self.__total_test = 227
+        self.__total_test = 232
         self.__failed_tests: int = 0
         self.__skipped_tests: int = 0
         self.__passed_tests: int = 0

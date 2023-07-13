@@ -30,7 +30,7 @@ Verify Confirm Code
 
 Verify Login Error Msg
     [Arguments]    ${msg}
-    Verify Text    ${ERROR_MSG}    ${msg}
+    Verify Text    ${ERROR_MSG}    ${msg}   is_equal=False
 
 Proceed 2fa Email
     [Arguments]    ${email}
@@ -82,6 +82,14 @@ Log In To The Admin Portal
     Verify Confirm Code
     Proceed 2fa Web
     Verify Admin Dashboard Welcome Text
+
+Log In To The Spa Portal
+    [Arguments]    ${login}     ${password}     ${locator}     ${message}
+    Open SPA Login Page
+    Enter Login And Password    ${login}    ${password}
+    Verify Confirm Code
+    Proceed 2fa Web
+    Verify Spa Dashboard Welcome Text       ${locator}     ${message}
 
 Log In By Api To The Admin Portal
     Open Login Page
