@@ -29,3 +29,5 @@ SESSION_LESS_30_MIN = "Session with the same category have already been created 
                       "difference or less for your Test Center"
 SESSION_WRONG_INTERVAL = "The session duration should be between 90 min and 2h"
 KEY_OCCUPATION_IS_EXIST = 'Has already been taken'
+MSG_ALREADY_RESERVATION = "Can't reserve exam, test taker has reservation at the same time, Can't reserve exam, " \
+                          "test taker already has a reservation for an exam in the same category"

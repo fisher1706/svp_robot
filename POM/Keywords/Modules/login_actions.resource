@@ -12,6 +12,7 @@ Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/Authentication.py
 Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/UserInfo.py
+Variables       POM/Locators/IndividualBaseLocators.py
 
 
 *** Keywords ***
@@ -84,7 +85,11 @@ Log In To The Admin Portal
     Verify Admin Dashboard Welcome Text
 
 Log In To The Spa Portal
-    [Arguments]    ${login}     ${password}     ${locator}     ${message}
+    [Arguments]
+    ...     ${login}=${INDIVIDUAL_DEFAULT_LOGIN}
+    ...     ${password}=${INDIVIDUAL_DEFAULT_PASSWORD}
+    ...     ${locator}=${ACCOUNT_DASHBOARD}
+    ...     ${message}=${MSG_SUCCESS_INDIVIDUAL_LOGIN}
     Open SPA Login Page
     Enter Login And Password    ${login}    ${password}
     Verify Confirm Code

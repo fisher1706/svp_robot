@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation       SPA Actions
-Library         String
-Resource        POM/Keywords/Modules/base_actions.resource
-Resource        POM/Keywords/Pages/spa.resource
+Library             String
+Resource            POM/Keywords/Modules/base_actions.resource
+Resource            POM/Keywords/Pages/spa.resource
 
 
 *** Keywords ***
