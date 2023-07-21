@@ -23,7 +23,19 @@ class IndividualBookingLocators:
     DETAILS_VALUE = '//*[@class="details-value"]'
     ALREADY_RESERVATION = '//*[@class="modal-form__heading"]'
     BTN_INDIVIDUAL_OK = '//button[text() = "Ok"]'
-
-
-
-
+    TRANSACTION_HISTORY_TEXT = '//*[@id="app"]//h2'
+    FILTER_ICON = '//*[@class="filter-icon"]'
+    TRANSACTION_LAST_ENTRY = 'tr:nth-child(1) td'
+    BTN_APPLY = '//button[text() = "Apply"]'
+    BTN_CLEAR_INDIVIDUAL_FILTER = '//button[text() = "Clear Filter"]'
+    FILTER_FIELD_ID = '//*[@id="id"]'
+    FILTER_FIELD_INVOICE_NUM = '//*[@id="invoice_num"]'
+    FILTER_SELECT_STATUS = '//*[@class="multiselect__select"]'
+    FILTER_FIELD_FROM = '//*[@placeholder="From"]'
+    FILTER_FIELD_TO = '//*[@placeholder="To"]'
+    FILTER_CONTROLS = '//*[@class="filter-controls__tag"]'
+    DOWNLOAD_ICON = '//*[@href="#"]'
+    HISTORY_ROW = 'tr[draggable]'
+    TICKET_ICON = '//*[@class="reservation-item__icon ticket-icon"]/..'
+    BTN_DOWNLOAD_TICKET = '//button[text() = " Download Ticket "]'
+    FIELD_OCCUPATION = '//*[@id="occupationSearchSelect"]'

@@ -6,6 +6,7 @@ Library         DateTime
 Library         String
 Library         Libraries/LocatorFunction.py
 Variables       POM/Locators/IndividualBookingLocators.py
+Variables       POM/Locators/IndividualBaseLocators.py
 Variables       Resources/Variables/SuccessMessage.py
 
 
@@ -35,8 +36,13 @@ Open Individual Boking Page
     Wait For Elements State     ${BTN_BOOK_AN_APPOINTMENT}      enabled
 
 Select Individual Occupation
+    [Arguments]    ${right}=True
     Click Button    ${BTN_SELECT_OCCUPATION}
-    Click Button    ${SELECTED_OCCUPATION}
+    IF    ${right}
+        Click Button    ${SELECTED_OCCUPATION}
+    ELSE
+        Type Text    ${FIELD_OCCUPATION}       Zapel
+    END
 
 Verify Key Selected Occupation
     ${key}=     Get Text    ${OCCUPATION_KEY}
@@ -82,9 +88,45 @@ Accept Summary Page
 Click Btn Ok
     Click Button    ${BTN_INDIVIDUAL_OK}
 
+Click Transaction History
+    Click Button    ${BTN_TRANSACTION_HISTORY}
 
+Click Filter Icon
+    Click Button    ${FILTER_ICON}
 
+Fill Field Id
+    [Arguments]    ${id}
+    Type Text    ${FILTER_FIELD_ID}        ${id}
 
+Fill Field Invoice Num
+    [Arguments]    ${invoice}
+    Type Text    ${FILTER_FIELD_INVOICE_NUM}    ${invoice}
 
+Fill Field From
+    [Arguments]    ${from}
+    Type Text    ${FILTER_FIELD_FROM}       ${from}
 
+Fill Field To
+    [Arguments]    ${to}
+    Type Text    ${FILTER_FIELD_TO}        ${to}
+    Keyboard Key    press    Enter
 
+Select Status
+    [Arguments]    ${status}
+    Click Button    ${FILTER_SELECT_STATUS}
+    ${locator}=     Create Locator By Text     ${status}
+    Click Button    ${locator}
+
+Click Btn Apply
+    Click Button    ${BTN_APPLY}
+
+Click Btn Clear Filter
+    Click Button    ${BTN_CLEAR_INDIVIDUAL_FILTER}
+
+Get Successful Transaction
+    ${elements}=    Get Elements    ${DOWNLOAD_ICON}
+    [Return]    ${elements}[0]
+
+Get Successful Appointment
+    ${elements}=    Get Elements    ${TICKET_ICON}
+    [Return]    ${elements}[0]
