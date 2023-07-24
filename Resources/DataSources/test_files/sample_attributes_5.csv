@@ -1,6 +1,14 @@
 National ID,Name [Same in Passport],Passport Number,Email,Exam Result [Score Value],Date of Exam [dd-mm-yyyy]
+<<<<<<< Resources/DataSources/test_files/sample_attributes_5.csv
 12345BI,Test Api 1,OO1042140,testOO1042140@gmail.com,99,15.07.2023
 12345BI,Test Api 2,OO1042141,testOO1042141@gmail.com,99,15.07.2023
 12345BI,Test Api 3,OO1042142,testOO1042142@gmail.com,99,15.07.2023
 12345BI,Test Api 4,OO1042143,testOO1042143@gmail.com,99,15.07.2023
 12345BI,Test Api 5,OO1042144,testOO1042144@gmail.com,99,15.07.2023
+=======
+12345BI,Test Api 1,VG1786360,testVG1786360@gmail.com,99,05.07.2023
+12345BI,Test Api 2,VG1786361,testVG1786361@gmail.com,99,05.07.2023
+12345BI,Test Api 3,VG1786362,testVG1786362@gmail.com,99,05.07.2023
+12345BI,Test Api 4,VG1786363,testVG1786363@gmail.com,99,05.07.2023
+12345BI,Test Api 5,VG1786364,testVG1786364@gmail.com,99,05.07.2023
+>>>>>>> Resources/DataSources/test_files/sample_attributes_5.csv
