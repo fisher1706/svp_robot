@@ -5,7 +5,7 @@ class SPASessionManagementLocators:
     FILTER_ICON = '//*[@class="filter-icon"]'
     BTN_APPLY = '//button[text() = "Apply"]'
     BTN_CLEAR_FILTER_MANAGEMENT = '//button[text() = "Clear Filter"]'
-    NO_DATA = '//*[text()="There are no data"]'
+    NO_DATA = '//*[@class="modal-box--empty-text"]'
     ACTIONS = 'td[data-label="Actions"]'
     VIEW = 'tr:nth-child(1) a[href="#"]'
     BTN_BACK = '//*[@class="btn back"]'

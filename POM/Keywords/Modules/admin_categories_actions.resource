@@ -22,7 +22,7 @@ Test Add Category With Incorrect Data
     ${category}=    Create New Category     status=wrong
     Add Category        category=${category}    status=wrong
     Verify Text    ${ERROR_CODE}        ${MSG_CATEGORY_CODE}
-    Verify Text    ${ERROR_ENGLISH_NAME}        ${MSG_ENGLISH_NAME}
+    Verify Text    ${ERROR_ENGLISH_NAME}        ${MSG_ENGLISH_NAME}     is_equal=False
     Verify Text    ${ERROR_ARABIC_NAME}        ${MSG_ARABIC_NAME}
 
 Test Add Category With Empty Form

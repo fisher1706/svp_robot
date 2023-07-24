@@ -22,7 +22,6 @@ def get_otp_code(email=DEFAULT_LOGIN, user_type='legislator', otp_method='email'
         data=json.dumps(json_body),
         headers={'Content-Type': 'application/json'}
     )
-    print('code', resp.json())
     return resp.json().get('otp_code')
 
 
@@ -39,7 +38,6 @@ def get_access_token(otp_code, login=DEFAULT_LOGIN, password=DEFAULT_PASSWORD, f
         url=API_URL + 'api/v1/login?locale=en',
         data=json.dumps(json_body),
         headers={'Content-Type': 'application/json'})
-    print(resp.json())
     return 'Bearer ' + resp.json().get('access_payload').get('access')
 
 
@@ -56,7 +54,6 @@ def get_access_token_2(otp_code, login=DEFAULT_LOGIN, password=DEFAULT_PASSWORD,
         url=API_URL + 'api/v1/login?locale=en',
         data=json.dumps(json_body),
         headers={'Content-Type': 'application/json'})
-    print('token', resp.json())
     return 'Bearer ' + resp.json().get('access_payload').get('access')
 
 
@@ -83,7 +80,6 @@ def create_session(token):
             'authorization': token
         }
     )
-    print(resp.json())
     return resp.json()
 
 
@@ -96,17 +92,12 @@ def cancel_session(token):
             'authorization': token
         }
     )
-    print(resp.json())
     return resp.json()
 
 
 if __name__ == '__main__':
     r = get_otp_code()
-    print('code', r)
     t = get_access_token_2(r)
-    print(t)
 
     # d = cancel_session(t)
-    # print(d)
-
     d = create_session(t)

@@ -22,9 +22,6 @@ Checking That User Can Not Book Session Within The Same Category Until The Sessi
 Checking Error Message When Individual Tries To Create Second Reservation For The Same Exam Session
     Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
 
-Checking Booked Appointment Status If Payment Is Pending
-    Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
-
 Checking The Payment Failed Error Message
     Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
 

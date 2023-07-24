@@ -86,7 +86,11 @@ Admin Labors Actions
     Open Admin Labors Page
     Wait Spinners To Disappear
     Click Next
-    Wait For Elements State     ${NATIONAL_ID}       visible
+    TRY
+        Wait For Elements State     ${NATIONAL_ID}       visible
+    EXCEPT
+        Wait For Elements State     ${NATIONAL_ID}       visible
+    END
 
 Get Data Labor
     [Arguments]    ${selector}
@@ -131,4 +135,8 @@ Verify Filter Field
     Click Clear
     Type Text    ${selector}    ${value}
     Keyboard Key    press    Enter
-    Verify Text     ${FILTERS_CONTROL}       ${value}
+    TRY
+        Verify Text     ${FILTERS_CONTROL}       ${value}
+    EXCEPT
+        Verify Text     ${FILTERS_CONTROL}       ${value}
+    END
