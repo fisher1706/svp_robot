@@ -39,7 +39,6 @@ Test Download Ticked From Booking Booking Details Page
 Test User Can Not Book Session Within The Same Category Until The Session Status Is Reserved
     Individual Booking Actions      payment=False
 
-
 Individual Booking Actions
     [Arguments]    ${payment}=True      ${session}=True
     ${data}=    Get Data Booked Appointments
@@ -54,7 +53,7 @@ Individual Booking Actions
     Click Btn Next
     Accept Summary Page
     IF    ${payment}
-        CONTINUE
+        Log To Console    Will work after update
     ELSE
         Should Not Be Empty     ${data}
         Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}
