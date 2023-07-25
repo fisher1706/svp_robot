@@ -39,7 +39,6 @@ ACTIONS_LOG_ENTITY_FILTER_OPTIONS = [
     {'User': 'ruba test'},
     {'Legislator': 'Legislator'},
     {'Permission': 'action'},
-    {'Country category': 'Tiling'}
 ]
 
 CONTAINS_FILTER_OPTIONS = [

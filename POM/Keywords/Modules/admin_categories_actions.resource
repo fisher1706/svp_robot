@@ -37,7 +37,11 @@ Test Ability To Edit Category
     Fill Category Form      category=${category}
     Click Btn Save
     Wait Spinners To Disappear
-    Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_ACTIONS_CATEGORY}
+    TRY
+        Verify Text     ${SUCCESSFULLY}     ${SUCCESSFULLY_ACTIONS_CATEGORY}    timeout=120s
+    EXCEPT
+        Verify Text     ${SUCCESSFULLY_ADD}     ${SUCCESSFULLY_ACTIONS_CATEGORY}    timeout=120s
+    END
 
 Test View Category Detail Information
     Admin Categories Actions

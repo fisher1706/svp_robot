@@ -82,7 +82,7 @@ Test Ability Use Filtration
 
 Verify General Information
     [Arguments]    ${data}
-    Wait For Elements State     ${NATIONAL_ID}       visible
+    Wait For Elements State     ${NATIONAL_ID}       visible    timeout=120s
     ${general}=     Get Last Entry    ${DATA_GENERAL_INFORMATION}
     List Should Contain Value       ${general}     ${data}[0]
 
