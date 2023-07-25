@@ -28,7 +28,7 @@ Test View Data Of Tansaction History
 
 Test Download Ticked From Booking Page
     ${ticket_download}=    Get Successful Appointment
-    Download File       filename=ticket.pdf     btn_download=${ticket_download}
+    Download File       filename=ticket.pdf     btn_download=${ticket_download}${TICKET_ICON}
 
 Test Download Ticked From Booking Booking Details Page
     ${ticket_download}=    Get Successful Appointment

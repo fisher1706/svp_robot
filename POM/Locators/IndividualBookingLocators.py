@@ -36,6 +36,7 @@ class IndividualBookingLocators:
     FILTER_CONTROLS = '//*[@class="filter-controls__tag"]'
     DOWNLOAD_ICON = '//*[@href="#"]'
     HISTORY_ROW = 'tr[draggable]'
-    TICKET_ICON = '//*[@class="reservation-item__icon ticket-icon"]/..'
+    TICKET_ICON = '//*[@class="reservation-item__icon ticket-icon"]'
+    INDIVIDUAL_SUCCESS_ACTIONS = '//*[@class="reservation-item__icon ticket-icon"]/..'
     BTN_DOWNLOAD_TICKET = '//button[text() = " Download Ticket "]'
     FIELD_OCCUPATION = '//*[@id="occupationSearchSelect"]'

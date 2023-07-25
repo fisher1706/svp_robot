@@ -63,8 +63,8 @@ Select Individual Date
     ${locator}=     Create Locator By Text     ${date.day}
     ${elements}=    Get Elements    ${locator}
     FOR    ${el}    IN      @{elements}
-        ${state}=    Get Element States     ${el}       then    value & (visible | hidden)
-        IF      ${state}
+        ${state}=    Get Attribute      ${el}       aria-disabled
+        IF      '${state}'=='false'
             Click Button    ${el}
             BREAK
         ELSE
@@ -89,7 +89,7 @@ Click Btn Ok
     Click Button    ${BTN_INDIVIDUAL_OK}
 
 Click Transaction History
-    Click Button    ${BTN_TRANSACTION_HISTORY}
+    Click Button    ${BTN_TRANSACTION_HISTORY_INDIVIDUAL}
 
 Click Filter Icon
     Click Button    ${FILTER_ICON}
@@ -128,5 +128,5 @@ Get Successful Transaction
     [Return]    ${elements}[0]
 
 Get Successful Appointment
-    ${elements}=    Get Elements    ${TICKET_ICON}
+    ${elements}=    Get Elements    ${INDIVIDUAL_SUCCESS_ACTIONS}
     [Return]    ${elements}[0]

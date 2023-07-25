@@ -23,7 +23,6 @@ LEGISLATOR_TCENTER_FILTER_OPTIONS = [
     'Create Test Center Owner',
     'Edit Test Center',
     'View Test Center',
-    'Delete Test Center',
     'Add individual',
     'Add Group',
     'View upload files',

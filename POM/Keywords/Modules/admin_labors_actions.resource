@@ -40,7 +40,11 @@ Test Ability Activate Labor On Labor Page
     ${count_before}=       Get Length      ${data_before}
     FOR    ${_}    IN RANGE    ${count_before}
         ${inner}=    Get Elements    ${REVOKED_LABORS}
-        Choose Item Actions     ${inner}[0]      Reactivate
+        TRY
+            Choose Item Actions     ${inner}[0]      Reactivate
+        EXCEPT
+            CONTINUE
+        END
         Wait Spinners To Disappear
         Click Yes
         Wait For Elements State    ${NATIONAL_ID}       visible

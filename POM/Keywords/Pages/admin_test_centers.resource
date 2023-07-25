@@ -49,12 +49,6 @@ Select Dropdown Statuses
     Select Options By    ${DROPDOWN_LEGISLATOR}    text    ${key}
 
 Select View Of Last Entry
-    Wait Spinners To Disappear
-    TRY
-        Wait For Condition    Element Count    ${ICON_DOTS}    ==    1
-    EXCEPT
-        Wait For Condition    Element Count    ${ICON_DOTS}    ==    1
-    END
     Hover    ${ICON_DOTS}
     Click Button    ${ICON_VIEW_ACTION}
 
@@ -93,9 +87,7 @@ Select Dropdown Category
     [Arguments]    ${text}
     Click Button    ${DROPDOWN_CATEGORY}
     ${elements}=    Get Elements    ${DROPDOWN_CATEGORY_ITEM}
-    FOR    ${el}    IN    @{elements}
-        Click    ${el}
-    END
+    Click    ${elements}[0]
 
 Fill Name
     [Arguments]    ${text}
