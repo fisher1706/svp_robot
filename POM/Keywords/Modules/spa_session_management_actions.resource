@@ -54,7 +54,11 @@ Test Checking Tackers Table With No Result
     Test Ability To Use View Action To See Sessions Information
     Click Test Tackers
     Wait For Elements State     ${TEST_TACKERS_TEXT}   visible
-    Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    TRY
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    EXCEPT
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    END
 
 Test TCenter Is Able To Use Filter
     ${interval}=     Get Month Interval

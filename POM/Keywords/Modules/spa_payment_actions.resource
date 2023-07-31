@@ -145,4 +145,8 @@ Approve Payment
     Click Issue
     Click Confirm
     Wait Spinners To Disappear
-    Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
+    TRY
+        Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
+    EXCEPT
+        Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
+    END

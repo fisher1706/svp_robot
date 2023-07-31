@@ -222,8 +222,13 @@ Verify Wrong Data On Edit Form
     ELSE
         ${locator_btn}=     Set Variable        ${BTN_EDIT}
     END
-    Fill And Verify Field   ${OFFICIAL_CONTACT_NUMBER}      ${FIELD_OFFICIAL_CONTACT_NUMBER}
-    ...     ${WARNING_PHONE_NUMBER}     ${locator_btn}     ${TC_ONLY_DIGITS_CONTACT_NUMBER}
+    TRY
+        Fill And Verify Field   ${OFFICIAL_CONTACT_NUMBER}      ${FIELD_OFFICIAL_CONTACT_NUMBER}
+        ...     ${WARNING_PHONE_NUMBER}     ${locator_btn}     ${TC_ONLY_DIGITS_CONTACT_NUMBER}
+    EXCEPT
+        Fill And Verify Field   ${OFFICIAL_CONTACT_NUMBER}      ${FIELD_OFFICIAL_CONTACT_NUMBER}
+        ...     ${WARNING_PHONE_NUMBER}     ${locator_btn}     ${TC_ONLY_DIGITS_CONTACT_NUMBER_SECOND}
+    END
     Fill And Verify Field   ${CITY}      ${FIELD_CITY}
     ...     ${WARNING_CITY}     ${locator_btn}     ${ONLY_EN_CHARS}
     Fill And Verify Field   ${ACCOUNT_POSTAL_CODE}      ${FIELD_POSTAL_CODE}

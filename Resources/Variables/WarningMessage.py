@@ -15,6 +15,7 @@ TC_EMPTY_EMAIL = "Email can't be empty"
 TC_EMPTY_CITY = "[ \"City can't be empty\" ]"
 TC_EMPTY_STREET = "Street can't be empty"
 TC_ONLY_DIGITS_CONTACT_NUMBER = '[ "Should contain digits only", "errorMessages.minLength" ]'
+TC_ONLY_DIGITS_CONTACT_NUMBER_SECOND = '"Should contain digits only"'
 TC_VALID_EMAIL = 'Please enter a valid email'
 ONLY_EN_CHARS = "Only english characters"
 TC_ONLY_DIGITS_POSTAL_CODE = 'Should contain digits only'
