@@ -150,7 +150,7 @@ Ability Reset Password
             Verify Btn Continue Reset Dissabled
         END
     ELSE
-        CONTINUE
+        RETURN
     END
 
 Activate Account And Reset Password With Invalid Credentials
