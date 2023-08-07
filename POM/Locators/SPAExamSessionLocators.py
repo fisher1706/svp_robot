@@ -36,4 +36,3 @@ class SPAExamSessionLocators:
                      '//*[@class="multiselect__option multiselect__option--highlight"]'
     BTN_DONE = "//button[text() = 'Done']"
     REPEAT_ON = '//*[@class="day-checkbox-label"]//*[@class="text"]'
-
