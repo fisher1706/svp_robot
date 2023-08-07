@@ -5,8 +5,8 @@ FILTER_FIELD_NAME = '#englishName'
 DROPDOWN_CITY = "label[for='city'] + div select"
 DROPDOWN_STATUSES = '#status'
 
-ICON_DOTS = 'td[data-label="Actions"]'
-ICON_VIEW_ACTION = "//ul[@class = 'table-main__actioins-list']//a[text() = 'View']"
+ICON_DOTS = 'tr:nth-child(1) td[data-label="Actions"]'
+ICON_VIEW_ACTION = 'tr:nth-child(1) td[data-label="Actions"] li:nth-child(1) a'
 ICON_EDIT_ACTION = "//ul[@class = 'table-main__actioins-list']//a[text() = 'Edit']"
 ICON_REMOVE_ACTION = "//ul[@class = 'table-main__actioins-list']//a[text() = 'Delete']"
 
@@ -20,7 +20,7 @@ FIELD_CITY = '#city'
 FIELD_ADDRESS = '#address'
 FIELD_CONTACT_PHONE = '#phoneNumber'
 DROPDOWN_LEGISLATOR = '//*[@class="multiselect__select"]'
-DEFAULT_LEGISLATOR = '//*[text()="Autotest lhbyfidi"]'
+DEFAULT_LEGISLATOR = '//*[@class="multiselect__option multiselect__option--highlight"]'
 ALL_LEGISLATORS = '//*[@class="multiselect__option"]'
 FIELD_TEST_CENTER_OWNER_NAME = '#testCenterOwnerName'
 FIELD_TEST_CENTER_OWNER_EMAIL = '#testCenterOwnerEmail'

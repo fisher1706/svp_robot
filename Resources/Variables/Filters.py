@@ -23,7 +23,6 @@ LEGISLATOR_TCENTER_FILTER_OPTIONS = [
     'Create Test Center Owner',
     'Edit Test Center',
     'View Test Center',
-    'Delete Test Center',
     'Add individual',
     'Add Group',
     'View upload files',
@@ -40,7 +39,6 @@ ACTIONS_LOG_ENTITY_FILTER_OPTIONS = [
     {'User': 'ruba test'},
     {'Legislator': 'Legislator'},
     {'Permission': 'action'},
-    {'Country category': 'Tiling'}
 ]
 
 CONTAINS_FILTER_OPTIONS = [

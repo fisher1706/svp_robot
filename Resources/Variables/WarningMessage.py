@@ -15,8 +15,9 @@ TC_EMPTY_EMAIL = "Email can't be empty"
 TC_EMPTY_CITY = "[ \"City can't be empty\" ]"
 TC_EMPTY_STREET = "Street can't be empty"
 TC_ONLY_DIGITS_CONTACT_NUMBER = '[ "Should contain digits only", "errorMessages.minLength" ]'
+TC_ONLY_DIGITS_CONTACT_NUMBER_SECOND = '"Should contain digits only"'
 TC_VALID_EMAIL = 'Please enter a valid email'
-ONLY_EN_CHARS = '[ "Only english characters" ]'
+ONLY_EN_CHARS = "Only english characters"
 TC_ONLY_DIGITS_POSTAL_CODE = 'Should contain digits only'
 INVALID_CURRENT_PASSWORD = 'Current password is invalid'
 SAME_NEW_PASSWORD = 'New password shouldn’t be same as old Password'
@@ -29,3 +30,4 @@ SESSION_LESS_30_MIN = "Session with the same category have already been created 
                       "difference or less for your Test Center"
 SESSION_WRONG_INTERVAL = "The session duration should be between 90 min and 2h"
 KEY_OCCUPATION_IS_EXIST = 'Has already been taken'
+MSG_ALREADY_RESERVATION = "Can't reserve exam, test taker already has a reservation for an exam in the same category"

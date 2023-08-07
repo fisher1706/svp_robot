@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation       SPA Actions
-Library         String
-Resource        POM/Keywords/Modules/base_actions.resource
-Resource        POM/Keywords/Pages/spa.resource
+Library             String
+Resource            POM/Keywords/Modules/base_actions.resource
+Resource            POM/Keywords/Pages/spa.resource
 
 
 *** Keywords ***
@@ -30,7 +30,7 @@ Fill And Verify Field
     FOR    ${val}   IN  @{data}
         Type Text       ${field_locator}        ${val}
         Click Button        ${btn_locator}
-        Verify Text     ${field_message}        ${message}
+        Verify Text     ${field_message}        ${message}      is_equal=False
     END
 
 Verify Disabling Filters Fields

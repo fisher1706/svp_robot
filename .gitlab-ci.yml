@@ -45,7 +45,7 @@ build:
   only:
     refs:
       - master
-#      - QAA-763
+      - QAA-769
       - merge_request
     changes:
       - Dockerfile
@@ -113,6 +113,7 @@ ui_admin_tests:
     when: always
   only:
     - master
+    - QAA-769
 
 ui_legislator_tests:
   image: $IMAGE
@@ -134,6 +135,7 @@ ui_legislator_tests:
     when: always
   only:
     - master
+    - QAA-769
   dependencies:
     - ui_admin_tests
   needs:
@@ -160,12 +162,43 @@ ui_test_center_owner_tests:
     when: always
   only:
     - master
+    - QAA-769
   dependencies:
     - ui_admin_tests
     - ui_legislator_tests
   needs:
     - ui_admin_tests
     - ui_legislator_tests
+
+ui_individual_tests:
+  image: $IMAGE
+  allow_failure: true
+  stage: run_tests
+  tags:
+    - oci-shared
+  script:
+    - cd $WORKING_DIRECTORY
+    - . ~/.bashrc
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/individual/
+  artifacts:
+    paths:
+      - $ALLURE_RESULTS_DIRECTORY
+      - $ROBOT_REPORT
+      - $OUTPUT_REPORT
+    expire_in: 1 day
+    when: always
+  only:
+    - master
+    - QAA-769
+  dependencies:
+    - ui_admin_tests
+    - ui_legislator_tests
+    - ui_test_center_owner_tests
+  needs:
+    - ui_admin_tests
+    - ui_legislator_tests
+    - ui_test_center_owner_tests
 
 allure-ui-admin-results:
   extends: .generate_allure_report
@@ -181,6 +214,7 @@ allure-ui-admin-results:
     - ui_admin_tests
   only:
     - master
+    - QAA-769
 
 
 allure-ui-legislator-results:
@@ -197,6 +231,7 @@ allure-ui-legislator-results:
     - ui_legislator_tests
   only:
     - master
+    - QAA-769
 
 allure-ui-test_center_owner-results:
   extends: .generate_allure_report
@@ -212,6 +247,23 @@ allure-ui-test_center_owner-results:
     - ui_test_center_owner_tests
   only:
     - master
+    - QAA-769
+
+allure-ui-individual-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: svp-ui-daily-individual
+  tags:
+    - oci-shared
+  dependencies:
+    - ui_individual_tests
+  needs:
+    - ui_individual_tests
+  only:
+    - master
+    - QAA-769
 
 
 slack-report-ui-admin-results:
@@ -228,6 +280,7 @@ slack-report-ui-admin-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-admin
     only:
       - master
+      - QAA-769
 
 slack-report-ui-legislator-results:
     image: $IMAGE
@@ -243,6 +296,7 @@ slack-report-ui-legislator-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-legislator
     only:
       - master
+      - QAA-769
 
 slack-report-ui-test_center_owner-results:
     image: $IMAGE
@@ -258,3 +312,20 @@ slack-report-ui-test_center_owner-results:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-tc
     only:
       - master
+      - QAA-769
+
+slack-report-ui-individual-results:
+    image: $IMAGE
+    allow_failure: true
+    stage: send-slack-reports
+    tags:
+      - oci-shared
+    dependencies:
+      - ui_individual_tests
+    needs:
+      - ui_individual_tests
+    script:
+      - python Resources/Setup/send_allure_report.py svp-ui-daily-individual
+    only:
+      - master
+      - QAA-769

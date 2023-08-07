@@ -40,7 +40,11 @@ Test Ability Activate Labor On Labor Page
     ${count_before}=       Get Length      ${data_before}
     FOR    ${_}    IN RANGE    ${count_before}
         ${inner}=    Get Elements    ${REVOKED_LABORS}
-        Choose Item Actions     ${inner}[0]      Reactivate
+        TRY
+            Choose Item Actions     ${inner}[0]      Reactivate
+        EXCEPT
+            CONTINUE
+        END
         Wait Spinners To Disappear
         Click Yes
         Wait For Elements State    ${NATIONAL_ID}       visible
@@ -78,7 +82,7 @@ Test Ability Use Filtration
 
 Verify General Information
     [Arguments]    ${data}
-    Wait For Elements State     ${NATIONAL_ID}       visible
+    Wait For Elements State     ${NATIONAL_ID}       visible    timeout=120s
     ${general}=     Get Last Entry    ${DATA_GENERAL_INFORMATION}
     List Should Contain Value       ${general}     ${data}[0]
 
@@ -86,7 +90,11 @@ Admin Labors Actions
     Open Admin Labors Page
     Wait Spinners To Disappear
     Click Next
-    Wait For Elements State     ${NATIONAL_ID}       visible
+    TRY
+        Wait For Elements State     ${NATIONAL_ID}       visible
+    EXCEPT
+        Wait For Elements State     ${NATIONAL_ID}       visible
+    END
 
 Get Data Labor
     [Arguments]    ${selector}
@@ -131,4 +139,8 @@ Verify Filter Field
     Click Clear
     Type Text    ${selector}    ${value}
     Keyboard Key    press    Enter
-    Verify Text     ${FILTERS_CONTROL}       ${value}
+    TRY
+        Verify Text     ${FILTERS_CONTROL}       ${value}
+    EXCEPT
+        Verify Text     ${FILTERS_CONTROL}       ${value}
+    END

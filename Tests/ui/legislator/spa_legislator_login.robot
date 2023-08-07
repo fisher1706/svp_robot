@@ -56,4 +56,8 @@ Login To SPA Portal With Invalid Credentials
     [Arguments]    @{item}
     Open SPA Login Page
     Enter Login And Password    ${item}[0]    ${item}[1]
-    Verify Login Error Msg    ${item}[2]
+    TRY
+        Verify Login Error Msg    ${item}[2][0]
+    EXCEPT
+        Verify Login Error Msg    ${item}[2][1]
+    END

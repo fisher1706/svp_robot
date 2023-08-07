@@ -31,6 +31,7 @@ Set Certificate Price
 
 Verify Certificate Price
     [Arguments]     ${price}
+    Wait Spinners To Disappear
     Wait For Elements State     ${CERTIFICATE_PRICE_TEXT}       enabled
     ${value}=    Convert To String      ${price}
     Verify Text    ${CERTIFICATE_PRICE_VALUE}      ${value}     timeout=30s
