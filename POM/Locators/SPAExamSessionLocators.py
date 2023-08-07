@@ -20,3 +20,20 @@ class SPAExamSessionLocators:
     SESSION_SEE_MORE = '//*[@class="session__btn btn"]'
     TEXT_ERROR = '//*[@class="text-error"]'
     SESSION_ENTRY = '//*[@class="details-value"]'
+    REPEAT_SESSION_TEXT = '//h1'
+    SELECT_REPEAT_EVERY = '//*[@class="input-group input-group--margin-middle repeat-type-select"]' \
+                          '//*[@class="multiselect__select"]'
+    BTN_PLUS = '//*[@class="number-input__button number-input__button--plus"]'
+    BTN_ON = '//*[text()=" On "]/span'
+    BTN_AFTER = '//*[text()=" After "]/span'
+    FIELD_INPUT_ON = '//*[@class="input-group__input input-group__datepicker"]'
+    FIELD_SELECT_AFTER = '//*[@class="input-group input-group--margin-middle repeat-after-select"]' \
+                         '//*[@class="multiselect__select"]'
+    DEFAULT_SESSION_COUNT = '1 sessions'
+    MONTH_SELECT_OPTIONS = '//*[@class="input-group input-group--margin-middle repeat-monthly-select"]' \
+                           '//*[@class="multiselect__select"]'
+    MONTH_SELECTED = '//*[@class="input-group input-group--margin-middle repeat-monthly-select"]' \
+                     '//*[@class="multiselect__option multiselect__option--highlight"]'
+    BTN_DONE = "//button[text() = 'Done']"
+    REPEAT_ON = '//*[@class="day-checkbox-label"]//*[@class="text"]'
+

@@ -54,3 +54,9 @@ Verify Password Validation
     Open Activation Page Link       is_tcenter=${is_tcenter}
     Enter Login And Password On Password Form
     Verify Message Token Warning
+
+Reset Password On Password Form
+    [Arguments]    ${password}    ${confirm_password}
+    Enter Password Activate    ${password}
+    Enter Confirmed Password Activate    ${confirm_password}
+    Verify Continue Button Is Dissabled

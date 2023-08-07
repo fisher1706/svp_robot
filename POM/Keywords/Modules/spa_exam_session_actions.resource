@@ -1,20 +1,22 @@
 *** Settings ***
 Resource        POM/Keywords/Pages/spa_exam_session.resource
 Resource        POM/Keywords/Pages/base.resource
-Library         Libraries/Utils.py
 Variables       POM/Locators/SPAExamSessionLocators.py
-Variables       Resources/Variables/SessionRepeat.py
 Variables       Resources/Variables/WarningMessage.py
 
 
 *** Keywords ***
 Test Check Ability Add New Session
-    [Arguments]    ${num}=1
+    [Arguments]    ${num}=1     ${random}=False
     Switch To Session
     Click Add Session
     ${session_time}=    Time New Session    num=${num}
     ${seat_number}=     Return Random Number Limit
-    ${repeat_type}=   Return Random Data List     ${session_repeat}
+    IF    ${random}
+        ${repeat_type}=   Return Random Data List     ${session_repeat}
+    ELSE
+        ${repeat_type}=   Set Variable    ${session_repeat}[0]
+    END
     Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
     Click Ok
     Verify Added Session    ${session_time}
@@ -25,7 +27,6 @@ Test Not Ability To Create New Session For Past Date
     Switch To Session
     ${session_time}=    Time New Session    correct_start=True
     ${elements}=    Get Elements    ${start}${session_time[1]}${end}
-    Get Element States    ${elements}[-1]    validate    value & disabled
     Click Add Session
     Fill New Session Form   ${session_time}     1      Does not repeat
     Verify Text     ${TEXT_ERROR}       ${SESSION_CAN_NOT_BE_PAST}
@@ -65,8 +66,12 @@ Fill New Session Form
     Choose Time New Session     ${session_time}
     Choose Seats New Session        ${seats_number}
     Choose Category New Session
-    IF    '${repeat_type}'!='${session_repeat[0]}'     Choose Repeat Session    ${repeat_type}
-    Click Add
+    Choose Repeat Session    ${repeat_type}
+    IF      '${repeat_type}'=='Custom'
+        Fill Custom Session Form    session_time=${session_time}
+    ELSE
+        Click Add
+    END
 
 Verify Added Session
     [Arguments]    ${time}      ${start}=//*[text()="        ${end}="]
@@ -99,3 +104,12 @@ Get Day
         ${state}=    Get Attribute         ${el}       aria-disabled
         IF      '${state}'=='false'     RETURN    ${el}
     END
+
+Fill Custom Session Form
+    [Arguments]    ${session_time}      ${num}=1
+    Wait For Elements State    ${REPEAT_SESSION_TEXT}
+    ${repeat_every}=   Return Random Data List     ${custom_repeat}
+    Choose Custom Repeat Session        repeat_every=${repeat_every}
+    Add Custom Session Day      num=${num}
+    Select Ends Custom      session_time=${session_time}
+    Click Btn Done

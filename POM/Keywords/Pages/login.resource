@@ -51,3 +51,9 @@ Verify Sign In Title
 
 Wait Login Page To Load
     Wait For Elements State    ${PASSWORD_FIELD}
+
+Click Forgot My Password
+    Click Button    ${FORGOT_MY_PASSWORD}
+
+Verify Btn Continue Reset Dissabled
+    Wait For Elements State    ${BTN_CONTINUE_RESET}      disabled
