@@ -13,7 +13,6 @@ Variables       Resources/Variables/Authentication.py
 Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/UserInfo.py
 Variables       POM/Locators/IndividualBaseLocators.py
-Variables       Resources/Variables/SetPasswordDataset.py
 
 
 *** Keywords ***
