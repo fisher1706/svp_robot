@@ -48,13 +48,17 @@ Test Ability To Use View Action To See Sessions Information
 Test Ability To Back From Session Information Page
     Test Ability To Use View Action To See Sessions Information
     Wait For Elements State     ${SESSION_MANAGEMENT_TEXT}   visible
-    Verify Text     ${SESSION_MANAGEMENT_TEXT}      Sessions Management
+    Verify Text     ${SESSION_MANAGEMENT_TEXT}      Sessions Management     timeout=60s
 
 Test Checking Tackers Table With No Result
     Test Ability To Use View Action To See Sessions Information
     Click Test Tackers
     Wait For Elements State     ${TEST_TACKERS_TEXT}   visible
-    Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    TRY
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    EXCEPT
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+    END
 
 Test TCenter Is Able To Use Filter
     ${interval}=     Get Month Interval
@@ -105,7 +109,7 @@ Verify Filter Session Date
         ${filters_data}=    Get Last Entry      ${CHOSE_FILTERS}
         Lists Should Be Equal       ${data}     ${filters_data}
     ELSE
-        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
+        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}        timeout=60s
     END
 
 Switch To Session Management

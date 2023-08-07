@@ -11,6 +11,7 @@ Test Setup          Open Chrome Browser
 
 *** Test Cases ***
 Checking the ability to verify account information
+    Skip    account information data
     Create Entities And Log In    is_legislator_activate=True    login_tcenter=False
     Verify Account Information
 

@@ -12,6 +12,7 @@ class AdminCategoriesLocators:
     FIELD_PROMETRIC_CODE = '//*[@id="prometric_code"]'
     BTN_SAVE_CATEGORY = '//*[text()="Save"]'
     SUCCESSFULLY = '//*[@class="toasted-container alert-msg top-center"]'
+    SUCCESSFULLY_ADD = '//*[@id="SVYpJL51g"]'
     ERROR_CODE = '//*[text()="Only digits"]'
     ERROR_ENGLISH_NAME = '//*[text()="Only english characters"]'
     ERROR_ARABIC_NAME = '//*[text()="Only arabic characters"]'

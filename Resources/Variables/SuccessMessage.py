@@ -12,3 +12,8 @@ SUCCESS_UPDATE_CONTENT = 'Content has been successfully updated'
 MSG_SUCCESS_ADD_OCCUPATION = 'success'
 MSG_SUCCESS_UPLOAD_OCCUPATION = 'File has been uploaded successfully'
 MSG_SUCCESS_INVITATION = 'Invitation link has been successfully sent'
+MSG_SUCCESS_INDIVIDUAL_LOGIN = 'Account Dashboard'
+DEFAULT_CATEGORY = 'Engine Mechanics'
+MSG_DESCRIPTION_CATEGORY = f'Based on your selected occupation your exam category will be:\n{DEFAULT_CATEGORY}\n' \
+                           'Please note that this category and occupation key will be checked by the embassy so ' \
+                           'make sure you’ve selected the correct occupation as shown in your visa application'

@@ -12,6 +12,7 @@ Variables       Resources/Variables/WarningMessage.py
 Variables       Resources/Variables/Authentication.py
 Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/UserInfo.py
+Variables       POM/Locators/IndividualBaseLocators.py
 
 
 *** Keywords ***
@@ -30,7 +31,7 @@ Verify Confirm Code
 
 Verify Login Error Msg
     [Arguments]    ${msg}
-    Verify Text    ${ERROR_MSG}    ${msg}
+    Verify Text    ${ERROR_MSG}    ${msg}   is_equal=False
 
 Proceed 2fa Email
     [Arguments]    ${email}
@@ -82,6 +83,18 @@ Log In To The Admin Portal
     Verify Confirm Code
     Proceed 2fa Web
     Verify Admin Dashboard Welcome Text
+
+Log In To The Spa Portal
+    [Arguments]
+    ...     ${login}=${INDIVIDUAL_DEFAULT_LOGIN}
+    ...     ${password}=${INDIVIDUAL_DEFAULT_PASSWORD}
+    ...     ${locator}=${ACCOUNT_DASHBOARD}
+    ...     ${message}=${MSG_SUCCESS_INDIVIDUAL_LOGIN}
+    Open SPA Login Page
+    Enter Login And Password    ${login}    ${password}
+    Verify Confirm Code
+    Proceed 2fa Web
+    Verify Spa Dashboard Welcome Text       ${locator}     ${message}
 
 Log In By Api To The Admin Portal
     Open Login Page

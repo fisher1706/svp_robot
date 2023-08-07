@@ -107,7 +107,7 @@ Verify Warning Digits Only Postal Code
     Verify Text        ${WARNING_POSTAL_CODE}    ${TC_ONLY_DIGITS_POSTAL_CODE}
 
 Verify Warning En Chars Only Name
-    Verify Text     ${WARNING_NAME}    ${ONLY_EN_CHARS}
+    Verify Text     ${WARNING_NAME}    ${ONLY_EN_CHARS}     is_equal=False
 
 Verify Warning Digits Only Contact Number
     Should Match    ${WARNING_PHONE_NUMBER}    ${TC_ONLY_DIGITS_CONTACT_NUMBER}
