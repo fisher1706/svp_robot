@@ -37,7 +37,7 @@ Choose Repeat Session
         Click Button    ${locator}
     END
 
-Click Add
+Click Add Session
     Click Button    ${BTN_ADD}
 
 Click Ok

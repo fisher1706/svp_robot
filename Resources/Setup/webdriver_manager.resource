@@ -9,6 +9,6 @@ Open Chrome Browser
     Set Common Global Variables
     New Persistent Context
     ...    browser=${browser}
-    ...    headless=True
+    ...    headless=False
     ...    args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu"]
     Set Browser Timeout    ${timeout}
