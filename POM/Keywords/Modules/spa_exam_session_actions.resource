@@ -70,7 +70,7 @@ Fill New Session Form
     IF      '${repeat_type}'=='Custom'
         Fill Custom Session Form    session_time=${session_time}
     ELSE
-        Click Add
+        Click Add Session Form
     END
 
 Verify Added Session

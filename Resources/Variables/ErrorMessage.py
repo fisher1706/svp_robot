@@ -28,3 +28,5 @@ MSG_DOWNLOAD_ERROR = 'You can not upload the categories. Please update the CSV f
 MSG_LINKED_NATIONALITY = 'was already linked with another country'
 
 MSG_WRONG_INVITATION = 'This email is already in use with another account'
+
+MSG_RESERVATION_ERROR = 'Records that match the entered data were not found'

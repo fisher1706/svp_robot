@@ -168,3 +168,9 @@ Verify Test Center Owner Name
 Verify Test Center Owner Email
     [Arguments]    ${email}
     Verify Text    ${TEST_CENTER_OWNER_EMAIL}    ${email}
+
+Select Dropdown Filter Statuses
+    [Arguments]    ${text}
+    Click Button    ${DROPDOWN_STATUSES}
+    Select Options By    ${DROPDOWN_STATUSES}    text    ${text}
+    Keyboard Key    press    Enter

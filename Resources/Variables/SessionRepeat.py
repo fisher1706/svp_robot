@@ -9,7 +9,7 @@ session_repeat = [
     'Does not repeat',
     'Daily',
     f'Weekly {day}',
-    f'Monthly on the first {day}',
+    # f'Monthly on the first {day}',
     'Custom'
 ]
 
