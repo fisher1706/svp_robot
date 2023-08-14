@@ -7,7 +7,6 @@ Variables           Resources/Variables/ErrorMessage.py
 
 
 *** Keywords ***
-
 Open Admin SVPI Reservations Page
     Open Page    base_url=${ADMIN_URL}    page_url=reservations
 
