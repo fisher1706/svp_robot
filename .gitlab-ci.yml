@@ -45,7 +45,7 @@ build:
   only:
     refs:
       - master
-      - QAA-769
+      - QAA-806
       - merge_request
     changes:
       - Dockerfile
@@ -113,7 +113,7 @@ ui_admin_tests:
     when: always
   only:
     - master
-    - QAA-769
+    - QAA-806
 
 ui_legislator_tests:
   image: $IMAGE
