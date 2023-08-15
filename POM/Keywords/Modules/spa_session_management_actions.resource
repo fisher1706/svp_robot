@@ -97,7 +97,7 @@ Verify Filter Reservations
     Type Text   ${RESERVATION_INPUT}      ${data}
     Click Apply
     IF    ${is_correct}
-        CONTINUE
+        RETURN
     ELSE
         Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
     END

@@ -37,4 +37,3 @@ Select Category Status
     Click Button    ${SELECT_CATEGORY_STATUS}
     Select Options By    ${SELECT_CATEGORY_STATUS}    text    ${status}
     Keyboard Key    press    Enter
-

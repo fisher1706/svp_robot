@@ -58,7 +58,7 @@ Individual Booking Actions
     Click Btn Next
     Accept Summary Page
     IF    ${payment}
-        CONTINUE
+        Log To Console    Update in future
     ELSE
         Should Not Be Empty     ${data}
         Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}      is_equal=False
