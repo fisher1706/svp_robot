@@ -10,7 +10,7 @@ Variables       Resources/Variables/WrongTestCenterDataset.py
 Verify Account Information
     [Arguments]    ${account}=False    ${is_logo}=False
     Open Account Information Page
-    IF    ${account}==False    # robocop: disable=inline-if-can-be-used
+    IF    'not(${account})'    # robocop: disable=inline-if-can-be-used
         ${account}=    Get Legislator Account
     END
     ${logo}=    Set Variable If    ${is_logo}    Yes    No

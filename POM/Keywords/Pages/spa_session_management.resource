@@ -24,3 +24,7 @@ Click Back
 Click Test Tackers
     Hover       ${BTN_TEST_TACKERS}
     Click Button    ${BTN_TEST_TACKERS}
+
+Click Icon Cansel
+    Hover    ${ACTIONS}
+    Click Button    ${VIEW}

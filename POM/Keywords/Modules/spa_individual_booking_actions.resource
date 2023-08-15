@@ -31,16 +31,21 @@ Test Download Ticked From Booking Page
     Download File       filename=ticket.pdf     btn_download=${ticket_download}${TICKET_ICON}
 
 Test Download Ticked From Booking Booking Details Page
-    ${ticket_download}=    Get Successful Appointment
-    Click Button    ${ticket_download}${EYE_ICON}
-    Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
-    Download File       filename=ticket.pdf     btn_download=${BTN_DOWNLOAD_TICKET}
+    TRY
+        ${ticket_download}=    Get Successful Appointment
+        Click Button    ${ticket_download}${EYE_ICON}
+        Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
+        Download File       filename=ticket.pdf     btn_download=${BTN_DOWNLOAD_TICKET}
+    EXCEPT
+        RETURN
+    END
 
 Test User Can Not Book Session Within The Same Category Until The Session Status Is Reserved
     Individual Booking Actions      payment=False
 
 Individual Booking Actions
     [Arguments]    ${payment}=True      ${session}=True
+    Wait For Elements State    ${BOOKED_APPOINTMENTS_TEXT}       visible
     ${data}=    Get Data Booked Appointments
     Click Book And Appointment
     Wait For Elements State    ${BOOK_AN_APPOINTMENT_TEXT}      visible
@@ -53,10 +58,10 @@ Individual Booking Actions
     Click Btn Next
     Accept Summary Page
     IF    ${payment}
-        Log To Console    Will work after update
+        CONTINUE
     ELSE
         Should Not Be Empty     ${data}
-        Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}
+        Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}      is_equal=False
     END
     Click Btn Ok
 

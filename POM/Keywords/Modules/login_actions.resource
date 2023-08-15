@@ -139,11 +139,11 @@ Log Out User
 
 Ability Reset Password
     # TODO: Use Add success flow when email service will work
-    [Arguments]    ${wrong}=True
+    [Arguments]    ${is_negative}=True
     Open SPA Login Page
     Click Forgot My Password
     Wait For Elements State    ${RESET_PASSWORD_TEXT}      visible
-    IF    ${wrong}
+    IF    ${is_negative}
         FOR    ${item}      IN      @{INVALID_EMAIL_LIST}
             Type Text    ${FIELD_ENTER_EMAIL}       ${item}
             Verify Btn Continue Reset Dissabled

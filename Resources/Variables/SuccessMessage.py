@@ -17,3 +17,4 @@ DEFAULT_CATEGORY = 'Engine Mechanics'
 MSG_DESCRIPTION_CATEGORY = f'Based on your selected occupation your exam category will be:\n{DEFAULT_CATEGORY}\n' \
                            'Please note that this category and occupation key will be checked by the embassy so ' \
                            'make sure you’ve selected the correct occupation as shown in your visa application'
+MSG_TCENTER_SUCCESSFULLY_UPDATED = 'Test center has been updated successfully'

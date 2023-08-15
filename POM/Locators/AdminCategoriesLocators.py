@@ -29,7 +29,6 @@ class AdminCategoriesLocators:
     DOWNLOAD_CSV_SAMPLE = '//*[text()=" download csv sample "]'
     DATA_CATEGORY = '//*[@class="info-value"]'
     PUBLISH_STATUS = '//*[@class="info-value"]//span'
-    BTN_UNPUBLISH = '//button[text() = "Unpublish"]'
-    BTN_PUBLISH = '//button[text() = "Publish"]'
     BTN_EDIT = '//*[text()="Edit"]'
     BTN_BACK = '//*[text()=" Back "]'
+    SELECT_CATEGORY_STATUS = 'select[name="published"]'

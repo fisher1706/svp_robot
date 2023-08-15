@@ -23,20 +23,18 @@ Click Btn Edit
 Verify Create Category Button Is Dissabled
     Wait For Elements State    ${BTN_SAVE_CATEGORY}    disabled
 
-Click Chage Status
-    Click Button    ${CHANGE_STATUS}
-
 Click Upload Categories
     Click Button    ${BTN_UPLOAD_CATEGORIES}
 
 Click Done
     Click Button    ${BTN_DONE}
 
-Click Btn Publish
-    Click Button    ${BTN_PUBLISH}
-
-Click Btn Unpublish
-    Click Button    ${BTN_UNPUBLISH}
-
 Click Btn Back
     Click Button    ${BTN_BACK}
+
+Select Category Status
+    [Arguments]     ${status}
+    Click Button    ${SELECT_CATEGORY_STATUS}
+    Select Options By    ${SELECT_CATEGORY_STATUS}    text    ${status}
+    Keyboard Key    press    Enter
+

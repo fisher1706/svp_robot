@@ -5,6 +5,11 @@ Variables       POM/Locators/SPAExamSessionLocators.py
 Variables       Resources/Variables/WarningMessage.py
 
 
+*** Variables ***
+${DEFAULT_REPEAT_TYPE}      Does not repeat
+${DEFAULT_SEAT_NUMBER}      1
+
+
 *** Keywords ***
 Test Check Ability Add New Session
     [Arguments]    ${num}=1     ${random}=False
@@ -12,10 +17,11 @@ Test Check Ability Add New Session
     Click Add Session
     ${session_time}=    Time New Session    num=${num}
     ${seat_number}=     Return Random Number Limit
+    ${repeat_types}=     Get Last Entry    ${TYPES_REPEAT_SESSION}
     IF    ${random}
-        ${repeat_type}=   Return Random Data List     ${session_repeat}
+        ${repeat_type}=   Return Random Data List     ${repeat_types}
     ELSE
-        ${repeat_type}=   Set Variable    ${session_repeat}[0]
+        ${repeat_type}=   Set Variable    ${repeat_types}[0]
     END
     Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
     Click Ok
@@ -28,14 +34,14 @@ Test Not Ability To Create New Session For Past Date
     ${session_time}=    Time New Session    correct_start=True
     ${elements}=    Get Elements    ${start}${session_time[1]}${end}
     Click Add Session
-    Fill New Session Form   ${session_time}     1      Does not repeat
+    Fill New Session Form   ${session_time}     ${DEFAULT_SEAT_NUMBER}      ${DEFAULT_REPEAT_TYPE}
     Verify Text     ${TEXT_ERROR}       ${SESSION_CAN_NOT_BE_PAST}
 
 Test Not Ability Create New Session With Wrong Interval
     Switch To Session
     ${session_time}=    Time New Session    delta=2
     Click Add Session
-    Fill New Session Form   ${session_time}     1      Does not repeat
+    Fill New Session Form   ${session_time}     ${DEFAULT_SEAT_NUMBER}      ${DEFAULT_REPEAT_TYPE}
     Verify Text     ${TEXT_ERROR}       ${SESSION_WRONG_INTERVAL}
 
 Test To View Detailed Information About Session

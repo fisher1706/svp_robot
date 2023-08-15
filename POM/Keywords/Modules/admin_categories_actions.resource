@@ -63,14 +63,16 @@ Test Change Category Status
     Admin Categories Actions
     Choose Item Actions    type=View
     ${status_before}=    Get Text       ${PUBLISH_STATUS}
-    IF      '${status_before}'=='yes'
-        Click Btn Unpublish
-    ELSE
-        Click Btn Publish
-    END
     Click Btn Back
+    Choose Item Actions    type=Edit
+    IF      '${status_before}'=='yes'
+        Select Category Status      Unpublish
+    ELSE
+        Select Category Status      Publish
+        Type Text    ${FIELD_PROMETRIC_CODE}      100
+    END
+    Click Btn Save
     Wait Spinners To Disappear
-    Choose Item Actions    type=View
     Sleep    2
     ${status_after}=    Get Text       ${PUBLISH_STATUS}
     Should Not Be Equal     ${status_before}      ${status_after}

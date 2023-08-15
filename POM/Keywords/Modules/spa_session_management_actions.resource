@@ -9,6 +9,10 @@ Variables       Resources/Variables/InfoMessages.py
 Variables       Resources/Variables/Filters.py
 
 
+*** Variables ***
+${DEFAULT_REPEAT_TYPE}      Does not repeat
+
+
 *** Keywords ***
 Test TCcenter Will Be Able To View All Sessions
     [Arguments]    ${number}=3
@@ -18,7 +22,7 @@ Test TCcenter Will Be Able To View All Sessions
         Click Add Session
         ${session_time}=    Time New Session    num=${i}
         ${seat_number}=     Return Random Number Limit
-        ${repeat_type}=   Set Variable      ${session_repeat}[0]
+        ${repeat_type}=   Set Variable      ${DEFAULT_REPEAT_TYPE}
         Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
         Click Ok
         ${seat_number}=     Convert To String       ${seat_number}
@@ -27,7 +31,6 @@ Test TCcenter Will Be Able To View All Sessions
         Append To List      ${total_data}      ${session_time[4]}     ${seat_number}      ${repeat_type}
     END
     Switch To Session Management
-    Log To Console      ${total_data}
     Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
     Verify Added Sessions   ${total_data}
 
@@ -94,7 +97,7 @@ Verify Filter Reservations
     Type Text   ${RESERVATION_INPUT}      ${data}
     Click Apply
     IF    ${is_correct}
-        Log To Console    test
+        CONTINUE
     ELSE
         Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
     END

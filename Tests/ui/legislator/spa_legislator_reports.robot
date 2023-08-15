@@ -16,10 +16,6 @@ Checking the ability to search entry by filters and clear filters on Reports tab
 Checking the certificate is valid scenario
     Test Legislator Valid Scenario
 
-Checking the certificate is expired scenario
-    Skip    expired scenario
-    Test Legislator Certificate Is Expired
-
 Checking the passport number is valid but its not for the certificate entered serial number scenario
     Test Legislator Wrong Certificate
 

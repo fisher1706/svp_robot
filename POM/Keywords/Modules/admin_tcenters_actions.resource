@@ -42,7 +42,6 @@ Verify Error Message On Test Center Create
 
 Verify Tcenters View Fields
     [Arguments]    ${account}    ${legislator_name}
-    Log To Console    ${account}
     Verify Name In Title    ${account.en_name}
     Verify Name    ${account.en_name}
     Verify Adress    ${account.address}
