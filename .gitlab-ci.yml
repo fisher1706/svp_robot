@@ -14,6 +14,8 @@ variables:
   ROBOT_REPORT: ./Results/Reports/report.html
   OUTPUT_REPORT: ./Results/Reports/output.xml
   ALLURE_RESULTS_DIRECTORY: ./Results/Reports/allure-results
+  BROWSER: ./Results/Reports/browser/
+  ROBOT_REPORT_LOG: ./Results/Reports/log.html
 
 stages:
   - build
@@ -109,6 +111,8 @@ ui_admin_tests:
       - $ALLURE_RESULTS_DIRECTORY
       - $ROBOT_REPORT
       - $OUTPUT_REPORT
+      - $ROBOT_REPORT_LOG
+      - $BROWSER
     expire_in: 1 day
     when: always
   only:
