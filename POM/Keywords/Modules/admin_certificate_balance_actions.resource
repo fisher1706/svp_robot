@@ -13,10 +13,8 @@ Test Use Filter On Certificate Balance Page
     FOR    ${item}      IN      @{filter_data}
         ${key}      ${value}=   Reformat Data Filter        ${item}
         Click Btn Cancel
-        Wait Spinners To Disappear
         Wait Until Keyword Succeeds    5x    1 sec
         ...     Select Dropdown List    selector=${SELECT_OWNER_ROLE}       val=${key}
-        Wait Spinners To Disappear
         Wait Until Keyword Succeeds    5x    1 sec
         ...     Select Dropdown List    selector=${SELECT_COUNTRY}       val=${country}
         Type Text    ${FIELD_OWNER_NAME}        ${value}
