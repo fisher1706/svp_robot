@@ -135,6 +135,8 @@ ui_legislator_tests:
       - $ALLURE_RESULTS_DIRECTORY
       - $ROBOT_REPORT
       - $OUTPUT_REPORT
+      - $ROBOT_REPORT_LOG
+      - $BROWSER
     expire_in: 1 day
     when: always
   only:
@@ -162,6 +164,8 @@ ui_test_center_owner_tests:
       - $ALLURE_RESULTS_DIRECTORY
       - $ROBOT_REPORT
       - $OUTPUT_REPORT
+      - $ROBOT_REPORT_LOG
+      - $BROWSER
     expire_in: 1 day
     when: always
   only:
@@ -190,6 +194,8 @@ ui_individual_tests:
       - $ALLURE_RESULTS_DIRECTORY
       - $ROBOT_REPORT
       - $OUTPUT_REPORT
+      - $ROBOT_REPORT_LOG
+      - $BROWSER
     expire_in: 1 day
     when: always
   only:
