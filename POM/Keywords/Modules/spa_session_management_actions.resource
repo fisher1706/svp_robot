@@ -31,7 +31,8 @@ Test TCcenter Will Be Able To View All Sessions
         Append To List      ${total_data}      ${session_time[4]}     ${seat_number}      ${repeat_type}
     END
     Switch To Session Management
-    Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
+    Wait Until Keyword Succeeds    5x    2 sec
+    ...     Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
     Verify Added Sessions   ${total_data}
 
 Test Filters By Non Existent Data
