@@ -22,7 +22,7 @@ Wait Spinners To Disappear
     Wait For Elements State    ${WAITING_SPINNER}    hidden
 
 Wait Inner Spinners To Disappear
-    Wait For Elements State    ${WAITING_INNER_SPINNER}    hidden
+    Wait For Elements State    ${WAITING_INNER_SPINNER}    hidden       timeout=180s
 
 # TODO: uncomment methods when needed in future tests
 #@staticmethod

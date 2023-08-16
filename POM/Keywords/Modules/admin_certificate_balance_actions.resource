@@ -16,6 +16,7 @@ Test Use Filter On Certificate Balance Page
         Click Btn Cancel
         Wait Until Keyword Succeeds    5x    1 sec
         ...     Select Dropdown List    selector=${SELECT_OWNER_ROLE}       val=${key}
+        Wait For Elements State     ${SELECT_COUNTRY}       enabled
         Wait Until Keyword Succeeds    5x    1 sec
         ...     Select Dropdown List    selector=${SELECT_COUNTRY}       val=${country}
         Type Text    ${FIELD_OWNER_NAME}        ${value}
