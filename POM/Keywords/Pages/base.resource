@@ -21,6 +21,9 @@ Wait Continue Button To Become Disabled
 Wait Spinners To Disappear
     Wait For Elements State    ${WAITING_SPINNER}    hidden
 
+Wait Inner Spinners To Disappear
+    Wait For Elements State    ${WAITING_INNER_SPINNER}    hidden
+
 # TODO: uncomment methods when needed in future tests
 #@staticmethod
 #def is_disabled(locator_name: str):

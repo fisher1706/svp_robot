@@ -10,6 +10,7 @@ Variables       Resources/Variables/Filters.py
 Test Use Filter On Certificate Balance Page
     [Arguments]    ${country}=Ukraine       ${filter_data}=${FILTER_OWNER_ROLE}
     Open Admin Certificate Balance Page
+    Wait Inner Spinners To Disappear
     FOR    ${item}      IN      @{filter_data}
         ${key}      ${value}=   Reformat Data Filter        ${item}
         Click Btn Cancel
