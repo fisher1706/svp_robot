@@ -1,5 +1,5 @@
-custom_repeat = [
+custom_repeat = (
     'Day',
     'Week',
     'Month'
-]
+)
