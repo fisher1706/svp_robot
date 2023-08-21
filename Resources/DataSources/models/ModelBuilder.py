@@ -10,6 +10,7 @@ from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
 from Resources.DataSources.models.occupation import Occupation
 from Resources.DataSources.models.category import Category
+from Resources.DataSources.models.individual import Individual
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
 
@@ -151,4 +152,23 @@ class ModelBuilder:
             prometric_cbt_exam_weight=prometric_cbt_exam_weight,
             exam_weight=exam_weight,
             prometric_code=prometric_code
+        )
+
+    @staticmethod
+    @keyword('Create New Individual')
+    def build_random_individual(country=COUNTRY):
+        random_manager = RandomManager()
+
+        first_name = random_manager.random_name()
+        last_name = random_manager.random_name()
+        email = random_manager.random_email()
+
+        date_of_birth = ''
+        passport_expiration = ''
+
+        return Individual(
+            first_name=first_name,
+            last_name=last_name,
+            national_id=COUNTRY_ID,
+            country=country
         )
