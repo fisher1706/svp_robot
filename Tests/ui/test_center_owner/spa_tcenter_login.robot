@@ -22,3 +22,10 @@ C8819 Check valid Login and Password
 C8840 Check ability to log out from system
     Create Entities And Log In    is_tcenter=True    is_tcenter_activate=True
     Log Out User
+
+Checking Password Validation For TCenter Reset Password Flow With Invalid User Email
+    Ability Reset Password
+
+Checking Password Validation For TCenter Reset Password Flow With Invalid Credentials
+    [Documentation]    Only negative flow. Positive use in "Create Entities And Log In"
+    Create Entities And Reset Password With Invalid Credentials    is_tcenter=True    is_tcenter_activate=True

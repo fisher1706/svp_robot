@@ -136,3 +136,26 @@ Log Out User
     Click On Profile Menu
     Click Logout Button
     Wait Login Page To Load
+
+Ability Reset Password
+    # TODO: Use Add success flow when email service will work
+    [Arguments]    ${wrong}=True
+    Open SPA Login Page
+    Click Forgot My Password
+    Wait For Elements State    ${RESET_PASSWORD_TEXT}      visible
+    IF    ${wrong}
+        FOR    ${item}      IN      @{INVALID_EMAIL_LIST}
+            Type Text    ${FIELD_ENTER_EMAIL}       ${item}
+            Verify Btn Continue Reset Dissabled
+        END
+    ELSE
+        RETURN
+    END
+
+Activate Account And Reset Password With Invalid Credentials
+    [Arguments]    ${is_tcenter}
+    Open Activation Page Link       ${is_tcenter}
+    Verify Password Title
+    FOR    ${item}      IN      @{INVALID_PASSWORD_LIST}
+        Reset Password On Password Form       password=${item}[0]     confirm_password=${item}[0]
+    END

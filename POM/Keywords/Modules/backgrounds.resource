@@ -79,3 +79,32 @@ Check Permission Settings
         ...     multiple_categories=${is_multiple_categories}
         Log In To SPA    ${two_factor_verification}    ${email}
     END
+
+Create Entities And Reset Password With Invalid Credentials
+    [Arguments]
+    ...    ${is_legislator}=True
+    ...    ${is_legislator_activate}=False
+    ...    ${is_tcenter}=False
+    ...    ${is_tcenter_activate}=False
+    ...    ${login_tcenter}=True
+    Request Token
+    ${token}=    Get Token
+    Put Permissions    token=${token}    tcenter=${login_tcenter}    multiple_categories=False
+    IF    ${is_legislator}
+        Create Legislator    ${token}
+        ${legislator_account}=    Get Legislator Account
+        Log To Console    \nLegislator Email
+        Log To Console    ${legislator_account.email}
+        IF    ${is_legislator_activate}
+            Activate Account And Reset Password With Invalid Credentials      is_tcenter=False
+        END
+    END
+    IF    ${is_tcenter}
+        Create Test Center    ${token}
+        ${tcenter_account}=    Get Test Center Account
+        Log To Console    Test Center Owner Email
+        Log To Console    ${tcenter_account.email}
+        IF    ${is_tcenter_activate}
+            Activate Account And Reset Password With Invalid Credentials     is_tcenter=True
+        END
+    END

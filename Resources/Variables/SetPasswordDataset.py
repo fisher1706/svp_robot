@@ -7,3 +7,9 @@ INVALID_PASSWORD_LIST = [
     ['Abcdefg!', 'Abcdefg!', 'Abcdefg!'],
     ['Abcdefg123', 'Abcdefg123', 'Abcdefg123'],
 ]
+
+INVALID_EMAIL_LIST = [
+    'Abcdefg123gmail.com',
+    'abc123.@gmail.com',
+    ''
+]
