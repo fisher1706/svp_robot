@@ -9,5 +9,5 @@ Test Setup          Open Chrome Browser
 
 
 *** Test Cases ***
-Checking Successfully Registration With Email
-    Test Successfully Registration With Email
+Checking Validation Rules For The First Step
+    Test Successfully Registration

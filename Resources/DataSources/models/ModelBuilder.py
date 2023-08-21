@@ -1,7 +1,5 @@
-from datetime import date
-
+from datetime import date, timedelta
 from robot.api.deco import keyword
-
 from Libraries.logger import yaml_logger
 from Libraries.random_manager import RandomManager
 from Libraries.translate_to_arabic import Translator
@@ -13,6 +11,8 @@ from Resources.DataSources.models.category import Category
 from Resources.DataSources.models.individual import Individual
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
+from Resources.Variables import UserInfo
+
 
 logger = yaml_logger.setup_logging(__name__)
 
@@ -156,19 +156,24 @@ class ModelBuilder:
 
     @staticmethod
     @keyword('Create New Individual')
-    def build_random_individual(country=COUNTRY):
+    def build_random_individual(password=UserInfo.DEFAULT_PASSWORD, default_delta=7200):
         random_manager = RandomManager()
 
         first_name = random_manager.random_name()
         last_name = random_manager.random_name()
+        national_id = random_manager.random_number(size=10)
         email = random_manager.random_email()
-
-        date_of_birth = ''
-        passport_expiration = ''
+        passport = random_manager.random_letters(size=2) + str(random_manager.random_number())
+        date_of_birth = date.today() - timedelta(days=default_delta)
+        passport_expiration = date.today() + timedelta(days=default_delta)
 
         return Individual(
             first_name=first_name,
             last_name=last_name,
-            national_id=COUNTRY_ID,
-            country=country
+            national_id=national_id,
+            passport=passport,
+            email=email,
+            date_of_birth=date_of_birth,
+            passport_expiration=passport_expiration,
+            password=password
         )
