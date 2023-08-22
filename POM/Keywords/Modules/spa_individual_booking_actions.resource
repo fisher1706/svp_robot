@@ -38,7 +38,6 @@ Test Download Ticked From Booking Booking Details Page
     Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
     Download File       filename=ticket.pdf     btn_download=${BTN_DOWNLOAD_TICKET}
 
-
 Test User Can Not Book Session Within The Same Category Until The Session Status Is Reserved
     Individual Booking Actions      payment=False
 
