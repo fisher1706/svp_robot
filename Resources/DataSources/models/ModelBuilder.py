@@ -8,10 +8,8 @@ from Resources.DataSources.models.email import Email
 from Resources.DataSources.models.labor import Labor
 from Resources.DataSources.models.occupation import Occupation
 from Resources.DataSources.models.category import Category
-from Resources.DataSources.models.individual import Individual
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
-from Resources.Variables import UserInfo
 
 
 logger = yaml_logger.setup_logging(__name__)
@@ -152,28 +150,4 @@ class ModelBuilder:
             prometric_cbt_exam_weight=prometric_cbt_exam_weight,
             exam_weight=exam_weight,
             prometric_code=prometric_code
-        )
-
-    @staticmethod
-    @keyword('Create New Individual')
-    def build_random_individual(password=UserInfo.DEFAULT_PASSWORD, default_delta=7200):
-        random_manager = RandomManager()
-
-        first_name = random_manager.random_name()
-        last_name = random_manager.random_name()
-        national_id = random_manager.random_number(size=10)
-        email = random_manager.random_email()
-        passport = random_manager.random_letters(size=2) + str(random_manager.random_number())
-        date_of_birth = date.today() - timedelta(days=default_delta)
-        passport_expiration = date.today() + timedelta(days=default_delta)
-
-        return Individual(
-            first_name=first_name,
-            last_name=last_name,
-            national_id=national_id,
-            passport=passport,
-            email=email,
-            date_of_birth=date_of_birth,
-            passport_expiration=passport_expiration,
-            password=password
         )
