@@ -1,7 +1,5 @@
-from datetime import date
-
+from datetime import date, timedelta
 from robot.api.deco import keyword
-
 from Libraries.logger import yaml_logger
 from Libraries.random_manager import RandomManager
 from Libraries.translate_to_arabic import Translator
@@ -12,6 +10,7 @@ from Resources.DataSources.models.occupation import Occupation
 from Resources.DataSources.models.category import Category
 from Resources.Variables import CategoriesIdsDataset
 from Resources.Variables.DirPath import DirPath
+
 
 logger = yaml_logger.setup_logging(__name__)
 

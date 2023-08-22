@@ -10,6 +10,10 @@ Variables       Resources/Variables/DirPath.py
 Variables       POM/Locators/AdminBaseLocators.py
 
 
+*** Variables ***
+${DEFAULT_CODE}     100
+
+
 *** Keywords ***
 Test Ability Add Category
     Admin Categories Actions
@@ -69,7 +73,7 @@ Test Change Category Status
         Select Category Status      Unpublish
     ELSE
         Select Category Status      Publish
-        Type Text    ${FIELD_PROMETRIC_CODE}      100
+        Type Text    ${FIELD_PROMETRIC_CODE}      ${DEFAULT_CODE}
     END
     Click Btn Save
     Wait Spinners To Disappear

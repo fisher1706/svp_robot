@@ -27,22 +27,17 @@ Test View Data Of Tansaction History
     Should Not Be Empty    ${data_tr_history}
 
 Test Download Ticked From Booking Page
-    TRY
-        ${ticket_download}=    Get Successful Appointment
-        Download File       filename=ticket.pdf     btn_download=${ticket_download}${TICKET_ICON}
-    EXCEPT
-        Log To Console    Necessary Successful Appointment
-    END
+    #TODO:  Update test after possibility add "Successful Appointment"
+    ${ticket_download}=    Get Successful Appointment
+    Download File       filename=ticket.pdf     btn_download=${ticket_download}${TICKET_ICON}
 
 Test Download Ticked From Booking Booking Details Page
-    TRY
-        ${ticket_download}=    Get Successful Appointment
-        Click Button    ${ticket_download}${EYE_ICON}
-        Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
-        Download File       filename=ticket.pdf     btn_download=${BTN_DOWNLOAD_TICKET}
-    EXCEPT
-        RETURN
-    END
+    #TODO:  Update test after possibility add "Successful Appointment"
+    ${ticket_download}=    Get Successful Appointment
+    Click Button    ${ticket_download}${EYE_ICON}
+    Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
+    Download File       filename=ticket.pdf     btn_download=${BTN_DOWNLOAD_TICKET}
+
 
 Test User Can Not Book Session Within The Same Category Until The Session Status Is Reserved
     Individual Booking Actions      payment=False
@@ -61,9 +56,7 @@ Individual Booking Actions
     Select Individual Session
     Click Btn Next
     Accept Summary Page
-    IF    ${payment}
-        Log To Console    Update in future
-    ELSE
+    IF    'not(${payment})'
         Should Not Be Empty     ${data}
         Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}      is_equal=False
     END

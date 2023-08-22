@@ -16,11 +16,7 @@ Test Add Reservation With Valid Data
     Wait For Elements State    ${RESERVATION_INFO_TEXT}     visible
     Fill Test Tacker & Exam Info    entry=${reservation_data}       passport=${EMPTY}        reservation=${EMPTY}
     Verify Test Tacker & Exam Info      passport=${EMPTY}       reservation=${EMPTY}
-    IF      '${agreement}'=='${EMPTY}'
-        RETURN
-    ELSE
-        Verify Term And Conditions      agreement=${agreement}
-    END
+    Verify Term And Conditions      agreement=${agreement}
 
 Test Add Reservation With Invalid Data
     [Arguments]     ${passport}=${EMPTY}        ${reservation}=${EMPTY}

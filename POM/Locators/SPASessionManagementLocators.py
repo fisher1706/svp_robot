@@ -21,3 +21,4 @@ class SPASessionManagementLocators:
     SESSION_DATE_FROM = '//input[@placeholder="From"]'
     SESSION_DATE_TO = '//input[@placeholder="To"]'
     TYPE = '//*[@class="multiselect__select"]'
+    TAB_SESSION_ID = 'td[data-label="Session ID"]'

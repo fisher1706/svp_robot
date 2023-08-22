@@ -48,9 +48,10 @@ Test Ability Select Filter
     Verify Filter Field Choose      ${dropdown}[0]      ${data[8]}
     Verify Filter Field Choose      ${dropdown}[1]      ${data[4]}
     Verify Filter Field Choose      ${dropdown}[2]      ${data[5]}
-
-    ${status}=  Low String      ${data}[7]
-    Verify Filter Field Choose      ${dropdown}[3]      ${status}
+    ${statuses}=        Get Last Entry      ${OPEN_STATUSES}
+    FOR     ${status}   IN      @{statuses}
+        Verify Filter Field Choose      ${dropdown}[3]      ${status}
+    END
 
 Verify Assessor Information
     @{elements}=   Get Elements    ${DATA}

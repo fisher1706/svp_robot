@@ -95,7 +95,8 @@ Verify Edit Country
     TRY
         Verify Text    ${COUNTRY_SUCCESSFULLY_UPDATED}      ${SUCCESS_UPDATE_MESSAGE}
     EXCEPT
-        Log To Console    Success update window
+        ${cuntry}=      Get Text    ${EDIT_COUNTRY}
+        Should Not Be Empty    ${cuntry}
     END
 
 Verify Edit Button Is Dissabled

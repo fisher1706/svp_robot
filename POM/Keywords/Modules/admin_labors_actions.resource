@@ -76,7 +76,7 @@ Test Ability Use Filtration
         ${date}=    Reverse Date        ${data}[7]
         Verify Filter Field    ${FIELD_LAST_ACTIVE_DATE}        ${date}
     END
-    Verify Filter Field    ${FIELD_EMAIL}        ${data}[6]
+    IF  '${data}[6]'!=''    Verify Filter Field    ${FIELD_EMAIL}        ${data}[6]
     Verify Filter Field Select      ${FIELD_COUNTRY_OF_RESIDENCE}   ${INPUT_COUNTRY_OF_RESIDENCE}   ${data}[3]
     Verify Filter Field Select      ${FIELD_NATIONALITY}   ${INPUT_NATIONALITY}   ${data}[4]
 
