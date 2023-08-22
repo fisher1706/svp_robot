@@ -83,13 +83,14 @@ Verify Added Session
     [Arguments]    ${time}      ${start}=//*[text()="        ${end}="]
     Wait For Elements State     ${BTN_ADD}   hidden
     ${elements}=     Get Elements        ${start}${time[0]}${end}
-    ${el}=      Get Day     ${time}     0
-    Click       ${el}
+    ${day}=      Get Day     ${time}     0
+    Click       ${day}
     Verify Text     ${SESSION_CATEGORY}     Engine Mechanics
     TRY
         Verify Text     ${SESSION_TIME}     ${time[2]} - ${time[3]}
     EXCEPT
-        Log To Console    Data is not updated
+        ${data}=    Get Text        ${SESSION_TIME}
+        Should Not Be Empty    ${data}
     END
     Verify Text     ${SESSION_STATUS}       Scheduled
     Verify Text     ${SESSION_SEE_MORE}       See more

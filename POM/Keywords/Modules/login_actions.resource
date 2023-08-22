@@ -148,8 +148,6 @@ Ability Reset Password
             Type Text    ${FIELD_ENTER_EMAIL}       ${item}
             Verify Btn Continue Reset Dissabled
         END
-    ELSE
-        RETURN
     END
 
 Activate Account And Reset Password With Invalid Credentials

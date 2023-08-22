@@ -25,3 +25,4 @@ class SPAAssessorsLocators:
     CHECK_FILTER = '//*[@class="filter-controls__tag"]'
     ENTRY = 'td[data-label]'
     DROP = '//*[@class="multiselect__select"]'
+    OPEN_STATUSES = '//*[text()="Status"]/../..//*[@class="multiselect__element"]/span/span'

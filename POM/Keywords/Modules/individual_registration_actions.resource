@@ -13,8 +13,6 @@ Test Successfully Registration
     Sleep    5
 
 
-
-
 Fill General Information
     [Arguments]    ${individual}
     Fill Field First Name    ${individual.first_name}

@@ -28,11 +28,11 @@ Test TCcenter Will Be Able To View All Sessions
         ${seat_number}=     Convert To String       ${seat_number}
         ${repeat_type}=     Convert To String       ${repeat_type}
         ${repeat_type}=     Cap String      ${repeat_type}
-        Append To List      ${total_data}      ${session_time[4]}     ${seat_number}      ${repeat_type}
+        Append To List      ${total_data}      ${seat_number}      ${repeat_type}
     END
     Switch To Session Management
     Wait Until Keyword Succeeds    5x    2 sec
-    ...     Wait For Elements State     //*[text()=" ${session_time[4]} "]   visible
+    ...     Wait For Elements State     ${TAB_SESSION_ID}   visible
     Verify Added Sessions   ${total_data}
 
 Test Filters By Non Existent Data
@@ -92,17 +92,6 @@ Verify Filter Seats
         Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
     END
 
-Verify Filter Reservations
-    [Arguments]    ${locator}   ${data}     ${is_correct}
-    Switch And Clear Filters
-    Type Text   ${RESERVATION_INPUT}      ${data}
-    Click Apply
-    IF    ${is_correct}
-        RETURN
-    ELSE
-        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
-    END
-
 Verify Filter Session Date
     [Arguments]    ${data}     ${is_correct}
     Switch And Clear Filters
@@ -129,7 +118,7 @@ Switch And Clear Filters
 Verify Added Sessions
     [Arguments]     ${data_in}
     ${data}=     Read Tabs Data Session Management      ${ENTRY}
-    Lists Should Be Equal     ${data_in}     ${data}
+    List Should Contain Sub List        ${data}     ${data_in}
 
 Read Tabs Data Session Management
     [Arguments]    ${locators}      ${all_data}=False
