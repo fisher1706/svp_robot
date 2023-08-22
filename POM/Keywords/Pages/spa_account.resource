@@ -63,7 +63,6 @@ Get Email
 
 Click Edit Button
     Click Button    ${BTN_EDIT}
-#    s(self.BTN_EDIT).should(be.clickable).perform(command.js.scroll_into_view).click()
 
 Verify Button Id Disabled
     Get Element States    ${BTN_SAVE}    validate    value & disabled
@@ -100,8 +99,7 @@ Select Show Logo Toggle
 
 Upload Logo File
     [Arguments]    ${dir_path}=None
-    Type Text    ${BTN_LOGO_FILE}    ${dir_path}
-#    s(self.BTN_LOGO_FILE).should(be.clickable).type(dir_path)
+    Upload File By Selector    ${BTN_LOGO_FILE}    ${dir_path}
 
 Verify Warning Digits Only Postal Code
     Verify Text        ${WARNING_POSTAL_CODE}    ${TC_ONLY_DIGITS_POSTAL_CODE}

@@ -10,5 +10,4 @@ Test Setup    Run Keywords    Open Chrome Browser   AND     Log In By Api To The
 
 *** Test Cases ***
 Ability Edit Landing Page Content
-    Skip    site main page
     Test Edit Landing Page Content

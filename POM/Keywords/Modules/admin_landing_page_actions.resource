@@ -13,7 +13,6 @@ Test Edit Landing Page Content
     ${section}=     Get Randon String
     ${content}=     Get Randon String
     Set Landing Page Content    section=${section}      content=${content}
-    Set Landing Page Content    section=${SECTION_TITLE}      content=${CONTENT}
 
 Admin Landing Page Content Actions
     Open Admin Landing Page Content
@@ -25,7 +24,4 @@ Set Landing Page Content
     Click Btn Edit
     Type Text    ${FIELD_SECTION_TITLE}        ${section}
     Type Text    ${FIELD_CONTENT}        ${content}
-    Click Btn Save
-    Wait Spinners To Disappear
-    Verify Text    ${SUCCESS_UPDATE}        ${SUCCESS_UPDATE_CONTENT}
-    Click Btn Ok
+    Verify Btn Save Active

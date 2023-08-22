@@ -18,9 +18,6 @@ Checking the operations of filters search by non existed data
 Checking ability to use view action to see sessions Information
     Test Ability To Use View Action To See Sessions Information
 
-Checking Information for Canceled session
-    Skip    todo after add functionality
-
 Checking ability to back from the Session Informations Page
     Test Ability To Back From Session Information Page
 

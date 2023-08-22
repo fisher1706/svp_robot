@@ -47,7 +47,21 @@ Check an active Admin can view Edit Test Center form
     Verify Tcenters View Fields    ${tcenter_account}    ${legislator_account.en_name}
 
 Check an active Admin can edit Test Center with valid data
-    Skip    todo
+    ${tcenter_account}=    Create New Account
+    Log In By Api To The Admin Portal
+    Open Test Centers Page
+    Wait Spinners To Disappear
+    Select Edit Of Last Entry
+    Fill Edit TCenter Form      account=${tcenter_account}
+    Click Btn Edit TCenter
+    Verify Message TCenter Successfully Updated
 
 Check an active Admin can not edit owner with registered email
-    Skip    todo
+    ${tcenter_account}=    Create New Account
+    Log In By Api To The Admin Portal
+    Open Test Centers Page
+    Wait Spinners To Disappear
+    Select Edit Of Last Entry
+    Fill Edit TCenter Form      account=${tcenter_account}      email=${DEFAULT_LOGIN}
+    Click Btn Edit TCenter
+    Verify Message Email Is Already Use

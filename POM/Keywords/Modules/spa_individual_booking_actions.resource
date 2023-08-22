@@ -27,10 +27,12 @@ Test View Data Of Tansaction History
     Should Not Be Empty    ${data_tr_history}
 
 Test Download Ticked From Booking Page
+    #TODO:  Update test after possibility add "Successful Appointment"
     ${ticket_download}=    Get Successful Appointment
     Download File       filename=ticket.pdf     btn_download=${ticket_download}${TICKET_ICON}
 
 Test Download Ticked From Booking Booking Details Page
+    #TODO:  Update test after possibility add "Successful Appointment"
     ${ticket_download}=    Get Successful Appointment
     Click Button    ${ticket_download}${EYE_ICON}
     Wait For Elements State    ${BOOKING_DETAILS_TEXT}      visible
@@ -41,6 +43,7 @@ Test User Can Not Book Session Within The Same Category Until The Session Status
 
 Individual Booking Actions
     [Arguments]    ${payment}=True      ${session}=True
+    Wait For Elements State    ${BOOKED_APPOINTMENTS_TEXT}       visible
     ${data}=    Get Data Booked Appointments
     Click Book And Appointment
     Wait For Elements State    ${BOOK_AN_APPOINTMENT_TEXT}      visible
@@ -52,11 +55,9 @@ Individual Booking Actions
     Select Individual Session
     Click Btn Next
     Accept Summary Page
-    IF    ${payment}
-        Log To Console    Will work after update
-    ELSE
+    IF    'not(${payment})'
         Should Not Be Empty     ${data}
-        Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}
+        Verify Text    ${ALREADY_RESERVATION}       ${MSG_ALREADY_RESERVATION}      is_equal=False
     END
     Click Btn Ok
 

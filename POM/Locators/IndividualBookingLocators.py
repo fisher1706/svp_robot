@@ -40,3 +40,4 @@ class IndividualBookingLocators:
     INDIVIDUAL_SUCCESS_ACTIONS = '//*[@class="reservation-item__icon ticket-icon"]/..'
     BTN_DOWNLOAD_TICKET = '//button[text() = " Download Ticket "]'
     FIELD_OCCUPATION = '//*[@id="occupationSearchSelect"]'
+    BOOKED_APPOINTMENTS_TEXT = '//*[@id="app"]//h2'

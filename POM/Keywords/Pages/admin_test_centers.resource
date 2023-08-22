@@ -1,12 +1,14 @@
 *** Settings ***
 Library         Browser
+Resource        POM/Keywords/Modules/base_actions.resource
+Resource        POM/Keywords/Pages/dashboard.resource
 Variables       POM/Locators/BaseLocators.py
 Variables       POM/Locators/AdminTestCentersLocators.py
 Variables       Resources/Variables/Titles.py
 Variables       Resources/Variables/Status.py
 Variables       Resources/Variables/Filters.py
-Resource        POM/Keywords/Modules/base_actions.resource
-Resource        POM/Keywords/Pages/dashboard.resource
+Variables       Resources/Variables/SuccessMessage.py
+Variables       Resources/Variables/ErrorMessage.py
 
 
 *** Keywords ***
@@ -79,7 +81,7 @@ Click Button Create Test Center
 
 Select Dropdown County
     [Arguments]    ${text}
-    Click Button    ${DROPDOWN_COUNTRY}
+    Wait Until Keyword Succeeds    5x    1 sec      Click Button    ${DROPDOWN_COUNTRY}
     Select Options By    ${DROPDOWN_COUNTRY}    text    ${text}
     Keyboard Key    press    Enter
 
@@ -174,3 +176,40 @@ Select Dropdown Filter Statuses
     Click Button    ${DROPDOWN_STATUSES}
     Select Options By    ${DROPDOWN_STATUSES}    text    ${text}
     Keyboard Key    press    Enter
+
+Click Btn Edit TCenter
+    Click Button    ${BTN_EDIT_TCENTER}
+
+Select Legislator Edit
+    Click Button    ${SELECT_EDIT_LEGISLATOR}
+    ${elements}=    Get Elements    ${SELECTED_EDIT_LEGISLATOR}
+    Click        ${elements}[2]
+
+Select Category Edit
+    Click Button    ${DROPDOWN_CATEGORY}
+    ${elements}=    Get Elements    ${DROPDOWN_CATEGORY_ITEM}
+    Click        ${elements}[1]
+
+Fill Edit TCenter Form
+    [Arguments]     ${account}      ${email}=${EMPTY}
+    Wait For Elements State    ${EDIT_TCENTER}      visible
+    Clear Text      ${FIELD_EDIT_NAME}
+    Type Text       ${FIELD_EDIT_NAME}     ${account.en_name}
+    Type Text       ${FIELD_EDIT_CITY}     ${account.city}
+    Type Text       ${FIELD_EDIT_ADDRESS}     ${account.address}
+    Type Text       ${FIELD_EDIT_POSTAL_CODE}       ${account.postal_code}
+    Type Text       ${FIELD_EDIT_PHONE_NUMBER}     ${account.sub_number}
+    Type Text       ${FIELD_EDIT_OWNER_NAME}     ${account.contact_name}
+    Select Category Edit
+    Select Legislator Edit
+    IF      '${email}'=='${EMPTY}'
+        Type Text       ${FIELD_EDIT_OWNER_EMAIL}     ${account.email}
+    ELSE
+        Type Text       ${FIELD_EDIT_OWNER_EMAIL}     ${email}
+    END
+
+Verify Message TCenter Successfully Updated
+    Verify Text     ${TCENTER_SUCCESSFULLY_UPDATED}     ${MSG_TCENTER_SUCCESSFULLY_UPDATED}
+
+Verify Message Email Is Already Use
+    Verify Text    ${EMAI_ALREADY_USE}      ${MSG_EMAIL_ALREADY_USE}

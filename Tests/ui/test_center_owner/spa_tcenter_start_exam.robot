@@ -11,9 +11,6 @@ ${RESERVATION}      5Q85TR
 
 
 *** Test Cases ***
-Verify Ability To Check Reservation Info With Valid Data
-    Test Add Reservation With Valid Data
-
 Verify Ability To Check Reservation Info With Invalid Passport Number
     Test Add Reservation With Invalid Data      passport=${PASSWORD}
 

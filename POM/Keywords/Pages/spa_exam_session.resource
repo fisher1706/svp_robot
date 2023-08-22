@@ -29,9 +29,7 @@ Choose Category New Session
 
 Choose Repeat Session
     [Arguments]     ${repeat_type}
-    IF    '${repeat_type}'=='Does not repeat'
-        RETURN
-    ELSE
+    IF    '${repeat_type}'!='Does not repeat'
         Click Button    ${REPEAT_SESSION}
         ${locator}=     Create Locator By Span      ${repeat_type}
         Click Button    ${locator}

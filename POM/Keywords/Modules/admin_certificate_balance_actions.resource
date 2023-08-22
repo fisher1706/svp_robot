@@ -10,11 +10,15 @@ Variables       Resources/Variables/Filters.py
 Test Use Filter On Certificate Balance Page
     [Arguments]    ${country}=Ukraine       ${filter_data}=${FILTER_OWNER_ROLE}
     Open Admin Certificate Balance Page
+    Wait Inner Spinners To Disappear
     FOR    ${item}      IN      @{filter_data}
         ${key}      ${value}=   Reformat Data Filter        ${item}
         Click Btn Cancel
-        Select Dropdown List    selector=${SELECT_OWNER_ROLE}       val=${key}
-        Select Dropdown List    selector=${SELECT_COUNTRY}       val=${country}
+        Wait Until Keyword Succeeds    5x    1 sec
+        ...     Select Dropdown List    selector=${SELECT_OWNER_ROLE}       val=${key}
+        Wait For Elements State     ${SELECT_COUNTRY}       enabled
+        Wait Until Keyword Succeeds    5x    1 sec
+        ...     Select Dropdown List    selector=${SELECT_COUNTRY}       val=${country}
         Type Text    ${FIELD_OWNER_NAME}        ${value}
         Click Btn Seach
         Verify Filter   value=${value}

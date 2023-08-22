@@ -16,3 +16,6 @@ Click Btn Save
 
 Click Btn Ok
     Click Button    ${BTN_OK}
+
+Verify Btn Save Active
+    Wait For Elements State    ${BTN_SAVE}      enabled

@@ -29,9 +29,11 @@ Checking The Pending Payment Message
     Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
 
 Checking Ability To Download Ticket From The Booking Page
+    Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
     Test Download Ticked From Booking Page
 
 Checking Ability To Download Ticket From The Booking Details Page
+    Skip        https://is-takamol.atlassian.net/browse/PVPE-1826
     Test Download Ticked From Booking Booking Details Page
 
 Checking That Individual Can Go To The Transaction History Tab And View All Transactions Made By Them

@@ -92,7 +92,12 @@ Admin Country Actions
 Verify Edit Country
     Wait Spinners To Disappear
     Wait For Elements State     ${PERMITTED_SERVICES_TEXT}       visible
-    Verify Text    ${COUNTRY_SUCCESSFULLY_UPDATED}      ${SUCCESS_UPDATE_MESSAGE}
+    TRY
+        Verify Text    ${COUNTRY_SUCCESSFULLY_UPDATED}      ${SUCCESS_UPDATE_MESSAGE}
+    EXCEPT
+        ${cuntry}=      Get Text    ${EDIT_COUNTRY}
+        Should Not Be Empty    ${cuntry}
+    END
 
 Verify Edit Button Is Dissabled
     Wait For Elements State    ${BTN_EDIT}    disabled

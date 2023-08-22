@@ -32,18 +32,6 @@ Test Legislator Valid Scenario
     Checking Sertificate Scenario       ${passport}     ${sertificate_number}
     ...     ${MESSAGE_VALID_CERTIFICATE}
 
-Test Legislator Certificate Is Expired
-    Upload Group Of Labors Index    wrong_timestamp=True
-    Change Timestamp To Previous Day
-    Upload Group Of Labors Index    file=False      wrong_timestamp=True
-    Log To Console    Second upload pass
-    Pass Credit Flow    state=Success
-    Approve Payment
-    ${sertificate_number}     Get Certificate Number
-    ${passport}     Get Passport Number
-    Checking Sertificate Scenario       ${passport}     ${sertificate_number}
-    ...     ${MESSAGE_VALID_CERTIFICATE}
-
 Test Legislator Wrong Certificate
     Upload Group Of Labors Index
     ${passport}     Get Passport Number

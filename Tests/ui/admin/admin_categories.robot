@@ -28,7 +28,6 @@ Ability To View Category History
     Test View Category History
 
 Ability To Change Status Of The Category
-    Skip    discuss change status
     Test Change Category Status
 
 Uploading Of The Category From Csv File

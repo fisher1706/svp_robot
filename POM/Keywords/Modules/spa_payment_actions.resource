@@ -145,8 +145,4 @@ Approve Payment
     Click Issue
     Click Confirm
     Wait Spinners To Disappear
-    TRY
-        Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
-    EXCEPT
-        Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
-    END
+    Wait Until Keyword Succeeds    5x    2 sec      Verify Text    ${CERTIFICATES}       ${MSG_CERTIFICATE}
