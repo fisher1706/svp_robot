@@ -15,7 +15,7 @@ Test Check Ability Add New Session
     [Arguments]    ${num}=1     ${random}=False
     Switch To Session
     Click Add Session
-    ${session_time}=    Time New Session    num=${num}
+    ${session_time}=    Time New Session
     ${seat_number}=     Return Random Number Limit
     ${repeat_types}=     Get Last Entry    ${TYPES_REPEAT_SESSION}
     IF    ${random}

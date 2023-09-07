@@ -18,3 +18,6 @@ MSG_DESCRIPTION_CATEGORY = f'Based on your selected occupation your exam categor
                            'Please note that this category and occupation key will be checked by the embassy so ' \
                            'make sure you’ve selected the correct occupation as shown in your visa application'
 MSG_TCENTER_SUCCESSFULLY_UPDATED = 'Test center has been updated successfully'
+MSG_REGISTER_INTO_SVP = 'Register into SVP'
+MSG_INTERRUPT_INDIVIDUAL = 'Data cannot be amended or changed after creating the account, ' \
+                           'make sure you’re entering correct data for all fields in this form'
