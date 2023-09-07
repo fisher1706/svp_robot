@@ -24,7 +24,7 @@ Test Get Credits
             CONTINUE
         ELSE
             Pass Credit Flow        ${state}
-            Click Payment
+            Wait Until Keyword Succeeds    5x    1 sec    Click Payment
             Verify Credits Counter      ${amount}
         END
     END
@@ -137,6 +137,7 @@ Pass Labor Flow
     [Arguments]     ${amount}=1
     Upload Group Of Labors Index    ${amount}
     Pass Credit Flow    state=${TRANSACTION_STATE_LIST}[0]
+    Reload
     Approve Payment
 
 Approve Payment

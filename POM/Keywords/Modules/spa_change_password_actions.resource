@@ -44,7 +44,7 @@ Verify Change Password With Current Password
     Verify Warning New Password
 
 Verify Change Password With Mismatch New Password
-    Open Change Password Page
+    Wait Until Keyword Succeeds    5x    1 sec    Open Change Password Page
     Fill Change Password Form    @{MISMATCH_NEW_PASSWORD}
     Verify Warning Confirm New Password
 

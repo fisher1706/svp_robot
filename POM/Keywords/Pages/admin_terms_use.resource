@@ -11,11 +11,14 @@ Open Admin Terms Use Content
 Click Btn Arabic
     Click Button    ${BTN_ARABIC}
 
-Click Btn Edit
-    Click Button    ${BTN_EDIT}
-
-Click Btn Save
-    Click Button    ${BTN_SAVE}
+Click Btn Save Changes
+    Click Button    ${BTN_SAVE_CHANGES}
 
 Click Btn Ok
     Click Button    ${BTN_OK}
+
+Verify Btn Save Changes Active
+    Wait For Elements State    ${BTN_SAVE_CHANGES}      enabled
+
+Activate Field Content
+    Click Button    ${ACTIVATE_FIELD_CONTENT}

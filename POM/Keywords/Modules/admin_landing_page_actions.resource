@@ -21,7 +21,7 @@ Admin Landing Page Content Actions
 
 Set Landing Page Content
     [Arguments]    ${section}       ${content}
-    Click Btn Edit
+    Activate Field Content
     Type Text    ${FIELD_SECTION_TITLE}        ${section}
     Type Text    ${FIELD_CONTENT}        ${content}
-    Verify Btn Save Active
+    Verify Btn Save Changes Active

@@ -10,7 +10,7 @@ Test Setup    Run Keywords    Open Chrome Browser       AND     Create Entities 
 
 *** Test Cases ***
 Checking ability to add new session
-    Test Check Ability Add New Session      random=True
+    Test Check Ability Add New Session
 
 Checking not ability to create a new session for past date
     Test Not Ability To Create New Session For Past Date

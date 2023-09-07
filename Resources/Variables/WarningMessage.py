@@ -33,3 +33,5 @@ KEY_OCCUPATION_IS_EXIST = 'Has already been taken'
 MSG_ALREADY_RESERVATION = "Can't reserve exam, test taker already has a reservation for an exam in the same category"
 MSG_INDIVIDUAL_LONG_NAME = 'Maximum 50 digits'
 MSG_INDIVIDUAL_WRONG_EMAIL = 'Please enter a valid email'
+MSG_INVALID_EMAIL_ADMIN = 'Invalid Email'
+MSG_NO_DATA = 'There are no data'

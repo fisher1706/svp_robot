@@ -29,7 +29,7 @@ Read Data Term Of Use Page
     END
 
 Edit Data Term Of Use Page
-    Click Btn Edit
-    Click Btn Save
+    Activate Field Content
+    Click Btn Save Changes
     Verify Text    ${SUCCESS_UPDATE}        ${SUCCESS_UPDATE_CONTENT}
     Click Btn Ok

@@ -8,14 +8,14 @@ Variables           POM/Locators/AdminLandingPageLocators.py
 Open Admin Landing Page Content
     Open Page    base_url=${ADMIN_URL}    page_url=landing-page-content
 
-Click Btn Edit
-    Click Button    ${BTN_EDIT}
-
-Click Btn Save
-    Click Button    ${BTN_SAVE}
+Click Btn Save Changes
+    Click Button    ${BTN_SAVE_CHANGES}
 
 Click Btn Ok
     Click Button    ${BTN_OK}
 
-Verify Btn Save Active
-    Wait For Elements State    ${BTN_SAVE}      enabled
+Verify Btn Save Changes Active
+    Wait For Elements State    ${BTN_SAVE_CHANGES}      enabled
+
+Activate Field Content
+    Click Button    ${ACTIVATE_FIELD_CONTENT}

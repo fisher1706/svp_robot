@@ -53,7 +53,7 @@ Fill Field Confirm Password
 Select Country Of Residence
     Click Button    ${SELECT_COUNTRY_OF_RESIDENCE}
     ${countries}=       Get Last Entry    ${OPEN_COUNTRIES}
-    ${locator}=     Create Locator By Text      ${countries}[0]
+    ${locator}=     Create Locator By Text      ${countries}[${NUMBER_DEFAULT_COUNTRY}]
     Click Button    ${locator}
 
 Select Nationality

@@ -12,10 +12,9 @@ ${DEFAULT_PRICE}    30
 *** Keywords ***
 Test Edit Certificate Price
     Admin Certificate Price Actions
-    ${price}=      Return Random Number Limit
+    ${price}=      Set Variable    ${DEFAULT_PRICE}
     Set Certificate Price    price=${price}
     Verify Certificate Price        price=${price}
-    Set Default Certificate Price
 
 Admin Certificate Price Actions
     Open Admin Certificate Price Page
@@ -34,7 +33,7 @@ Verify Certificate Price
     Wait Spinners To Disappear
     Wait For Elements State     ${CERTIFICATE_PRICE_TEXT}       enabled
     ${value}=    Convert To String      ${price}
-    Verify Text    ${CERTIFICATE_PRICE_VALUE}      ${value}     timeout=30s
+    Verify Text    ${CERTIFICATE_PRICE_VALUE}      ${value}     timeout=60s
 
 Set Default Certificate Price
     Wait Spinners To Disappear

@@ -12,21 +12,7 @@ ${DEFAULT_SEAT_NUMBER}      1
 
 *** Keywords ***
 Test Check Ability Add New Session
-    [Arguments]    ${num}=1     ${random}=False
-    Switch To Session
-    Click Add Session
-    ${session_time}=    Time New Session
-    ${seat_number}=     Return Random Number Limit
-    ${repeat_types}=     Get Last Entry    ${TYPES_REPEAT_SESSION}
-    IF    ${random}
-        ${repeat_type}=   Return Random Data List     ${repeat_types}
-    ELSE
-        ${repeat_type}=   Set Variable    ${repeat_types}[0]
-    END
-    Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
-    Click Ok
-    Verify Added Session    ${session_time}
-    [Return]    ${session_time}     ${seat_number}      ${repeat_type}
+    Ability To Add New Session      random=True
 
 Test Not Ability To Create New Session For Past Date
     [Arguments]    ${start}=//*[text()="    ${end}="]
@@ -45,22 +31,39 @@ Test Not Ability Create New Session With Wrong Interval
     Verify Text     ${TEXT_ERROR}       ${SESSION_WRONG_INTERVAL}
 
 Test To View Detailed Information About Session
-    ${session_time}     ${seat_number}      ${repeat_type}=      Test Check Ability Add New Session
+    ${session_time}     ${seat_number}      ${repeat_type}=      Ability To Add New Session
     Click See More
     Verify Additional Information About Session     ${session_time}     ${seat_number}      ${repeat_type}
 
 Test That TCenter Can Not Create Same Session With Same Category Which Starts At The Same Time
-    ${session_time}     ${seat_number}      ${repeat_type}=      Test Check Ability Add New Session
+    ${session_time}     ${seat_number}      ${repeat_type}=      Ability To Add New Session
     Click Add Session
     Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
     Verify Text     ${TEXT_ERROR}       ${SESSION_HAS_BEEN_TAKEN}
 
 Test That TCenter Can Not Create Same Session With Same Category Which Starts Less Than 30 Min
-    ${session_time}     ${seat_number}      ${repeat_type}=      Test Check Ability Add New Session
+    ${session_time}     ${seat_number}      ${repeat_type}=      Ability To Add New Session
     ${session_time}=    Time New Session    correct_start=Less
     Click Add Session
     Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
     Verify Text     ${TEXT_ERROR}       ${SESSION_LESS_30_MIN}
+
+Ability To Add New Session
+    [Arguments]    ${num}=1     ${random}=False
+    Switch To Session
+    Click Add Session
+    ${session_time}=    Time New Session
+    ${seat_number}=     Return Random Number Limit
+    ${repeat_types}=     Get Last Entry    ${TYPES_REPEAT_SESSION}
+    IF    ${random}
+        ${repeat_type}=   Return Random Data List     ${repeat_types}
+    ELSE
+        ${repeat_type}=   Set Variable    ${repeat_types}[0]
+    END
+    Fill New Session Form   ${session_time}     ${seat_number}      ${repeat_type}
+    Click Ok
+    Verify Added Session    ${session_time}
+    [Return]    ${session_time}     ${seat_number}      ${repeat_type}
 
 Switch To Session
     Wait Spinners To Disappear

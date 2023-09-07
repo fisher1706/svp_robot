@@ -78,8 +78,9 @@ Proceed 2fa Web
     Should Be True    ${is_passed}    ${OTP_CODE}
 
 Log In To The Admin Portal
+    [Arguments]    ${login}=${DEFAULT_LOGIN}     ${password}=${DEFAULT_PASSWORD}
     Open Login Page
-    Enter Login And Password    ${DEFAULT_LOGIN}    ${DEFAULT_PASSWORD}
+    Enter Login And Password    ${login}    ${password}
     Verify Confirm Code
     Proceed 2fa Web
     Verify Admin Dashboard Welcome Text

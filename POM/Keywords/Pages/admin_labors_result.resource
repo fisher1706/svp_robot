@@ -2,7 +2,6 @@
 Resource            POM/Keywords/Pages/base.resource
 Resource            POM/Keywords/Modules/base_actions.resource
 Variables           POM/Locators/AdminLaborsResultLocators.py
-Variables           POM/Locators/SPALocators.py
 
 
 *** Keywords ***
@@ -11,5 +10,14 @@ Open Admin Labors Result Page
     Wait Spinners To Disappear
     Wait For Elements State    ${LABORS_RESULT_TEXT}      visible
 
-Click Next
-    Click Button    ${BTN_NEXT}
+Click Btn Search
+    Click Button    ${BTN_SEARCH}
+
+Click Btn Cancel
+    Click Button    ${BTN_CANCEL}
+
+Select Necessary Satus
+    [Arguments]    ${status}
+    Click Btn Cancel
+    Select Options By    ${SELECT_STATS}    text    ${status}
+    Click Btn Search

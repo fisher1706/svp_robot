@@ -1,5 +1,6 @@
 *** Settings ***
 Resource            POM/Keywords/Pages/base.resource
+Resource            POM/Keywords/Modules/base_actions.resource
 Variables           POM/Locators/AdminPrivacyPolicyLocators.py
 
 
@@ -7,5 +8,8 @@ Variables           POM/Locators/AdminPrivacyPolicyLocators.py
 Open Admin Privacy Policy Content
     Open Page    base_url=${ADMIN_URL}    page_url=privacy-page-content
 
-Verify Edit Button Status
-    Wait For Elements State    ${BTN_EDIT}    enabled
+Activate Field Content
+    Click Button    ${ACTIVATE_FIELD_CONTENT}
+
+Verify Btn Save Changes Active
+    Wait For Elements State    ${BTN_SAVE_CHANGES}      enabled

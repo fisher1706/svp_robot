@@ -19,9 +19,8 @@ class SPAReportsLocator:
     MSG_VALID_CERTIFICATE = '.results__message'
     RESULT_PASSPORT_NUMBER = '.results__heading + div div:nth-child(2) div'
     RESULT_CERTIFICATE_SERIAL_NUMBER = '.results__heading + div div:nth-child(3) div'
-    LABOR_NAME = "//div[.='Labor Name']/following-sibling::div"
-    PASSPORT_NUMBER = "//div[@class='results']//div[.='Passport Number']/following-sibling::div"
     ICON_CERTIFICATES = "td[data-label='Certificates'] a"
+    MSG_VERIFY_RESULT = '//*[@class="results__message success"]'
 
     FILTERS = [
         FILTER_FIELD_ID,

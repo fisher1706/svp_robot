@@ -13,9 +13,10 @@ Test Verify Download Certificate
     Verify Ability Download Certificate    labor=${labor}     status=${status}
 
 Test View Labor Details
-    [Arguments]    ${status}=Pending      ${hover}=//*[@class="actionTypeLinks"]      ${view}=//a[text() = "View"]
+    [Arguments]    ${status}=Pending      ${hover}=${HOVER}      ${view}=${ICON_VIEW}
     Open Admin Labors Result Page
     ${labor}=    Find Necessary Labor    status=${status}
+    Sleep    3
     ${entry}=   Get Last Entry      ${labor}
     ${data}=    Split String     ${entry}[0]     \t
     Hover   ${labor}${hover}
@@ -26,19 +27,9 @@ Test View Labor Details
 
 Find Necessary Labor
     [Arguments]    ${status}    ${start}=//*[text()="       ${end}="]/../..
+    Select Necessary Satus      status=${status}
     ${entries}=    Get Elements    ${start}${status}${end}
-    ${len}=     Get Length      ${entries}
-    IF    '${len}'>'1'
-        RETURN      ${entries}[0]
-    ELSE
-        WHILE   '${len}'<='1'
-            Click Next
-            Sleep    1
-            ${entries}=    Get Elements    ${start}${status}${end}
-            ${len}=     Get Length      ${entries}
-        END
-        RETURN      ${entries}[0]
-    END
+    RETURN      ${entries}[0]
 
 Verify Ability Download Certificate
     [Arguments]    ${labor}      ${status}      ${filename}=certificate.pdf     ${end}=//a[@href="#"]

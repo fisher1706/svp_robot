@@ -33,3 +33,4 @@ class IndividualRegistrationLocators:
                                 '//*[@class="validation-message__text validation-message__text--error"]'
     BTN_BACK = '//button[text() = "Back "]'
     INTERRUPT_FIELD_MSG = '//*[@class="description"]'
+    NUMBER_DEFAULT_COUNTRY = 2
