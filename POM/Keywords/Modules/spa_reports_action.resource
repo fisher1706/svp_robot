@@ -36,13 +36,13 @@ Test Legislator Wrong Certificate
     Upload Group Of Labors Index
     ${passport}     Get Passport Number
     Checking Sertificate Scenario       ${passport}     ${WRONG_CERTIFICATE}
-    ...     ${MESSAGE_WRONG_CERTIFICATE}        is_valid_scenario=False
+    ...     ${MSG_CERTIFICATE_NOT_EXIST}        is_valid_scenario=False
 
 Test Legislator Wrong Passport Number
     Pass Labor Flow
     ${sertificate_number}     Get Certificate Number
     Checking Sertificate Scenario       ${WRONG_PASSPORT_NUMBER}     ${sertificate_number}
-    ...     ${MSG_WRONG_CERTIFICATE_ERROR}        is_valid_scenario=False
+    ...     ${MSG_CERTIFICATE_NOT_EXIST}        is_valid_scenario=False
 
 Test Legislator Certificate Does Not Exist
     Upload Group Of Labors Index
@@ -67,8 +67,7 @@ Checking Sertificate Scenario
     Verify Result Certificate Serial Number     ${sertificate_number}
     Verify Result Passport Number      ${passport}
     IF      ${is_valid_scenario}
-        Verify Labor Name
-        Verify Passport Number      ${passport}
+        Verify Text    ${MSG_VERIFY_RESULT}     ${MESSAGE_VALID_CERTIFICATE}
     END
 
 Get Certificate Number

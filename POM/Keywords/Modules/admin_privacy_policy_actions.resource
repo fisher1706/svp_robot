@@ -8,7 +8,8 @@ Variables       POM/Locators/AdminPrivacyPolicyLocators.py
 Test Read And Edit Data Privacy Policy Page
     Admin Privacy Policy Actions
     Read Data Privacy Policy Page
-    Verify Edit Button Status
+    Activate Field Content
+    Verify Btn Save Changes Active
 
 Admin Privacy Policy Actions
     Open Admin Privacy Policy Content

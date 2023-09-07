@@ -31,3 +31,4 @@ class AdminCountryLocators:
     LEGISLATOR = '//*[@id="legislator"]'
     TCENTER = '//*[@id="testCenter"]'
     LINKED_NATIONALITY = '//*[@class="toasted alert-msg-inner errors-nationalities toasted-primary error"]'
+    NO_DATA = '//*[@class="table-no-data"]'

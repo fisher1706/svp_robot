@@ -48,13 +48,13 @@ class Utils:
             ]
         elif correct_start == 'Less':
             add = [
-                f"{(datetime.now() + timedelta(hours=1)).strftime('%H:')}30",
-                (datetime.now() + timedelta(hours=delta)).strftime('%H:00'),
+                f"{(datetime.now() + timedelta(hours=default_delta+1)).strftime('%H:')}30",
+                (datetime.now() + timedelta(hours=default_delta+delta)).strftime('%H:00'),
             ]
         else:
             add = [
-                (datetime.now() - timedelta(hours=4)).strftime('%H:00'),
-                (datetime.now() - timedelta(hours=2)).strftime('%H:00'),
+                (datetime.now() - timedelta(hours=default_delta+4)).strftime('%H:00'),
+                (datetime.now() - timedelta(hours=default_delta+2)).strftime('%H:00'),
             ]
         return data + add
 

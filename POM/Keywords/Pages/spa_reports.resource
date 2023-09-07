@@ -65,14 +65,6 @@ Verify Result Certificate Serial Number
     [Arguments]     ${val}
     Verify Text     ${RESULT_CERTIFICATE_SERIAL_NUMBER}      ${val}     is_equal=False
 
-Verify Labor Name
-    [Arguments]     ${val}=Name
-    Verify Text     ${LABOR_NAME}      ${val}
-
-Verify Passport Number
-    [Arguments]     ${val}
-    Verify Text     ${PASSPORT_NUMBER}      ${val}      is_equal=False
-
 Click Icon Certificate
     Click Button    ${ICON_CERTIFICATES}
 

@@ -1,2 +1,6 @@
 National ID,Name [Same in Passport],Passport Number,Email,Exam Result [Score Value],Date of Exam [dd-mm-yyyy]
+<<<<<<< Resources/DataSources/test_files/sample_attributes.csv
+12345BI,Name,UL2150678,scsdvsdvdsvsdvs@gmail.com,99,06.09.2023
+=======
 12345BI,Name,DM3640140,testDM3640140@gmail.com,99,28.08.2023
+>>>>>>> Resources/DataSources/test_files/sample_attributes.csv

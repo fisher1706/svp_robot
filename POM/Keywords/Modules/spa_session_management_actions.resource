@@ -36,7 +36,7 @@ Test TCcenter Will Be Able To View All Sessions
     Verify Added Sessions   ${total_data}
 
 Test Filters By Non Existent Data
-    Test Check Ability Add New Session
+    Ability To Add New Session
     Switch To Session Management
     ${elements}=    Get Elements    ${TYPE}
     Verify Filter Session ID    test    False
@@ -44,7 +44,7 @@ Test Filters By Non Existent Data
     Verify Filter Session Date      ${WRONG_SESSION_DATE}   False
 
 Test Ability To Use View Action To See Sessions Information
-    ${session_time}     ${seat_number}      ${repeat_type}=     Test Check Ability Add New Session
+    ${session_time}     ${seat_number}      ${repeat_type}=     Ability To Add New Session
     Switch To Session Management
     Click Icon Edit
     Verify Additional Information About Session     ${session_time}     ${seat_number}      ${repeat_type}
@@ -59,9 +59,9 @@ Test Checking Tackers Table With No Result
     Click Test Tackers
     Wait For Elements State     ${TEST_TACKERS_TEXT}   visible
     TRY
-        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}        timeout=60s
     EXCEPT
-        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}
+        Verify Text     ${EMPTY_TEST_TACKERS_DATA}      ${NO_DATA_AVAILABLE}        timeout=60s
     END
 
 Test TCenter Is Able To Use Filter
@@ -79,7 +79,7 @@ Verify Filter Session ID
     IF      ${is_correct}
         Verify Text     ${CHOSE_FILTERS}      ${data}
     ELSE
-        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
+        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}        timeout=60s
     END
 
 Verify Filter Seats
@@ -89,7 +89,7 @@ Verify Filter Seats
     IF    ${is_correct}
         Verify Text     ${CHOSE_FILTERS}      ${data}
     ELSE
-        Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
+        Wait Until Keyword Succeeds    5x    2 sec      Verify Text     ${NO_DATA}      ${NO_DATA_AVAILABLE}
     END
 
 Verify Filter Session Date

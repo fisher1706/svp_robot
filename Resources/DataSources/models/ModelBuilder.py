@@ -129,7 +129,7 @@ class ModelBuilder:
 
         category_status = random_manager.random_from_list(CategoriesIdsDataset.CATEGORY_STATUS)
         test_type = random_manager.random_from_list(CategoriesIdsDataset.CATEGORY_TEST_TYPE)
-        prometric_cbt_exam_weight = random_manager.random_number_limit()
+        prometric_cbt_exam_weight = random_manager.random_number_limit(start=20)
         prometric_code = random_manager.random_number_limit(start=10)
         exam_weight = random_manager.random_number_limit()
 

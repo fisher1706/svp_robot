@@ -1,4 +1,5 @@
 DEFAULT_LOGIN = 'admin@gmail.com'
+SUPER_ADMIN = 'super_admin@gmail.com'
 DEFAULT_PASSWORD = 'Password#1'
 INVALID_LOGIN = 'test@@gmail.com'
 CHANGED_PASSWORD = 'Password#1!#'

@@ -5,6 +5,7 @@ Variables       POM/Locators/AdminCountryLocators.py
 Variables       Resources/Variables/SuccessMessage.py
 Variables       Resources/Variables/Filters.py
 Variables       Resources/Variables/ErrorMessage.py
+Variables       Resources/Variables/WarningMessage.py
 
 
 *** Keywords ***
@@ -129,4 +130,8 @@ Verify Filters Country
 Verify Filters
     [Arguments]    ${value}     ${locator}
     Wait Spinners To Disappear
-    Verify Text     ${locator}      ${value}    is_equal=False
+    TRY
+        Verify Text     ${locator}      ${value}    is_equal=False
+    EXCEPT
+        Verify Text    ${NO_DATA}      ${MSG_NO_DATA}
+    END

@@ -47,7 +47,6 @@ build:
   only:
     refs:
       - master
-      - QAA-828-test
       - merge_request
     changes:
       - Dockerfile
@@ -95,6 +94,7 @@ pylint:
   only:
       - merge_requests
 
+
 ui_admin_tests:
   image: $IMAGE
   allow_failure: true
@@ -115,9 +115,10 @@ ui_admin_tests:
       - $BROWSER
     expire_in: 1 day
     when: always
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
 
 ui_legislator_tests:
   image: $IMAGE
@@ -139,14 +140,14 @@ ui_legislator_tests:
       - $BROWSER
     expire_in: 1 day
     when: always
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
   dependencies:
     - ui_admin_tests
   needs:
     - ui_admin_tests
-
 
 ui_test_center_owner_tests:
   image: $IMAGE
@@ -168,9 +169,10 @@ ui_test_center_owner_tests:
       - $BROWSER
     expire_in: 1 day
     when: always
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
   dependencies:
     - ui_admin_tests
     - ui_legislator_tests
@@ -198,9 +200,10 @@ ui_individual_tests:
       - $BROWSER
     expire_in: 1 day
     when: always
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
   dependencies:
     - ui_admin_tests
     - ui_legislator_tests
@@ -209,6 +212,7 @@ ui_individual_tests:
     - ui_admin_tests
     - ui_legislator_tests
     - ui_test_center_owner_tests
+
 
 allure-ui-admin-results:
   extends: .generate_allure_report
@@ -222,10 +226,10 @@ allure-ui-admin-results:
     - ui_admin_tests
   needs:
     - ui_admin_tests
-  only:
-    - master
-    - QAA-828-test
-
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
 
 allure-ui-legislator-results:
   extends: .generate_allure_report
@@ -239,9 +243,10 @@ allure-ui-legislator-results:
     - ui_legislator_tests
   needs:
     - ui_legislator_tests
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
 
 allure-ui-test_center_owner-results:
   extends: .generate_allure_report
@@ -255,9 +260,10 @@ allure-ui-test_center_owner-results:
     - ui_test_center_owner_tests
   needs:
     - ui_test_center_owner_tests
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
 
 allure-ui-individual-results:
   extends: .generate_allure_report
@@ -271,9 +277,10 @@ allure-ui-individual-results:
     - ui_individual_tests
   needs:
     - ui_individual_tests
-  only:
-    - master
-    - QAA-828-test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
 
 
 slack-report-ui-admin-results:
@@ -288,9 +295,10 @@ slack-report-ui-admin-results:
       - ui_admin_tests
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-admin
-    only:
-      - master
-      - QAA-828-test
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
 
 slack-report-ui-legislator-results:
     image: $IMAGE
@@ -304,9 +312,10 @@ slack-report-ui-legislator-results:
       - ui_legislator_tests
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-legislator
-    only:
-      - master
-      - QAA-828-test
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
 
 slack-report-ui-test_center_owner-results:
     image: $IMAGE
@@ -320,9 +329,10 @@ slack-report-ui-test_center_owner-results:
       - ui_test_center_owner_tests
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-tc
-    only:
-      - master
-      - QAA-828-test
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
 
 slack-report-ui-individual-results:
     image: $IMAGE
@@ -336,6 +346,7 @@ slack-report-ui-individual-results:
       - ui_individual_tests
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-individual
-    only:
-      - master
-      - QAA-828-test
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
