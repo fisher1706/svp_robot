@@ -35,16 +35,16 @@ class Utils:
 
     @staticmethod
     @keyword('Time New Session')
-    def time_new_session(delta=3, correct_start='False', num=0):
+    def time_new_session(delta=3, correct_start='False', default_delta=4, num=1):
         data = [
             datetime.now().strftime('%-d'),
             (datetime.now() - timedelta(days=1)).strftime('%-d'),
         ]
         if correct_start == 'False':
             add = [
-                (datetime.now() + timedelta(hours=num+1)).strftime('%H:00'),
-                (datetime.now() + timedelta(hours=num+delta)).strftime('%H:00'),
-                (datetime.now() + timedelta(hours=num+1)).strftime('%d/%m/%Y %H:00')
+                (datetime.now() + timedelta(hours=num+default_delta+1)).strftime('%H:00'),
+                (datetime.now() + timedelta(hours=num+default_delta+delta)).strftime('%H:00'),
+                (datetime.now() + timedelta(hours=num+default_delta+1)).strftime('%d/%m/%Y %H:00')
             ]
         elif correct_start == 'Less':
             add = [
