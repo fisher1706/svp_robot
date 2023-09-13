@@ -29,7 +29,6 @@ stages:
   services:
     - name: docker:dind
   script:
-    - echo $OCI_REGISTRY_PASSWORD | docker login $OCI_REGISTRY_REGION -u $OCI_REGISTRY_USERNAME --password-stdin
     - docker pull $OCI_ENV_LATEST || true
     #remove --build-arg when pip registry will be ready
     - docker build --cache-from $OCI_ENV_LATEST --build-arg CI_JOB_TOKEN=${CI_JOB_TOKEN} --build-arg CI_SERVER_HOST=${CI_SERVER_HOST} -t $OCI_ENV_LATEST -t $OCI_VERSION_TAGGED .
