@@ -35,3 +35,8 @@ MSG_INDIVIDUAL_LONG_NAME = 'Maximum 50 digits'
 MSG_INDIVIDUAL_WRONG_EMAIL = 'Please enter a valid email'
 MSG_INVALID_EMAIL_ADMIN = 'Invalid Email'
 MSG_NO_DATA = 'There are no data'
+MSG_INVALID_PASSWORD = 'Passport number should contain minimum 1, maximum 2 letters, Passport number should contain ' \
+                       'minimum 7, maximum 8 numbers, Passport number should contain maximum 9 digits'
+MSG_INVALID_CERTIFICATE = 'Invalid certificate number'
+MSG_INVALID_OCCUPATION_KEY = 'Minimum 6 digits'
+MSG_INVALID_NATIONALITY_CODE = 'Only english characters, Minimum 2 characters'

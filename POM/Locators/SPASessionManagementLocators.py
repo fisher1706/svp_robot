@@ -1,6 +1,6 @@
 class SPASessionManagementLocators:
     BTN_SESSION_MANAGEMENT = '//*[@href="/sessions-management"]'
-    SESSION_MANAGEMENT_TEXT = '//*[text()="Sessions management"]'
+    SESSION_MANAGEMENT_TEXT = '//*[@class="q-page-box__header"]//*[text()="Sessions management"]'
     ENTRY = '//*[@id="app"]//table/tbody/tr'
     FILTER_ICON = '//*[@class="filter-icon"]'
     BTN_APPLY = '//button[text() = "Apply"]'

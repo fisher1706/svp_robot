@@ -40,7 +40,7 @@ Test Filters By Non Existent Data
     Switch To Session Management
     ${elements}=    Get Elements    ${TYPE}
     Verify Filter Session ID    test    False
-    Verify Filter Seats    ${EMPTY}      100   False
+    Verify Filter Seats    ${EMPTY}      1000   False
     Verify Filter Session Date      ${WRONG_SESSION_DATE}   False
 
 Test Ability To Use View Action To See Sessions Information
@@ -51,8 +51,8 @@ Test Ability To Use View Action To See Sessions Information
 
 Test Ability To Back From Session Information Page
     Test Ability To Use View Action To See Sessions Information
-    Wait For Elements State     ${SESSION_MANAGEMENT_TEXT}   visible
-    Verify Text     ${SESSION_MANAGEMENT_TEXT}      Sessions Management     timeout=60s
+    Click Back
+    Verify Text     ${SESSION_MANAGEMENT_TEXT}      Sessions management     timeout=60s
 
 Test Checking Tackers Table With No Result
     Test Ability To Use View Action To See Sessions Information

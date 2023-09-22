@@ -16,7 +16,7 @@ class SPAReportsLocator:
     FIELD_PASSPORT_NUMBER = '#passport'
     FIELD_CERTIFICATE_SERIAL_NUMBER = '#certificate'
     BTN_VERIFY = '.btn--border-primary'
-    MSG_VALID_CERTIFICATE = '.results__message'
+    FIELD_MSG_VALID_CERTIFICATE = '.results__message'
     RESULT_PASSPORT_NUMBER = '.results__heading + div div:nth-child(2) div'
     RESULT_CERTIFICATE_SERIAL_NUMBER = '.results__heading + div div:nth-child(3) div'
     ICON_CERTIFICATES = "td[data-label='Certificates'] a"
