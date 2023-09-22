@@ -55,7 +55,7 @@ Check Verify Status
 
 Verify Msg Sertificates
     [Arguments]     ${val}
-    Verify Text     ${MSG_VALID_CERTIFICATE}      ${val}
+    Verify Text     ${FIELD_MSG_VALID_CERTIFICATE}      ${val}
 
 Verify Result Passport Number
     [Arguments]     ${val}

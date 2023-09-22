@@ -21,3 +21,4 @@ MSG_TCENTER_SUCCESSFULLY_UPDATED = 'Test center has been updated successfully'
 MSG_REGISTER_INTO_SVP = 'Register into SVP'
 MSG_INTERRUPT_INDIVIDUAL = 'Data cannot be amended or changed after creating the account, ' \
                            'make sure you’re entering correct data for all fields in this form'
+MSG_VALID_CERTIFICATE = 'The certificate is valid'
