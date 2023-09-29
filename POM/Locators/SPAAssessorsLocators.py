@@ -1,8 +1,8 @@
 class SPAAssessorsLocators:
     BTN_ASSESSORS = '//*[@href="/assessors-list"]'
     ASSESSORS_TEXT = '//*[@class="q-page-box__header"]'
-    ACTIONS = '//*[@class="actions-wrap"]'
-    ICON_VIEW_ACTION = '//*[@class="actions-dropdown"]//*[text()=" View "]'
+    ACTIONS = 'tr:nth-child(1) td[data-label="Actions"]'
+    ICON_VIEW_ACTION = 'tr:nth-child(1) td[data-label="Actions"] div[class="action-list-item"]:nth-child(1)'
     DATA = '//*[@class="details-value"]'
     ADDRESS = '//*[text()="Address"]'
     OTHER_DETAILS = '//*[text()="Other Details"]'

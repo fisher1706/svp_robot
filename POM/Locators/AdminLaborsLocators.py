@@ -4,7 +4,7 @@ class AdminLaborsLocators:
     LABORS_TEXT = '//*[@id="app"]//h1'
     ACTIVE_LABORS = '//*[@class="status-label status-label--active"]/../..'
     NATIONAL_ID = '//*[@class="national_id"]'
-    GENERAL_INFORMATION = '//*[text()="General Information"]'
+    GENERAL_INFORMATION_TEXT = '//*[@class="content registered-labor-view"]//*[text()="General Information"]'
     DATA_GENERAL_INFORMATION = '//*[@class="info-value"]'
     BTN_YES = '//*[text()="yes"]'
     REVOKED_LABORS = '//*[@class="status-label status-label--revoked"]/../..'

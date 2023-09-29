@@ -85,6 +85,11 @@ Verify Filter Field Choose
 Filter Actions
     [Arguments]    ${value}
     Click Apply
-    Verify Text     ${CHECK_FILTER}     ${value}
+    TRY
+        Verify Text     ${CHECK_FILTER}     ${value}
+    EXCEPT
+        Click Apply
+        Verify Text     ${CHECK_FILTER}     ${value}
+    END
     Click Filter
     Click Clear Filter

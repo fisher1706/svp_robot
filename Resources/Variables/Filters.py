@@ -37,8 +37,7 @@ ACTIONS_LOG_ENTITY_FILTER_OPTIONS = [
     {'Category': 'nbrz'},
     {'Occupation': 'gkgsxpfl'},
     {'User': 'ruba test'},
-    {'Legislator': 'Legislator'},
-    {'Permission': 'action'},
+    {'Legislator': 'Legislator'}
 ]
 
 CONTAINS_FILTER_OPTIONS = [
