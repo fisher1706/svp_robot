@@ -34,3 +34,15 @@ class LocatorFunction:
     @staticmethod
     def create_role_locator_super_admin(data):
         return f'//*[@class="user-roles__item"]//span[text()="{data}"]'
+
+    @staticmethod
+    def create_locator_quantity_rows(data):
+        return f'//*[@class="multiselect__element"]//*[text()="{data} rows"]'
+
+    @staticmethod
+    def create_locator_cell(data):
+        return f'td[data-label="{data}"]'
+
+    @staticmethod
+    def create_locator_dropdown_list_actions(data):
+        return f'td[data-label="{data}"] a'

@@ -95,7 +95,7 @@ Verify Added Session
         ${data}=    Get Text        ${SESSION_TIME}
         Should Not Be Empty    ${data}
     END
-    Verify Text     ${SESSION_STATUS}       Scheduled
+    Verify Text     ${SESSION_STATUS}       Drafted
     Verify Text     ${SESSION_SEE_MORE}       See more
 
 Verify Additional Information About Session
@@ -109,7 +109,7 @@ Verify Additional Information About Session
     Should Be Equal     ${entry}[4]     ${seats_number}
     Should Be Equal     ${entry}[5]     0
     Should Be Equal     ${entry}[6]     ${repeat_type}
-    Should Be Equal     ${entry}[7]     Scheduled
+    Should Be Equal     ${entry}[7]     Drafted
 
 Get Day
     [Arguments]    ${time}      ${index}

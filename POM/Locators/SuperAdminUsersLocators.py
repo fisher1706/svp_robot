@@ -8,7 +8,8 @@ class SuperAdminUsersLocators:
     BTN_SEND_INVITATION = '//button[text() = "Send Invitation"]'
     BTN_OK = '//button[text() = "ok"]'
     LAST_ENTRY = 'tbody tr:nth-child(1)'
-    WARNING_FIELD_INVALID_EMAIL = '//*[@class="validation-message__text validation-message__text--error"]'
+    WARNING_FIELD_INVALID_EMAIL = '//*[@class="q-page-box__content"]' \
+                                  '//*[@class="validation-message__text validation-message__text--error"]'
     LAST_ACTIONS = 'tr:nth-child(1) td[data-label="Actions"]'
     RESEND_ACTIONS = 'tr:nth-child(1) td[data-label="Actions"] li:nth-child(1) span'
     BTN_YES = '//button[text() = "yes"]'

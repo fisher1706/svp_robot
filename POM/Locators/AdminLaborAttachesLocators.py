@@ -7,7 +7,7 @@ class AdminLaborAttachesLocators:
     FIELD_USER_EMAIL_ADDRESS = '//*[@id="user_email"]'
     BTN_SEND_INVITATION = '//button[text() = "Send Invitation"]'
     SUCCESS_SEND = '//*[@class="modal-form__heading"]'
-    SUCCESS_BOX = '//*[@class="q-page-box q-box-form modal-form__box"]'
+    SUCCESS_BOX = '//*[@class="q-page-box__content"]'
     ERROR_SEND = '//*[@class="input-group input-group--margin-top"]//' \
                  'span[@class="validation-message__text validation-message__text--error"]'
     BTN_OK = '//button[text() = "ok"]'

@@ -21,7 +21,7 @@ Test Use Filter On Certificate Balance Page
         ...     Select Dropdown List    selector=${SELECT_COUNTRY}       val=${country}
         Type Text    ${FIELD_OWNER_NAME}        ${value}
         Click Btn Seach
-        Verify Filter   value=${value}
+        Wait Until Keyword Succeeds    5x    1 sec      Verify Filter   value=${value}
     END
 
 Admin Certificate Balance Actions
