@@ -1,8 +1,10 @@
 *** Settings ***
+Documentation    this test for db connection
 Library    OperatingSystem
-Library    DatabaseLibrary
 Library    String
-Suite Setup       Connect To Database    psycopg2   ${POSTGRES_DB}    ${POSTGRES_USER}    ${POSTGRES_PASS}    ${POSTGRES_HOST}    ${POSTGRES_PORT}
+Library    DatabaseLibrary
+Suite Setup       Connect To Database    psycopg2   ${POSTGRES_DB}    ${POSTGRES_USER}
+...    ${POSTGRES_PASS}    ${POSTGRES_HOST}    ${POSTGRES_PORT}
 Suite Teardown   Disconnect From Database
 
 
@@ -15,10 +17,11 @@ ${POSTGRES_HOST}   192.168.20.86
 ${POSTGRES_PORT}       5432
 
 
+
 *** Test Cases ***
 Connect to DB and update table "users"
   [Documentation]    update full name  where id = 723
-  [Tags]
+  [Tags]   update
     ${OUTPUT}=  Execute Sql String    UPDATE users set full_name='ahmed' WHERE users.id = 723;
-      Log To Console    ${OUTPUT}
-      Should Be Equal As Strings    ${OUTPUT}    None
+    Log To Console    ${OUTPUT}
+    Should Be Equal As Strings    ${OUTPUT}    None

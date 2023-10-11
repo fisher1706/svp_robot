@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.0 on win32)" generated="20231011 17:16:03.916" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\b.hassan-c\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Execute Sql String">
+<var>${OUTPUT}</var>
+<arg>UPDATE users set full_name='ahmed' WHERE users.id = 723;</arg>
+<msg timestamp="20231011 17:16:04.339" level="FAIL">No keyword with name 'Execute Sql String' found.</msg>
+<status status="FAIL" starttime="20231011 17:16:04.339" endtime="20231011 17:16:04.339"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231011 17:16:04.339" endtime="20231011 17:16:04.339"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20231011 17:16:04.339" endtime="20231011 17:16:04.339"/>
+</kw>
+<status status="PASS" starttime="20231011 17:16:03.932" endtime="20231011 17:16:07.300"/>
+</kw>
+<status status="PASS" starttime="20231011 17:16:03.932" endtime="20231011 17:16:07.300"/>
+</test>
+<status status="PASS" starttime="20231011 17:16:03.932" endtime="20231011 17:16:07.302"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
