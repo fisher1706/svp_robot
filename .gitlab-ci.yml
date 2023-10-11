@@ -505,3 +505,38 @@ db connections:
     script:
       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
         SET full_name = 'Mohamed' WHERE users.id = 723;"
+
+allure-db-connection-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: svp-ui-daily-home
+  tags:
+    - oci-shared
+  dependencies:
+    - db connections
+  needs:
+    - db connections
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never        
+
+slack-report-db-connection-results:
+    image: $IMAGE
+    allow_failure: true
+    stage: send-slack-reports
+    tags:
+      - oci-shared
+    dependencies:
+      - db connections
+    needs:
+      - db connections
+    script:
+      - python Resources/Setup/send_allure_report.py svp-ui-daily-home
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
+      
