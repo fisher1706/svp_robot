@@ -490,7 +490,7 @@ slack-report-ui-spa-home-results:
         when: always
       - when: never
 
-db connections:
+db-connections:
     image: postgres:13
     allow_failure: true
     stage: run_tests
@@ -515,9 +515,9 @@ allure-db-connection-results:
   tags:
     - oci-shared
   dependencies:
-    - db connections
+    - db-connections
   needs:
-    - db connections
+    - db-connections
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
       when: always
@@ -530,9 +530,9 @@ slack-report-db-connection-results:
     tags:
       - oci-shared
     dependencies:
-      - db connections
+      - db-connections
     needs:
-      - db connections
+      - db-connections
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-home
     rules:
