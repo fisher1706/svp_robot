@@ -490,27 +490,25 @@ slack-report-ui-spa-home-results:
         when: always
       - when: never
 
-db_test:
-    image: $IMAGE
-    allow_failure: true
-    stage: run_tests
-    tags:
-      - oci-stage-psql
-    script:
-       - cd $WORKING_DIRECTORY
-       - . ~/.bashrc
-       - . $(find $POETRY_ENV -name activate)
-       - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
-    artifacts:
+db_tests:
+  image: postgres:13
+  allow_failure: true
+  stage: run_tests
+  tags:
+    - oci-stage-psql 
+  script:
+    - cd $WORKING_DIRECTORY
+    - . ~/.bashrc
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
+  artifacts:
     paths:
       - $ALLURE_RESULTS_DIRECTORY
       - $ROBOT_REPORT
       - $OUTPUT_REPORT
       - $ROBOT_REPORT_LOG
-      - $BROWSER
+      - $BROWSER_RESULTS
     expire_in: 1 day
     when: always
-    rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
+  only:
+    - master
