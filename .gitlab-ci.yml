@@ -503,10 +503,14 @@ db-connections:
       POSTGRES_PASS: QA01@git-ru534
       POSTGRES_DB:  stage_svp_international_api
     script:
-      - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
-        SET full_name = 'saad' WHERE users.id = 723;"
-      - cd $WORKING_DIRECTORY
-      - . ~/.bashrc
+      #- PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
+      #SET full_name = 'saad' WHERE users.id = 723;"
+       - cd $WORKING_DIRECTORY
+       - . ~/.bashrc
        - . $(find $POETRY_ENV -name activate)
-      - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
-    when: always  
+       - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
+    when: always
+    rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
