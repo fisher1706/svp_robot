@@ -509,14 +509,6 @@ db-connections:
       - . ~/.bashrc
        - . $(find $POETRY_ENV -name activate)
       - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
-    artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
     when: always
     rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
