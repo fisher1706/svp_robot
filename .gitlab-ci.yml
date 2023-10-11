@@ -512,7 +512,6 @@ db-connections:
       - $OUTPUT_REPORT
       - $ROBOT_REPORT_LOG
       - $BROWSER
-    expire_in: 1 day
     when: always
 
 allure-db-connection-results:
