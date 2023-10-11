@@ -496,6 +496,7 @@ db_tests:
   stage: run_tests
   tags:
     - oci-shared 
+    - oci-stage-psql 
   script:
     - cd $WORKING_DIRECTORY
     - . ~/.bashrc
