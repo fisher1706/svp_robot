@@ -491,15 +491,15 @@ slack-report-ui-spa-home-results:
       - when: never
 
 db_tests:
-  image: postgres:13
+  image: $IMAGE
   allow_failure: true
   stage: run_tests
   tags:
-    - oci-stage-psql 
+    - oci-shared 
   script:
     - cd $WORKING_DIRECTORY
     - . ~/.bashrc
-    #- . $(find $POETRY_ENV -name activate)
+    - . $(find $POETRY_ENV -name activate)
     - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
   artifacts:
     paths:
