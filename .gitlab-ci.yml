@@ -489,3 +489,19 @@ slack-report-ui-spa-home-results:
       - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
         when: always
       - when: never
+
+db connections:
+    image: postgres:13
+    allow_failure: true
+    stage: run_tests
+    tags:
+      - oci-stage-psql
+    variables:
+      POSTGRES_HOST: svp-postgres-stage-service-external.svp-stag
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: qa_gitlab_reader
+      POSTGRES_PASS: AhAzmrJ75EHkqFYW
+      POSTGRES_DB:  stage_svp_international_api
+    script:
+      - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
+        SET full_name = 'Mohamed' WHERE users.id = 723;"
