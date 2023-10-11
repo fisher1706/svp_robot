@@ -496,6 +496,7 @@ db-connections:
     stage: run_tests
     tags:
       - oci-stage-psql
+      - oci-shared
     variables:
       POSTGRES_HOST: 192.168.20.86
       POSTGRES_PORT: 5432
