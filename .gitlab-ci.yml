@@ -506,7 +506,7 @@ db_test:
        - cd $WORKING_DIRECTORY
        - . ~/.bashrc
        - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
-       - python3 -m robot.run -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT
+       - python -m robot.run -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT
         -U  qa_gitlab_reader -d  $POSTGRES_DB Tests/ui/db_test/
     only: 
       - master
