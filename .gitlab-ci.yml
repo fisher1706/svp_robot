@@ -499,15 +499,12 @@ db_test:
     variables:
       POSTGRES_HOST: 192.168.20.86
       POSTGRES_PORT: 5432
-      POSTGRES_PASS: QA01@git-ru534
       POSTGRES_USER: qa_gitlab_reader  
       POSTGRES_DB:  stage_svp_international_api
     script:
        - cd $WORKING_DIRECTORY
        - . ~/.bashrc
-       - . $(find $POETRY_ENV -name activate)
-       - python -m robot.run  Tests/ui/db_test/
-    when: always
-    rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-    - when: never
+       - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
+       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB Tests/ui/db_test/
+    only: 
+      - master
