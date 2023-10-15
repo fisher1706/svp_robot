@@ -491,7 +491,7 @@ slack-report-ui-spa-home-results:
       - when: never 
 
 db_test:
-    image: python:3.8
+    image: $IMAGE
     allow_failure: true
     stage: run_tests
     tags:
