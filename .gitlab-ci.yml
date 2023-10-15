@@ -513,7 +513,6 @@ db_test:
 #       - mkdir -p ./Results/Reports/ ./Results/Reports/allure-results
        - apt install curl -y
        - curl -sSL https://install.python-poetry.org | python3 -
-       - poetry install
        - cd $WORKING_DIRECTORY 
        - . ~/.bashrc
        - . $(find $POETRY_ENV -name activate)
