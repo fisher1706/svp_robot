@@ -505,13 +505,11 @@ db_test:
     script:
 #       - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
 #       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users SET full_name = 'basma' WHERE users.id = 723;"
-       - cat /etc/*release*
        - apt update
-       - apt install software-properties-common -y
-       - apt update
-       - apt install python -y
-       - apt install python-pip -y
+       - sudo apt install python3 python3-pip python3-tk python3-virtualenv -y
+       - virtualenv robot-env
+       - source robot-env/bin/activate
        - pip install robotframework
-       - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY  -v DB_HOST:$POSTGRES_HOST -v DB_PORT:$POSTGRES_PORT -v DB_USER:$POSTGRES_USER -v DB_PASSWORD:$POSTGRES_PASS -v DB_NAME:$POSTGRES_DB Test/ui/db_test/db_test.robot
+       - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U qa_gitlab_reader -d $POSTGRES_DB Test/ui/db_test/
     only: 
       - master
