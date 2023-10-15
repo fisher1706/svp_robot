@@ -491,7 +491,7 @@ slack-report-ui-spa-home-results:
       - when: never 
 
 db_test:
-    image: $IMAGE
+    image: postgres:13
     allow_failure: true
     stage: run_tests
     tags:
