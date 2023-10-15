@@ -491,7 +491,7 @@ slack-report-ui-spa-home-results:
       - when: never 
 
 db_test:
-    image: postgres:13
+    image: $IMAGE
     allow_failure: true
     stage: run_tests
     tags:
@@ -505,7 +505,7 @@ db_test:
     script:
        - cd $WORKING_DIRECTORY
        - . ~/.bashrc
-       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB
+       - . $(find $POETRY_ENV -name activate)
        - python -m robot.run  Tests/ui/db_test/
     when: always
     rules:
