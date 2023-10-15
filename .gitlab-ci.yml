@@ -507,10 +507,10 @@ db_test:
 #       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users SET full_name = 'basma' WHERE users.id = 723;"
        - cat /etc/*release*
        - apt update
-       - apt install software-properties-common
+       - apt install software-properties-common -y
        - add-apt-repository ppa:deadsnakes/ppa
        - apt update
-       - apt install python3.8
+       - apt install python3 -y
        - pip install robotframework
        - python3 -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY  -v DB_HOST:$POSTGRES_HOST -v DB_PORT:$POSTGRES_PORT -v DB_USER:$POSTGRES_USER -v DB_PASSWORD:$POSTGRES_PASS -v DB_NAME:$POSTGRES_DB Test/ui/db_test/db_test.robot
     only: 
