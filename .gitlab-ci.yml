@@ -506,7 +506,8 @@ db_test:
        - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
        - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
         SET full_name = 'basma' WHERE users.id = 723;"
-       - python -m robot.run -d /path/to/output/directory -v DB_HOST:$POSTGRES_HOST -v DB_PORT:$POSTGRES_PORT -v 
+       - export PATH=$PATH:/path/to/python/bin
+       - python3 -m robot.run -d /path/to/output/directory -v DB_HOST:$POSTGRES_HOST -v DB_PORT:$POSTGRES_PORT -v 
         DB_USER:$POSTGRES_USER -v DB_PASSWORD:$POSTGRES_PASS -v DB_NAME:$POSTGRES_DB Test/ui/db_test/db_test.robot
     only: 
       - master
