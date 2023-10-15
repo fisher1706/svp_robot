@@ -490,26 +490,26 @@ slack-report-ui-spa-home-results:
         when: always
       - when: never
 
-db_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared 
-    - oci-stage-psql 
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER_RESULTS
-    expire_in: 1 day
+db_test:
+    image: $IMAGE
+    allow_failure: true
+    stage: run_tests
+    tags:
+      - oci-stage-psql
+    variables:
+      POSTGRES_HOST: 192.168.20.86
+      POSTGRES_PORT: 5432
+      POSTGRES_PASS: QA01@git-ru534
+      POSTGRES_USER: qa_gitlab_reader  
+      POSTGRES_DB:  stage_svp_international_api
+    script:
+       - cd $WORKING_DIRECTORY
+       - . ~/.bashrc
+       - . $(find $POETRY_ENV -name activate)
+       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB
+       - python -m robot.run  Tests/ui/db_test/
     when: always
-  only:
-    - master
+    rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
