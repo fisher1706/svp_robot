@@ -511,7 +511,9 @@ db_test:
 #       - mkdir -p ./Results/Reports/ ./Results/Reports/allure-results
        - apt install curl -y
        - curl -sSL https://install.python-poetry.org | python3 -
-       - cd $WORKING_DIRECTORY 
+       - cd $WORKING_DIRECTORY
+       - pwd
+       - ls -lR
        - . ~/.bashrc
        - python -m robot.run -d ./Results/Reports/ --listener allure_robotframework:./Results/Reports/allure-results -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U qa_gitlab_reader -d $POSTGRES_DB Tests/ui/db_test/
     tags:
