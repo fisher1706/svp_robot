@@ -499,6 +499,7 @@ db_test:
     variables:
       POSTGRES_HOST: 192.168.20.86
       POSTGRES_PORT: 5432
+      POSTGRES_PASS: QA01@git-ru534
       POSTGRES_USER: qa_gitlab_reader  
       POSTGRES_DB:  stage_svp_international_api
     script:
