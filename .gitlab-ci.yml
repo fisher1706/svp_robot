@@ -495,7 +495,7 @@ db_test:
     allow_failure: true
     stage: run_tests
     tags:
-      - oci-stage-psql
+      - oci-shared
     variables:
       POSTGRES_HOST: 192.168.20.86
       POSTGRES_PORT: 5432
@@ -506,9 +506,9 @@ db_test:
        - cd $WORKING_DIRECTORY
        - . ~/.bashrc
        - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
+       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U  qa_gitlab_reader -d  $POSTGRES_DB
        - . $(find $POETRY_ENV -name activate)
        - poetry add robotframework
-       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U  qa_gitlab_reader -d  $POSTGRES_DB
        - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/db_test/
 
     only: 
