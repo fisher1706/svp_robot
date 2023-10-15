@@ -491,7 +491,7 @@ slack-report-ui-spa-home-results:
       - when: never 
 
 db_test:
-    image: python:3.8
+    image: postgres:13
     allow_failure: true
     stage: run_tests
     tags:
@@ -507,8 +507,7 @@ db_test:
        - . ~/.bashrc
        - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
        - export PATH=$PATH:/path/to/python/bin
-       - source /path/to/venv/bin/activate
        - python -m robot.run -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader 
-        -d   $POSTGRES_DB Tests/ui/db_test/
+        -d   $POSTGRES_DB
     only: 
       - master
