@@ -510,7 +510,10 @@ db_test:
        - virtualenv robot-env
        - source robot-env/bin/activate
        - pip install robotframework
-       - mkdir -p ./Results/Reports/ ./Results/Reports/allure-results 
+#       - mkdir -p ./Results/Reports/ ./Results/Reports/allure-results
+       - cd $WORKING_DIRECTORY 
+       - . ~/.bashrc
+       - . $(find $POETRY_ENV -name activate)
        - python -m robot.run -d ./Results/Reports/ --listener allure_robotframework:./Results/Reports/allure-results -v PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U qa_gitlab_reader -d $POSTGRES_DB Test/ui/db_test/
     only: 
       - master
