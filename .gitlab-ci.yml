@@ -510,6 +510,7 @@ db_test:
        - apt install software-properties-common -y
        - apt update
        - apt install python3 -y
+       - apt install python3-pip -y
        - pip3 install robotframework
        - python3 -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY  -v DB_HOST:$POSTGRES_HOST -v DB_PORT:$POSTGRES_PORT -v DB_USER:$POSTGRES_USER -v DB_PASSWORD:$POSTGRES_PASS -v DB_NAME:$POSTGRES_DB Test/ui/db_test/db_test.robot
     only: 
