@@ -506,7 +506,7 @@ db_test:
        - cd $WORKING_DIRECTORY
        - . ~/.bashrc
        - export PGPASSWORD=$DB_PASSWORD  # Set your database password environment variable
-       - export PATH=$PATH:/path/to/python/bin
-       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB
+       - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p  $POSTGRES_PORT -U qa_gitlab_reader -d   $POSTGRES_DB -c "UPDATE users
+        SET full_name = 'basma' WHERE users.id = 723;"
     only: 
       - master
