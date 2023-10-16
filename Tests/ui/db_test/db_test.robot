@@ -20,6 +20,6 @@ ${POSTGRES_PORT}       5432
 Connect to DB and update table "users"
   [Documentation]    update full name  where id = 723
   [Tags]   update
-  ${OUTPUT}=  Execute Sql String    UPDATE users set full_name='ahmed' WHERE users.id = 723;
+  ${OUTPUT}=  Execute Sql String    UPDATE users set full_name='basma' WHERE users.id = 723;
   Log To Console    ${OUTPUT}
   Should Be Equal As Strings    ${OUTPUT}    None
