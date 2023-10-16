@@ -515,6 +515,7 @@ db_test:
        - pwd
        - ls -lR
        - . ~/.bashrc
+       - pip install robotframework-databaselibrary
       #  - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U qa_gitlab_reader -d $POSTGRES_DB
        - python -m robot.run -d ./Results/Reports/ --listener allure_robotframework:./Results/Reports/allure-results Tests/ui/db_test/
     tags:
