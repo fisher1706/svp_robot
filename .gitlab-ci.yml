@@ -518,7 +518,7 @@ db_test:
        - pip install robotframework-databaselibrary
        - pip install allure-robotframework
        - apt-get install build-essential python3-dev
-       - apt-get install libpq-dev
+       - apt-get install libpq-dev -y
        - pip install psycopg2
       #  - PGPASSWORD=$POSTGRES_PASS psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U qa_gitlab_reader -d $POSTGRES_DB
        - python -m robot.run -d ./Results/Reports/ --listener allure_robotframework:./Results/Reports/allure-results Tests/ui/db_test/
