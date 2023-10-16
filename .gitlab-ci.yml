@@ -494,12 +494,6 @@ db_test:
     image: postgres:13
     allow_failure: true
     stage: run_tests
-    variables:
-      POSTGRES_HOST: 192.168.20.86
-      POSTGRES_PORT: 5432
-      POSTGRES_PASS: QA01@git-ru534
-      POSTGRES_USER: qa_gitlab_reader  
-      POSTGRES_DB:  stage_svp_international_api
     script:
        - apt update
        - apt install python3 python3-pip python3-tk python3-virtualenv -y
