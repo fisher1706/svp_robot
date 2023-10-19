@@ -8,6 +8,7 @@ Variables       Resources/Variables/WarningMessage.py
 *** Variables ***
 ${DEFAULT_REPEAT_TYPE}      Does not repeat
 ${DEFAULT_SEAT_NUMBER}      1
+${DEFAULT_STATUS}           Scheduled
 
 
 *** Keywords ***
@@ -95,7 +96,7 @@ Verify Added Session
         ${data}=    Get Text        ${SESSION_TIME}
         Should Not Be Empty    ${data}
     END
-    Verify Text     ${SESSION_STATUS}       Drafted
+    Verify Text     ${SESSION_STATUS}       ${DEFAULT_STATUS}
     Verify Text     ${SESSION_SEE_MORE}       See more
 
 Verify Additional Information About Session
@@ -109,7 +110,7 @@ Verify Additional Information About Session
     Should Be Equal     ${entry}[4]     ${seats_number}
     Should Be Equal     ${entry}[5]     0
     Should Be Equal     ${entry}[6]     ${repeat_type}
-    Should Be Equal     ${entry}[7]     Drafted
+    Should Be Equal     ${entry}[7]     ${DEFAULT_STATUS}
 
 Get Day
     [Arguments]    ${time}      ${index}

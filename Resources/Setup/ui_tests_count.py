@@ -9,7 +9,8 @@ class UiTestCounts(TestSuiteBuilder):
     def __init__(self):
         super().__init__()
         self.count = 0
-        self.test_folders = ['admin', 'super_admin', 'legislator', 'test_center_owner', 'individual', 'spa_home']
+        self.test_folders = ['admin', 'super_admin', 'legislator', 'test_center_owner',
+                             'individual', 'spa_home', 'assessors']
 
     def get_total_count(self):
         for _folder in self.test_folders:

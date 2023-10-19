@@ -285,6 +285,45 @@ ui_spa_home_tests:
     - ui_individual_tests
     - ui_super_admin_tests
 
+ui_spa_assessors:
+  image: $IMAGE
+  allow_failure: true
+  stage: run_tests
+  tags:
+    - oci-shared
+  script:
+    - cd $WORKING_DIRECTORY
+    - . ~/.bashrc
+    - . $(find $POETRY_ENV -name activate)
+    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/assessors/
+  artifacts:
+    paths:
+      - $ALLURE_RESULTS_DIRECTORY
+      - $ROBOT_REPORT
+      - $OUTPUT_REPORT
+      - $ROBOT_REPORT_LOG
+      - $BROWSER
+    expire_in: 1 day
+    when: always
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
+  dependencies:
+    - ui_admin_tests
+    - ui_legislator_tests
+    - ui_test_center_owner_tests
+    - ui_individual_tests
+    - ui_super_admin_tests
+    - ui_spa_home_tests
+  needs:
+    - ui_admin_tests
+    - ui_legislator_tests
+    - ui_test_center_owner_tests
+    - ui_individual_tests
+    - ui_super_admin_tests
+    - ui_spa_home_tests
+
 allure-ui-admin-results:
   extends: .generate_allure_report
   stage: send-test-reports
@@ -382,6 +421,23 @@ allure-ui-spa-home-results:
     - ui_spa_home_tests
   needs:
     - ui_spa_home_tests
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+      when: always
+    - when: never
+
+allure-ui-assessors-results:
+  extends: .generate_allure_report
+  stage: send-test-reports
+  variables:
+    ALLURE_URL: https://allure-api.takamol.support
+    ALLURE_PROJECT_ID: ui_spa_assessors
+  tags:
+    - oci-shared
+  dependencies:
+    - ui_spa_assessors
+  needs:
+    - ui_spa_assessors
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
       when: always
@@ -485,6 +541,23 @@ slack-report-ui-spa-home-results:
       - ui_spa_home_tests
     script:
       - python Resources/Setup/send_allure_report.py svp-ui-daily-home
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+        when: always
+      - when: never
+
+slack-report-assessors-results:
+    image: $IMAGE
+    allow_failure: true
+    stage: send-slack-reports
+    tags:
+      - oci-shared
+    dependencies:
+      - ui_spa_assessors
+    needs:
+      - ui_spa_assessors
+    script:
+      - python Resources/Setup/send_allure_report.py ui_spa_assessors
     rules:
       - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
         when: always

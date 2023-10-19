@@ -46,3 +46,11 @@ class LocatorFunction:
     @staticmethod
     def create_locator_dropdown_list_actions(data):
         return f'td[data-label="{data}"] a'
+
+    @staticmethod
+    def create_locator_dropdown_phone_country_code(data):
+        return f'//*[@class="vti__dropdown-item"]//span[contains(text(),"{data}")]'
+
+    @staticmethod
+    def create_locator_radiobutton(name, value):
+        return f'//input[@name="{name}" and @value="{value}"]/../span'

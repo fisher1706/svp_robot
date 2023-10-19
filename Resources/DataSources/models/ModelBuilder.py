@@ -9,7 +9,8 @@ from Resources.DataSources.models.individual import Individual
 from Resources.DataSources.models.labor import Labor
 from Resources.DataSources.models.occupation import Occupation
 from Resources.DataSources.models.category import Category
-from Resources.Variables import CategoriesIdsDataset, UserInfo
+from Resources.DataSources.models.assessor import Assessor
+from Resources.Variables import CategoriesIdsDataset, UserInfo, AssessorsData
 from Resources.Variables.DirPath import DirPath
 
 
@@ -26,6 +27,8 @@ class ModelBuilder:
     CONTACT_NAME = 'Contact Name'
     CATEGORY = CategoriesIdsDataset.ENGINE_MECHANICS['name']
     POSTAL_CODE = 111111
+    GENDER = 'Male'
+    LANGUAGES = 'English'
 
     @staticmethod
     @keyword('Create New Account')
@@ -175,4 +178,76 @@ class ModelBuilder:
             date_of_birth=date_of_birth,
             passport_expiration=passport_expiration,
             password=password
+        )
+
+    @staticmethod
+    @keyword('Create new random assessor')
+    def build_random_assessors(
+            full_name=None,
+            date_of_birth=None,
+            gender=GENDER,
+            cnic=None,
+            passport_number=None,
+            country_code=COUNTRY_CODE,
+            phone=None,
+            email=None,
+            passport_file=LOGO,
+            country=COUNTRY,
+            city=CITY,
+            category=CATEGORY,
+            languages=LANGUAGES,
+            educations=None,
+            experience=None,
+            institute=None,
+            institute_name=None,
+            skills=None,
+            knowledge=None,
+            prof_qualification=None,
+            inter_qualification=None,
+            inter_experience=None
+    ):
+        random_manager = RandomManager()
+        full_name = full_name if full_name else random_manager.random_name()
+        date_of_birth = date_of_birth if date_of_birth else date.today()
+        cnic = cnic if cnic else random_manager.random_number(size=10)
+        passport_number = passport_number if passport_number else \
+            random_manager.random_letters(size=2) + str(random_manager.random_number(size=7))
+        phone = phone if phone else random_manager.random_number(size=7)
+        email = email if email else random_manager.random_email()
+        educations = educations if educations else random_manager.random_from_list(AssessorsData.EDUCATIONS)
+        experience = experience if experience else random_manager.random_from_list(AssessorsData.EXPERIENCE)
+        institute = institute if institute else random_manager.random_from_list(AssessorsData.FIFTY_FIFTY)
+        institute_name = institute_name if institute_name else random_manager.random_name()
+        skills = skills if skills else random_manager.random_from_list(AssessorsData.SKILLS)
+        knowledge = knowledge if knowledge else random_manager.random_from_list(AssessorsData.FIFTY_FIFTY)
+        prof_qualification = prof_qualification if prof_qualification else \
+            random_manager.random_from_list(AssessorsData.FIFTY_FIFTY)
+        inter_qualification = inter_qualification if inter_qualification else \
+            random_manager.random_from_list(AssessorsData.QUALIFICATION)
+        inter_experience = inter_experience if inter_experience else \
+            random_manager.random_from_list(AssessorsData.INTERNATIONAL_EXPERIENCE)
+
+        return Assessor(
+            full_name=full_name,
+            date_of_birth=date_of_birth,
+            gender=gender,
+            cnic=cnic,
+            passport_number=passport_number,
+            country_code=country_code,
+            phone=phone,
+            email=email,
+            passport_file=passport_file,
+            country=country,
+            city=city,
+            category=category,
+            languages=languages,
+            educations=educations,
+            experience=experience,
+            institute=institute,
+            institute_name=institute_name,
+            skills=skills,
+            knowledge=knowledge,
+            prof_qualification=prof_qualification,
+            inter_qualification=inter_qualification,
+            inter_experience=inter_experience
         )

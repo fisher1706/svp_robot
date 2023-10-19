@@ -5,5 +5,5 @@ class AdminLaborsResultLocators:
     SELECT_STATS = '//*[@id="resultStatus"]'
     BTN_SEARCH = '//button[text() = "Search"]'
     BTN_CANCEL = '//button[text() = "Search"]'
-    HOVER = '//*[@class="actionTypeLinks"]'
+    HOVER = '//*[@class="table-main__actions-list table-main__actions-list--visible"]'
     ICON_VIEW = '//a[text() = "View"]'

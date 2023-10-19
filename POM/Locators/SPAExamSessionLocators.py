@@ -16,7 +16,7 @@ class SPAExamSessionLocators:
     SESSION_CATEGORY = '//*[@class="session__category"]'
     SESSION_TIME = '//*[@class="session__time"]'
     SESSION_SEATS = '//*[@class="session__seats"]'
-    SESSION_STATUS = '//*[@class="status-label status-label--drafted"]'
+    SESSION_STATUS = '//*[@class="status-label status-label--scheduled"]'
     SESSION_SEE_MORE = '//*[@class="session__btn btn"]'
     TEXT_ERROR = '//*[@class="text-error"]'
     SESSION_ENTRY = '//*[@class="details-value"]'

@@ -40,3 +40,4 @@ MSG_INVALID_PASSWORD = 'Passport number should contain minimum 1, maximum 2 lett
 MSG_INVALID_CERTIFICATE = 'Invalid certificate number'
 MSG_INVALID_OCCUPATION_KEY = 'Minimum 6 digits'
 MSG_INVALID_NATIONALITY_CODE = 'Only english characters, Minimum 2 characters'
+ASSESSOR_CNIC_REGISTERED = 'User with same CNIC/National ID is already registered to the system'

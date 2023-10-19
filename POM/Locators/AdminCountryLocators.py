@@ -22,7 +22,7 @@ class AdminCountryLocators:
     CHECKBOX_CATEGORY = '//*[@class="checkbox checkbox--categories col-12 col-md-4 mt-0"]'
     RADIO_BUTTON = '//*[@class="input-group__wrapper "]//label'
     SELECT_NATIONALITY = '//*[@class="arrow"]'
-    NATIONALITY = '//li//span//span'
+    NATIONALITY = '//*[text()="Select Nationality"]/..//li//span//span'
     COUNTRY_SUCCESSFULLY_UPDATED = '//*[@class="alert-message alert-message--success"]'
     COUNTRY_CHOOSE_OPTION = '//*[@class="form-row"]//select'
     COUNTRY_TAB = 'tr:nth-child(1) td[data-label="Country"]'
