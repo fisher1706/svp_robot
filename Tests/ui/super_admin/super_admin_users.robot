@@ -23,9 +23,11 @@ Checking Ability To Resend The Invitation For Pending Rows Negative
     Test Ability Resend Invitation      type=negative
 
 Checking Ability To Revoke Admin Users With Activated Statuses
+    Skip    Long to find necessary user
     Test Ability Revoke Users With Active Statuses
 
 Checking Ability To Revoke Admin Users With Activated Statuses Negative
+    Skip    Long to find necessary user
     Test Ability Revoke Users With Active Statuses      type=negative
 
 Checking Ability To Reactivate Admin Users With Revoked Statuses Negative

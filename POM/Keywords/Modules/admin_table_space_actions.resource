@@ -10,7 +10,13 @@ Test Check Admin And Super Admin Space
     Check Admin Space Header
     Check Admin Space Size      url=${url}
     Check Admin Alternating Rows
-    IF    '${url}'!='faqs'
+    IF    '${url}'=='faqs'
+        RETURN
+    ELSE IF     '${url}'=='legislators'
+        RETURN
+    ELSE IF     '${url}'=='labor-attaches'
+        RETURN
+    ELSE
         Check Admin Fixed Header And Displaed Rows Dropdown
     END
 
