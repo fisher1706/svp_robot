@@ -5,6 +5,7 @@ Library         Libraries/LocatorFunction.py
 Library         Libraries/Utils.py
 Variables       POM/Locators/SPAAssessorsRegistration.py
 
+
 *** Variables ***
 ${ATTR}           style
 ${QUALIFICATION}             qualification
@@ -15,6 +16,7 @@ ${KNOWLEDGE_TOOLS}             tools
 ${PROF_QUALIFICATION}             profQualification
 ${INTERNAL_QUALIFICATION}             internalQualification
 ${INTERNAL_EXPERIENCE}             internalExperience
+
 
 *** Keywords ***
 Open SPA Landing Page

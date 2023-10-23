@@ -111,7 +111,6 @@ Choose Category
 
 Choose Nationality
     [Arguments]    ${start}=//*[text()="     ${end}="]
-#    Reload
     ${natioalities}=        Get Nationality List
     ${natioality}=      Return Random Data List     ${natioalities}
     ${state}=    Get Element States      ${BTN_DEL}      then    bool(value & visible)
