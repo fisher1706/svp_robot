@@ -544,21 +544,31 @@ slack-report-ui-spa-home-results:
     rules:
       - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
         when: always
-      - when: never
+      - when: never 
 
-slack-report-assessors-results:
-    image: $IMAGE
+db_test:
+    image: postgres:13
     allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_spa_assessors
-    needs:
-      - ui_spa_assessors
+    stage: run_tests
     script:
-      - python Resources/Setup/send_allure_report.py ui_spa_assessors
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
+       - apt update
+       - apt install python3 python3-pip python3-tk python3-virtualenv -y
+       - virtualenv robot-env
+       - source robot-env/bin/activate
+       - pip install robotframework
+       - apt install curl -y
+       - curl -sSL https://install.python-poetry.org | python3 -
+       - cd $WORKING_DIRECTORY
+       - pwd
+       - ls -lR
+       - . ~/.bashrc
+       - pip install robotframework-databaselibrary
+       - pip install allure-robotframework
+       - apt-get install build-essential python3-dev
+       - apt-get install libpq-dev -y
+       - pip install psycopg2
+       - python -m robot.run -d ./Results/Reports/ --listener allure_robotframework:./Results/Reports/allure-results Tests/ui/db_test/
+    tags:
+      - oci-stage-psql
+    only: 
+      - master
