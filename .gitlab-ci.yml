@@ -120,432 +120,432 @@ ui_admin_tests:
       when: always
     - when: never
 
-ui_legislator_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/legislator/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-  needs:
-    - ui_admin_tests
-
-ui_test_center_owner_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/test_center_owner/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-    - ui_legislator_tests
-  needs:
-    - ui_admin_tests
-    - ui_legislator_tests
-
-ui_individual_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/individual/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-  needs:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-
-ui_super_admin_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/super_admin/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-  needs:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-
-ui_spa_home_tests:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/spa_home/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-    - ui_super_admin_tests
-  needs:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-    - ui_super_admin_tests
-
-ui_spa_assessors:
-  image: $IMAGE
-  allow_failure: true
-  stage: run_tests
-  tags:
-    - oci-shared
-  script:
-    - cd $WORKING_DIRECTORY
-    - . ~/.bashrc
-    - . $(find $POETRY_ENV -name activate)
-    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/assessors/
-  artifacts:
-    paths:
-      - $ALLURE_RESULTS_DIRECTORY
-      - $ROBOT_REPORT
-      - $OUTPUT_REPORT
-      - $ROBOT_REPORT_LOG
-      - $BROWSER
-    expire_in: 1 day
-    when: always
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-  dependencies:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-    - ui_super_admin_tests
-    - ui_spa_home_tests
-  needs:
-    - ui_admin_tests
-    - ui_legislator_tests
-    - ui_test_center_owner_tests
-    - ui_individual_tests
-    - ui_super_admin_tests
-    - ui_spa_home_tests
-
-allure-ui-admin-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-admin
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_admin_tests
-  needs:
-    - ui_admin_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-super-admin-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-super
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_super_admin_tests
-  needs:
-    - ui_super_admin_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-legislator-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-legislator
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_legislator_tests
-  needs:
-    - ui_legislator_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-test_center_owner-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-tc
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_test_center_owner_tests
-  needs:
-    - ui_test_center_owner_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-individual-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-individual
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_individual_tests
-  needs:
-    - ui_individual_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-spa-home-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: svp-ui-daily-home
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_spa_home_tests
-  needs:
-    - ui_spa_home_tests
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-allure-ui-assessors-results:
-  extends: .generate_allure_report
-  stage: send-test-reports
-  variables:
-    ALLURE_URL: https://allure-api.takamol.support
-    ALLURE_PROJECT_ID: ui_spa_assessors
-  tags:
-    - oci-shared
-  dependencies:
-    - ui_spa_assessors
-  needs:
-    - ui_spa_assessors
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-      when: always
-    - when: never
-
-
-slack-report-ui-admin-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_admin_tests
-    needs:
-      - ui_admin_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-admin
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
-
-slack-report-ui-super-admin-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_super_admin_tests
-    needs:
-      - ui_super_admin_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-super
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
-
-slack-report-ui-legislator-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_legislator_tests
-    needs:
-      - ui_legislator_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-legislator
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
-
-slack-report-ui-test_center_owner-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_test_center_owner_tests
-    needs:
-      - ui_test_center_owner_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-tc
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
-
-slack-report-ui-individual-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_individual_tests
-    needs:
-      - ui_individual_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-individual
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never
-
-slack-report-ui-spa-home-results:
-    image: $IMAGE
-    allow_failure: true
-    stage: send-slack-reports
-    tags:
-      - oci-shared
-    dependencies:
-      - ui_spa_home_tests
-    needs:
-      - ui_spa_home_tests
-    script:
-      - python Resources/Setup/send_allure_report.py svp-ui-daily-home
-    rules:
-      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
-        when: always
-      - when: never 
-
+#ui_legislator_tests:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/legislator/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#  needs:
+#    - ui_admin_tests
+#
+#ui_test_center_owner_tests:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/test_center_owner/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#  needs:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#
+#ui_individual_tests:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/individual/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#  needs:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#
+#ui_super_admin_tests:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/super_admin/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#  needs:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#
+#ui_spa_home_tests:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/spa_home/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#    - ui_super_admin_tests
+#  needs:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#    - ui_super_admin_tests
+#
+#ui_spa_assessors:
+#  image: $IMAGE
+#  allow_failure: true
+#  stage: run_tests
+#  tags:
+#    - oci-shared
+#  script:
+#    - cd $WORKING_DIRECTORY
+#    - . ~/.bashrc
+#    - . $(find $POETRY_ENV -name activate)
+#    - python -m robot.run -d $ROBOT_RESULTS_REPORTS --listener allure_robotframework:$ALLURE_RESULTS_DIRECTORY Tests/ui/assessors/
+#  artifacts:
+#    paths:
+#      - $ALLURE_RESULTS_DIRECTORY
+#      - $ROBOT_REPORT
+#      - $OUTPUT_REPORT
+#      - $ROBOT_REPORT_LOG
+#      - $BROWSER
+#    expire_in: 1 day
+#    when: always
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#  dependencies:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#    - ui_super_admin_tests
+#    - ui_spa_home_tests
+#  needs:
+#    - ui_admin_tests
+#    - ui_legislator_tests
+#    - ui_test_center_owner_tests
+#    - ui_individual_tests
+#    - ui_super_admin_tests
+#    - ui_spa_home_tests
+#
+#allure-ui-admin-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-admin
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_admin_tests
+#  needs:
+#    - ui_admin_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-super-admin-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-super
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_super_admin_tests
+#  needs:
+#    - ui_super_admin_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-legislator-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-legislator
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_legislator_tests
+#  needs:
+#    - ui_legislator_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-test_center_owner-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-tc
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_test_center_owner_tests
+#  needs:
+#    - ui_test_center_owner_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-individual-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-individual
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_individual_tests
+#  needs:
+#    - ui_individual_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-spa-home-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: svp-ui-daily-home
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_spa_home_tests
+#  needs:
+#    - ui_spa_home_tests
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#allure-ui-assessors-results:
+#  extends: .generate_allure_report
+#  stage: send-test-reports
+#  variables:
+#    ALLURE_URL: https://allure-api.takamol.support
+#    ALLURE_PROJECT_ID: ui_spa_assessors
+#  tags:
+#    - oci-shared
+#  dependencies:
+#    - ui_spa_assessors
+#  needs:
+#    - ui_spa_assessors
+#  rules:
+#    - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#      when: always
+#    - when: never
+#
+#
+#slack-report-ui-admin-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_admin_tests
+#    needs:
+#      - ui_admin_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-admin
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
+#slack-report-ui-super-admin-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_super_admin_tests
+#    needs:
+#      - ui_super_admin_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-super
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
+#slack-report-ui-legislator-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_legislator_tests
+#    needs:
+#      - ui_legislator_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-legislator
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
+#slack-report-ui-test_center_owner-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_test_center_owner_tests
+#    needs:
+#      - ui_test_center_owner_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-tc
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
+#slack-report-ui-individual-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_individual_tests
+#    needs:
+#      - ui_individual_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-individual
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
+#slack-report-ui-spa-home-results:
+#    image: $IMAGE
+#    allow_failure: true
+#    stage: send-slack-reports
+#    tags:
+#      - oci-shared
+#    dependencies:
+#      - ui_spa_home_tests
+#    needs:
+#      - ui_spa_home_tests
+#    script:
+#      - python Resources/Setup/send_allure_report.py svp-ui-daily-home
+#    rules:
+#      - if: '$CI_PIPELINE_SOURCE == "schedule" || $CI_PIPELINE_SOURCE == "web"'
+#        when: always
+#      - when: never
+#
 #db_test:
 #    image: postgres:13
 #    allow_failure: true
