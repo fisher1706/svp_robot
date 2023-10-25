@@ -47,6 +47,7 @@ build:
   only:
     refs:
       - master
+      - test_pip
       - merge_request
     changes:
       - Dockerfile
